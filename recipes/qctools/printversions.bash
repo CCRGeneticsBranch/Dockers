@@ -50,3 +50,6 @@ echo "2.27.4"
 
 figlet multiqc
 multiqc --version
+
+figlet RSeQC
+echo "4.0.0"

@@ -10,14 +10,6 @@ ENV TAG="v1.2"
 
 # rseqc 4.0.0
 RUN pip3 install RSeQC
-# WORKDIR /opt2
-# # RUN wget https://sourceforge.net/projects/rseqc/files/RSeQC-4.0.0.tar.gz/download -O RSeQC-4.0.0.tar.gz && \
-# #     tar xzvf RSeQC-4.0.0.tar.gz && rm -rf RSeQC-4.0.0.tar.gz
-# # WORKDIR /opt2/RSeQC-4.0.0
-# RUN wget https://sourceforge.net/projects/rseqc/files/RSeQC-3.0.1.tar.gz/download -O RSeQC-3.0.1.tar.gz && \
-#     tar xzvf RSeQC-3.0.1.tar.gz && rm -f RSeQC-3.0.1.tar.gz
-# WORKDIR /opt2/RSeQC-3.0.1
-# RUN python setup.py install
 
 # cleanup etc
 COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
