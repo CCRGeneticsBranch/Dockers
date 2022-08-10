@@ -15,8 +15,8 @@ RUN pip3 install RSeQC
 COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
 COPY printversions.bash /opt2/printversions
 RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi && \
-    ln -s Dockerfile.${TAG} /opt2/Dockerfile && \
     chmod a+r /opt2/Dockerfile.${TAG} && \
+    ln -s Dockerfile.${TAG} /opt2/Dockerfile && \
     chmod a+rx /opt2/printversions
 RUN /opt2/printversions > /opt2/versions.txt; exit 0
 RUN chmod a+r /opt2/versions.txt
