@@ -15,8 +15,9 @@ ENV TAG="v1.3"
 ADD http://smithlabresearch.org/downloads/preseq_linux_v2.0.tar.bz2 /opt2
 WORKDIR /opt2
 RUN tar xjvf preseq_linux_v2.0.tar.bz2 && \
-    mv preseq_linux_v2.0 preseq && chmod a+x preseq
-ENV PATH="/opt2:$PATH"
+    rm -f preseq_linux_v2.0.tar.bz2 && \
+    chmod a+x /opt2/preseq_v2.0/preseq 
+ENV PATH="/opt2/preseq_v2.0:$PATH"
 
 # cleanup etc
 COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
