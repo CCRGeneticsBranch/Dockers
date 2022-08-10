@@ -1,5 +1,5 @@
-FROM nciccbr/ccrgb_qctools:v1.4
-ENV TAG="v1.5"
+FROM nciccbr/ccrgb_qctools:v1.5
+ENV TAG="v1.6"
 
 # TAG v1.0 has
 # Fastqc v0.11.9
@@ -27,6 +27,7 @@ WORKDIR /opt2
 RUN tar xzvf jellyfish-1.1.11.tar.gz && rm -f jellyfish-1.1.11.tar.gz 
 WORKDIR /opt2/jellyfish-1.1.11 
 RUN ./configure && make && make install && cd /opt2 && rm -rf jellyfish-1.1.11
+ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/lib"
 # kraken
 
 # cleanup etc
