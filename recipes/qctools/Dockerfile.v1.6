@@ -22,7 +22,7 @@ ENV TAG="v1.5"
 # deeptools 3.5.1
 
 # jellyfish
-apt-get install -y jellyfish
+RUN apt-get install -y jellyfish
 # ADD http://www.cbcb.umd.edu/software/jellyfish/jellyfish-1.1.11.tar.gz /opt2
 # WORKDIR /opt2
 # RUN tar xjvf htslib-1.15.1.tar.bz2 && rm -f htslib-1.15.1.tar.bz2 && mkdir -p /opt2/htslib
