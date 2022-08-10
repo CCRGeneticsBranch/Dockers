@@ -53,3 +53,6 @@ multiqc --version
 
 figlet RSeQC
 echo "4.0.0"
+
+figlet preseq
+echo "3.1.1"

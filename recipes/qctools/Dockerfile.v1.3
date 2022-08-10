@@ -21,9 +21,9 @@ RUN ./configure && make && make install && cd /opt2 && rm -rf /opt2/htslib-1.15.
 # preseq v2.0
 ADD https://github.com/smithlabcode/preseq/releases/download/v3.1.2/preseq-3.1.2.tar.gz /opt2
 WORKDIR /opt2
-RUN tar -zxvf preseq-3.1.2.tar.gz && rm -f preseq-3.1.2.tar.gz && mkdir /opt2/preseq
+RUN tar -zxvf preseq-3.1.2.tar.gz && rm -f preseq-3.1.2.tar.gz && mkdir -p /opt2/preseq
 WORKDIR /opt2/preseq-3.1.2
-RUN ./configure --prefix=/opt2/preseq/bin --enable-hts && make && make install && cd /opt2 && rm -rf /opt2/preseq-3.1.2
+RUN ./configure --prefix=/opt2/preseq --enable-hts && make && make install && cd /opt2 && rm -rf /opt2/preseq-3.1.2
 ENV PATH="/opt2/preseq/bin:$PATH"
 
 # cleanup etc
