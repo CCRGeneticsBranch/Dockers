@@ -20,7 +20,7 @@ COPY Dockerfile.$TAG /opt2/Dockerfile
 COPY printversions.bash /opt2/printversions
 RUN chmod a+r /opt2/Dockerfile && \
     chmod a+rx /opt2/printversions
-RUN /opt2/printversions > /opt2/versions.txt 
+RUN /opt2/printversions > /opt2/versions.txt; exit 0
 RUN chmod a+r /opt2/versions.txt
 WORKDIR /data2
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
