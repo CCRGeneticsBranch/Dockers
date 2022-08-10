@@ -1,0 +1,21 @@
+FROM nciccbr/ccrgb_qctools:v1.0
+ENV TAG="v1.1"
+
+# TAG v1.0 has
+# Fastqc v0.11.9
+# picard tools v2.27.4
+
+# install multiqc
+RUN pip3 install multiqc==1.12
+
+# cleanup etc
+COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+COPY printversions.bash /opt2/printversions
+RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi && \
+    ln -s Dockerfile.${TAG} Dockerfile && \
+    chmod a+r /opt2/Dockerfile.${TAG} && \
+    chmod a+rx /opt2/printversions
+RUN /opt2/printversions > /opt2/versions.txt; exit 0
+RUN chmod a+r /opt2/versions.txt
+WORKDIR /data2
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
