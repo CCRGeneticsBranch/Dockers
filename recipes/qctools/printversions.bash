@@ -47,3 +47,6 @@ fastqc -v
 figlet picard
 java -jar $PICARDJAR -h 
 echo "2.27.4"
+
+figlet multiqc
+multiqc --version
