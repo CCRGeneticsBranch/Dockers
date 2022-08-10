@@ -43,3 +43,6 @@ python3 -c "import pysam;print('pysam:%s'%(pysam.__version__))"
 
 figlet fastqc
 fastqc -v
+
+figlet picard
+java -jar $PICARDJAR -h 
