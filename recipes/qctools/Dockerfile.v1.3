@@ -12,7 +12,7 @@ ENV TAG="v1.3"
 # rseqc 4.0.0
 
 # preseq v2.0
-ADD https://github.com/smithlabcode/preseq/releases/download/v3.1.2/preseq-3.1.2.tar.gz
+ADD https://github.com/smithlabcode/preseq/releases/download/v3.1.2/preseq-3.1.2.tar.gz /opt2
 WORKDIR /opt2
 RUN tar -zxvf preseq-3.1.2.tar.gz && rm -f preseq-3.1.2.tar.gz && mkdir /opt2/preseq
 WORKDIR /opt2/preseq-3.1.2
