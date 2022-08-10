@@ -12,6 +12,7 @@ ENV TAG="v1.3"
 # rseqc 4.0.0
 
 # preseq v2.0
+RUN apt-get install -y libgsl-dev
 ADD http://smithlabresearch.org/downloads/preseq_linux_v2.0.tar.bz2 /opt2
 WORKDIR /opt2
 RUN tar xjvf preseq_linux_v2.0.tar.bz2 && \
