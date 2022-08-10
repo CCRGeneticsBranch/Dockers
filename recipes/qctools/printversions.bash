@@ -41,3 +41,5 @@ python3 -c "import numpy;print('numpy:%s'%(numpy.__version__))"
 python3 -c "import scipy;print('scipy:%s'%(scipy.__version__))"
 python3 -c "import pysam;print('pysam:%s'%(pysam.__version__))"
 
+figlet fastqc
+fastqc -v
