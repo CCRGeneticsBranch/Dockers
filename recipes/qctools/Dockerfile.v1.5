@@ -17,7 +17,7 @@ ENV TAG="v1.5"
 
 # TAG v1.4 has
 # fastqvalidator 6d619a34749e9d33c34ef0d3e0e87324ca77f320
-pip3 install deeptools
+RUN pip3 install deeptools
 
 # cleanup etc
 COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
