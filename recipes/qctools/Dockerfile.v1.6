@@ -23,7 +23,7 @@ ENV TAG="v1.5"
 
 # jellyfish
 WORKDIR /opt2
-ADD http://www.cbcb.umd.edu/software/jellyfish/jellyfish-1.1.11.tar.gz
+ADD http://www.cbcb.umd.edu/software/jellyfish/jellyfish-1.1.11.tar.gz jellyfish-1.1.11.tar.gz
 RUN tar xzvf jellyfish-1.1.11.tar.gz && rm -f jellyfish-1.1.11.tar.gz 
 WORKDIR /opt2/jellyfish-1.1.11 && ./configure && make && make install && cd /opt2 && rm -rf jellyfish-1.1.11
 # kraken
