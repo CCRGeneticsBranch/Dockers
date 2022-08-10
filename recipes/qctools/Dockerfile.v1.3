@@ -11,6 +11,13 @@ ENV TAG="v1.3"
 # TAG v1.2 has
 # rseqc 4.0.0
 
+# htslib
+ADD https://github.com/samtools/htslib/releases/download/1.15.1/htslib-1.15.1.tar.bz2 /opt2
+WORKDIR /opt2
+RUN tar xjvf htslib-1.15.1.tar.bz2 && rm -f htslib-1.15.1.tar.bz2 && mkdir -p /opt2/htslib
+WORKDIR /opt2/htslib-1.15.1
+RUN ./configure && make && make install && cd /opt2 && rm -rf /opt2/htslib-1.15.1
+
 # preseq v2.0
 ADD https://github.com/smithlabcode/preseq/releases/download/v3.1.2/preseq-3.1.2.tar.gz /opt2
 WORKDIR /opt2
