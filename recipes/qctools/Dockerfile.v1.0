@@ -10,6 +10,11 @@ RUN unzip fastqc_v0.11.9.zip && \
     chmod 755 /opt2/FastQC/fastqc && \
     ln -s /opt2/FastQC/fastqc /usr/local/bin/fastqc
 
+# picard tools
+RUN mkdir -p /opt2/picardtools
+ADD https://github.com/broadinstitute/picard/releases/download/2.27.4/picardcloud.jar /opt2/picardtools
+ENV PICARDJAR="/opt2/picardtools/picardcloud.jar"
+
 # cleanup etc
 COPY Dockerfile.$TAG /opt2/Dockerfile
 COPY printversions.bash /opt2/printversions
