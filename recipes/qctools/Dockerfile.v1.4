@@ -1,0 +1,37 @@
+FROM nciccbr/ccrgb_qctools:v1.3
+ENV TAG="v1.4"
+
+# TAG v1.0 has
+# Fastqc v0.11.9
+# picard tools v2.27.4
+
+# TAG v1.1 has
+# install multiqc 1.12
+
+# TAG v1.2 has
+# rseqc 4.0.0
+
+# TAG v1.3 has
+# htslib 1.15.1
+# preseq 3.1.1
+
+# fastqvalidator
+WORKDIR	/opt2
+RUN	git clone https://github.com/statgen/fastQValidator.git
+WORKDIR	/opt2/fastQValidator
+RUN	export CXXFLAGS="-static-libgcc -static-libstdc++" && \
+	export LD_FLAGS="-static -lpthread" && \
+	make cloneLib && make
+ENV	PATH="$PATH:/opt2/fastQValidator/bin"
+
+# cleanup etc
+COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+COPY printversions.bash /opt2/printversions
+RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi && \
+    chmod a+r /opt2/Dockerfile.${TAG} && \
+    ln -s Dockerfile.${TAG} /opt2/Dockerfile && \
+    chmod a+rx /opt2/printversions
+RUN /opt2/printversions > /opt2/versions.txt; exit 0
+RUN chmod a+r /opt2/versions.txt
+WORKDIR /data2
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
