@@ -56,3 +56,6 @@ echo "4.0.0"
 
 figlet preseq
 echo "3.1.1"
+
+figlet fastQValidator
+echo "6d619a34749e9d33c34ef0d3e0e87324ca77f320"
