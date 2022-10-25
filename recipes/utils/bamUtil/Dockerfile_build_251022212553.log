@@ -1,0 +1,24 @@
+Sending build context to Docker daemon  141.3kB
+Step 1/9 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/9 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 7286e3ecbaa6
+Step 3/9 : WORKDIR /tmp
+ ---> Using cache
+ ---> 8dd248822d02
+Step 4/9 : RUN git clone https://github.com/statgen/bamUtil.git &&     cd bamUtil && make cloneLib && make && make install INSTALLDIR=/opt2/bamUtil
+ ---> Using cache
+ ---> 1af49048d661
+Step 5/9 : ENV PATH="$PATH:/opt2/bamUtil"
+ ---> Using cache
+ ---> 4394f8327f3f
+Step 6/9 : RUN rm -rf /tmp/bamUtil
+ ---> Using cache
+ ---> e31b97c4c11e
+Step 7/9 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> 601b9e3964a9
+Step 8/9 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile && WORKDIR /data2
+ ---> Running in cb938a4c4a92
+[91m/bin/sh: 1: [0m[91mWORKDIR: not found
+[0m

@@ -1,0 +1,15 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/13 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/13 : ENV TAG="v1.0"
+ ---> Running in 3baeb418c5e4
+Removing intermediate container 3baeb418c5e4
+ ---> 7286e3ecbaa6
+Step 3/13 : WORKDIR /tmp
+ ---> Running in dae7c8472c4e
+Removing intermediate container dae7c8472c4e
+ ---> 8dd248822d02
+Step 4/13 : RUN git clone https://github.com/statgen/bamUtil.git &&     && cd bamUtil && make cloneLib && make && make install INSTALLDIR=/opt2/bamUtil
+ ---> Running in 299495bf5858
+[91m/bin/sh: 1: Syntax error: "&&" unexpected
+[0m

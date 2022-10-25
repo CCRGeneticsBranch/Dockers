@@ -1,0 +1,41 @@
+Sending build context to Docker daemon  142.8kB
+Step 1/10 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/10 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 7286e3ecbaa6
+Step 3/10 : WORKDIR /tmp
+ ---> Using cache
+ ---> 8dd248822d02
+Step 4/10 : RUN git clone https://github.com/statgen/bamUtil.git &&     cd bamUtil && make cloneLib && make && make install INSTALLDIR=/opt2/bamUtil
+ ---> Using cache
+ ---> 1af49048d661
+Step 5/10 : ENV PATH="$PATH:/opt2/bamUtil"
+ ---> Using cache
+ ---> 4394f8327f3f
+Step 6/10 : RUN rm -rf /tmp/bamUtil
+ ---> Using cache
+ ---> e31b97c4c11e
+Step 7/10 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> 24c25a2f43fa
+Step 8/10 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 9eaa071d6c6a
+Removing intermediate container 9eaa071d6c6a
+ ---> 8819d843024c
+Step 9/10 : WORKDIR /data2
+ ---> Running in f2d2379741ea
+Removing intermediate container f2d2379741ea
+ ---> e0b32f4f33bc
+Step 10/10 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 2e3fe0e7ca51
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 2e3fe0e7ca51
+ ---> cca84bd0c2da
+Successfully built cca84bd0c2da
+Successfully tagged nciccbr/ccrgb_bamutil:latest

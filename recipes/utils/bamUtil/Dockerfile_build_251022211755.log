@@ -1,0 +1,733 @@
+Sending build context to Docker daemon  5.632kB
+Step 1/13 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/13 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 7286e3ecbaa6
+Step 3/13 : WORKDIR /tmp
+ ---> Using cache
+ ---> 8dd248822d02
+Step 4/13 : RUN git clone https://github.com/statgen/bamUtil.git &&     cd bamUtil && make cloneLib && make && make install INSTALLDIR=/opt2/bamUtil
+ ---> Running in 16db93c5ab91
+[91mCloning into 'bamUtil'...
+[0m[91mCloning into '../libStatGen'...
+[0mCall make to compile libStatGen and this tool.
+make[1]: Entering directory '/tmp/bamUtil/src'
+make -C ../../libStatGen --no-print-directory opt
+ln -s ../samtools/bgzf.h ../include/bgzf.h
+ln -s ../samtools/knetfile.h ../include/knetfile.h
+ln -s ../samtools/khash.h ../include/khash.h
+ln -s ../samtools/bam.h ../include/bam.h
+mkdir -p obj
+gcc -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/bgzf.o -c bgzf.c 
+gcc -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/knetfile.o -c knetfile.c 
+ar -cru ../libStatGen.a obj/bgzf.o obj/knetfile.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mln -s ../general/BaseAsciiMap.h ../include/BaseAsciiMap.h
+ln -s ../general/BaseQualityHelper.h ../include/BaseQualityHelper.h
+ln -s ../general/BaseUtilities.h ../include/BaseUtilities.h
+ln -s ../general/BasicHash.h ../include/BasicHash.h
+ln -s ../general/BgzfFileType.h ../include/BgzfFileType.h
+ln -s ../general/BgzfFileTypeRecovery.h ../include/BgzfFileTypeRecovery.h
+ln -s ../general/CharBuffer.h ../include/CharBuffer.h
+ln -s ../general/Chromosome.h ../include/Chromosome.h
+ln -s ../general/Cigar.h ../include/Cigar.h
+ln -s ../general/CigarRoller.h ../include/CigarRoller.h
+ln -s ../general/Error.h ../include/Error.h
+ln -s ../general/ErrorHandler.h ../include/ErrorHandler.h
+ln -s ../general/FileType.h ../include/FileType.h
+ln -s ../general/FortranFormat.h ../include/FortranFormat.h
+ln -s ../general/GenomeSequence.h ../include/GenomeSequence.h
+ln -s ../general/GenotypeLists.h ../include/GenotypeLists.h
+ln -s ../general/glfHandler.h ../include/glfHandler.h
+ln -s ../general/GzipFileType.h ../include/GzipFileType.h
+ln -s ../general/GzipHeader.h ../include/GzipHeader.h
+ln -s ../general/Hash.h ../include/Hash.h
+ln -s ../general/IndexBase.h ../include/IndexBase.h
+ln -s ../general/Input.h ../include/Input.h
+ln -s ../general/InputFile.h ../include/InputFile.h
+ln -s ../general/IntArray.h ../include/IntArray.h
+ln -s ../general/IntHash.h ../include/IntHash.h
+ln -s ../general/LongLongCounter.h ../include/LongLongCounter.h
+ln -s ../general/MapFunction.h ../include/MapFunction.h
+ln -s ../general/MathMatrix.h ../include/MathMatrix.h
+ln -s ../general/MathVector.h ../include/MathVector.h
+ln -s ../general/MemoryAllocators.h ../include/MemoryAllocators.h
+ln -s ../general/MemoryInfo.h ../include/MemoryInfo.h
+ln -s ../general/MemoryMapArray.h ../include/MemoryMapArray.h
+ln -s ../general/MemoryMap.h ../include/MemoryMap.h
+ln -s ../general/MiniDeflate.h ../include/MiniDeflate.h
+ln -s ../general/NonOverlapRegions.h ../include/NonOverlapRegions.h
+ln -s ../general/Parameters.h ../include/Parameters.h
+ln -s ../general/PedigreeAlleleFreq.h ../include/PedigreeAlleleFreq.h
+ln -s ../general/Pedigree.h ../include/Pedigree.h
+ln -s ../general/PedigreeDescription.h ../include/PedigreeDescription.h
+ln -s ../general/PedigreeFamily.h ../include/PedigreeFamily.h
+ln -s ../general/PedigreeGlobals.h ../include/PedigreeGlobals.h
+ln -s ../general/PedigreePerson.h ../include/PedigreePerson.h
+ln -s ../general/PhoneHome.h ../include/PhoneHome.h
+ln -s ../general/QuickIndex.h ../include/QuickIndex.h
+ln -s ../general/Random.h ../include/Random.h
+ln -s ../general/ReferenceSequence.h ../include/ReferenceSequence.h
+ln -s ../general/SmithWaterman.h ../include/SmithWaterman.h
+ln -s ../general/Sort.h ../include/Sort.h
+ln -s ../general/STLUtilities.h ../include/STLUtilities.h
+ln -s ../general/StatGenStatus.h ../include/StatGenStatus.h
+ln -s ../general/StringAlias.h ../include/StringAlias.h
+ln -s ../general/StringArray.h ../include/StringArray.h
+ln -s ../general/StringBasics.h ../include/StringBasics.h
+ln -s ../general/StringHash.h ../include/StringHash.h
+ln -s ../general/StringMap.h ../include/StringMap.h
+ln -s ../general/Tabix.h ../include/Tabix.h
+ln -s ../general/UncompressedFileType.h ../include/UncompressedFileType.h
+ln -s ../general/Constant.h ../include/Constant.h
+ln -s ../general/CSG_MD5.h ../include/CSG_MD5.h
+ln -s ../general/Generic.h ../include/Generic.h
+ln -s ../general/GenomeSequenceHelpers.h ../include/GenomeSequenceHelpers.h
+ln -s ../general/GreedyTupleAligner.h ../include/GreedyTupleAligner.h
+ln -s ../general/InplaceMerge.h ../include/InplaceMerge.h
+ln -s ../general/LongHash.h ../include/LongHash.h
+ln -s ../general/LongInt.h ../include/LongInt.h
+ln -s ../general/MathConstant.h ../include/MathConstant.h
+ln -s ../general/PackedVector.h ../include/PackedVector.h
+ln -s ../general/PedigreeAlleles.h ../include/PedigreeAlleles.h
+ln -s ../general/Performance.h ../include/Performance.h
+ln -s ../general/ReusableVector.h ../include/ReusableVector.h
+ln -s ../general/SimpleStats.h ../include/SimpleStats.h
+ln -s ../general/TrimSequence.h ../include/TrimSequence.h
+ln -s ../general/UnitTest.h ../include/UnitTest.h
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseAsciiMap.o -c BaseAsciiMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseQualityHelper.o -c BaseQualityHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseUtilities.o -c BaseUtilities.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BasicHash.o -c BasicHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BgzfFileType.o -c BgzfFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BgzfFileTypeRecovery.o -c BgzfFileTypeRecovery.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/CharBuffer.o -c CharBuffer.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Chromosome.o -c Chromosome.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Cigar.o -c Cigar.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/CigarRoller.o -c CigarRoller.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Error.o -c Error.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/ErrorHandler.o -c ErrorHandler.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/FileType.o -c FileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/FortranFormat.o -c FortranFormat.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GenomeSequence.o -c GenomeSequence.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GenotypeLists.o -c GenotypeLists.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/glfHandler.o -c glfHandler.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GzipFileType.o -c GzipFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GzipHeader.o -c GzipHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Hash.o -c Hash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/IndexBase.o -c IndexBase.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Input.o -c Input.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/InputFile.o -c InputFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/IntArray.o -c IntArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/IntHash.o -c IntHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/LongLongCounter.o -c LongLongCounter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MapFunction.o -c MapFunction.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MathMatrix.o -c MathMatrix.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MathVector.o -c MathVector.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MemoryAllocators.o -c MemoryAllocators.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MemoryInfo.o -c MemoryInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MemoryMapArray.o -c MemoryMapArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MemoryMap.o -c MemoryMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MiniDeflate.o -c MiniDeflate.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/NonOverlapRegions.o -c NonOverlapRegions.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Parameters.o -c Parameters.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeAlleleFreq.o -c PedigreeAlleleFreq.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Pedigree.o -c Pedigree.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeDescription.o -c PedigreeDescription.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeFamily.o -c PedigreeFamily.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeGlobals.o -c PedigreeGlobals.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreePerson.o -c PedigreePerson.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PhoneHome.o -c PhoneHome.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/QuickIndex.o -c QuickIndex.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Random.o -c Random.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/ReferenceSequence.o -c ReferenceSequence.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SmithWaterman.o -c SmithWaterman.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Sort.o -c Sort.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/STLUtilities.o -c STLUtilities.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StatGenStatus.o -c StatGenStatus.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringAlias.o -c StringAlias.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringArray.o -c StringArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringBasics.o -c StringBasics.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringHash.o -c StringHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringMap.o -c StringMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Tabix.o -c Tabix.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/UncompressedFileType.o -c UncompressedFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeLoader.o -c PedigreeLoader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeTrim.o -c PedigreeTrim.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeTwin.o -c PedigreeTwin.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/BaseAsciiMap.o obj/BaseQualityHelper.o obj/BaseUtilities.o obj/BasicHash.o obj/BgzfFileType.o obj/BgzfFileTypeRecovery.o obj/CharBuffer.o obj/Chromosome.o obj/Cigar.o obj/CigarRoller.o obj/Error.o obj/ErrorHandler.o obj/FileType.o obj/FortranFormat.o obj/GenomeSequence.o obj/GenotypeLists.o obj/glfHandler.o obj/GzipFileType.o obj/GzipHeader.o obj/Hash.o obj/IndexBase.o obj/Input.o obj/InputFile.o obj/IntArray.o obj/IntHash.o obj/LongLongCounter.o obj/MapFunction.o obj/MathMatrix.o obj/MathVector.o obj/MemoryAllocators.o obj/MemoryInfo.o obj/MemoryMapArray.o obj/MemoryMap.o obj/MiniDeflate.o obj/NonOverlapRegions.o obj/Parameters.o obj/PedigreeAlleleFreq.o obj/Pedigree.o obj/PedigreeDescription.o obj/PedigreeFamily.o obj/PedigreeGlobals.o obj/PedigreePerson.o obj/PhoneHome.o obj/QuickIndex.o obj/Random.o obj/ReferenceSequence.o obj/SmithWaterman.o obj/Sort.o obj/STLUtilities.o obj/StatGenStatus.o obj/StringAlias.o obj/StringArray.o obj/StringBasics.o obj/StringHash.o obj/StringMap.o obj/Tabix.o obj/UncompressedFileType.o obj/PedigreeLoader.o obj/PedigreeTrim.o obj/PedigreeTwin.o
+[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')
+[0mln -s ../bam/SamFileHeader.h ../include/SamFileHeader.h
+ln -s ../bam/SamFile.h ../include/SamFile.h
+ln -s ../bam/GenericSamInterface.h ../include/GenericSamInterface.h
+ln -s ../bam/SamInterface.h ../include/SamInterface.h
+ln -s ../bam/BamInterface.h ../include/BamInterface.h
+ln -s ../bam/SamRecord.h ../include/SamRecord.h
+ln -s ../bam/BamIndex.h ../include/BamIndex.h
+ln -s ../bam/SamHeaderHD.h ../include/SamHeaderHD.h
+ln -s ../bam/SamHeaderPG.h ../include/SamHeaderPG.h
+ln -s ../bam/SamHeaderRecord.h ../include/SamHeaderRecord.h
+ln -s ../bam/SamHeaderSQ.h ../include/SamHeaderSQ.h
+ln -s ../bam/SamHeaderRG.h ../include/SamHeaderRG.h
+ln -s ../bam/SamHeaderTag.h ../include/SamHeaderTag.h
+ln -s ../bam/SamValidation.h ../include/SamValidation.h
+ln -s ../bam/SamStatistics.h ../include/SamStatistics.h
+ln -s ../bam/SamQuerySeqWithRefHelper.h ../include/SamQuerySeqWithRefHelper.h
+ln -s ../bam/SamFilter.h ../include/SamFilter.h
+ln -s ../bam/PileupElement.h ../include/PileupElement.h
+ln -s ../bam/PileupElementBaseQual.h ../include/PileupElementBaseQual.h
+ln -s ../bam/SamReferenceInfo.h ../include/SamReferenceInfo.h
+ln -s ../bam/SamTags.h ../include/SamTags.h
+ln -s ../bam/PosList.h ../include/PosList.h
+ln -s ../bam/CigarHelper.h ../include/CigarHelper.h
+ln -s ../bam/SamRecordPool.h ../include/SamRecordPool.h
+ln -s ../bam/SamCoordOutput.h ../include/SamCoordOutput.h
+ln -s ../bam/SamRecordHelper.h ../include/SamRecordHelper.h
+ln -s ../bam/Pileup.h ../include/Pileup.h
+ln -s ../bam/SamHelper.h ../include/SamHelper.h
+ln -s ../bam/SamFlag.h ../include/SamFlag.h
+ln -s ../bam/SamStatus.h ../include/SamStatus.h
+mkdir -p obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamFileHeader.o -c SamFileHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamFile.o -c SamFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GenericSamInterface.o -c GenericSamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamInterface.o -c SamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BamInterface.o -c BamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamRecord.o -c SamRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BamIndex.o -c BamIndex.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderHD.o -c SamHeaderHD.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderPG.o -c SamHeaderPG.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderRecord.o -c SamHeaderRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderSQ.o -c SamHeaderSQ.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderRG.o -c SamHeaderRG.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderTag.o -c SamHeaderTag.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamValidation.o -c SamValidation.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamStatistics.o -c SamStatistics.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamQuerySeqWithRefHelper.o -c SamQuerySeqWithRefHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamFilter.o -c SamFilter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PileupElement.o -c PileupElement.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PileupElementBaseQual.o -c PileupElementBaseQual.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamReferenceInfo.o -c SamReferenceInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamTags.o -c SamTags.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PosList.o -c PosList.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/CigarHelper.o -c CigarHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamRecordPool.o -c SamRecordPool.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamCoordOutput.o -c SamCoordOutput.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamRecordHelper.o -c SamRecordHelper.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/SamFileHeader.o obj/SamFile.o obj/GenericSamInterface.o obj/SamInterface.o obj/BamInterface.o obj/SamRecord.o obj/BamIndex.o obj/SamHeaderHD.o obj/SamHeaderPG.o obj/SamHeaderRecord.o obj/SamHeaderSQ.o obj/SamHeaderRG.o obj/SamHeaderTag.o obj/SamValidation.o obj/SamStatistics.o obj/SamQuerySeqWithRefHelper.o obj/SamFilter.o obj/PileupElement.o obj/PileupElementBaseQual.o obj/SamReferenceInfo.o obj/SamTags.o obj/PosList.o obj/CigarHelper.o obj/SamRecordPool.o obj/SamCoordOutput.o obj/SamRecordHelper.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mln -s ../fastq/FastQFile.h ../include/FastQFile.h
+ln -s ../fastq/BaseCount.h ../include/BaseCount.h
+ln -s ../fastq/BaseComposition.h ../include/BaseComposition.h
+ln -s ../fastq/FastQStatus.h ../include/FastQStatus.h
+mkdir -p obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/FastQFile.o -c FastQFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseCount.o -c BaseCount.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseComposition.o -c BaseComposition.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/FastQStatus.o -c FastQStatus.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/FastQFile.o obj/BaseCount.o obj/BaseComposition.o obj/FastQStatus.o
+[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')
+[0mln -s ../glf/GlfException.h ../include/GlfException.h
+ln -s ../glf/GlfFile.h ../include/GlfFile.h
+ln -s ../glf/GlfHeader.h ../include/GlfHeader.h
+ln -s ../glf/GlfRecord.h ../include/GlfRecord.h
+ln -s ../glf/GlfRefSection.h ../include/GlfRefSection.h
+ln -s ../glf/GlfStatus.h ../include/GlfStatus.h
+mkdir -p obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfException.o -c GlfException.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfFile.o -c GlfFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfHeader.o -c GlfHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfRecord.o -c GlfRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfRefSection.o -c GlfRefSection.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfStatus.o -c GlfStatus.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/GlfException.o obj/GlfFile.o obj/GlfHeader.o obj/GlfRecord.o obj/GlfRefSection.o obj/GlfStatus.o
+[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')[0m[91m
+[0mln -s ../vcf/VcfFile.h ../include/VcfFile.h
+ln -s ../vcf/VcfFileReader.h ../include/VcfFileReader.h
+ln -s ../vcf/VcfFileWriter.h ../include/VcfFileWriter.h
+ln -s ../vcf/VcfGenotypeField.h ../include/VcfGenotypeField.h
+ln -s ../vcf/VcfGenotypeFormat.h ../include/VcfGenotypeFormat.h
+ln -s ../vcf/VcfGenotypeSample.h ../include/VcfGenotypeSample.h
+ln -s ../vcf/VcfHeader.h ../include/VcfHeader.h
+ln -s ../vcf/VcfHelper.h ../include/VcfHelper.h
+ln -s ../vcf/VcfRecord.h ../include/VcfRecord.h
+ln -s ../vcf/VcfRecordField.h ../include/VcfRecordField.h
+ln -s ../vcf/VcfRecordFilter.h ../include/VcfRecordFilter.h
+ln -s ../vcf/VcfRecordGenotype.h ../include/VcfRecordGenotype.h
+ln -s ../vcf/VcfRecordInfo.h ../include/VcfRecordInfo.h
+ln -s ../vcf/VcfSubsetSamples.h ../include/VcfSubsetSamples.h
+ln -s ../vcf/VcfRecordDiscardRules.h ../include/VcfRecordDiscardRules.h
+mkdir -p obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfFile.o -c VcfFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfFileReader.o -c VcfFileReader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfFileWriter.o -c VcfFileWriter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfGenotypeField.o -c VcfGenotypeField.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfGenotypeFormat.o -c VcfGenotypeFormat.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfGenotypeSample.o -c VcfGenotypeSample.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfHeader.o -c VcfHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfHelper.o -c VcfHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecord.o -c VcfRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordField.o -c VcfRecordField.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordFilter.o -c VcfRecordFilter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordGenotype.o -c VcfRecordGenotype.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordInfo.o -c VcfRecordInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfSubsetSamples.o -c VcfSubsetSamples.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordDiscardRules.o -c VcfRecordDiscardRules.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/VcfFile.o obj/VcfFileReader.o obj/VcfFileWriter.o obj/VcfGenotypeField.o obj/VcfGenotypeFormat.o obj/VcfGenotypeSample.o obj/VcfHeader.o obj/VcfHelper.o obj/VcfRecord.o obj/VcfRecordField.o obj/VcfRecordFilter.o obj/VcfRecordGenotype.o obj/VcfRecordInfo.o obj/VcfSubsetSamples.o obj/VcfRecordDiscardRules.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p ../obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:20 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Validate.o -c Validate.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:22 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Convert.o -c Convert.cpp -DVERSION="\"1.0.15\""
+[91mConvert.cpp: In member function 'virtual int Convert::execute(int, char**)':
+Convert.cpp:223:37: warning: catching polymorphic type 'class std::runtime_error' by value [-Wcatch-value=]
+  223 |         } catch (std::runtime_error e) {
+      |                                     ^
+[0mg++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:23 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Diff.o -c Diff.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:25 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/DumpHeader.o -c DumpHeader.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:25 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/SplitChromosome.o -c SplitChromosome.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:26 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/WriteRegion.o -c WriteRegion.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:28 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/DumpIndex.o -c DumpIndex.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:28 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/ReadIndexedBam.o -c ReadIndexedBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:29 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/DumpRefInfo.o -c DumpRefInfo.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:30 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Filter.o -c Filter.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:31 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/ReadReference.o -c ReadReference.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:32 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Revert.o -c Revert.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:33 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Squeeze.o -c Squeeze.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:34 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/FindCigars.o -c FindCigars.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:35 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Stats.o -c Stats.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:37 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/PileupElementBaseQCStats.o -c PileupElementBaseQCStats.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:38 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/ClipOverlap.o -c ClipOverlap.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:39 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/MateMapByCoord.o -c MateMapByCoord.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:40 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/SplitBam.o -c SplitBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:41 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/TrimBam.o -c TrimBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:42 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/MergeBam.o -c MergeBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:44 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/PolishBam.o -c PolishBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:46 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/GapInfo.o -c GapInfo.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:47 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Logger.o -c Logger.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:48 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Bam2FastQ.o -c Bam2FastQ.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:50 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Dedup.o -c Dedup.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:52 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Dedup_LowMem.o -c Dedup_LowMem.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:54 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Prediction.o -c Prediction.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:55 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/LogisticRegression.o -c LogisticRegression.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:56 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/MathCholesky.o -c MathCholesky.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:56 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/HashErrorModel.o -c HashErrorModel.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:57 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Recab.o -c Recab.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:19:59 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/OverlapHandler.o -c OverlapHandler.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:20:00 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/OverlapClipLowerBaseQual.o -c OverlapClipLowerBaseQual.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:20:01 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/ExplainFlags.o -c ExplainFlags.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:20:02 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/Main.o -c Main.cpp -DVERSION="\"1.0.15\""
+[91mMain.cpp: In function 'int main(int, char**)':
+Main.cpp:280:43: warning: catching polymorphic type 'class std::runtime_error' by value [-Wcatch-value=]
+  280 |                 catch (std::runtime_error e)
+      |                                           ^
+[0m[91mMain.cpp:344:43: warning: catching polymorphic type 'class std::runtime_error' by value [-Wcatch-value=]
+  344 |                 catch (std::runtime_error e)
+      |                                           ^
+[0mg++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:20:03 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/BamExecutable.o -c  BamExecutable.cpp -DVERSION="\"1.0.15\""
+mkdir -p ../bin
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:20:04 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\""  -o ../bin/bam     ../obj/BamExecutable.o ../obj/Validate.o ../obj/Convert.o ../obj/Diff.o ../obj/DumpHeader.o ../obj/SplitChromosome.o ../obj/WriteRegion.o ../obj/DumpIndex.o ../obj/ReadIndexedBam.o ../obj/DumpRefInfo.o ../obj/Filter.o ../obj/ReadReference.o ../obj/Revert.o ../obj/Squeeze.o ../obj/FindCigars.o ../obj/Stats.o ../obj/PileupElementBaseQCStats.o ../obj/ClipOverlap.o ../obj/MateMapByCoord.o ../obj/SplitBam.o ../obj/TrimBam.o ../obj/MergeBam.o ../obj/PolishBam.o ../obj/GapInfo.o ../obj/Logger.o ../obj/Bam2FastQ.o ../obj/Dedup.o ../obj/Dedup_LowMem.o ../obj/Prediction.o ../obj/LogisticRegression.o ../obj/MathCholesky.o ../obj/HashErrorModel.o ../obj/Recab.o ../obj/OverlapHandler.o ../obj/OverlapClipLowerBaseQual.o ../obj/ExplainFlags.o ../obj/Main.o      ../../libStatGen/libStatGen.a     -lm -lz  
+make[1]: Leaving directory '/tmp/bamUtil/src'
+make[1]: Entering directory '/tmp/bamUtil/src'
+make -C ../../libStatGen --no-print-directory opt
+ar -cru ../libStatGen.a obj/bgzf.o obj/knetfile.o
+[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')[0m[91m
+[0mar -cru ../libStatGen.a obj/BaseAsciiMap.o obj/BaseQualityHelper.o obj/BaseUtilities.o obj/BasicHash.o obj/BgzfFileType.o obj/BgzfFileTypeRecovery.o obj/CharBuffer.o obj/Chromosome.o obj/Cigar.o obj/CigarRoller.o obj/Error.o obj/ErrorHandler.o obj/FileType.o obj/FortranFormat.o obj/GenomeSequence.o obj/GenotypeLists.o obj/glfHandler.o obj/GzipFileType.o obj/GzipHeader.o obj/Hash.o obj/IndexBase.o obj/Input.o obj/InputFile.o obj/IntArray.o obj/IntHash.o obj/LongLongCounter.o obj/MapFunction.o obj/MathMatrix.o obj/MathVector.o obj/MemoryAllocators.o obj/MemoryInfo.o obj/MemoryMapArray.o obj/MemoryMap.o obj/MiniDeflate.o obj/NonOverlapRegions.o obj/Parameters.o obj/PedigreeAlleleFreq.o obj/Pedigree.o obj/PedigreeDescription.o obj/PedigreeFamily.o obj/PedigreeGlobals.o obj/PedigreePerson.o obj/PhoneHome.o obj/QuickIndex.o obj/Random.o obj/ReferenceSequence.o obj/SmithWaterman.o obj/Sort.o obj/STLUtilities.o obj/StatGenStatus.o obj/StringAlias.o obj/StringArray.o obj/StringBasics.o obj/StringHash.o obj/StringMap.o obj/Tabix.o obj/UncompressedFileType.o obj/PedigreeLoader.o obj/PedigreeTrim.o obj/PedigreeTwin.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mar -cru ../libStatGen.a obj/SamFileHeader.o obj/SamFile.o obj/GenericSamInterface.o obj/SamInterface.o obj/BamInterface.o obj/SamRecord.o obj/BamIndex.o obj/SamHeaderHD.o obj/SamHeaderPG.o obj/SamHeaderRecord.o obj/SamHeaderSQ.o obj/SamHeaderRG.o obj/SamHeaderTag.o obj/SamValidation.o obj/SamStatistics.o obj/SamQuerySeqWithRefHelper.o obj/SamFilter.o obj/PileupElement.o obj/PileupElementBaseQual.o obj/SamReferenceInfo.o obj/SamTags.o obj/PosList.o obj/CigarHelper.o obj/SamRecordPool.o obj/SamCoordOutput.o obj/SamRecordHelper.o
+[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')[0m[91m
+[0mar -cru ../libStatGen.a obj/FastQFile.o obj/BaseCount.o obj/BaseComposition.o obj/FastQStatus.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mar -cru ../libStatGen.a obj/GlfException.o obj/GlfFile.o obj/GlfHeader.o obj/GlfRecord.o obj/GlfRefSection.o obj/GlfStatus.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')[0m[91m
+[0mar -cru ../libStatGen.a obj/VcfFile.o obj/VcfFileReader.o obj/VcfFileWriter.o obj/VcfGenotypeField.o obj/VcfGenotypeFormat.o obj/VcfGenotypeSample.o obj/VcfHeader.o obj/VcfHelper.o obj/VcfRecord.o obj/VcfRecordField.o obj/VcfRecordFilter.o obj/VcfRecordGenotype.o obj/VcfRecordInfo.o obj/VcfSubsetSamples.o obj/VcfRecordDiscardRules.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mg++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:20:04 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\""  -o ../bin/bam     ../obj/BamExecutable.o ../obj/Validate.o ../obj/Convert.o ../obj/Diff.o ../obj/DumpHeader.o ../obj/SplitChromosome.o ../obj/WriteRegion.o ../obj/DumpIndex.o ../obj/ReadIndexedBam.o ../obj/DumpRefInfo.o ../obj/Filter.o ../obj/ReadReference.o ../obj/Revert.o ../obj/Squeeze.o ../obj/FindCigars.o ../obj/Stats.o ../obj/PileupElementBaseQCStats.o ../obj/ClipOverlap.o ../obj/MateMapByCoord.o ../obj/SplitBam.o ../obj/TrimBam.o ../obj/MergeBam.o ../obj/PolishBam.o ../obj/GapInfo.o ../obj/Logger.o ../obj/Bam2FastQ.o ../obj/Dedup.o ../obj/Dedup_LowMem.o ../obj/Prediction.o ../obj/LogisticRegression.o ../obj/MathCholesky.o ../obj/HashErrorModel.o ../obj/Recab.o ../obj/OverlapHandler.o ../obj/OverlapClipLowerBaseQual.o ../obj/ExplainFlags.o ../obj/Main.o      ../../libStatGen/libStatGen.a     -lm -lz  
+make -C ../../libStatGen --no-print-directory debug
+mkdir -p obj/debug
+gcc -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/bgzf.o -c bgzf.c 
+gcc -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/knetfile.o -c knetfile.c 
+ar -cru ../libStatGen_debug.a obj/debug/bgzf.o obj/debug/knetfile.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p obj/debug
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BaseAsciiMap.o -c BaseAsciiMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BaseQualityHelper.o -c BaseQualityHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BaseUtilities.o -c BaseUtilities.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BasicHash.o -c BasicHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BgzfFileType.o -c BgzfFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BgzfFileTypeRecovery.o -c BgzfFileTypeRecovery.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/CharBuffer.o -c CharBuffer.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Chromosome.o -c Chromosome.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Cigar.o -c Cigar.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/CigarRoller.o -c CigarRoller.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Error.o -c Error.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/ErrorHandler.o -c ErrorHandler.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/FileType.o -c FileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/FortranFormat.o -c FortranFormat.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GenomeSequence.o -c GenomeSequence.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GenotypeLists.o -c GenotypeLists.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/glfHandler.o -c glfHandler.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GzipFileType.o -c GzipFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GzipHeader.o -c GzipHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Hash.o -c Hash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/IndexBase.o -c IndexBase.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Input.o -c Input.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/InputFile.o -c InputFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/IntArray.o -c IntArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/IntHash.o -c IntHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/LongLongCounter.o -c LongLongCounter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/MapFunction.o -c MapFunction.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/MathMatrix.o -c MathMatrix.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/MathVector.o -c MathVector.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/MemoryAllocators.o -c MemoryAllocators.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/MemoryInfo.o -c MemoryInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/MemoryMapArray.o -c MemoryMapArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/MemoryMap.o -c MemoryMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/MiniDeflate.o -c MiniDeflate.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/NonOverlapRegions.o -c NonOverlapRegions.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Parameters.o -c Parameters.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PedigreeAlleleFreq.o -c PedigreeAlleleFreq.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Pedigree.o -c Pedigree.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PedigreeDescription.o -c PedigreeDescription.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PedigreeFamily.o -c PedigreeFamily.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PedigreeGlobals.o -c PedigreeGlobals.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PedigreePerson.o -c PedigreePerson.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PhoneHome.o -c PhoneHome.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/QuickIndex.o -c QuickIndex.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Random.o -c Random.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/ReferenceSequence.o -c ReferenceSequence.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SmithWaterman.o -c SmithWaterman.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Sort.o -c Sort.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/STLUtilities.o -c STLUtilities.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/StatGenStatus.o -c StatGenStatus.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/StringAlias.o -c StringAlias.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/StringArray.o -c StringArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/StringBasics.o -c StringBasics.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/StringHash.o -c StringHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/StringMap.o -c StringMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/Tabix.o -c Tabix.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/UncompressedFileType.o -c UncompressedFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PedigreeLoader.o -c PedigreeLoader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PedigreeTrim.o -c PedigreeTrim.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PedigreeTwin.o -c PedigreeTwin.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_debug.a obj/debug/BaseAsciiMap.o obj/debug/BaseQualityHelper.o obj/debug/BaseUtilities.o obj/debug/BasicHash.o obj/debug/BgzfFileType.o obj/debug/BgzfFileTypeRecovery.o obj/debug/CharBuffer.o obj/debug/Chromosome.o obj/debug/Cigar.o obj/debug/CigarRoller.o obj/debug/Error.o obj/debug/ErrorHandler.o obj/debug/FileType.o obj/debug/FortranFormat.o obj/debug/GenomeSequence.o obj/debug/GenotypeLists.o obj/debug/glfHandler.o obj/debug/GzipFileType.o obj/debug/GzipHeader.o obj/debug/Hash.o obj/debug/IndexBase.o obj/debug/Input.o obj/debug/InputFile.o obj/debug/IntArray.o obj/debug/IntHash.o obj/debug/LongLongCounter.o obj/debug/MapFunction.o obj/debug/MathMatrix.o obj/debug/MathVector.o obj/debug/MemoryAllocators.o obj/debug/MemoryInfo.o obj/debug/MemoryMapArray.o obj/debug/MemoryMap.o obj/debug/MiniDeflate.o obj/debug/NonOverlapRegions.o obj/debug/Parameters.o obj/debug/PedigreeAlleleFreq.o obj/debug/Pedigree.o obj/debug/PedigreeDescription.o obj/debug/PedigreeFamily.o obj/debug/PedigreeGlobals.o obj/debug/PedigreePerson.o obj/debug/PhoneHome.o obj/debug/QuickIndex.o obj/debug/Random.o obj/debug/ReferenceSequence.o obj/debug/SmithWaterman.o obj/debug/Sort.o obj/debug/STLUtilities.o obj/debug/StatGenStatus.o obj/debug/StringAlias.o obj/debug/StringArray.o obj/debug/StringBasics.o obj/debug/StringHash.o obj/debug/StringMap.o obj/debug/Tabix.o obj/debug/UncompressedFileType.o obj/debug/PedigreeLoader.o obj/debug/PedigreeTrim.o obj/debug/PedigreeTwin.o
+[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')[0m[91m
+[0mmkdir -p obj/debug
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamFileHeader.o -c SamFileHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamFile.o -c SamFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GenericSamInterface.o -c GenericSamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamInterface.o -c SamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BamInterface.o -c BamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamRecord.o -c SamRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BamIndex.o -c BamIndex.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamHeaderHD.o -c SamHeaderHD.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamHeaderPG.o -c SamHeaderPG.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamHeaderRecord.o -c SamHeaderRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamHeaderSQ.o -c SamHeaderSQ.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamHeaderRG.o -c SamHeaderRG.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamHeaderTag.o -c SamHeaderTag.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamValidation.o -c SamValidation.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamStatistics.o -c SamStatistics.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamQuerySeqWithRefHelper.o -c SamQuerySeqWithRefHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamFilter.o -c SamFilter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PileupElement.o -c PileupElement.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PileupElementBaseQual.o -c PileupElementBaseQual.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamReferenceInfo.o -c SamReferenceInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamTags.o -c SamTags.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/PosList.o -c PosList.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/CigarHelper.o -c CigarHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamRecordPool.o -c SamRecordPool.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamCoordOutput.o -c SamCoordOutput.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/SamRecordHelper.o -c SamRecordHelper.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_debug.a obj/debug/SamFileHeader.o obj/debug/SamFile.o obj/debug/GenericSamInterface.o obj/debug/SamInterface.o obj/debug/BamInterface.o obj/debug/SamRecord.o obj/debug/BamIndex.o obj/debug/SamHeaderHD.o obj/debug/SamHeaderPG.o obj/debug/SamHeaderRecord.o obj/debug/SamHeaderSQ.o obj/debug/SamHeaderRG.o obj/debug/SamHeaderTag.o obj/debug/SamValidation.o obj/debug/SamStatistics.o obj/debug/SamQuerySeqWithRefHelper.o obj/debug/SamFilter.o obj/debug/PileupElement.o obj/debug/PileupElementBaseQual.o obj/debug/SamReferenceInfo.o obj/debug/SamTags.o obj/debug/PosList.o obj/debug/CigarHelper.o obj/debug/SamRecordPool.o obj/debug/SamCoordOutput.o obj/debug/SamRecordHelper.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p obj/debug
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/FastQFile.o -c FastQFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BaseCount.o -c BaseCount.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/BaseComposition.o -c BaseComposition.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/FastQStatus.o -c FastQStatus.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_debug.a obj/debug/FastQFile.o obj/debug/BaseCount.o obj/debug/BaseComposition.o obj/debug/FastQStatus.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p obj/debug
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GlfException.o -c GlfException.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GlfFile.o -c GlfFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GlfHeader.o -c GlfHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GlfRecord.o -c GlfRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GlfRefSection.o -c GlfRefSection.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/GlfStatus.o -c GlfStatus.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_debug.a obj/debug/GlfException.o obj/debug/GlfFile.o obj/debug/GlfHeader.o obj/debug/GlfRecord.o obj/debug/GlfRefSection.o obj/debug/GlfStatus.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p obj/debug
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfFile.o -c VcfFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfFileReader.o -c VcfFileReader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfFileWriter.o -c VcfFileWriter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfGenotypeField.o -c VcfGenotypeField.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfGenotypeFormat.o -c VcfGenotypeFormat.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfGenotypeSample.o -c VcfGenotypeSample.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfHeader.o -c VcfHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfHelper.o -c VcfHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfRecord.o -c VcfRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfRecordField.o -c VcfRecordField.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfRecordFilter.o -c VcfRecordFilter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfRecordGenotype.o -c VcfRecordGenotype.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfRecordInfo.o -c VcfRecordInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfSubsetSamples.o -c VcfSubsetSamples.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/debug/VcfRecordDiscardRules.o -c VcfRecordDiscardRules.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_debug.a obj/debug/VcfFile.o obj/debug/VcfFileReader.o obj/debug/VcfFileWriter.o obj/debug/VcfGenotypeField.o obj/debug/VcfGenotypeFormat.o obj/debug/VcfGenotypeSample.o obj/debug/VcfHeader.o obj/debug/VcfHelper.o obj/debug/VcfRecord.o obj/debug/VcfRecordField.o obj/debug/VcfRecordFilter.o obj/debug/VcfRecordGenotype.o obj/debug/VcfRecordInfo.o obj/debug/VcfSubsetSamples.o obj/debug/VcfRecordDiscardRules.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p ../obj/debug
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:11 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Validate.o -c Validate.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:12 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Convert.o -c Convert.cpp -DVERSION="\"1.0.15\""
+[91mConvert.cpp: In member function 'virtual int Convert::execute(int, char**)':
+Convert.cpp:223:37: warning: catching polymorphic type 'class std::runtime_error' by value [-Wcatch-value=]
+  223 |         } catch (std::runtime_error e) {
+      |                                     ^
+[0mg++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:13 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Diff.o -c Diff.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:15 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/DumpHeader.o -c DumpHeader.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:15 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/SplitChromosome.o -c SplitChromosome.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:16 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/WriteRegion.o -c WriteRegion.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:17 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/DumpIndex.o -c DumpIndex.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:18 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/ReadIndexedBam.o -c ReadIndexedBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:19 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/DumpRefInfo.o -c DumpRefInfo.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:20 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Filter.o -c Filter.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:21 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/ReadReference.o -c ReadReference.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:21 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Revert.o -c Revert.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:22 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Squeeze.o -c Squeeze.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:23 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/FindCigars.o -c FindCigars.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:24 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Stats.o -c Stats.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:25 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/PileupElementBaseQCStats.o -c PileupElementBaseQCStats.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:26 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/ClipOverlap.o -c ClipOverlap.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:27 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/MateMapByCoord.o -c MateMapByCoord.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:28 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/SplitBam.o -c SplitBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:29 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/TrimBam.o -c TrimBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:30 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/MergeBam.o -c MergeBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:31 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/PolishBam.o -c PolishBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:32 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/GapInfo.o -c GapInfo.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:33 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Logger.o -c Logger.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:34 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Bam2FastQ.o -c Bam2FastQ.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:35 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Dedup.o -c Dedup.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:37 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Dedup_LowMem.o -c Dedup_LowMem.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:39 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Prediction.o -c Prediction.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:40 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/LogisticRegression.o -c LogisticRegression.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:40 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/MathCholesky.o -c MathCholesky.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:41 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/HashErrorModel.o -c HashErrorModel.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:42 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Recab.o -c Recab.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:43 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/OverlapHandler.o -c OverlapHandler.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:44 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/OverlapClipLowerBaseQual.o -c OverlapClipLowerBaseQual.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:45 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/ExplainFlags.o -c ExplainFlags.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:46 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/Main.o -c Main.cpp -DVERSION="\"1.0.15\""
+[91mMain.cpp: In function 'int main(int, char**)':
+Main.cpp:280:43: warning: catching polymorphic type 'class std::runtime_error' by value [-Wcatch-value=]
+  280 |                 catch (std::runtime_error e)
+      |                                           ^
+[0m[91mMain.cpp:344:43: warning: catching polymorphic type 'class std::runtime_error' by value [-Wcatch-value=]
+  344 |                 catch (std::runtime_error e)
+      |                                           ^
+[0mg++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:47 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/debug/BamExecutable.o -c  BamExecutable.cpp -DVERSION="\"1.0.15\""
+mkdir -p ../bin/debug
+g++  -std=gnu++0x -ggdb -O0 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:21:48 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\""  -o ../bin/debug/bam   ../obj/debug/BamExecutable.o ../obj/debug/Validate.o ../obj/debug/Convert.o ../obj/debug/Diff.o ../obj/debug/DumpHeader.o ../obj/debug/SplitChromosome.o ../obj/debug/WriteRegion.o ../obj/debug/DumpIndex.o ../obj/debug/ReadIndexedBam.o ../obj/debug/DumpRefInfo.o ../obj/debug/Filter.o ../obj/debug/ReadReference.o ../obj/debug/Revert.o ../obj/debug/Squeeze.o ../obj/debug/FindCigars.o ../obj/debug/Stats.o ../obj/debug/PileupElementBaseQCStats.o ../obj/debug/ClipOverlap.o ../obj/debug/MateMapByCoord.o ../obj/debug/SplitBam.o ../obj/debug/TrimBam.o ../obj/debug/MergeBam.o ../obj/debug/PolishBam.o ../obj/debug/GapInfo.o ../obj/debug/Logger.o ../obj/debug/Bam2FastQ.o ../obj/debug/Dedup.o ../obj/debug/Dedup_LowMem.o ../obj/debug/Prediction.o ../obj/debug/LogisticRegression.o ../obj/debug/MathCholesky.o ../obj/debug/HashErrorModel.o ../obj/debug/Recab.o ../obj/debug/OverlapHandler.o ../obj/debug/OverlapClipLowerBaseQual.o ../obj/debug/ExplainFlags.o ../obj/debug/Main.o    ../../libStatGen/libStatGen_debug.a   -lm -lz  
+make -C ../../libStatGen --no-print-directory profile
+mkdir -p obj/profile
+gcc -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/bgzf.o -c bgzf.c 
+gcc -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/knetfile.o -c knetfile.c 
+ar -cru ../libStatGen_profile.a obj/profile/bgzf.o obj/profile/knetfile.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p obj/profile
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BaseAsciiMap.o -c BaseAsciiMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BaseQualityHelper.o -c BaseQualityHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BaseUtilities.o -c BaseUtilities.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BasicHash.o -c BasicHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BgzfFileType.o -c BgzfFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BgzfFileTypeRecovery.o -c BgzfFileTypeRecovery.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/CharBuffer.o -c CharBuffer.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Chromosome.o -c Chromosome.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Cigar.o -c Cigar.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/CigarRoller.o -c CigarRoller.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Error.o -c Error.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/ErrorHandler.o -c ErrorHandler.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/FileType.o -c FileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/FortranFormat.o -c FortranFormat.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GenomeSequence.o -c GenomeSequence.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GenotypeLists.o -c GenotypeLists.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/glfHandler.o -c glfHandler.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GzipFileType.o -c GzipFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GzipHeader.o -c GzipHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Hash.o -c Hash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/IndexBase.o -c IndexBase.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Input.o -c Input.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/InputFile.o -c InputFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/IntArray.o -c IntArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/IntHash.o -c IntHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/LongLongCounter.o -c LongLongCounter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/MapFunction.o -c MapFunction.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/MathMatrix.o -c MathMatrix.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/MathVector.o -c MathVector.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/MemoryAllocators.o -c MemoryAllocators.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/MemoryInfo.o -c MemoryInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/MemoryMapArray.o -c MemoryMapArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/MemoryMap.o -c MemoryMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/MiniDeflate.o -c MiniDeflate.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/NonOverlapRegions.o -c NonOverlapRegions.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Parameters.o -c Parameters.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PedigreeAlleleFreq.o -c PedigreeAlleleFreq.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Pedigree.o -c Pedigree.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PedigreeDescription.o -c PedigreeDescription.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PedigreeFamily.o -c PedigreeFamily.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PedigreeGlobals.o -c PedigreeGlobals.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PedigreePerson.o -c PedigreePerson.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PhoneHome.o -c PhoneHome.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/QuickIndex.o -c QuickIndex.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Random.o -c Random.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/ReferenceSequence.o -c ReferenceSequence.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SmithWaterman.o -c SmithWaterman.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Sort.o -c Sort.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/STLUtilities.o -c STLUtilities.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/StatGenStatus.o -c StatGenStatus.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/StringAlias.o -c StringAlias.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/StringArray.o -c StringArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/StringBasics.o -c StringBasics.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/StringHash.o -c StringHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/StringMap.o -c StringMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/Tabix.o -c Tabix.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/UncompressedFileType.o -c UncompressedFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PedigreeLoader.o -c PedigreeLoader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PedigreeTrim.o -c PedigreeTrim.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PedigreeTwin.o -c PedigreeTwin.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_profile.a obj/profile/BaseAsciiMap.o obj/profile/BaseQualityHelper.o obj/profile/BaseUtilities.o obj/profile/BasicHash.o obj/profile/BgzfFileType.o obj/profile/BgzfFileTypeRecovery.o obj/profile/CharBuffer.o obj/profile/Chromosome.o obj/profile/Cigar.o obj/profile/CigarRoller.o obj/profile/Error.o obj/profile/ErrorHandler.o obj/profile/FileType.o obj/profile/FortranFormat.o obj/profile/GenomeSequence.o obj/profile/GenotypeLists.o obj/profile/glfHandler.o obj/profile/GzipFileType.o obj/profile/GzipHeader.o obj/profile/Hash.o obj/profile/IndexBase.o obj/profile/Input.o obj/profile/InputFile.o obj/profile/IntArray.o obj/profile/IntHash.o obj/profile/LongLongCounter.o obj/profile/MapFunction.o obj/profile/MathMatrix.o obj/profile/MathVector.o obj/profile/MemoryAllocators.o obj/profile/MemoryInfo.o obj/profile/MemoryMapArray.o obj/profile/MemoryMap.o obj/profile/MiniDeflate.o obj/profile/NonOverlapRegions.o obj/profile/Parameters.o obj/profile/PedigreeAlleleFreq.o obj/profile/Pedigree.o obj/profile/PedigreeDescription.o obj/profile/PedigreeFamily.o obj/profile/PedigreeGlobals.o obj/profile/PedigreePerson.o obj/profile/PhoneHome.o obj/profile/QuickIndex.o obj/profile/Random.o obj/profile/ReferenceSequence.o obj/profile/SmithWaterman.o obj/profile/Sort.o obj/profile/STLUtilities.o obj/profile/StatGenStatus.o obj/profile/StringAlias.o obj/profile/StringArray.o obj/profile/StringBasics.o obj/profile/StringHash.o obj/profile/StringMap.o obj/profile/Tabix.o obj/profile/UncompressedFileType.o obj/profile/PedigreeLoader.o obj/profile/PedigreeTrim.o obj/profile/PedigreeTwin.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p obj/profile
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamFileHeader.o -c SamFileHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamFile.o -c SamFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GenericSamInterface.o -c GenericSamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamInterface.o -c SamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BamInterface.o -c BamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamRecord.o -c SamRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BamIndex.o -c BamIndex.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamHeaderHD.o -c SamHeaderHD.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamHeaderPG.o -c SamHeaderPG.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamHeaderRecord.o -c SamHeaderRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamHeaderSQ.o -c SamHeaderSQ.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamHeaderRG.o -c SamHeaderRG.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamHeaderTag.o -c SamHeaderTag.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamValidation.o -c SamValidation.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamStatistics.o -c SamStatistics.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamQuerySeqWithRefHelper.o -c SamQuerySeqWithRefHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamFilter.o -c SamFilter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PileupElement.o -c PileupElement.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PileupElementBaseQual.o -c PileupElementBaseQual.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamReferenceInfo.o -c SamReferenceInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamTags.o -c SamTags.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/PosList.o -c PosList.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/CigarHelper.o -c CigarHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamRecordPool.o -c SamRecordPool.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamCoordOutput.o -c SamCoordOutput.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/SamRecordHelper.o -c SamRecordHelper.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_profile.a obj/profile/SamFileHeader.o obj/profile/SamFile.o obj/profile/GenericSamInterface.o obj/profile/SamInterface.o obj/profile/BamInterface.o obj/profile/SamRecord.o obj/profile/BamIndex.o obj/profile/SamHeaderHD.o obj/profile/SamHeaderPG.o obj/profile/SamHeaderRecord.o obj/profile/SamHeaderSQ.o obj/profile/SamHeaderRG.o obj/profile/SamHeaderTag.o obj/profile/SamValidation.o obj/profile/SamStatistics.o obj/profile/SamQuerySeqWithRefHelper.o obj/profile/SamFilter.o obj/profile/PileupElement.o obj/profile/PileupElementBaseQual.o obj/profile/SamReferenceInfo.o obj/profile/SamTags.o obj/profile/PosList.o obj/profile/CigarHelper.o obj/profile/SamRecordPool.o obj/profile/SamCoordOutput.o obj/profile/SamRecordHelper.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p obj/profile
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/FastQFile.o -c FastQFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BaseCount.o -c BaseCount.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/BaseComposition.o -c BaseComposition.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/FastQStatus.o -c FastQStatus.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_profile.a obj/profile/FastQFile.o obj/profile/BaseCount.o obj/profile/BaseComposition.o obj/profile/FastQStatus.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p obj/profile
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GlfException.o -c GlfException.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GlfFile.o -c GlfFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GlfHeader.o -c GlfHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GlfRecord.o -c GlfRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GlfRefSection.o -c GlfRefSection.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/GlfStatus.o -c GlfStatus.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_profile.a obj/profile/GlfException.o obj/profile/GlfFile.o obj/profile/GlfHeader.o obj/profile/GlfRecord.o obj/profile/GlfRefSection.o obj/profile/GlfStatus.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p obj/profile
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfFile.o -c VcfFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfFileReader.o -c VcfFileReader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfFileWriter.o -c VcfFileWriter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfGenotypeField.o -c VcfGenotypeField.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfGenotypeFormat.o -c VcfGenotypeFormat.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfGenotypeSample.o -c VcfGenotypeSample.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfHeader.o -c VcfHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfHelper.o -c VcfHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfRecord.o -c VcfRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfRecordField.o -c VcfRecordField.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfRecordFilter.o -c VcfRecordFilter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfRecordGenotype.o -c VcfRecordGenotype.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfRecordInfo.o -c VcfRecordInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfSubsetSamples.o -c VcfSubsetSamples.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/profile/VcfRecordDiscardRules.o -c VcfRecordDiscardRules.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen_profile.a obj/profile/VcfFile.o obj/profile/VcfFileReader.o obj/profile/VcfFileWriter.o obj/profile/VcfGenotypeField.o obj/profile/VcfGenotypeFormat.o obj/profile/VcfGenotypeSample.o obj/profile/VcfHeader.o obj/profile/VcfHelper.o obj/profile/VcfRecord.o obj/profile/VcfRecordField.o obj/profile/VcfRecordFilter.o obj/profile/VcfRecordGenotype.o obj/profile/VcfRecordInfo.o obj/profile/VcfSubsetSamples.o obj/profile/VcfRecordDiscardRules.o
+[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')[0m[91m
+[0mmkdir -p ../obj/profile
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:42 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Validate.o -c Validate.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:43 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Convert.o -c Convert.cpp -DVERSION="\"1.0.15\""
+[91mConvert.cpp: In member function 'virtual int Convert::execute(int, char**)':
+Convert.cpp:223:37: warning: catching polymorphic type 'class std::runtime_error' by value [-Wcatch-value=]
+  223 |         } catch (std::runtime_error e) {
+      |                                     ^
+[0mg++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:44 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Diff.o -c Diff.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:45 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/DumpHeader.o -c DumpHeader.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:46 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/SplitChromosome.o -c SplitChromosome.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:47 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/WriteRegion.o -c WriteRegion.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:48 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/DumpIndex.o -c DumpIndex.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:48 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/ReadIndexedBam.o -c ReadIndexedBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:49 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/DumpRefInfo.o -c DumpRefInfo.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:50 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Filter.o -c Filter.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:51 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/ReadReference.o -c ReadReference.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:51 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Revert.o -c Revert.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:52 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Squeeze.o -c Squeeze.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:53 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/FindCigars.o -c FindCigars.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:53 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Stats.o -c Stats.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:54 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/PileupElementBaseQCStats.o -c PileupElementBaseQCStats.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:55 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/ClipOverlap.o -c ClipOverlap.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:56 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/MateMapByCoord.o -c MateMapByCoord.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:57 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/SplitBam.o -c SplitBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:58 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/TrimBam.o -c TrimBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:22:59 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/MergeBam.o -c MergeBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:00 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/PolishBam.o -c PolishBam.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:01 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/GapInfo.o -c GapInfo.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:02 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Logger.o -c Logger.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:02 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Bam2FastQ.o -c Bam2FastQ.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:03 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Dedup.o -c Dedup.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:05 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Dedup_LowMem.o -c Dedup_LowMem.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:06 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Prediction.o -c Prediction.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:07 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/LogisticRegression.o -c LogisticRegression.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:07 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/MathCholesky.o -c MathCholesky.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:08 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/HashErrorModel.o -c HashErrorModel.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:09 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Recab.o -c Recab.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:10 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/OverlapHandler.o -c OverlapHandler.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:11 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/OverlapClipLowerBaseQual.o -c OverlapClipLowerBaseQual.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:12 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/ExplainFlags.o -c ExplainFlags.cpp -DVERSION="\"1.0.15\""
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:12 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/Main.o -c Main.cpp -DVERSION="\"1.0.15\""
+[91mMain.cpp: In function 'int main(int, char**)':
+Main.cpp:280:43: warning: catching polymorphic type 'class std::runtime_error' by value [-Wcatch-value=]
+  280 |                 catch (std::runtime_error e)
+      |                                           ^
+[0m[91mMain.cpp:344:43: warning: catching polymorphic type 'class std::runtime_error' by value [-Wcatch-value=]
+  344 |                 catch (std::runtime_error e)
+      |                                           ^
+[0mg++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:14 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\"" -o ../obj/profile/BamExecutable.o -c  BamExecutable.cpp -DVERSION="\"1.0.15\""
+mkdir -p ../bin/profile
+g++  -std=gnu++0x -pg -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS -DDATE="\"Tue Oct 25 17:23:14 EDT 2022\"" -DVERSION="\"1.0.15\"" -DUSER="\"root\""  -o ../bin/profile/bam ../obj/profile/BamExecutable.o ../obj/profile/Validate.o ../obj/profile/Convert.o ../obj/profile/Diff.o ../obj/profile/DumpHeader.o ../obj/profile/SplitChromosome.o ../obj/profile/WriteRegion.o ../obj/profile/DumpIndex.o ../obj/profile/ReadIndexedBam.o ../obj/profile/DumpRefInfo.o ../obj/profile/Filter.o ../obj/profile/ReadReference.o ../obj/profile/Revert.o ../obj/profile/Squeeze.o ../obj/profile/FindCigars.o ../obj/profile/Stats.o ../obj/profile/PileupElementBaseQCStats.o ../obj/profile/ClipOverlap.o ../obj/profile/MateMapByCoord.o ../obj/profile/SplitBam.o ../obj/profile/TrimBam.o ../obj/profile/MergeBam.o ../obj/profile/PolishBam.o ../obj/profile/GapInfo.o ../obj/profile/Logger.o ../obj/profile/Bam2FastQ.o ../obj/profile/Dedup.o ../obj/profile/Dedup_LowMem.o ../obj/profile/Prediction.o ../obj/profile/LogisticRegression.o ../obj/profile/MathCholesky.o ../obj/profile/HashErrorModel.o ../obj/profile/Recab.o ../obj/profile/OverlapHandler.o ../obj/profile/OverlapClipLowerBaseQual.o ../obj/profile/ExplainFlags.o ../obj/profile/Main.o  ../../libStatGen/libStatGen_profile.a -lm -lz  
+ 
+Creating directory /opt2/bamUtil
+ 
+ 
+Installing to directory /opt2/bamUtil
+To select a different directory, run
+ 
+make install INSTALLDIR=your_preferred_dir
+ 
+cp ../bin/bam /opt2/bamUtil
+make[1]: Leaving directory '/tmp/bamUtil/src'
+Removing intermediate container 16db93c5ab91
+ ---> 1af49048d661
+Step 5/13 : ENV PATH="$PATH:/opt2/bamUtil"
+ ---> Running in 0794a1c16e61
+Removing intermediate container 0794a1c16e61
+ ---> 4394f8327f3f
+Step 6/13 : RUN rm -rf /tmp/bamUtil
+ ---> Running in 82f27599a5ad
+Removing intermediate container 82f27599a5ad
+ ---> e31b97c4c11e
+Step 7/13 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
