@@ -1,0 +1,25 @@
+Sending build context to Docker daemon  412.2kB
+Step 1/13 : FROM nciccbr/ccrgb_qctools:v1.2
+ ---> a37fe6cc89f9
+Step 2/13 : ENV TAG="v1.3"
+ ---> Running in c75b97f29b12
+Removing intermediate container c75b97f29b12
+ ---> c951c5acdddc
+Step 3/13 : ADD http://smithlabresearch.org/downloads/preseq_linux_v2.0.tar.bz2 /opt2
+
+ ---> ec7deea8328a
+Step 4/13 : WORKDIR /opt2
+ ---> Running in d5c7dffe1459
+Removing intermediate container d5c7dffe1459
+ ---> 06a15fa47b9f
+Step 5/13 : RUN tar xjvf preseq_linux_v2.0.tar.bz2 &&     mv preseq_linux_v2.0 preseq && chmod a+x preseq
+ ---> Running in 0017a289a1c9
+preseq_v2.0/
+preseq_v2.0/preseq
+preseq_v2.0/bam2mr
+preseq_v2.0/README.md
+preseq_v2.0/gpl-3.0.txt
+preseq_v2.0/manual.pdf
+preseq_v2.0/RELEASE_NOTES.txt
+[91mmv: [0m[91mcannot stat 'preseq_linux_v2.0': No such file or directory
+[0m

@@ -1,0 +1,509 @@
+Sending build context to Docker daemon  716.8kB
+Step 1/14 : FROM nciccbr/ccrgb_qctools:v1.3
+ ---> 00987c3b8177
+Step 2/14 : ENV TAG="v1.4"
+ ---> Using cache
+ ---> 280b0896821d
+Step 3/14 : WORKDIR	/opt2
+ ---> Using cache
+ ---> 944a5af2f146
+Step 4/14 : RUN	git clone https://github.com/statgen/fastQValidator.git
+ ---> Using cache
+ ---> 269629ebe436
+Step 5/14 : WORKDIR	/opt2/fastQValidator
+ ---> Using cache
+ ---> 5e178772aa3c
+Step 6/14 : RUN	export CXXFLAGS="-static-libgcc -static-libstdc++" && 	export LD_FLAGS="-static -lpthread" &&     git config --global url."https://github.com".insteadOf git://github.com && 	make cloneLib && make
+ ---> Running in b1c90ee9f9da
+Unable to locate: ./../libStatGen/Makefiles/Makefile.tool
+To change the location, set LIB_PATH_GENERAL or LIB_PATH_FASTQ_VALIDATOR to the appropriate path to libStatGen. Or specify "make LIB_PATH_GENERAL=yourPath" or "make LIB_PATH_FASTQ_VALIDATOR=yourPath"
+Use make cloneLib if you have git and want to clone the current libStatGen at that location.
+[91mCloning into '../libStatGen'...
+[0mCall make to compile libStatGen and this tool.
+make[1]: Entering directory '/opt2/fastQValidator/src'
+make -C ../../libStatGen --no-print-directory opt
+ln -s ../samtools/bgzf.h ../include/bgzf.h
+ln -s ../samtools/knetfile.h ../include/knetfile.h
+ln -s ../samtools/khash.h ../include/khash.h
+ln -s ../samtools/bam.h ../include/bam.h
+mkdir -p obj
+gcc -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/bgzf.o -c bgzf.c 
+gcc -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/knetfile.o -c knetfile.c 
+ar -cru ../libStatGen.a obj/bgzf.o obj/knetfile.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mln -s ../general/BaseAsciiMap.h ../include/BaseAsciiMap.h
+ln -s ../general/BaseQualityHelper.h ../include/BaseQualityHelper.h
+ln -s ../general/BaseUtilities.h ../include/BaseUtilities.h
+ln -s ../general/BasicHash.h ../include/BasicHash.h
+ln -s ../general/BgzfFileType.h ../include/BgzfFileType.h
+ln -s ../general/BgzfFileTypeRecovery.h ../include/BgzfFileTypeRecovery.h
+ln -s ../general/CharBuffer.h ../include/CharBuffer.h
+ln -s ../general/Chromosome.h ../include/Chromosome.h
+ln -s ../general/Cigar.h ../include/Cigar.h
+ln -s ../general/CigarRoller.h ../include/CigarRoller.h
+ln -s ../general/Error.h ../include/Error.h
+ln -s ../general/ErrorHandler.h ../include/ErrorHandler.h
+ln -s ../general/FileType.h ../include/FileType.h
+ln -s ../general/FortranFormat.h ../include/FortranFormat.h
+ln -s ../general/GenomeSequence.h ../include/GenomeSequence.h
+ln -s ../general/GenotypeLists.h ../include/GenotypeLists.h
+ln -s ../general/glfHandler.h ../include/glfHandler.h
+ln -s ../general/GzipFileType.h ../include/GzipFileType.h
+ln -s ../general/GzipHeader.h ../include/GzipHeader.h
+ln -s ../general/Hash.h ../include/Hash.h
+ln -s ../general/IndexBase.h ../include/IndexBase.h
+ln -s ../general/Input.h ../include/Input.h
+ln -s ../general/InputFile.h ../include/InputFile.h
+ln -s ../general/IntArray.h ../include/IntArray.h
+ln -s ../general/IntHash.h ../include/IntHash.h
+ln -s ../general/LongLongCounter.h ../include/LongLongCounter.h
+ln -s ../general/MapFunction.h ../include/MapFunction.h
+ln -s ../general/MathMatrix.h ../include/MathMatrix.h
+ln -s ../general/MathVector.h ../include/MathVector.h
+ln -s ../general/MemoryAllocators.h ../include/MemoryAllocators.h
+ln -s ../general/MemoryInfo.h ../include/MemoryInfo.h
+ln -s ../general/MemoryMapArray.h ../include/MemoryMapArray.h
+ln -s ../general/MemoryMap.h ../include/MemoryMap.h
+ln -s ../general/MiniDeflate.h ../include/MiniDeflate.h
+ln -s ../general/NonOverlapRegions.h ../include/NonOverlapRegions.h
+ln -s ../general/Parameters.h ../include/Parameters.h
+ln -s ../general/PedigreeAlleleFreq.h ../include/PedigreeAlleleFreq.h
+ln -s ../general/Pedigree.h ../include/Pedigree.h
+ln -s ../general/PedigreeDescription.h ../include/PedigreeDescription.h
+ln -s ../general/PedigreeFamily.h ../include/PedigreeFamily.h
+ln -s ../general/PedigreeGlobals.h ../include/PedigreeGlobals.h
+ln -s ../general/PedigreePerson.h ../include/PedigreePerson.h
+ln -s ../general/PhoneHome.h ../include/PhoneHome.h
+ln -s ../general/QuickIndex.h ../include/QuickIndex.h
+ln -s ../general/Random.h ../include/Random.h
+ln -s ../general/ReferenceSequence.h ../include/ReferenceSequence.h
+ln -s ../general/SmithWaterman.h ../include/SmithWaterman.h
+ln -s ../general/Sort.h ../include/Sort.h
+ln -s ../general/STLUtilities.h ../include/STLUtilities.h
+ln -s ../general/StatGenStatus.h ../include/StatGenStatus.h
+ln -s ../general/StringAlias.h ../include/StringAlias.h
+ln -s ../general/StringArray.h ../include/StringArray.h
+ln -s ../general/StringBasics.h ../include/StringBasics.h
+ln -s ../general/StringHash.h ../include/StringHash.h
+ln -s ../general/StringMap.h ../include/StringMap.h
+ln -s ../general/Tabix.h ../include/Tabix.h
+ln -s ../general/UncompressedFileType.h ../include/UncompressedFileType.h
+ln -s ../general/Constant.h ../include/Constant.h
+ln -s ../general/CSG_MD5.h ../include/CSG_MD5.h
+ln -s ../general/Generic.h ../include/Generic.h
+ln -s ../general/GenomeSequenceHelpers.h ../include/GenomeSequenceHelpers.h
+ln -s ../general/GreedyTupleAligner.h ../include/GreedyTupleAligner.h
+ln -s ../general/InplaceMerge.h ../include/InplaceMerge.h
+ln -s ../general/LongHash.h ../include/LongHash.h
+ln -s ../general/LongInt.h ../include/LongInt.h
+ln -s ../general/MathConstant.h ../include/MathConstant.h
+ln -s ../general/PackedVector.h ../include/PackedVector.h
+ln -s ../general/PedigreeAlleles.h ../include/PedigreeAlleles.h
+ln -s ../general/Performance.h ../include/Performance.h
+ln -s ../general/ReusableVector.h ../include/ReusableVector.h
+ln -s ../general/SimpleStats.h ../include/SimpleStats.h
+ln -s ../general/TrimSequence.h ../include/TrimSequence.h
+ln -s ../general/UnitTest.h ../include/UnitTest.h
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseAsciiMap.o -c BaseAsciiMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseQualityHelper.o -c BaseQualityHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseUtilities.o -c BaseUtilities.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BasicHash.o -c BasicHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BgzfFileType.o -c BgzfFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BgzfFileTypeRecovery.o -c BgzfFileTypeRecovery.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/CharBuffer.o -c CharBuffer.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Chromosome.o -c Chromosome.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Cigar.o -c Cigar.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/CigarRoller.o -c CigarRoller.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Error.o -c Error.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/ErrorHandler.o -c ErrorHandler.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/FileType.o -c FileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/FortranFormat.o -c FortranFormat.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GenomeSequence.o -c GenomeSequence.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GenotypeLists.o -c GenotypeLists.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/glfHandler.o -c glfHandler.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GzipFileType.o -c GzipFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GzipHeader.o -c GzipHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Hash.o -c Hash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/IndexBase.o -c IndexBase.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Input.o -c Input.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/InputFile.o -c InputFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/IntArray.o -c IntArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/IntHash.o -c IntHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/LongLongCounter.o -c LongLongCounter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MapFunction.o -c MapFunction.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MathMatrix.o -c MathMatrix.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MathVector.o -c MathVector.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MemoryAllocators.o -c MemoryAllocators.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MemoryInfo.o -c MemoryInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MemoryMapArray.o -c MemoryMapArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MemoryMap.o -c MemoryMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/MiniDeflate.o -c MiniDeflate.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/NonOverlapRegions.o -c NonOverlapRegions.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Parameters.o -c Parameters.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeAlleleFreq.o -c PedigreeAlleleFreq.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Pedigree.o -c Pedigree.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeDescription.o -c PedigreeDescription.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeFamily.o -c PedigreeFamily.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeGlobals.o -c PedigreeGlobals.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreePerson.o -c PedigreePerson.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PhoneHome.o -c PhoneHome.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/QuickIndex.o -c QuickIndex.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Random.o -c Random.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/ReferenceSequence.o -c ReferenceSequence.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SmithWaterman.o -c SmithWaterman.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Sort.o -c Sort.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/STLUtilities.o -c STLUtilities.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StatGenStatus.o -c StatGenStatus.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringAlias.o -c StringAlias.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringArray.o -c StringArray.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringBasics.o -c StringBasics.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringHash.o -c StringHash.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/StringMap.o -c StringMap.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/Tabix.o -c Tabix.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/UncompressedFileType.o -c UncompressedFileType.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeLoader.o -c PedigreeLoader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeTrim.o -c PedigreeTrim.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall -Wno-format-truncation  -Wno-strict-overflow -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PedigreeTwin.o -c PedigreeTwin.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/BaseAsciiMap.o obj/BaseQualityHelper.o obj/BaseUtilities.o obj/BasicHash.o obj/BgzfFileType.o obj/BgzfFileTypeRecovery.o obj/CharBuffer.o obj/Chromosome.o obj/Cigar.o obj/CigarRoller.o obj/Error.o obj/ErrorHandler.o obj/FileType.o obj/FortranFormat.o obj/GenomeSequence.o obj/GenotypeLists.o obj/glfHandler.o obj/GzipFileType.o obj/GzipHeader.o obj/Hash.o obj/IndexBase.o obj/Input.o obj/InputFile.o obj/IntArray.o obj/IntHash.o obj/LongLongCounter.o obj/MapFunction.o obj/MathMatrix.o obj/MathVector.o obj/MemoryAllocators.o obj/MemoryInfo.o obj/MemoryMapArray.o obj/MemoryMap.o obj/MiniDeflate.o obj/NonOverlapRegions.o obj/Parameters.o obj/PedigreeAlleleFreq.o obj/Pedigree.o obj/PedigreeDescription.o obj/PedigreeFamily.o obj/PedigreeGlobals.o obj/PedigreePerson.o obj/PhoneHome.o obj/QuickIndex.o obj/Random.o obj/ReferenceSequence.o obj/SmithWaterman.o obj/Sort.o obj/STLUtilities.o obj/StatGenStatus.o obj/StringAlias.o obj/StringArray.o obj/StringBasics.o obj/StringHash.o obj/StringMap.o obj/Tabix.o obj/UncompressedFileType.o obj/PedigreeLoader.o obj/PedigreeTrim.o obj/PedigreeTwin.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mln -s ../bam/SamFileHeader.h ../include/SamFileHeader.h
+ln -s ../bam/SamFile.h ../include/SamFile.h
+ln -s ../bam/GenericSamInterface.h ../include/GenericSamInterface.h
+ln -s ../bam/SamInterface.h ../include/SamInterface.h
+ln -s ../bam/BamInterface.h ../include/BamInterface.h
+ln -s ../bam/SamRecord.h ../include/SamRecord.h
+ln -s ../bam/BamIndex.h ../include/BamIndex.h
+ln -s ../bam/SamHeaderHD.h ../include/SamHeaderHD.h
+ln -s ../bam/SamHeaderPG.h ../include/SamHeaderPG.h
+ln -s ../bam/SamHeaderRecord.h ../include/SamHeaderRecord.h
+ln -s ../bam/SamHeaderSQ.h ../include/SamHeaderSQ.h
+ln -s ../bam/SamHeaderRG.h ../include/SamHeaderRG.h
+ln -s ../bam/SamHeaderTag.h ../include/SamHeaderTag.h
+ln -s ../bam/SamValidation.h ../include/SamValidation.h
+ln -s ../bam/SamStatistics.h ../include/SamStatistics.h
+ln -s ../bam/SamQuerySeqWithRefHelper.h ../include/SamQuerySeqWithRefHelper.h
+ln -s ../bam/SamFilter.h ../include/SamFilter.h
+ln -s ../bam/PileupElement.h ../include/PileupElement.h
+ln -s ../bam/PileupElementBaseQual.h ../include/PileupElementBaseQual.h
+ln -s ../bam/SamReferenceInfo.h ../include/SamReferenceInfo.h
+ln -s ../bam/SamTags.h ../include/SamTags.h
+ln -s ../bam/PosList.h ../include/PosList.h
+ln -s ../bam/CigarHelper.h ../include/CigarHelper.h
+ln -s ../bam/SamRecordPool.h ../include/SamRecordPool.h
+ln -s ../bam/SamCoordOutput.h ../include/SamCoordOutput.h
+ln -s ../bam/SamRecordHelper.h ../include/SamRecordHelper.h
+ln -s ../bam/Pileup.h ../include/Pileup.h
+ln -s ../bam/SamHelper.h ../include/SamHelper.h
+ln -s ../bam/SamFlag.h ../include/SamFlag.h
+ln -s ../bam/SamStatus.h ../include/SamStatus.h
+mkdir -p obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamFileHeader.o -c SamFileHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamFile.o -c SamFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GenericSamInterface.o -c GenericSamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamInterface.o -c SamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BamInterface.o -c BamInterface.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamRecord.o -c SamRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BamIndex.o -c BamIndex.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderHD.o -c SamHeaderHD.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderPG.o -c SamHeaderPG.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderRecord.o -c SamHeaderRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderSQ.o -c SamHeaderSQ.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderRG.o -c SamHeaderRG.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamHeaderTag.o -c SamHeaderTag.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamValidation.o -c SamValidation.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamStatistics.o -c SamStatistics.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamQuerySeqWithRefHelper.o -c SamQuerySeqWithRefHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamFilter.o -c SamFilter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PileupElement.o -c PileupElement.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PileupElementBaseQual.o -c PileupElementBaseQual.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamReferenceInfo.o -c SamReferenceInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamTags.o -c SamTags.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/PosList.o -c PosList.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/CigarHelper.o -c CigarHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamRecordPool.o -c SamRecordPool.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamCoordOutput.o -c SamCoordOutput.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/SamRecordHelper.o -c SamRecordHelper.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/SamFileHeader.o obj/SamFile.o obj/GenericSamInterface.o obj/SamInterface.o obj/BamInterface.o obj/SamRecord.o obj/BamIndex.o obj/SamHeaderHD.o obj/SamHeaderPG.o obj/SamHeaderRecord.o obj/SamHeaderSQ.o obj/SamHeaderRG.o obj/SamHeaderTag.o obj/SamValidation.o obj/SamStatistics.o obj/SamQuerySeqWithRefHelper.o obj/SamFilter.o obj/PileupElement.o obj/PileupElementBaseQual.o obj/SamReferenceInfo.o obj/SamTags.o obj/PosList.o obj/CigarHelper.o obj/SamRecordPool.o obj/SamCoordOutput.o obj/SamRecordHelper.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mln -s ../fastq/FastQFile.h ../include/FastQFile.h
+ln -s ../fastq/BaseCount.h ../include/BaseCount.h
+ln -s ../fastq/BaseComposition.h ../include/BaseComposition.h
+ln -s ../fastq/FastQStatus.h ../include/FastQStatus.h
+mkdir -p obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/FastQFile.o -c FastQFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseCount.o -c BaseCount.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/BaseComposition.o -c BaseComposition.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/FastQStatus.o -c FastQStatus.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/FastQFile.o obj/BaseCount.o obj/BaseComposition.o obj/FastQStatus.o
+[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')[0m[91m
+[0mln -s ../glf/GlfException.h ../include/GlfException.h
+ln -s ../glf/GlfFile.h ../include/GlfFile.h
+ln -s ../glf/GlfHeader.h ../include/GlfHeader.h
+ln -s ../glf/GlfRecord.h ../include/GlfRecord.h
+ln -s ../glf/GlfRefSection.h ../include/GlfRefSection.h
+ln -s ../glf/GlfStatus.h ../include/GlfStatus.h
+mkdir -p obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfException.o -c GlfException.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfFile.o -c GlfFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfHeader.o -c GlfHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfRecord.o -c GlfRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfRefSection.o -c GlfRefSection.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/GlfStatus.o -c GlfStatus.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/GlfException.o obj/GlfFile.o obj/GlfHeader.o obj/GlfRecord.o obj/GlfRefSection.o obj/GlfStatus.o
+[91mar: [0m[91m`u' modifier ignored since `D' is the default (see `U')[0m[91m
+[0mln -s ../vcf/VcfFile.h ../include/VcfFile.h
+ln -s ../vcf/VcfFileReader.h ../include/VcfFileReader.h
+ln -s ../vcf/VcfFileWriter.h ../include/VcfFileWriter.h
+ln -s ../vcf/VcfGenotypeField.h ../include/VcfGenotypeField.h
+ln -s ../vcf/VcfGenotypeFormat.h ../include/VcfGenotypeFormat.h
+ln -s ../vcf/VcfGenotypeSample.h ../include/VcfGenotypeSample.h
+ln -s ../vcf/VcfHeader.h ../include/VcfHeader.h
+ln -s ../vcf/VcfHelper.h ../include/VcfHelper.h
+ln -s ../vcf/VcfRecord.h ../include/VcfRecord.h
+ln -s ../vcf/VcfRecordField.h ../include/VcfRecordField.h
+ln -s ../vcf/VcfRecordFilter.h ../include/VcfRecordFilter.h
+ln -s ../vcf/VcfRecordGenotype.h ../include/VcfRecordGenotype.h
+ln -s ../vcf/VcfRecordInfo.h ../include/VcfRecordInfo.h
+ln -s ../vcf/VcfSubsetSamples.h ../include/VcfSubsetSamples.h
+ln -s ../vcf/VcfRecordDiscardRules.h ../include/VcfRecordDiscardRules.h
+mkdir -p obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfFile.o -c VcfFile.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfFileReader.o -c VcfFileReader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfFileWriter.o -c VcfFileWriter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfGenotypeField.o -c VcfGenotypeField.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfGenotypeFormat.o -c VcfGenotypeFormat.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfGenotypeSample.o -c VcfGenotypeSample.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfHeader.o -c VcfHeader.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfHelper.o -c VcfHelper.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecord.o -c VcfRecord.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordField.o -c VcfRecordField.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordFilter.o -c VcfRecordFilter.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordGenotype.o -c VcfRecordGenotype.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordInfo.o -c VcfRecordInfo.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfSubsetSamples.o -c VcfSubsetSamples.cpp -DVERSION="\"1.0.0\""
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o obj/VcfRecordDiscardRules.o -c VcfRecordDiscardRules.cpp -DVERSION="\"1.0.0\""
+ar -cru ../libStatGen.a obj/VcfFile.o obj/VcfFileReader.o obj/VcfFileWriter.o obj/VcfGenotypeField.o obj/VcfGenotypeFormat.o obj/VcfGenotypeSample.o obj/VcfHeader.o obj/VcfHelper.o obj/VcfRecord.o obj/VcfRecordField.o obj/VcfRecordFilter.o obj/VcfRecordGenotype.o obj/VcfRecordInfo.o obj/VcfSubsetSamples.o obj/VcfRecordDiscardRules.o
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mmkdir -p ../obj
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS  -o ../obj/FastQValidator.o -c FastQValidator.cpp -DVERSION="\"0.1.1a\""
+mkdir -p ../bin
+g++  -std=gnu++0x -O4 -pipe -Wall  -I../../libStatGen/include -I.   -D__ZLIB_AVAILABLE__ -D_FILE_OFFSET_BITS=64 -D__STDC_LIMIT_MACROS   -o ../bin/fastQValidator     ../obj/FastQValidator.o      ../../libStatGen/libStatGen.a     -lm -lz  
+make[1]: Leaving directory '/opt2/fastQValidator/src'
+Removing intermediate container b1c90ee9f9da
+ ---> b5fe080e1aad
+Step 7/14 : ENV	PATH="$PATH:/opt2/fastQValidator/bin"
+ ---> Running in a95414f0d7fc
+Removing intermediate container a95414f0d7fc
+ ---> d1e4b0920e07
+Step 8/14 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> 58b73a731e89
+Step 9/14 : COPY printversions.bash /opt2/printversions
+ ---> c9374b8feb05
+Step 10/14 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile &&     chmod a+rx /opt2/printversions
+ ---> Running in fb8d88307a23
+Removing intermediate container fb8d88307a23
+ ---> 24ab3b18e451
+Step 11/14 : RUN /opt2/printversions > /opt2/versions.txt; exit 0
+ ---> Running in 1bf4e2896b82
+[91m
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.17-r1188
+Contact: Heng Li <lh3@sanger.ac.uk>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries
+
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
+
+[0m[91mopenjdk version "1.8.0_342"
+OpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07[0m[91m)
+OpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)
+[0m[91mjavac 1.8.0_342
+[0m[91m[1m[31mUSAGE: PicardCommandLine [32m<program name>[1m[31m [-h]
+
+[0m[1m[31mAvailable Programs:
+[0m[37m--------------------------------------------------------------------------------------
+[0m[31mBase Calling:                                    Tools that process sequencing machine data, e.g. Illumina base calls, and detect sequencing level attributes, e.g. adapters[0m
+[32m    CheckIlluminaDirectory                       [31m[36mAsserts the validity for specified Illumina basecalling data.  [0m
+[32m    CollectIlluminaBasecallingMetrics            [31m[36mCollects Illumina Basecalling metrics for a sequencing run.  [0m
+[32m    CollectIlluminaLaneMetrics                   [31m[36mCollects Illumina lane metrics for the given BaseCalling analysis directory.[0m
+[32m    ExtractIlluminaBarcodes                      [31m[36mTool determines the barcode for each read in an Illumina lane.  [0m
+[32m    IlluminaBasecallsToFastq                     [31m[36mGenerate FASTQ file(s) from Illumina basecall read data.  [0m
+[32m    IlluminaBasecallsToSam                       [31m[36mTransforms raw Illumina sequencing data into an unmapped SAM, BAM or CRAM file.[0m
+[32m    MarkIlluminaAdapters                         [31m[36mReads a SAM/BAM/CRAM file and rewrites it with new adapter-trimming tags.  [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mDiagnostics and Quality Control:                 Tools that collect sequencing quality related and comparative metrics[0m
+[32m    AccumulateQualityYieldMetrics                [31m[36mCombines multiple QualityYieldMetrics files into a single file.[0m
+[32m    AccumulateVariantCallingMetrics              [31m[36mCombines multiple Variant Calling Metrics files into a single file[0m
+[32m    BamIndexStats                                [31m[36mGenerate index statistics from a BAM file[0m
+[32m    CalculateFingerprintMetrics                  [31m[36mCalculate statistics on fingerprints, checking their viability[0m
+[32m    CalculateReadGroupChecksum                   [31m[36mCreates a hash code based on the read groups (RG).  [0m
+[32m    CheckDuplicateMarking                        [31m[36mChecks the consistency of duplicate markings.[0m
+[32m    CheckFingerprint                             [31m[36mComputes a fingerprint from the supplied input (SAM/BAM/CRAM or VCF) file and compares it to the provided genotypes[0m
+[32m    CheckTerminatorBlock                         [31m[36mAsserts the provided gzip file's (e.g., BAM) last block is well-formed; RC 100 otherwise[0m
+[32m    ClusterCrosscheckMetrics                     [31m[36mClusters the results of a CrosscheckFingerprints run by LOD score[0m
+[32m    CollectAlignmentSummaryMetrics               [31m[36m<b>Produces a summary of alignment metrics from a SAM or BAM file.</b>  [0m
+[32m    CollectArraysVariantCallingMetrics           [31m[36mCollects summary and per-sample from the provided arrays VCF file[0m
+[32m    CollectBaseDistributionByCycle               [31m[36mChart the nucleotide distribution per cycle in a SAM or BAM file[0m
+[32m    CollectGcBiasMetrics                         [31m[36mCollect metrics regarding GC bias. [0m
+[32m    CollectHiSeqXPfFailMetrics                   [31m[36mClassify PF-Failing reads in a HiSeqX Illumina Basecalling directory into various categories.[0m
+[32m    CollectHsMetrics                             [31m[36mCollects hybrid-selection (HS) metrics for a SAM or BAM file.  [0m
+[32m    CollectIndependentReplicateMetrics           [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mEstimates the rate of independent replication rate of reads within a bam. 
+[0m
+[32m    CollectInsertSizeMetrics                     [31m[36mCollect metrics about the insert size distribution of a paired-end library. [0m
+[32m    CollectJumpingLibraryMetrics                 [31m[36mCollect jumping library metrics. [0m
+[32m    CollectMultipleMetrics                       [31m[36mCollect multiple classes of metrics. [0m
+[32m    CollectOxoGMetrics                           [31m[36mCollect metrics to assess oxidative artifacts.[0m
+[32m    CollectQualityYieldMetrics                   [31m[36mCollect metrics about reads that pass quality thresholds and Illumina-specific filters.  [0m
+[32m    CollectRawWgsMetrics                         [31m[36mCollect whole genome sequencing-related metrics.  [0m
+[32m    CollectRnaSeqMetrics                         [31m[36mProduces RNA alignment metrics for a SAM or BAM file.  [0m
+[32m    CollectRrbsMetrics                           [31m[36m<b>Collects metrics from reduced representation bisulfite sequencing (Rrbs) data.</b>  [0m
+[32m    CollectSamErrorMetrics                       [31m[36mProgram to collect error metrics on bases stratified in various ways.[0m
+[32m    CollectSequencingArtifactMetrics             [31m[36mCollect metrics to quantify single-base sequencing artifacts.  [0m
+[32m    CollectTargetedPcrMetrics                    [31m[36mCalculate PCR-related metrics from targeted sequencing data. [0m
+[32m    CollectVariantCallingMetrics                 [31m[36mCollects per-sample and aggregate (spanning all samples) metrics from the provided VCF file[0m
+[32m    CollectWgsMetrics                            [31m[36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.[0m
+[32m    CollectWgsMetricsWithNonZeroCoverage         [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.  [0m
+[32m    CompareMetrics                               [31m[36mCompare two metrics files.[0m
+[32m    CompareSAMs                                  [31m[36mCompare two input SAM/BAM/CRAM files.  [0m
+[32m    ConvertHaplotypeDatabaseToVcf                [31m[36mConvert Haplotype database file to vcf[0m
+[32m    ConvertSequencingArtifactToOxoG              [31m[36mExtract OxoG metrics from generalized artifacts metrics.  [0m
+[32m    CrosscheckFingerprints                       [31m[36mChecks that all data in the input files appear to have come from the same individual[0m
+[32m    CrosscheckReadGroupFingerprints              [31m[36mDEPRECATED: USE CrosscheckFingerprints. [0m
+[32m    EstimateLibraryComplexity                    [31m[36mEstimates the numbers of unique molecules in a sequencing library.  [0m
+[32m    ExtractFingerprint                           [31m[36mComputes a fingerprint from the input file.[0m
+[32m    IdentifyContaminant                          [31m[36mComputes a fingerprint from the supplied SAM/BAM file, given a contamination estimate.[0m
+[32m    LiftOverHaplotypeMap                         [31m[36mLifts over a haplotype database from one reference to another[0m
+[32m    MeanQualityByCycle                           [31m[36mCollect mean quality by cycle.[0m
+[32m    QualityScoreDistribution                     [31m[36mChart the distribution of quality scores.  [0m
+[32m    ValidateSamFile                              [31m[36mValidates a SAM/BAM/CRAM file.[0m
+[32m    ViewSam                                      [31m[36mPrints a SAM or BAM file to the screen[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mGenotyping Arrays Manipulation:                  Tools that manipulate data generated by Genotyping arrays[0m
+[32m    BpmToNormalizationManifestCsv                [31m[36mProgram to convert an Illumina bpm file into a bpm.csv file.[0m
+[32m    CombineGenotypingArrayVcfs                   [31m[36mProgram to combine multiple genotyping array VCF files into one VCF.[0m
+[32m    CompareGtcFiles                              [31m[36mCompares two GTC files.[0m
+[32m    CreateBafRegressMetricsFile                  [31m[36mProgram to generate a picard metrics file from the output of the bafRegress tool.[0m
+[32m    CreateExtendedIlluminaManifest               [31m[36mCreate an Extended Illumina Mani[0m[91mfest for usage by the Picard tool GtcToVcf[0m
+[32m    CreateVerifyIDIntensityContaminationMetricsFile    [31m[36mProgram to generate a picard metrics file from the output of the VerifyIDIntensity tool.[0m
+[32m    GtcToVcf                                     [31m[36mProgram to convert an Illumina GTC file to a VCF[0m
+[32m    MergePedIntoVcf                              [31m[36mProgram to merge a single-sample ped file from zCall into a single-sample VCF.[0m
+[32m    VcfToAdpc                                    [31m[36mProgram to convert an Arrays VCF to an ADPC file.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mIntervals Manipulation:                          Tools that process genomic intervals in various formats[0m
+[32m    BedToIntervalList                            [31m[36mConverts a BED file to a Picard Interval List.  [0m
+[32m    IntervalListToBed                            [31m[36mConverts an Picard IntervalList file to a BED file.[0m
+[32m    IntervalListTools                            [31m[36mA tool for performing various IntervalList manipulations[0m
+[32m    LiftOverIntervalList                         [31m[36mLifts over an interval list from one reference build to another. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mOther:                                           Miscellaneous tools, e.g. those that aid in data streaming[0m
+[32m    FifoBuffer                                   [31m[36mProvides a large, FIFO buffer that can be used to buffer input and output streams between programs.[0m
+[32m    SortGff                                      [31m[36mSorts a gff3 file, and adds flush directives[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mRead Data Manipulation:                          Tools that manipulate read data in SAM, BAM or CRAM format[0m
+[32m    AddCommentsToBam                             [31m[36mAdds comments to the header of a BAM file.[0m
+[32m    AddOATag                                     [31m[36mRecord current alignment information to OA tag.[0m
+[32m    AddOrReplaceReadGroups                       [31m[36mAssigns all the reads in a file to a single new read-group.[0m
+[32m    BamToBfq                                     [31m[36mConverts a BAM file into a BFQ (binary fastq formatted) file[0m
+[32m    BuildBamIndex                                [31m[36mGenerates a BAM index ".bai" file.  [0m
+[32m    CleanSam                                     [31m[36mCleans a SAM/BAM/CRAM files, soft-clipping beyond-end-of-reference alignments and setting MAPQ to 0 for unmapped reads[0m
+[32m    CollectDuplicateMetrics                      [31m[36mCollect Duplicate metrics from marked file.[0m
+[32m    DownsampleSam                                [31m[36mDownsample a SAM or BAM file.[0m
+[32m    FastqToSam                                   [31m[36mConverts a FASTQ file to an unaligned BAM or SAM file[0m
+[32m    FilterSamReads                               [31m[36mSubsets reads from a SAM/BAM/CRAM file by applying one of several filters.[0m
+[32m    FixMateInformation                           [31m[36mVerify mate-pair information between mates and fix if needed.[0m
+[32m    GatherBamFiles                               [31m[36mConcatenate efficiently BAM files that resulted from a scattered parallel analysis[0m
+[32m    MarkDuplicates                               [31m[36mIdentifies duplicate reads.  [0m
+[32m    MarkDuplicatesWithMateCigar                  [31m[36mIdentifies duplicate reads, accounting for mate CIGAR.  [0m
+[32m    MergeBamAlignment                            [31m[36mMerge alignment data from a SAM or BAM with data in an unmapped BAM file.  [0m
+[32m    MergeSamFiles                                [31m[36mMerges multiple SAM/BAM/CRAM (and/or) files into a single file.  [0m
+[32m    PositionBasedDownsampleSam                   [31m[36mDownsample a SAM or BAM file to retain a subset of the reads based on the reads location in each tile in the flowcell.[0m
+[32m    ReorderSam                                   [31m[36mReorders reads in a SAM or BAM file to match ordering in a second reference file.[0m
+[32m    ReplaceSamHeader                             [31m[36mReplaces the SAMFileHeader in a SAM/BAM/CRAM file.  [0m
+[32m    RevertOriginalBaseQualitiesAndAddMateCigar   [31m[36mReverts the original base qualities and adds the mate cigar tag to read-group files[0m
+[32m    RevertSam                                    [31m[36mReverts SAM/BAM/CRAM files to a previous state.  [0m
+[32m    SamFormatConverter                           [31m[36mConvert a BAM file to a SAM file, or a SAM to a BAM[0m
+[32m    SamToFastq                                   [31m[36mConverts a SAM/BAM/CRAM file to FASTQ.[0m
+[32m    SamToFastqWithTags                           [31m[36mConverts a SAM or BAM file to FASTQ alongside FASTQs created from tags.[0m
+[32m    SetNmAndUqTags                               [31m[36mDEPRECATED: Use SetNmMdAndUqTags instead.[0m
+[32m    SetNmMdAndUqTags                             [31m[36mFixes the NM, MD, and UQ tags in a SAM/BAM/CRAM file [0m
+[32m    SimpleMarkDuplicatesWithMateCigar            [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mExamines aligned records in the supplied SAM or BAM file to locate duplicate molecules.[0m
+[32m    SortSam                                      [31m[36mSorts a SAM, BAM or CRAM file.  [0m
+[32m    SplitSamByLibrary                            [31m[36mSplits a SAM/BAM/CRAM file into individual files by library[0m
+[32m    SplitSamByNumberOfReads                      [31m[36mSplits a SAM/BAM/CRAM file to multiple files.[0m
+[32m    UmiAwareMarkDuplicatesWithMateCigar          [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mIdentifies duplicate reads using information from read positions and UMIs. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mReference:                                       Tools that analyze and manipulate FASTA format references[0m
+[32m    BaitDesigner                                 [31m[36mDesigns oligonucleotide baits for hybrid selection reactions.[0m
+[32m    CreateSequenceDictionary                     [31m[36mCreates a sequence dictionary for a reference sequence.  [0m
+[32m    ExtractSequences                             [31m[36mSubsets intervals from a reference sequence to a new FASTA file.[0m
+[32m    NonNFastaSize                                [31m[36mCounts the number of non-N bases in a fasta file.[0m
+[32m    NormalizeFasta                               [31m[36mNormalizes lines of sequence in a FASTA file to be of the same length.[0m
+[32m    ScatterIntervalsByNs                         [31m[36mWrites an interval list created by splitting a reference at Ns.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Evaluation and Refinement:               Tools that evaluate and refine variant calls, e.g. with annotations not offered by the engine[0m
+[32m    FindMendelianViolations                      [31m[36mFinds mendelian violations of all types within a VCF[0m
+[32m    GenotypeConcordance                          [31m[36mCalculates the concordance between genotype data of one sample in each of two VCFs - truth (or reference) vs. calls.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Filtering:                               Tools that filter variants by annotating the FILTER column[0m
+[32m    FilterVcf                                    [31m[36mHard filters a VCF.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Manipulation:                            Tools that manipulate variant call format (VCF) data[0m
+[32m    FixVcfHeader                                 [31m[36mReplaces or fixes a VCF header.[0m
+[32m    GatherVcfs                                   [31m[36mGathers multiple VCF files from a scatter operation into a single VCF file[0m
+[32m    LiftoverVcf                                  [31m[36mLifts over a VCF file from one reference build to another.  [0m
+[32m    MakeSitesOnlyVcf                             [31m[36mCreates a VCF that contains all the site-level information for all records in the input VCF but no genotype information.[0m
+[32m    MakeVcfSampleNameMap                         [31m[36mCreates a TSV from sample name to VCF/GVCF path, with one line per input.[0m
+[32m    MergeVcfs                                    [31m[36mCombines multiple variant files into a single variant file[0m
+[32m    RenameSampleInVcf                            [31m[36mRenames a sample within a VCF or BCF.[0m
+[32m    SortVcf                                      [31m[36mSorts one or more VCF files.  [0m
+[32m    SplitVcfs                                    [31m[36mSplits SNPs and INDELs into separate files.  [0m
+[32m    UpdateVcfSequenceDictionary                  [31m[36mTakes a VCF and a second file that contains a sequence dictionary and updates the VCF with the new sequence dictionary.[0m
+[32m    VcfFormatConverter                           [31m[36mConverts VCF to BCF or BCF to VCF.  [0m
+[32m    VcfToIntervalList                            [31m[36mConverts a VCF or BCF file to a Picard Interval List[0m
+
+[37m--------------------------------------------------------------------------------------
+
+[0m[0mRemoving intermediate container 1bf4e2896b82
+ ---> 244f4d653f04
+Step 12/14 : RUN chmod a+r /opt2/versions.txt
+ ---> Running in 4dd14e55d9ed
+Removing intermediate container 4dd14e55d9ed
+ ---> 4113b42944f7
+Step 13/14 : WORKDIR /data2
+ ---> Running in 3c4f9bd1664a
+Removing intermediate container 3c4f9bd1664a
+ ---> 35efd9346aa4
+Step 14/14 : RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+ ---> Running in c39825436b09
+Removing intermediate container c39825436b09
+ ---> f9ff8f2f25a7
+Successfully built f9ff8f2f25a7
+Successfully tagged nciccbr/ccrgb_qctools:v1.4

@@ -1,0 +1,43 @@
+Sending build context to Docker daemon    364kB
+Step 1/10 : FROM nciccbr/ccrgb_qctools:v1.1
+ ---> e41eb3686ffc
+Step 2/10 : ENV TAG="v1.2"
+ ---> Using cache
+ ---> 4f806b8988b7
+Step 3/10 : RUN pip3 install RSeQC
+ ---> Running in 709b5324bc2f
+Collecting RSeQC
+  Downloading RSeQC-4.0.0-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.6/133.6 kB 4.9 MB/s eta 0:00:00
+Collecting pyBigWig
+  Downloading pyBigWig-0.3.18.tar.gz (64 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.8/64.8 kB 9.3 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting bx-python
+  Downloading bx_python-0.8.13-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 57.0 MB/s eta 0:00:00
+Requirement already satisfied: pysam in /usr/local/lib/python3.8/dist-packages (from RSeQC) (0.19.1)
+Requirement already satisfied: numpy in /usr/local/lib/python3.8/dist-packages (from RSeQC) (1.23.1)
+Collecting cython>=0.17
+  Downloading Cython-0.29.32-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (1.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 80.2 MB/s eta 0:00:00
+Building wheels for collected packages: pyBigWig
+  Building wheel for pyBigWig (setup.py): started
+  Building wheel for pyBigWig (setup.py): finished with status 'done'
+  Created wheel for pyBigWig: filename=pyBigWig-0.3.18-cp38-cp38-linux_x86_64.whl size=206875 sha256=4f5922b271d5d2d9634e784d79a32623b1cf362a6094478871f1362621104618
+  Stored in directory: /root/.cache/pip/wheels/1f/d0/64/fa4977556a0cfae19b8b1cf546f1928e81c45a8f19f73aba9b
+Successfully built pyBigWig
+Installing collected packages: pyBigWig, cython, bx-python, RSeQC
+Successfully installed RSeQC-4.0.0 bx-python-0.8.13 cython-0.29.32 pyBigWig-0.3.18
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mRemoving intermediate container 709b5324bc2f
+ ---> 9b327b953767
+Step 4/10 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> 00fbe1a31342
+Step 5/10 : COPY printversions.bash /opt2/printversions
+ ---> 721d4616a2fc
+Step 6/10 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     ln -s Dockerfile.${TAG} Dockerfile &&     chmod a+r /opt2/Dockerfile.${TAG} &&     chmod a+rx /opt2/printversions
+ ---> Running in e920109383fb
+[91mln: [0m[91mfailed to create symbolic link 'Dockerfile'[0m[91m: File exists[0m[91m
+[0m

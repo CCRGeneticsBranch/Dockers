@@ -1,0 +1,66 @@
+Sending build context to Docker daemon  53.25kB
+Step 1/10 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/10 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 5513dfa38e6f
+Step 3/10 : ADD https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.zip /opt2/
+
+ ---> Using cache
+ ---> cb866abee53d
+Step 4/10 : WORKDIR /opt2
+ ---> Using cache
+ ---> 16a81d51a4af
+Step 5/10 : RUN unzip fastqc_v0.11.9.zip &&     rm -f fastqc_v0.11.9.zip &&     chmod 755 /opt2/FastQC/fastqc &&     ln -s /opt2/FastQC/fastqc /usr/local/bin/fastqc
+ ---> Using cache
+ ---> 920669d019e5
+Step 6/10 : COPY Dockerfile.$TAG /opt2/Dockerfile
+ ---> 612bf930ab3e
+Step 7/10 : COPY printversions.bash /opt2/printversions
+ ---> 89725ccc863c
+Step 8/10 : RUN chmod a+r /opt2/Dockerfile &&     chmod a+rx /opt2/printversions &&     /opt2/printversions > /opt2/versions.txt &&     chmod a+r /opt2/versions.txt
+ ---> Running in f8e00a641fbb
+[91m
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.17-r1188
+Contact: Heng Li <lh3@sanger.ac.uk>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries
+
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
+
+[0m[91mopenjdk version "1.8.0_342"[0m[91m
+OpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07)
+[0m[91mOpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)
+[0m[91mjavac 1.8.0_342
+[0mRemoving intermediate container f8e00a641fbb
+ ---> ad272f0772e4
+Step 9/10 : WORKDIR /data2
+ ---> Running in dc397ed0d58c
+Removing intermediate container dc397ed0d58c
+ ---> d348412543e2
+Step 10/10 : RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+ ---> Running in cd2555e27c4e
+Removing intermediate container cd2555e27c4e
+ ---> 8ff06125ef1e
+Successfully built 8ff06125ef1e
+Successfully tagged nciccbr/ccrgb_qctools:v1.0

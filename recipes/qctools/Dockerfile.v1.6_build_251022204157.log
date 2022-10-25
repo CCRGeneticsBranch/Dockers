@@ -1,0 +1,322 @@
+Sending build context to Docker daemon  1.076MB
+Step 1/15 : FROM nciccbr/ccrgb_qctools:v1.5
+ ---> 486dd1b86f4b
+Step 2/15 : ENV TAG="v1.6"
+ ---> Running in 25b356b53342
+Removing intermediate container 25b356b53342
+ ---> 0b34fde4b71f
+Step 3/15 : ADD http://www.cbcb.umd.edu/software/jellyfish/jellyfish-1.1.11.tar.gz /opt2
+
+ ---> e53b7fd01c14
+Step 4/15 : WORKDIR /opt2
+ ---> Running in 73c63ee13571
+Removing intermediate container 73c63ee13571
+ ---> e6de4793e3cb
+Step 5/15 : RUN tar xzvf jellyfish-1.1.11.tar.gz && rm -f jellyfish-1.1.11.tar.gz
+ ---> Running in 9d3de22c67eb
+jellyfish-1.1.11/
+jellyfish-1.1.11/aclocal.m4
+jellyfish-1.1.11/HalfLICENSE
+jellyfish-1.1.11/depcomp
+jellyfish-1.1.11/jellyfish-1.1.pc.in
+jellyfish-1.1.11/jellyfish/
+jellyfish-1.1.11/jellyfish/atomic_gcc.hpp
+jellyfish-1.1.11/jellyfish/misc.hpp
+jellyfish-1.1.11/jellyfish/file_parser.hpp
+jellyfish-1.1.11/jellyfish/half.h
+jellyfish-1.1.11/jellyfish/histo_fastq_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/query_cmdline.hpp
+jellyfish-1.1.11/jellyfish/stats_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/time.hpp
+jellyfish-1.1.11/jellyfish/allocators_mmap.hpp
+jellyfish-1.1.11/jellyfish/raw_dumper.hpp
+jellyfish-1.1.11/jellyfish/storage.hpp
+jellyfish-1.1.11/jellyfish/compacted_dumper.hpp
+jellyfish-1.1.11/jellyfish/yaggo.cpp
+jellyfish-1.1.11/jellyfish/sequence_parser.hpp
+jellyfish-1.1.11/jellyfish/toFloat.h
+jellyfish-1.1.11/jellyfish/reversible_hash_function.hpp
+jellyfish-1.1.11/jellyfish/storage.cc
+jellyfish-1.1.11/jellyfish/cite_cmdline.hpp
+jellyfish-1.1.11/jellyfish/capped_integer.hpp
+jellyfish-1.1.11/jellyfish/hash_merge_cmdline.hpp
+jellyfish-1.1.11/jellyfish/thread_exec.cc
+jellyfish-1.1.11/jellyfish/floats.cc
+jellyfish-1.1.11/jellyfish/dump_fastq_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/jellyfish.cc
+jellyfish-1.1.11/jellyfish/seq_qual_parser.cc
+jellyfish-1.1.11/jellyfish/sorted_dumper.hpp
+jellyfish-1.1.11/jellyfish/parse_quake.hpp
+jellyfish-1.1.11/jellyfish/parse_dna.cc
+jellyfish-1.1.11/jellyfish/circular_buffer.hpp
+jellyfish-1.1.11/jellyfish/hash_fastq_merge_cmdline.hpp
+jellyfish-1.1.11/jellyfish/counter.hpp
+jellyfish-1.1.11/jellyfish/floats.hpp
+jellyfish-1.1.11/jellyfish/divisor.hpp
+jellyfish-1.1.11/jellyfish/histo_main.cc
+jellyfish-1.1.11/jellyfish/compacted_hash.hpp
+jellyfish-1.1.11/jellyfish/locking_hash_counters.hpp
+jellyfish-1.1.11/jellyfish/eLut.h
+jellyfish-1.1.11/jellyfish/allocators_mmap.cc
+jellyfish-1.1.11/jellyfish/test_read_parser.cc
+jellyfish-1.1.11/jellyfish/backtrace.cc
+jellyfish-1.1.11/jellyfish/generate_sequence.cc
+jellyfish-1.1.11/jellyfish/double_fifo_input.hpp
+jellyfish-1.1.11/jellyfish/noop_dumper.hpp
+jellyfish-1.1.11/jellyfish/parse_dna.hpp
+jellyfish-1.1.11/jellyfish/dna_codes.hpp
+jellyfish-1.1.11/jellyfish/dump_main.cc
+jellyfish-1.1.11/jellyfish/hash_merge.cc
+jellyfish-1.1.11/jellyfish/mapped_file.cc
+jellyfish-1.1.11/jellyfish/fastq_dumper.hpp
+jellyfish-1.1.11/jellyfish/allocators_malloc.hpp
+jellyfish-1.1.11/jellyfish/misc.cc
+jellyfish-1.1.11/jellyfish/sequence_parser.cc
+jellyfish-1.1.11/jellyfish/direct_sorted_dumper.hpp
+jellyfish-1.1.11/jellyfish/hash_function.hpp
+jellyfish-1.1.11/jellyfish/thread_exec.hpp
+jellyfish-1.1.11/jellyfish/direct_indexing_array.hpp
+jellyfish-1.1.11/jellyfish/half.cpp
+jellyfish-1.1.11/jellyfish/parse_qual_dna.cc
+jellyfish-1.1.11/jellyfish/dump_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/file_parser.cc
+jellyfish-1.1.11/jellyfish/dump_fastq_main.cc
+jellyfish-1.1.11/jellyfish/aligned_values_array.hpp
+jellyfish-1.1.11/jellyfish/square_binary_matrix.hpp
+jellyfish-1.1.11/jellyfish/time.cc
+jellyfish-1.1.11/jellyfish/invertible_hash_array.hpp
+jellyfish-1.1.11/jellyfish/dbg.hpp
+jellyfish-1.1.11/jellyfish/generate_sequence_cmdline.hpp
+jellyfish-1.1.11/jellyfish/concurrent_queues.hpp
+jellyfish-1.1.11/jellyfish/dumper.hpp
+jellyfish-1.1.11/jellyfish/parse_read.hpp
+jellyfish-1.1.11/jellyfish/backtrace.hpp
+jellyfish-1.1.11/jellyfish/mer_counting.hpp
+jellyfish-1.1.11/jellyfish/dbg.cc
+jellyfish-1.1.11/jellyfish/heap.hpp
+jellyfish-1.1.11/jellyfish/simple_growing_array.hpp
+jellyfish-1.1.11/jellyfish/err.cc
+jellyfish-1.1.11/jellyfish/mersenne.cpp
+jellyfish-1.1.11/jellyfish/hash.hpp
+jellyfish-1.1.11/jellyfish/stats_main.cc
+jellyfish-1.1.11/jellyfish/count_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/query_main.cc
+jellyfish-1.1.11/jellyfish/fstream_default.hpp
+jellyfish-1.1.11/jellyfish/err.hpp
+jellyfish-1.1.11/jellyfish/mer_counter.cc
+jellyfish-1.1.11/jellyfish/parse_read.cc
+jellyfish-1.1.11/jellyfish/randomc.h
+jellyfish-1.1.11/jellyfish/hash_fastq_merge.cc
+jellyfish-1.1.11/jellyfish/parse_quake.cc
+jellyfish-1.1.11/jellyfish/read_parser.cc
+jellyfish-1.1.11/jellyfish/allocators_shm.hpp
+jellyfish-1.1.11/jellyfish/seq_qual_parser.hpp
+jellyfish-1.1.11/jellyfish/simple_circular_buffer.hpp
+jellyfish-1.1.11/jellyfish/offsets_key_value.hpp
+jellyfish-1.1.11/jellyfish/yaggo.hpp
+jellyfish-1.1.11/jellyfish/histo_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/token_ring.hpp
+jellyfish-1.1.11/jellyfish/histo_fastq_main.cc
+jellyfish-1.1.11/jellyfish/parse_qual_dna.hpp
+jellyfish-1.1.11/jellyfish/locks_pthread.hpp
+jellyfish-1.1.11/jellyfish/square_binary_matrix.cc
+jellyfish-1.1.11/jellyfish/cite.cc
+jellyfish-1.1.11/jellyfish/mapped_file.hpp
+jellyfish-1.1.11/jellyfish/read_parser.hpp
+jellyfish-1.1.11/jellyfish/dna_codes.cc
+jellyfish-1.1.11/jellyfish/test_double_fifo_input.cc
+jellyfish-1.1.11/Makefile.in
+jellyfish-1.1.11/m4/
+jellyfish-1.1.11/m4/ltsugar.m4
+jellyfish-1.1.11/m4/lt~obsolete.m4
+jellyfish-1.1.11/m4/ltversion.m4
+jellyfish-1.1.11/m4/ltoptions.m4
+jellyfish-1.1.11/m4/libtool.m4
+jellyfish-1.1.11/config.sub
+jellyfish-1.1.11/gtest.mk
+jellyfish-1.1.11/LICENSE
+jellyfish-1.1.11/Makefile.am
+jellyfish-1.1.11/missing
+jellyfish-1.1.11/install-sh
+jellyfish-1.1.11/README
+jellyfish-1.1.11/configure
+jellyfish-1.1.11/tests/
+jellyfish-1.1.11/tests/multi_file.sh
+jellyfish-1.1.11/tests/parallel_fastq_sequence_hashing.sh
+jellyfish-1.1.11/tests/parallel_hashing.sh
+jellyfish-1.1.11/tests/merge.sh
+jellyfish-1.1.11/tests/raw_hash.sh
+jellyfish-1.1.11/tests/compat.sh.in
+jellyfish-1.1.11/tests/big.sh
+jellyfish-1.1.11/tests/small.sh
+jellyfish-1.1.11/tests/from_stream.sh
+jellyfish-1.1.11/tests/multi_file_fastq.sh
+jellyfish-1.1.11/tests/generate_sequence.sh
+jellyfish-1.1.11/tests/parsers.sh
+jellyfish-1.1.11/tests/from_stream_fastq.sh
+jellyfish-1.1.11/tests/parallel_fastq_hashing.sh
+jellyfish-1.1.11/tests/min_qual.sh
+jellyfish-1.1.11/tests/parallel_direct_indexing.sh
+jellyfish-1.1.11/tests/generate_fastq_sequence.sh
+jellyfish-1.1.11/tests/serial_direct_indexing.sh
+jellyfish-1.1.11/tests/serial_hashing.sh
+jellyfish-1.1.11/tests/parallel_fastq_direct_indexing.sh
+jellyfish-1.1.11/config.h.in
+jellyfish-1.1.11/configure.ac
+jellyfish-1.1.11/unit_tests/
+jellyfish-1.1.11/unit_tests/unit_tests.sh
+jellyfish-1.1.11/unit_tests/test_square_binary_matrix.cc
+jellyfish-1.1.11/unit_tests/gtest/
+jellyfish-1.1.11/unit_tests/gtest/include/
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-port.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-tuple.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-filepath.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-type-util.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-linked_ptr.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-string.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-param-util-generated.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-death-test-internal.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-param-util.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-internal.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-typed-test.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest_pred_impl.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-message.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-death-test.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-param-test.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-spi.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-test-part.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest_prod.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-printers.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest.h
+jellyfish-1.1.11/unit_tests/gtest/src/
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-port.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-all.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-death-test.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-filepath.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-typed-test.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-test-part.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest_main.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-printers.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-internal-inl.h
+jellyfish-1.1.11/unit_tests/test_offsets_key_value.cc
+jellyfish-1.1.11/unit_tests/test_simple_circular_buffer.cc
+jellyfish-1.1.11/config.guess
+jellyfish-1.1.11/doc/
+jellyfish-1.1.11/doc/jellyfish.pdf
+jellyfish-1.1.11/doc/jellyfish.man
+jellyfish-1.1.11/ltmain.sh
+Removing intermediate container 9d3de22c67eb
+ ---> d3c6cad6c941
+Step 6/15 : WORKDIR /opt2/jellyfish-1.1.11
+ ---> Running in c57edd5c2195
+Removing intermediate container c57edd5c2195
+ ---> 0b8db501f56a
+Step 7/15 : RUN ./configure && make && make install && cd /opt2 && rm -rf jellyfish-1.1.11
+ ---> Running in ccc3d1e69eb1
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to print strings... printf
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for md5sum... md5sum
+checking for __int128... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking execinfo.h usability... yes
+checking execinfo.h presence... yes
+checking for execinfo.h... yes
+checking sys/syscall.h usability... yes
+checking sys/syscall.h presence... yes
+checking for sys/syscall.h... yes
+checking for siginfo_t.si_int... yes
+configure: creating ./config.status

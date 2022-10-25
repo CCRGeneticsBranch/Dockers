@@ -1,0 +1,13 @@
+Sending build context to Docker daemon  1.925MB
+Step 1/10 : FROM nciccbr/ccrgb_qctools:v1.4
+ ---> 21e05f76eaf9
+Step 2/10 : ENV TAG="v1.5"
+ ---> Using cache
+ ---> 8c80a18f567e
+Step 3/10 : RUN apt-get install -y jellyfish
+ ---> Running in ba6cf57f3210
+Reading package lists...
+Building dependency tree...
+Reading state information...
+[91mE: Unable to locate package jellyfish
+[0m

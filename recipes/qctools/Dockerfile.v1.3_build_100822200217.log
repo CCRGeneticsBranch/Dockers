@@ -1,0 +1,536 @@
+Sending build context to Docker daemon  583.7kB
+Step 1/20 : FROM nciccbr/ccrgb_qctools:v1.2
+ ---> a37fe6cc89f9
+Step 2/20 : ENV TAG="v1.3"
+ ---> Using cache
+ ---> c951c5acdddc
+Step 3/20 : ADD https://github.com/samtools/htslib/releases/download/1.15.1/htslib-1.15.1.tar.bz2 /opt2
+
+
+ ---> Using cache
+ ---> cfd5c840ae1c
+Step 4/20 : WORKDIR /opt2
+ ---> Using cache
+ ---> c1cc5cb6909a
+Step 5/20 : RUN tar xjvf htslib-1.15.1.tar.bz2 && rm -f htslib-1.15.1.tar.bz2 && mkdir -p /opt2/htslib
+ ---> Using cache
+ ---> f7563075bc6f
+Step 6/20 : WORKDIR /opt2/htslib-1.15.1
+ ---> Using cache
+ ---> 0f851ca0605d
+Step 7/20 : RUN ./configure && make && make install && cd /opt2 && rm -rf /opt2/htslib-1.15.1
+ ---> Using cache
+ ---> f4c2685d4587
+Step 8/20 : ADD https://github.com/smithlabcode/preseq/releases/download/v3.1.2/preseq-3.1.2.tar.gz /opt2
+
+
+ ---> Using cache
+ ---> b10d66b617b7
+Step 9/20 : WORKDIR /opt2
+ ---> Using cache
+ ---> 5f3c3bcbec2a
+Step 10/20 : RUN tar -zxvf preseq-3.1.2.tar.gz && rm -f preseq-3.1.2.tar.gz && mkdir -p /opt2/preseq
+ ---> Running in 18aba5e0e1f4
+preseq-3.1.2/
+preseq-3.1.2/configure
+preseq-3.1.2/src/
+preseq-3.1.2/src/moment_sequence.cpp
+preseq-3.1.2/src/to-mr.cpp
+preseq-3.1.2/src/preseq.cpp
+preseq-3.1.2/src/continued_fraction.hpp
+preseq-3.1.2/src/load_data_for_complexity.cpp
+preseq-3.1.2/src/moment_sequence.hpp
+preseq-3.1.2/src/continued_fraction.cpp
+preseq-3.1.2/src/smithlab_cpp/
+preseq-3.1.2/src/smithlab_cpp/OptionParser.cpp
+preseq-3.1.2/src/smithlab_cpp/dna_four_bit.cpp
+preseq-3.1.2/src/smithlab_cpp/configure
+preseq-3.1.2/src/smithlab_cpp/bisulfite_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/smithlab_os.cpp
+preseq-3.1.2/src/smithlab_cpp/QualityScore.cpp
+preseq-3.1.2/src/smithlab_cpp/missing
+preseq-3.1.2/src/smithlab_cpp/configure.ac
+preseq-3.1.2/src/smithlab_cpp/aclocal.m4
+preseq-3.1.2/src/smithlab_cpp/sim_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/chromosome_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/ar-lib
+preseq-3.1.2/src/smithlab_cpp/chromosome_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/htslib_wrapper_deprecated.cpp
+preseq-3.1.2/src/smithlab_cpp/zlib_wrapper.hpp
+preseq-3.1.2/src/smithlab_cpp/cigar_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/sim_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/Makefile.am
+preseq-3.1.2/src/smithlab_cpp/install-sh
+preseq-3.1.2/src/smithlab_cpp/smithlab_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/zlib_wrapper.cpp
+preseq-3.1.2/src/smithlab_cpp/dna_four_bit.hpp
+preseq-3.1.2/src/smithlab_cpp/QualityScore.hpp
+preseq-3.1.2/src/smithlab_cpp/cigar_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/depcomp
+preseq-3.1.2/src/smithlab_cpp/MappedRead.hpp
+preseq-3.1.2/src/smithlab_cpp/OptionParser.hpp
+preseq-3.1.2/src/smithlab_cpp/README.md
+preseq-3.1.2/src/smithlab_cpp/bisulfite_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/config.h.in
+preseq-3.1.2/src/smithlab_cpp/MappedRead.cpp
+preseq-3.1.2/src/smithlab_cpp/compile
+preseq-3.1.2/src/smithlab_cpp/GenomicRegion.cpp
+preseq-3.1.2/src/smithlab_cpp/Makefile.in
+preseq-3.1.2/src/smithlab_cpp/GenomicRegion.hpp
+preseq-3.1.2/src/smithlab_cpp/htslib_wrapper_deprecated.hpp
+preseq-3.1.2/src/smithlab_cpp/sam_record.hpp
+preseq-3.1.2/src/smithlab_cpp/m4/
+preseq-3.1.2/src/smithlab_cpp/m4/ax_cxx_compile_stdcxx_11.m4
+preseq-3.1.2/src/smithlab_cpp/m4/ax_cxx_compile_stdcxx.m4
+preseq-3.1.2/src/smithlab_cpp/sam_record.cpp
+preseq-3.1.2/src/smithlab_cpp/smithlab_os.hpp
+preseq-3.1.2/src/smithlab_cpp/smithlab_utils.hpp
+preseq-3.1.2/src/load_data_for_complexity.hpp
+preseq-3.1.2/missing
+preseq-3.1.2/configure.ac
+preseq-3.1.2/aclocal.m4
+preseq-3.1.2/gpl-3.0.txt
+preseq-3.1.2/data/
+preseq-3.1.2/data/SRR1301329_1M_hist.txt
+preseq-3.1.2/data/Shakespeare_hist.txt
+preseq-3.1.2/data/SRR1003759_5M_subset.mr
+preseq-3.1.2/data/Shakespeare_vals.txt
+preseq-3.1.2/data/additional_data.txt
+preseq-3.1.2/data/SRR1106616_5M_subset.bam
+preseq-3.1.2/Makefile.am
+preseq-3.1.2/install-sh
+preseq-3.1.2/docs/
+preseq-3.1.2/docs/InitialExperimentComplexityCurves_copy.pdf
+preseq-3.1.2/docs/manual.tex
+preseq-3.1.2/docs/comparing_scWGA_coverage.pdf
+preseq-3.1.2/docs/manual.pdf
+preseq-3.1.2/docs/RELEASE_NOTES.txt
+preseq-3.1.2/docs/biblio.bib
+preseq-3.1.2/docs/TCR_richness_vs_age_lm.pdf
+preseq-3.1.2/docs/compare_RNA_Capture_junction_complexity.pdf
+preseq-3.1.2/docs/FullExperiment_copy.pdf
+preseq-3.1.2/depcomp
+preseq-3.1.2/README.md
+preseq-3.1.2/config.h.in
+preseq-3.1.2/Makefile.in
+preseq-3.1.2/preseqR/
+preseq-3.1.2/preseqR/NAMESPACE
+preseq-3.1.2/preseqR/data/
+preseq-3.1.2/preseqR/data/SRR1301329_base.txt
+preseq-3.1.2/preseqR/data/Twitter.txt
+preseq-3.1.2/preseqR/data/Dickens.txt
+preseq-3.1.2/preseqR/data/SRR061157_k31.txt
+preseq-3.1.2/preseqR/data/SRR1301329_1M_read.txt
+preseq-3.1.2/preseqR/data/SRR611492.txt
+preseq-3.1.2/preseqR/data/SRR1301329_1M_base.txt
+preseq-3.1.2/preseqR/data/Shakespeare.txt
+preseq-3.1.2/preseqR/data/WillButterfly.txt
+preseq-3.1.2/preseqR/data/SRR611492_5M.txt
+preseq-3.1.2/preseqR/data/FisherButterfly.txt
+preseq-3.1.2/preseqR/data/SRR1301329_read.txt
+preseq-3.1.2/preseqR/.git
+preseq-3.1.2/preseqR/R/
+preseq-3.1.2/preseqR/R/sample_coverage.R
+preseq-3.1.2/preseqR/R/tools.R
+preseq-3.1.2/preseqR/R/sequencing.R
+preseq-3.1.2/preseqR/R/ztnb.R
+preseq-3.1.2/preseqR/R/kmer.R
+preseq-3.1.2/preseqR/R/simulation.R
+preseq-3.1.2/preseqR/R/rational_function.R
+preseq-3.1.2/preseqR/R/compared_methods.R
+preseq-3.1.2/preseqR/R/rSAC.R
+preseq-3.1.2/preseqR/man/
+preseq-3.1.2/preseqR/man/SRR1301329_1M_read.Rd
+preseq-3.1.2/preseqR/man/FisherButterfly.Rd
+preseq-3.1.2/preseqR/man/ztp.rSAC.Rd
+preseq-3.1.2/preseqR/man/SRR611492_5M.Rd
+preseq-3.1.2/preseqR/man/fisher.alpha.Rd
+preseq-3.1.2/preseqR/man/kmer.frac.curve.bootstrap.Rd
+preseq-3.1.2/preseqR/man/SRR1301329_read.Rd
+preseq-3.1.2/preseqR/man/preseqR.nonreplace.sampling.Rd
+preseq-3.1.2/preseqR/man/preseqR.rSAC.Rd
+preseq-3.1.2/preseqR/man/cs.rSAC.Rd
+preseq-3.1.2/preseqR/man/preseqR.rSAC.sequencing.rmdup.Rd
+preseq-3.1.2/preseqR/man/preseqR.interpolate.rSAC.Rd
+preseq-3.1.2/preseqR/man/ds.rSAC.bootsrap.Rd
+preseq-3.1.2/preseqR/man/kmer.frac.curve.Rd
+preseq-3.1.2/preseqR/man/preseqR.sample.cov.bootstrap.Rd
+preseq-3.1.2/preseqR/man/preseqR.optimal.sequencing.Rd
+preseq-3.1.2/preseqR/man/Twitter.Rd
+preseq-3.1.2/preseqR/man/preseqR.simu.hist.Rd
+preseq-3.1.2/preseqR/man/preseqR.rSAC.bootstrap.Rd
+preseq-3.1.2/preseqR/man/preseqR.sample.cov.Rd
+preseq-3.1.2/preseqR/man/SRR1301329_1M_base.Rd
+preseq-3.1.2/preseqR/man/preseqR.package.Rd
+preseq-3.1.2/preseqR/man/bbc.rSAC.Rd
+preseq-3.1.2/preseqR/man/SRR611492.Rd
+preseq-3.1.2/preseqR/man/ztnb.rSAC.Rd
+preseq-3.1.2/preseqR/man/SRR1301329_base.Rd
+preseq-3.1.2/preseqR/man/fisher.rSAC.Rd
+preseq-3.1.2/preseqR/man/Dickens.Rd
+preseq-3.1.2/preseqR/man/Shakespeare.Rd
+preseq-3.1.2/preseqR/man/WillButterfly.Rd
+preseq-3.1.2/preseqR/man/SRR061157_k31.Rd
+preseq-3.1.2/preseqR/man/ds.rSAC.Rd
+preseq-3.1.2/preseqR/man/preseqR.ztnb.em.Rd
+preseq-3.1.2/preseqR/README.md
+preseq-3.1.2/preseqR/DESCRIPTION
+preseq-3.1.2/preseqR/inst/
+preseq-3.1.2/preseqR/inst/CITATION
+preseq-3.1.2/m4/
+preseq-3.1.2/m4/ax_cxx_compile_stdcxx_11.m4
+preseq-3.1.2/m4/ax_cxx_compile_stdcxx.m4
+Removing intermediate container 18aba5e0e1f4
+ ---> daebfa3c3e1f
+Step 11/20 : WORKDIR /opt2/preseq-3.1.2
+ ---> Running in 10ac862a7ba1
+Removing intermediate container 10ac862a7ba1
+ ---> 6bbc273c64d9
+Step 12/20 : RUN ./configure --prefix=/opt2/preseq --enable-hts && make && make install && cd /opt2 && rm -rf /opt2/preseq-3.1.2
+ ---> Running in 1b28d7e2461a
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking whether g++ supports C++11 features with -std=c++11... yes
+checking for ranlib... ranlib
+checking for hts_version in -lhts... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+=== configuring in src/smithlab_cpp (/opt2/preseq-3.1.2/src/smithlab_cpp)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/opt2/preseq'  '--enable-hts' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking whether g++ supports C++11 features with -std=c++11... yes
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for ranlib... ranlib
+checking for hts_version in -lhts... yes
+checking for zlibVersion in -lz... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+make  all-recursive
+make[1]: Entering directory '/opt2/preseq-3.1.2'
+Making all in src/smithlab_cpp
+make[2]: Entering directory '/opt2/preseq-3.1.2/src/smithlab_cpp'
+make  all-am
+make[3]: Entering directory '/opt2/preseq-3.1.2/src/smithlab_cpp'
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT GenomicRegion.o -MD -MP -MF .deps/GenomicRegion.Tpo -c -o GenomicRegion.o GenomicRegion.cpp
+mv -f .deps/GenomicRegion.Tpo .deps/GenomicRegion.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT MappedRead.o -MD -MP -MF .deps/MappedRead.Tpo -c -o MappedRead.o MappedRead.cpp
+mv -f .deps/MappedRead.Tpo .deps/MappedRead.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT OptionParser.o -MD -MP -MF .deps/OptionParser.Tpo -c -o OptionParser.o OptionParser.cpp
+mv -f .deps/OptionParser.Tpo .deps/OptionParser.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT QualityScore.o -MD -MP -MF .deps/QualityScore.Tpo -c -o QualityScore.o QualityScore.cpp
+mv -f .deps/QualityScore.Tpo .deps/QualityScore.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT bisulfite_utils.o -MD -MP -MF .deps/bisulfite_utils.Tpo -c -o bisulfite_utils.o bisulfite_utils.cpp
+mv -f .deps/bisulfite_utils.Tpo .deps/bisulfite_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT chromosome_utils.o -MD -MP -MF .deps/chromosome_utils.Tpo -c -o chromosome_utils.o chromosome_utils.cpp
+mv -f .deps/chromosome_utils.Tpo .deps/chromosome_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT sim_utils.o -MD -MP -MF .deps/sim_utils.Tpo -c -o sim_utils.o sim_utils.cpp
+mv -f .deps/sim_utils.Tpo .deps/sim_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT smithlab_os.o -MD -MP -MF .deps/smithlab_os.Tpo -c -o smithlab_os.o smithlab_os.cpp
+mv -f .deps/smithlab_os.Tpo .deps/smithlab_os.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT smithlab_utils.o -MD -MP -MF .deps/smithlab_utils.Tpo -c -o smithlab_utils.o smithlab_utils.cpp
+mv -f .deps/smithlab_utils.Tpo .deps/smithlab_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT zlib_wrapper.o -MD -MP -MF .deps/zlib_wrapper.Tpo -c -o zlib_wrapper.o zlib_wrapper.cpp
+mv -f .deps/zlib_wrapper.Tpo .deps/zlib_wrapper.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT dna_four_bit.o -MD -MP -MF .deps/dna_four_bit.Tpo -c -o dna_four_bit.o dna_four_bit.cpp
+mv -f .deps/dna_four_bit.Tpo .deps/dna_four_bit.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT cigar_utils.o -MD -MP -MF .deps/cigar_utils.Tpo -c -o cigar_utils.o cigar_utils.cpp
+mv -f .deps/cigar_utils.Tpo .deps/cigar_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT htslib_wrapper_deprecated.o -MD -MP -MF .deps/htslib_wrapper_deprecated.Tpo -c -o htslib_wrapper_deprecated.o htslib_wrapper_deprecated.cpp
+mv -f .deps/htslib_wrapper_deprecated.Tpo .deps/htslib_wrapper_deprecated.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT sam_record.o -MD -MP -MF .deps/sam_record.Tpo -c -o sam_record.o sam_record.cpp
+mv -f .deps/sam_record.Tpo .deps/sam_record.Po
+rm -f libsmithlab_cpp.a
+ar cru libsmithlab_cpp.a GenomicRegion.o MappedRead.o OptionParser.o QualityScore.o bisulfite_utils.o chromosome_utils.o sim_utils.o smithlab_os.o smithlab_utils.o zlib_wrapper.o dna_four_bit.o cigar_utils.o htslib_wrapper_deprecated.o sam_record.o 
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mranlib libsmithlab_cpp.a
+make[3]: Leaving directory '/opt2/preseq-3.1.2/src/smithlab_cpp'
+make[2]: Leaving directory '/opt2/preseq-3.1.2/src/smithlab_cpp'
+make[2]: Entering directory '/opt2/preseq-3.1.2'
+depbase=`echo src/preseq.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/preseq.o -MD -MP -MF $depbase.Tpo -c -o src/preseq.o src/preseq.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/continued_fraction.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/continued_fraction.o -MD -MP -MF $depbase.Tpo -c -o src/continued_fraction.o src/continued_fraction.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/load_data_for_complexity.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/load_data_for_complexity.o -MD -MP -MF $depbase.Tpo -c -o src/load_data_for_complexity.o src/load_data_for_complexity.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/moment_sequence.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/moment_sequence.o -MD -MP -MF $depbase.Tpo -c -o src/moment_sequence.o src/moment_sequence.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+g++ -std=c++11  -O2    -o preseq src/preseq.o src/continued_fraction.o src/load_data_for_complexity.o src/moment_sequence.o src/smithlab_cpp/libsmithlab_cpp.a -lhts 
+depbase=`echo src/to-mr.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/to-mr.o -MD -MP -MF $depbase.Tpo -c -o src/to-mr.o src/to-mr.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+g++ -std=c++11  -O2    -o to-mr src/to-mr.o src/smithlab_cpp/libsmithlab_cpp.a -lhts 
+make[2]: Leaving directory '/opt2/preseq-3.1.2'
+make[1]: Leaving directory '/opt2/preseq-3.1.2'
+make[1]: Entering directory '/opt2/preseq-3.1.2'
+make[2]: Entering directory '/opt2/preseq-3.1.2'
+ /usr/bin/mkdir -p '/opt2/preseq/bin'
+  /usr/bin/install -c preseq to-mr '/opt2/preseq/bin'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/opt2/preseq-3.1.2'
+make[1]: Leaving directory '/opt2/preseq-3.1.2'
+Removing intermediate container 1b28d7e2461a
+ ---> 1fdee0073a35
+Step 13/20 : ENV PATH="/opt2/preseq/bin:$PATH"
+ ---> Running in f1897237ef58
+Removing intermediate container f1897237ef58
+ ---> 5d18a14fa2d9
+Step 14/20 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> 83fa9b0c6c18
+Step 15/20 : COPY printversions.bash /opt2/printversions
+ ---> c49b320df170
+Step 16/20 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile &&     chmod a+rx /opt2/printversions
+ ---> Running in 2936dae0a44a
+Removing intermediate container 2936dae0a44a
+ ---> 14981b5bbd34
+Step 17/20 : RUN /opt2/printversions > /opt2/versions.txt; exit 0
+ ---> Running in 9156d4aa18d5
+[91m
+[0m[91mProgram: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.17-r1188
+Contact: Heng Li <lh3@sanger.ac.uk>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries
+
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
+
+[0m[91mopenjdk version "1.8.0_342"[0m[91m
+[0m[91mOpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07)
+OpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)
+[0m[91mjavac 1.8.0_342
+[0m[91m[1m[31mUSAGE: PicardCommandLine [32m<program name>[1m[31m [-h]
+
+[0m[1m[31mAvailable Programs:
+[0m[37m--------------------------------------------------------------------------------------
+[0m[31mBase Calling:                                    Tools that process sequencing machine data, e.g. Illumina base calls, and detect sequencing level attributes, e.g. adapters[0m
+[32m    CheckIlluminaDirectory                       [31m[36mAsserts the validity for specified Illumina basecalling data.  [0m
+[32m    CollectIlluminaBasecallingMetrics            [31m[36mCollects Illumina Basecalling metrics for a sequencing run.  [0m
+[32m    CollectIlluminaLaneMetrics                   [31m[36mCollects Illumina lane metrics for the given BaseCalling analysis directory.[0m
+[32m    ExtractIlluminaBarcodes                      [31m[36mTool determines the barcode for each read in an Illumina lane.  [0m
+[32m    IlluminaBasecallsToFastq                     [31m[36mGenerate FASTQ file(s) from Illumina basecall read data.  [0m
+[32m    IlluminaBasecallsToSam                       [31m[36mTransforms raw Illumina sequencing data into an unmapped SAM, BAM or CRAM file.[0m
+[32m    MarkIlluminaAdapters                         [31m[36mReads a SAM/BAM/CRAM file and rewrites it with new adapter-trimming tags.  [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mDiagnostics and Quality Control:                 Tools that collect sequencing quality related and comparative metrics[0m
+[32m    AccumulateQualityYieldMetrics                [31m[36mCombines multiple QualityYieldMetrics files into a single file.[0m
+[32m    AccumulateVariantCallingMetrics              [31m[36mCombines multiple Variant Calling Metrics files into a single file[0m
+[32m    BamIndexStats                                [31m[36mGenerate index statistics from a BAM file[0m
+[32m    CalculateFingerprintMetrics                  [31m[36mCalculate statistics on fingerprints, checking their viability[0m
+[32m    CalculateReadGroupChecksum                   [31m[36mCreates a hash code based on the read groups (RG).  [0m
+[32m    CheckDuplicateMarking                        [31m[36mChecks the consistency of duplicate markings.[0m
+[32m    CheckFingerprint                             [31m[36mComputes a fingerprint from the supplied input (SAM/BAM/CRAM or VCF) file and compares it to the provided genotypes[0m
+[32m    CheckTerminatorBlock                         [31m[36mAsserts the provided gzip file's (e.g., BAM) last block is well-formed; RC 100 otherwise[0m
+[32m    ClusterCrosscheckMetrics                     [31m[36mClusters the results of a CrosscheckFingerprints run by LOD score[0m
+[32m    CollectAlignmentSummaryMetrics               [31m[36m<b>Produces a summary of alignment metrics from a SAM or BAM file.</b>  [0m
+[32m    CollectArraysVariantCallingMetrics           [31m[36mCollects summary and per-sample from the provided arrays VCF file[0m
+[32m    CollectBaseDistributionByCycle               [31m[36mChart the nucleotide distribution per cycle in a SAM or BAM file[0m
+[32m    CollectGcBiasMetrics                         [31m[36mCollect metrics regarding GC bias. [0m
+[32m    CollectHiSeqXPfFailMetrics                   [31m[36mClassify PF-Failing reads in a HiSeqX Illumina Basecalling directory into various categories.[0m
+[32m    CollectHsMetrics                             [31m[36mCollects hybrid-selection (HS) metrics for a SAM or BAM file.  [0m
+[32m    CollectIndependentReplicateMetrics           [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mEstimates the rate of independent replication rate of reads within a bam. 
+[0m
+[32m    CollectInsertSizeMetrics                     [31m[36mCollect metrics about the insert size distribution of a paired-end library. [0m
+[32m    CollectJumpingLibraryMetrics                 [31m[36mCollect jumping library metrics. [0m
+[32m    CollectMultipleMetrics                       [31m[36mCollect multiple classes of metrics. [0m
+[32m    CollectOxoGMetrics                           [31m[36mCollect metrics to assess oxidative artifacts.[0m
+[32m    CollectQualityYieldMetrics                   [31m[36mCollect metrics about reads that pass quality thresholds and Illumina-specific filters.  [0m
+[32m    CollectRawWgsMetrics                         [31m[36mCollect whole genome sequencing-related metrics.  [0m
+[32m    CollectRnaSeqMetrics                         [31m[36mProduces RNA alignment metrics for a SAM or BAM file.  [0m
+[32m    CollectRrbsMetrics                           [31m[36m<b>Collects metrics from reduced representation bisulfite sequencing (Rrbs) data.</b>  [0m
+[32m    CollectSamErrorMetrics                       [31m[36mProgram to collect error metrics on bases stratified in various ways.[0m
+[32m    CollectSequencingArtifactMetrics             [31m[36mCollect metrics to quantify single-base sequencing artifacts.  [0m
+[32m    CollectTargetedPcrMetrics                    [31m[36mCalculate PCR-related metrics from targeted sequencing data. [0m
+[32m    CollectVariantCallingMetrics                 [31m[36mCollects per-sample and aggregate (spanning all samples) metrics from the provided VCF file[0m
+[32m    CollectWgsMetrics                            [31m[36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.[0m
+[32m    CollectWgsMetricsWithNonZeroCoverage         [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.  [0m
+[32m    CompareMetrics                               [31m[36mCompare two metrics files.[0m
+[32m    CompareSAMs                                  [31m[36mCompare two input SAM/BAM/CRAM files.  [0m
+[32m    ConvertHaplotypeDatabaseToVcf                [31m[36mConvert Haplotype database file to vcf[0m
+[32m    ConvertSequencingArtifactToOxoG              [31m[36mExtract OxoG metrics from generalized artifacts metrics.  [0m
+[32m    CrosscheckFingerprints                       [31m[36mChecks that all data in the input files appear to have come from the same individual[0m
+[32m    CrosscheckReadGroupFingerprints              [31m[36mDEPRECATED: USE CrosscheckFingerprints. [0m
+[32m    EstimateLibraryComplexity                    [31m[36mEstimates the numbers of unique molecules in a sequencing library.  [0m
+[32m    ExtractFingerprint                           [31m[36mComputes a fingerprint from the input file.[0m
+[32m    IdentifyContaminant                          [31m[36mComputes a fingerprint from the supplied SAM/BAM file, given a contamination estimate.[0m
+[32m    LiftOverHaplotypeMap                         [31m[36mLifts over a haplotype database from one reference to another[0m
+[32m    MeanQualityByCycle                           [31m[36mCollect mean quality by cycle.[0m
+[32m    QualityScoreDistribution                     [31m[36mChart the distribution of quality scores.  [0m
+[32m    ValidateSamFile                              [31m[36mValidates a SAM/BAM/CRAM file.[0m
+[32m    ViewSam                                      [31m[36mPrints a SAM or BAM file to the screen[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mGenotyping Arrays Manipulation:                  Tools that manipulate data generated by Genotyping arrays[0m
+[32m    BpmToNormalizationManifestCsv                [31m[36mProgram to convert an Illumina bpm file into a bpm.csv file.[0m
+[32m    CombineGenotypingArrayVcfs                   [31m[36mProgram to combine multiple genotyping array VCF files into one VCF.[0m
+[32m    CompareGtcFiles                              [31m[36mCompares two GTC files.[0m
+[32m    CreateBafRegressMetricsFile                  [31m[36mProgram to generate a picard metrics file from the output of the bafRegress tool.[0m
+[32m    CreateExtendedIlluminaManifest               [31m[36mCreate an Extended Illumina Mani[0m[91mfest for usage by the Picard tool GtcToVcf[0m
+[32m    CreateVerifyIDIntensityContaminationMetricsFile    [31m[36mProgram to generate a picard metrics file from the output of the VerifyIDIntensity tool.[0m
+[32m    GtcToVcf                                     [31m[36mProgram to convert an Illumina GTC file to a VCF[0m
+[32m    MergePedIntoVcf                              [31m[36mProgram to merge a single-sample ped file from zCall into a single-sample VCF.[0m
+[32m    VcfToAdpc                                    [31m[36mProgram to convert an Arrays VCF to an ADPC file.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mIntervals Manipulation:                          Tools that process genomic intervals in various formats[0m
+[32m    BedToIntervalList                            [31m[36mConverts a BED file to a Picard Interval List.  [0m
+[32m    IntervalListToBed                            [31m[36mConverts an Picard IntervalList file to a BED file.[0m
+[32m    IntervalListTools                            [31m[36mA tool for performing various IntervalList manipulations[0m
+[32m    LiftOverIntervalList                         [31m[36mLifts over an interval list from one reference build to another. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mOther:                                           Miscellaneous tools, e.g. those that aid in data streaming[0m
+[32m    FifoBuffer                                   [31m[36mProvides a large, FIFO buffer that can be used to buffer input and output streams between programs.[0m
+[32m    SortGff                                      [31m[36mSorts a gff3 file, and adds flush directives[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mRead Data Manipulation:                          Tools that manipulate read data in SAM, BAM or CRAM format[0m
+[32m    AddCommentsToBam                             [31m[36mAdds comments to the header of a BAM file.[0m
+[32m    AddOATag                                     [31m[36mRecord current alignment information to OA tag.[0m
+[32m    AddOrReplaceReadGroups                       [31m[36mAssigns all the reads in a file to a single new read-group.[0m
+[32m    BamToBfq                                     [31m[36mConverts a BAM file into a BFQ (binary fastq formatted) file[0m
+[32m    BuildBamIndex                                [31m[36mGenerates a BAM index ".bai" file.  [0m
+[32m    CleanSam                                     [31m[36mCleans a SAM/BAM/CRAM files, soft-clipping beyond-end-of-reference alignments and setting MAPQ to 0 for unmapped reads[0m
+[32m    CollectDuplicateMetrics                      [31m[36mCollect Duplicate metrics from marked file.[0m
+[32m    DownsampleSam                                [31m[36mDownsample a SAM or BAM file.[0m
+[32m    FastqToSam                                   [31m[36mConverts a FASTQ file to an unaligned BAM or SAM file[0m
+[32m    FilterSamReads                               [31m[36mSubsets reads from a SAM/BAM/CRAM file by applying one of several filters.[0m
+[32m    FixMateInformation                           [31m[36mVerify mate-pair information between mates and fix if needed.[0m
+[32m    GatherBamFiles                               [31m[36mConcatenate efficiently BAM files that resulted from a scattered parallel analysis[0m
+[32m    MarkDuplicates                               [31m[36mIdentifies duplicate reads.  [0m
+[32m    MarkDuplicatesWithMateCigar                  [31m[36mIdentifies duplicate reads, accounting for mate CIGAR.  [0m
+[32m    MergeBamAlignment                            [31m[36mMerge alignment data from a SAM or BAM with data in an unmapped BAM file.  [0m
+[32m    MergeSamFiles                                [31m[36mMerges multiple SAM/BAM/CRAM (and/or) files into a single file.  [0m
+[32m    PositionBasedDownsampleSam                   [31m[36mDownsample a SAM or BAM file to retain a subset of the reads based on the reads location in each tile in the flowcell.[0m
+[32m    ReorderSam                                   [31m[36mReorders reads in a SAM or BAM file to match ordering in a second reference file.[0m
+[32m    ReplaceSamHeader                             [31m[36mReplaces the SAMFileHeader in a SAM/BAM/CRAM file.  [0m
+[32m    RevertOriginalBaseQualitiesAndAddMateCigar   [31m[36mReverts the original base qualities and adds the mate cigar tag to read-group files[0m
+[32m    RevertSam                                    [31m[36mReverts SAM/BAM/CRAM files to a previous state.  [0m
+[32m    SamFormatConverter                           [31m[36mConvert a BAM file to a SAM file, or a SAM to a BAM[0m
+[32m    SamToFastq                                   [31m[36mConverts a SAM/BAM/CRAM file to FASTQ.[0m
+[32m    SamToFastqWithTags                           [31m[36mConverts a SAM or BAM file to FASTQ alongside FASTQs created from tags.[0m
+[32m    SetNmAndUqTags                               [31m[36mDEPRECATED: Use SetNmMdAndUqTags instead.[0m
+[32m    SetNmMdAndUqTags                             [31m[36mFixes the NM, MD, and UQ tags in a SAM/BAM/CRAM file [0m
+[32m    SimpleMarkDuplicatesWithMateCigar            [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mExamines aligned records in the supplied SAM or BAM file to locate duplicate molecules.[0m
+[32m    SortSam                                      [31m[36mSorts a SAM, BAM or CRAM file.  [0m
+[32m    SplitSamByLibrary                            [31m[36mSplits a SAM/BAM/CRAM file into individual files by library[0m
+[32m    SplitSamByNumberOfReads                      [31m[36mSplits a SAM/BAM/CRAM file to multiple files.[0m
+[32m    UmiAwareMarkDuplicatesWithMateCigar          [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mIdentifies duplicate reads using information from read positions and UMIs. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mReference:                                       Tools that analyze and manipulate FASTA format references[0m
+[32m    BaitDesigner                                 [31m[36mDesigns oligonucleotide baits for hybrid selection reactions.[0m
+[32m    CreateSequenceDictionary                     [31m[36mCreates a sequence dictionary for a reference sequence.  [0m
+[32m    ExtractSequences                             [31m[36mSubsets intervals from a reference sequence to a new FASTA file.[0m
+[32m    NonNFastaSize                                [31m[36mCounts the number of non-N bases in a fasta file.[0m
+[32m    NormalizeFasta                               [31m[36mNormalizes lines of sequence in a FASTA file to be of the same length.[0m
+[32m    ScatterIntervalsByNs                         [31m[36mWrites an interval list created by splitting a reference at Ns.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Evaluation and Refinement:               Tools that evaluate and refine variant calls, e.g. with annotations not offered by the engine[0m
+[32m    FindMendelianViolations                      [31m[36mFinds mendelian violations of all types within a VCF[0m
+[32m    GenotypeConcordance                          [31m[36mCalculates the concordance between genotype data of one sample in each of two VCFs - truth (or reference) vs. calls.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Filtering:                               Tools that filter variants by annotating the FILTER column[0m
+[32m    FilterVcf                                    [31m[36mHard filters a VCF.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Manipulation:                            Tools that manipulate variant call format (VCF) data[0m
+[32m    FixVcfHeader                                 [31m[36mReplaces or fixes a VCF header.[0m
+[32m    GatherVcfs                                   [31m[36mGathers multiple VCF files from a scatter operation into a single VCF file[0m
+[32m    LiftoverVcf                                  [31m[36mLifts over a VCF file from one reference build to another.  [0m
+[32m    MakeSitesOnlyVcf                             [31m[36mCreates a VCF that contains all the site-level information for all records in the input VCF but no genotype information.[0m
+[32m    MakeVcfSampleNameMap                         [31m[36mCreates a TSV from sample name to VCF/GVCF path, with one line per input.[0m
+[32m    MergeVcfs                                    [31m[36mCombines multiple variant files into a single variant file[0m
+[32m    RenameSampleInVcf                            [31m[36mRenames a sample within a VCF or BCF.[0m
+[32m    SortVcf                                      [31m[36mSorts one or more VCF files.  [0m
+[32m    SplitVcfs                                    [31m[36mSplits SNPs and INDELs into separate files.  [0m
+[32m    UpdateVcfSequenceDictionary                  [31m[36mTakes a VCF and a second file that contains a sequence dictionary and updates the VCF with the new sequence dictionary.[0m
+[32m    VcfFormatConverter                           [31m[36mConverts VCF to BCF or BCF to VCF.  [0m
+[32m    VcfToIntervalList                            [31m[36mConverts a VCF or BCF file to a Picard Interval List[0m
+
+[37m--------------------------------------------------------------------------------------
+
+[0m[0mRemoving intermediate container 9156d4aa18d5
+ ---> 903143d41773
+Step 18/20 : RUN chmod a+r /opt2/versions.txt
+ ---> Running in c9c28d1ca3c2
+Removing intermediate container c9c28d1ca3c2
+ ---> 707a0b4e6c8a
+Step 19/20 : WORKDIR /data2
+ ---> Running in a50736afb0c7
+Removing intermediate container a50736afb0c7
+ ---> f89a7ab51db1
+Step 20/20 : RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+ ---> Running in a34542265554
+Removing intermediate container a34542265554
+ ---> 34c6c454a135
+Successfully built 34c6c454a135
+Successfully tagged nciccbr/ccrgb_qctools:v1.3

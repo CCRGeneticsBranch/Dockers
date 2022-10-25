@@ -1,0 +1,371 @@
+Sending build context to Docker daemon  338.4kB
+Step 1/13 : FROM nciccbr/ccrgb_qctools:v1.1
+ ---> e41eb3686ffc
+Step 2/13 : ENV TAG="v1.2"
+ ---> Using cache
+ ---> 4f806b8988b7
+Step 3/13 : WORKDIR /opt2
+ ---> Using cache
+ ---> 2f466cd7a7e1
+Step 4/13 : RUN wget https://sourceforge.net/projects/rseqc/files/RSeQC-3.0.1.tar.gz/download -O RSeQC-3.0.1.tar.gz &&     tar xzvf RSeQC-3.0.1.tar.gz && rm -f RSeQC-3.0.1.tar.gz
+ ---> Running in 8a111a77414d
+[91m--2022-08-10 14:45:15--  https://sourceforge.net/projects/rseqc/files/RSeQC-3.0.1.tar.gz/download
+[0m[91mResolving sourceforge.net (sourceforge.net)... [0m[91m172.64.153.13, 104.18.34.243
+Connecting to sourceforge.net (sourceforge.net)|172.64.153.13|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://downloads.sourceforge.net/project/rseqc/RSeQC-3.0.1.tar.gz?ts=gAAAAABi8_y7y0wPxvux_JMY_gRxqA0mvbAY1V5gwbNVVALIhtWtRgeBv7FDqO88vVHq_vhT6W4Swwj6LuCJ78gMiyHP6ExbIA%3D%3D&use_mirror=versaweb&r= [following]
+[0m[91m--2022-08-10 14:45:15--  https://downloads.sourceforge.net/project/rseqc/RSeQC-3.0.1.tar.gz?ts=gAAAAABi8_y7y0wPxvux_JMY_gRxqA0mvbAY1V5gwbNVVALIhtWtRgeBv7FDqO88vVHq_vhT6W4Swwj6LuCJ78gMiyHP6ExbIA%3D%3D&use_mirror=versaweb&r=
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... [0m[91m204.68.111.105
+[0m[91mConnecting to downloads.sourceforge.net (downloads.sourceforge.net)|204.68.111.105|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://versaweb.dl.sourceforge.net/project/rseqc/RSeQC-3.0.1.tar.gz [following]
+--2022-08-10 14:45:15--  https://versaweb.dl.sourceforge.net/project/rseqc/RSeQC-3.0.1.tar.gz
+Resolving versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)... [0m[91m162.251.232.173
+Connecting to versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)|162.251.232.173|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+[0m[91mLength: [0m[91m119405[0m[91m (117K)[0m[91m [application/x-gzip]
+[0m[91mSaving to: 'RSeQC-3.0.1.tar.gz'
+[0m[91m
+     0K[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.... .......... .[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m...[0m[91m.[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m..[0m[91m.[0m[91m 42%  559K 0s
+    50K .......... ...[0m[91m....... ..[0m[91m..[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m. .......... [0m[91m.....[0m[91m.[0m[91m.[0m[91m... 85%  779K 0s
+   100K .....[0m[91m..... .[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m100%[0m[91m 3.81M[0m[91m=0.2s[0m[91m
+
+[0m[91m2022-08-10 14:45:16 (739 KB/s) - 'RSeQC-3.0.1.tar.gz' saved [119405/119405]
+
+[0mRSeQC-3.0.1/
+RSeQC-3.0.1/MANIFEST.in
+RSeQC-3.0.1/PKG-INFO
+RSeQC-3.0.1/README.rst
+RSeQC-3.0.1/distribute_setup.py
+RSeQC-3.0.1/doc/
+RSeQC-3.0.1/doc/CONTACTS
+RSeQC-3.0.1/doc/COPYING
+RSeQC-3.0.1/doc/INSTALL
+RSeQC-3.0.1/doc/Manual
+RSeQC-3.0.1/doc/THANKS
+RSeQC-3.0.1/lib/
+RSeQC-3.0.1/lib/RSeQC.egg-info/
+RSeQC-3.0.1/lib/RSeQC.egg-info/PKG-INFO
+RSeQC-3.0.1/lib/RSeQC.egg-info/SOURCES.txt
+RSeQC-3.0.1/lib/RSeQC.egg-info/dependency_links.txt
+RSeQC-3.0.1/lib/RSeQC.egg-info/not-zip-safe
+RSeQC-3.0.1/lib/RSeQC.egg-info/requires.txt
+RSeQC-3.0.1/lib/RSeQC.egg-info/top_level.txt
+RSeQC-3.0.1/lib/psyco_full.py
+RSeQC-3.0.1/lib/qcmodule/
+RSeQC-3.0.1/lib/qcmodule/BED.py
+RSeQC-3.0.1/lib/qcmodule/FrameKmer.py
+RSeQC-3.0.1/lib/qcmodule/SAM.py
+RSeQC-3.0.1/lib/qcmodule/__init__.py
+RSeQC-3.0.1/lib/qcmodule/annoGene.py
+RSeQC-3.0.1/lib/qcmodule/bam_cigar.py
+RSeQC-3.0.1/lib/qcmodule/changePoint.py
+RSeQC-3.0.1/lib/qcmodule/cigar.py
+RSeQC-3.0.1/lib/qcmodule/dotProduct.py
+RSeQC-3.0.1/lib/qcmodule/fasta.py
+RSeQC-3.0.1/lib/qcmodule/getBamFiles.py
+RSeQC-3.0.1/lib/qcmodule/mystat.py
+RSeQC-3.0.1/lib/qcmodule/orf.py
+RSeQC-3.0.1/lib/qcmodule/quantile.py
+RSeQC-3.0.1/lib/qcmodule/twoList.py
+RSeQC-3.0.1/lib/qcmodule/wiggle.py
+RSeQC-3.0.1/scripts/
+RSeQC-3.0.1/scripts/FPKM_count.py
+RSeQC-3.0.1/scripts/RNA_fragment_size.py
+RSeQC-3.0.1/scripts/RPKM_saturation.py
+RSeQC-3.0.1/scripts/bam2fq.py
+RSeQC-3.0.1/scripts/bam2wig.py
+RSeQC-3.0.1/scripts/bam_stat.py
+RSeQC-3.0.1/scripts/clipping_profile.py
+RSeQC-3.0.1/scripts/deletion_profile.py
+RSeQC-3.0.1/scripts/divide_bam.py
+RSeQC-3.0.1/scripts/geneBody_coverage.py
+RSeQC-3.0.1/scripts/geneBody_coverage2.py
+RSeQC-3.0.1/scripts/infer_experiment.py
+RSeQC-3.0.1/scripts/inner_distance.py
+RSeQC-3.0.1/scripts/insertion_profile.py
+RSeQC-3.0.1/scripts/junction_annotation.py
+RSeQC-3.0.1/scripts/junction_saturation.py
+RSeQC-3.0.1/scripts/mismatch_profile.py
+RSeQC-3.0.1/scripts/normalize_bigwig.py
+RSeQC-3.0.1/scripts/overlay_bigwig.py
+RSeQC-3.0.1/scripts/read_GC.py
+RSeQC-3.0.1/scripts/read_NVC.py
+RSeQC-3.0.1/scripts/read_distribution.py
+RSeQC-3.0.1/scripts/read_duplication.py
+RSeQC-3.0.1/scripts/read_hexamer.py
+RSeQC-3.0.1/scripts/read_quality.py
+RSeQC-3.0.1/scripts/split_bam.py
+RSeQC-3.0.1/scripts/split_paired_bam.py
+RSeQC-3.0.1/scripts/tin.py
+RSeQC-3.0.1/setup.cfg
+RSeQC-3.0.1/setup.py
+Removing intermediate container 8a111a77414d
+ ---> 425adefdf57a
+Step 5/13 : WORKDIR /opt2/RSeQC-3.0.1
+ ---> Running in f6267345b5e6
+Removing intermediate container f6267345b5e6
+ ---> 52fd8b77754f
+Step 6/13 : RUN python setup.py install
+ ---> Running in 40866b8d8f78
+running install
+running bdist_egg
+running egg_info
+writing lib/RSeQC.egg-info/PKG-INFO
+writing dependency_links to lib/RSeQC.egg-info/dependency_links.txt
+writing requirements to lib/RSeQC.egg-info/requires.txt
+writing top-level names to lib/RSeQC.egg-info/top_level.txt
+reading manifest file 'lib/RSeQC.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+[91mwarning: no files found matching '*.pyx' under directory 'lib'
+[0m[91mwarning: no files found matching '*.pxd' under directory 'lib'
+[0m[91mwarning: no files found matching '*.py' under directory 'src'
+[0mwriting manifest file 'lib/RSeQC.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib
+copying lib/psyco_full.py -> build/lib
+creating build/lib/qcmodule
+copying lib/qcmodule/cigar.py -> build/lib/qcmodule
+copying lib/qcmodule/mystat.py -> build/lib/qcmodule
+copying lib/qcmodule/twoList.py -> build/lib/qcmodule
+copying lib/qcmodule/wiggle.py -> build/lib/qcmodule
+copying lib/qcmodule/bam_cigar.py -> build/lib/qcmodule
+copying lib/qcmodule/quantile.py -> build/lib/qcmodule
+copying lib/qcmodule/orf.py -> build/lib/qcmodule
+copying lib/qcmodule/FrameKmer.py -> build/lib/qcmodule
+copying lib/qcmodule/SAM.py -> build/lib/qcmodule
+copying lib/qcmodule/fasta.py -> build/lib/qcmodule
+copying lib/qcmodule/changePoint.py -> build/lib/qcmodule
+copying lib/qcmodule/getBamFiles.py -> build/lib/qcmodule
+copying lib/qcmodule/dotProduct.py -> build/lib/qcmodule
+copying lib/qcmodule/__init__.py -> build/lib/qcmodule
+copying lib/qcmodule/annoGene.py -> build/lib/qcmodule
+copying lib/qcmodule/BED.py -> build/lib/qcmodule
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/cigar.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/mystat.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/twoList.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/wiggle.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/bam_cigar.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/quantile.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/orf.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/FrameKmer.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/SAM.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/fasta.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/changePoint.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/getBamFiles.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/dotProduct.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/__init__.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/annoGene.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/qcmodule/BED.py -> build/bdist.linux-x86_64/egg/qcmodule
+copying build/lib/psyco_full.py -> build/bdist.linux-x86_64/egg
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/cigar.py to cigar.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/mystat.py to mystat.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/twoList.py to twoList.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/wiggle.py to wiggle.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/bam_cigar.py to bam_cigar.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/quantile.py to quantile.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/orf.py to orf.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/FrameKmer.py to FrameKmer.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/SAM.py to SAM.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/fasta.py to fasta.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/changePoint.py to changePoint.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/getBamFiles.py to getBamFiles.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/dotProduct.py to dotProduct.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/__init__.py to __init__.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/annoGene.py to annoGene.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/qcmodule/BED.py to BED.cpython-38.pyc
+byte-compiling build/bdist.linux-x86_64/egg/psyco_full.py to psyco_full.cpython-38.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/scripts-3.8
+copying and adjusting scripts/geneBody_coverage.py -> build/scripts-3.8
+copying and adjusting scripts/infer_experiment.py -> build/scripts-3.8
+copying and adjusting scripts/bam2fq.py -> build/scripts-3.8
+copying and adjusting scripts/tin.py -> build/scripts-3.8
+copying and adjusting scripts/insertion_profile.py -> build/scripts-3.8
+copying and adjusting scripts/split_paired_bam.py -> build/scripts-3.8
+copying and adjusting scripts/read_NVC.py -> build/scripts-3.8
+copying and adjusting scripts/RNA_fragment_size.py -> build/scripts-3.8
+copying and adjusting scripts/RPKM_saturation.py -> build/scripts-3.8
+copying and adjusting scripts/normalize_bigwig.py -> build/scripts-3.8
+copying and adjusting scripts/bam2wig.py -> build/scripts-3.8
+copying and adjusting scripts/junction_annotation.py -> build/scripts-3.8
+copying and adjusting scripts/deletion_profile.py -> build/scripts-3.8
+copying and adjusting scripts/read_distribution.py -> build/scripts-3.8
+copying and adjusting scripts/geneBody_coverage2.py -> build/scripts-3.8
+copying and adjusting scripts/clipping_profile.py -> build/scripts-3.8
+copying and adjusting scripts/overlay_bigwig.py -> build/scripts-3.8
+copying and adjusting scripts/read_quality.py -> build/scripts-3.8
+copying and adjusting scripts/divide_bam.py -> build/scripts-3.8
+copying and adjusting scripts/read_GC.py -> build/scripts-3.8
+copying and adjusting scripts/read_hexamer.py -> build/scripts-3.8
+copying and adjusting scripts/split_bam.py -> build/scripts-3.8
+copying and adjusting scripts/bam_stat.py -> build/scripts-3.8
+copying and adjusting scripts/inner_distance.py -> build/scripts-3.8
+copying and adjusting scripts/FPKM_count.py -> build/scripts-3.8
+copying and adjusting scripts/mismatch_profile.py -> build/scripts-3.8
+copying and adjusting scripts/read_duplication.py -> build/scripts-3.8
+copying and adjusting scripts/junction_saturation.py -> build/scripts-3.8
+changing mode of build/scripts-3.8/geneBody_coverage.py from 644 to 755
+changing mode of build/scripts-3.8/infer_experiment.py from 644 to 755
+changing mode of build/scripts-3.8/bam2fq.py from 644 to 755
+changing mode of build/scripts-3.8/tin.py from 644 to 755
+changing mode of build/scripts-3.8/insertion_profile.py from 644 to 755
+changing mode of build/scripts-3.8/split_paired_bam.py from 644 to 755
+changing mode of build/scripts-3.8/read_NVC.py from 644 to 755
+changing mode of build/scripts-3.8/RNA_fragment_size.py from 644 to 755
+changing mode of build/scripts-3.8/RPKM_saturation.py from 644 to 755
+changing mode of build/scripts-3.8/normalize_bigwig.py from 644 to 755
+changing mode of build/scripts-3.8/bam2wig.py from 644 to 755
+changing mode of build/scripts-3.8/junction_annotation.py from 644 to 755
+changing mode of build/scripts-3.8/deletion_profile.py from 644 to 755
+changing mode of build/scripts-3.8/read_distribution.py from 644 to 755
+changing mode of build/scripts-3.8/geneBody_coverage2.py from 644 to 755
+changing mode of build/scripts-3.8/clipping_profile.py from 644 to 755
+changing mode of build/scripts-3.8/overlay_bigwig.py from 644 to 755
+changing mode of build/scripts-3.8/read_quality.py from 644 to 755
+changing mode of build/scripts-3.8/divide_bam.py from 644 to 755
+changing mode of build/scripts-3.8/read_GC.py from 644 to 755
+changing mode of build/scripts-3.8/read_hexamer.py from 644 to 755
+changing mode of build/scripts-3.8/split_bam.py from 644 to 755
+changing mode of build/scripts-3.8/bam_stat.py from 644 to 755
+changing mode of build/scripts-3.8/inner_distance.py from 644 to 755
+changing mode of build/scripts-3.8/FPKM_count.py from 644 to 755
+changing mode of build/scripts-3.8/mismatch_profile.py from 644 to 755
+changing mode of build/scripts-3.8/read_duplication.py from 644 to 755
+changing mode of build/scripts-3.8/junction_saturation.py from 644 to 755
+creating build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/geneBody_coverage.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/infer_experiment.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/bam2fq.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/tin.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/insertion_profile.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/split_paired_bam.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/read_NVC.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/RNA_fragment_size.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/RPKM_saturation.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/normalize_bigwig.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/bam2wig.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/junction_annotation.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/deletion_profile.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/read_distribution.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/geneBody_coverage2.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/clipping_profile.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/overlay_bigwig.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/read_quality.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/divide_bam.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/read_GC.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/read_hexamer.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/split_bam.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/bam_stat.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/inner_distance.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/FPKM_count.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/mismatch_profile.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/read_duplication.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-3.8/junction_saturation.py -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/geneBody_coverage.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/infer_experiment.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/bam2fq.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/tin.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/insertion_profile.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/split_paired_bam.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/read_NVC.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/RNA_fragment_size.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/RPKM_saturation.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/normalize_bigwig.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/bam2wig.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/junction_annotation.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/deletion_profile.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/read_distribution.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/geneBody_coverage2.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/clipping_profile.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/overlay_bigwig.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/read_quality.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/divide_bam.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/read_GC.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/read_hexamer.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/split_bam.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/bam_stat.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/inner_distance.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/FPKM_count.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/mismatch_profile.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/read_duplication.py to 755
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/junction_saturation.py to 755
+copying lib/RSeQC.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying lib/RSeQC.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying lib/RSeQC.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying lib/RSeQC.egg-info/not-zip-safe -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying lib/RSeQC.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying lib/RSeQC.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+creating dist
+creating 'dist/RSeQC-3.0.1-py3.8.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing RSeQC-3.0.1-py3.8.egg
+creating /usr/local/lib/python3.8/dist-packages/RSeQC-3.0.1-py3.8.egg
+Extracting RSeQC-3.0.1-py3.8.egg to /usr/local/lib/python3.8/dist-packages
+Adding RSeQC 3.0.1 to easy-install.pth file
+Installing geneBody_coverage.py script to /usr/local/bin
+Installing infer_experiment.py script to /usr/local/bin
+Installing bam2fq.py script to /usr/local/bin
+Installing tin.py script to /usr/local/bin
+Installing insertion_profile.py script to /usr/local/bin
+Installing split_paired_bam.py script to /usr/local/bin
+Installing read_NVC.py script to /usr/local/bin
+Installing RNA_fragment_size.py script to /usr/local/bin
+Installing RPKM_saturation.py script to /usr/local/bin
+Installing normalize_bigwig.py script to /usr/local/bin
+Installing bam2wig.py script to /usr/local/bin
+Installing junction_annotation.py script to /usr/local/bin
+Installing deletion_profile.py script to /usr/local/bin
+Installing read_distribution.py script to /usr/local/bin
+Installing geneBody_coverage2.py script to /usr/local/bin
+Installing clipping_profile.py script to /usr/local/bin
+Installing overlay_bigwig.py script to /usr/local/bin
+Installing read_quality.py script to /usr/local/bin
+Installing divide_bam.py script to /usr/local/bin
+Installing read_GC.py script to /usr/local/bin
+Installing read_hexamer.py script to /usr/local/bin
+Installing split_bam.py script to /usr/local/bin
+Installing bam_stat.py script to /usr/local/bin
+Installing inner_distance.py script to /usr/local/bin
+Installing FPKM_count.py script to /usr/local/bin
+Installing mismatch_profile.py script to /usr/local/bin
+Installing read_duplication.py script to /usr/local/bin
+Installing junction_saturation.py script to /usr/local/bin
+
+Installed /usr/local/lib/python3.8/dist-packages/RSeQC-3.0.1-py3.8.egg
+Processing dependencies for RSeQC==3.0.1
+Searching for pyBigWig
+Reading https://pypi.org/simple/pyBigWig/
+Downloading https://files.pythonhosted.org/packages/23/29/b51c3580427dd66dfecd63ffbe2dfa37175d3c898b289a3f27def1be34c0/pyBigWig-0.3.18.tar.gz#sha256=4c2a8c571b4100ad7c4c318c142eb48558646be52aaab28215a70426f5be31bc
+Best match: pyBigWig 0.3.18
+Processing pyBigWig-0.3.18.tar.gz
+Writing /tmp/easy_install-9_3455bm/pyBigWig-0.3.18/setup.cfg
+Running pyBigWig-0.3.18/setup.py -q bdist_egg --dist-dir /tmp/easy_install-9_3455bm/pyBigWig-0.3.18/egg-dist-tmp-jvnxyg01
+zip_safe flag not set; analyzing archive contents...
+__pycache__.pyBigWig.cpython-38: module references __file__
+pyBigWigTest.__pycache__.test.cpython-38: module references __file__
+[91m/tmp/easy_install-9_3455bm/pyBigWig-0.3.18/setup.py:8: DeprecationWarning: 
+
+  `numpy.distutils` is deprecated since NumPy 1.23.0, as a result
+  of the deprecation of `distutils` itself. It will be removed for
+  Python >= 3.12. For older Python versions it will remain present.
+  It is recommended to use `setuptools < 60.0` for those Python versions.
+  For more details, see:
+    https://numpy.org/devdocs/reference/distutils_status_migration.html 
+
+
+  from numpy.distutils.misc_util import get_info
+/usr/lib/python3.8/distutils/dist.py:274: UserWarning: Unknown distribution option: 'classifier'
+  warnings.warn(msg)
+No eggs found in /tmp/easy_install-9_3455bm/pyBigWig-0.3.18/egg-dist-tmp-jvnxyg01 (setup script problem?)
+[0m[91merror: The 'pyBigWig' distribution was not found and is required by RSeQC
+[0m

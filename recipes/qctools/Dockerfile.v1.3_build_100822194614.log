@@ -1,0 +1,202 @@
+Sending build context to Docker daemon  459.8kB
+Step 1/15 : FROM nciccbr/ccrgb_qctools:v1.2
+ ---> a37fe6cc89f9
+Step 2/15 : ENV TAG="v1.3"
+ ---> Using cache
+ ---> c951c5acdddc
+Step 3/15 : ADD https://github.com/smithlabcode/preseq/releases/download/v3.1.2/preseq-3.1.2.tar.gz /opt2
+
+
+ ---> 9f9255d0b44f
+Step 4/15 : WORKDIR /opt2
+ ---> Running in d8804fe6bf7c
+Removing intermediate container d8804fe6bf7c
+ ---> aae24e687a5c
+Step 5/15 : RUN tar -zxvf preseq-3.1.2.tar.gz && rm -f preseq-3.1.2.tar.gz && mkdir /opt2/preseq
+ ---> Running in 221c45497f1b
+preseq-3.1.2/
+preseq-3.1.2/configure
+preseq-3.1.2/src/
+preseq-3.1.2/src/moment_sequence.cpp
+preseq-3.1.2/src/to-mr.cpp
+preseq-3.1.2/src/preseq.cpp
+preseq-3.1.2/src/continued_fraction.hpp
+preseq-3.1.2/src/load_data_for_complexity.cpp
+preseq-3.1.2/src/moment_sequence.hpp
+preseq-3.1.2/src/continued_fraction.cpp
+preseq-3.1.2/src/smithlab_cpp/
+preseq-3.1.2/src/smithlab_cpp/OptionParser.cpp
+preseq-3.1.2/src/smithlab_cpp/dna_four_bit.cpp
+preseq-3.1.2/src/smithlab_cpp/configure
+preseq-3.1.2/src/smithlab_cpp/bisulfite_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/smithlab_os.cpp
+preseq-3.1.2/src/smithlab_cpp/QualityScore.cpp
+preseq-3.1.2/src/smithlab_cpp/missing
+preseq-3.1.2/src/smithlab_cpp/configure.ac
+preseq-3.1.2/src/smithlab_cpp/aclocal.m4
+preseq-3.1.2/src/smithlab_cpp/sim_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/chromosome_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/ar-lib
+preseq-3.1.2/src/smithlab_cpp/chromosome_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/htslib_wrapper_deprecated.cpp
+preseq-3.1.2/src/smithlab_cpp/zlib_wrapper.hpp
+preseq-3.1.2/src/smithlab_cpp/cigar_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/sim_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/Makefile.am
+preseq-3.1.2/src/smithlab_cpp/install-sh
+preseq-3.1.2/src/smithlab_cpp/smithlab_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/zlib_wrapper.cpp
+preseq-3.1.2/src/smithlab_cpp/dna_four_bit.hpp
+preseq-3.1.2/src/smithlab_cpp/QualityScore.hpp
+preseq-3.1.2/src/smithlab_cpp/cigar_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/depcomp
+preseq-3.1.2/src/smithlab_cpp/MappedRead.hpp
+preseq-3.1.2/src/smithlab_cpp/OptionParser.hpp
+preseq-3.1.2/src/smithlab_cpp/README.md
+preseq-3.1.2/src/smithlab_cpp/bisulfite_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/config.h.in
+preseq-3.1.2/src/smithlab_cpp/MappedRead.cpp
+preseq-3.1.2/src/smithlab_cpp/compile
+preseq-3.1.2/src/smithlab_cpp/GenomicRegion.cpp
+preseq-3.1.2/src/smithlab_cpp/Makefile.in
+preseq-3.1.2/src/smithlab_cpp/GenomicRegion.hpp
+preseq-3.1.2/src/smithlab_cpp/htslib_wrapper_deprecated.hpp
+preseq-3.1.2/src/smithlab_cpp/sam_record.hpp
+preseq-3.1.2/src/smithlab_cpp/m4/
+preseq-3.1.2/src/smithlab_cpp/m4/ax_cxx_compile_stdcxx_11.m4
+preseq-3.1.2/src/smithlab_cpp/m4/ax_cxx_compile_stdcxx.m4
+preseq-3.1.2/src/smithlab_cpp/sam_record.cpp
+preseq-3.1.2/src/smithlab_cpp/smithlab_os.hpp
+preseq-3.1.2/src/smithlab_cpp/smithlab_utils.hpp
+preseq-3.1.2/src/load_data_for_complexity.hpp
+preseq-3.1.2/missing
+preseq-3.1.2/configure.ac
+preseq-3.1.2/aclocal.m4
+preseq-3.1.2/gpl-3.0.txt
+preseq-3.1.2/data/
+preseq-3.1.2/data/SRR1301329_1M_hist.txt
+preseq-3.1.2/data/Shakespeare_hist.txt
+preseq-3.1.2/data/SRR1003759_5M_subset.mr
+preseq-3.1.2/data/Shakespeare_vals.txt
+preseq-3.1.2/data/additional_data.txt
+preseq-3.1.2/data/SRR1106616_5M_subset.bam
+preseq-3.1.2/Makefile.am
+preseq-3.1.2/install-sh
+preseq-3.1.2/docs/
+preseq-3.1.2/docs/InitialExperimentComplexityCurves_copy.pdf
+preseq-3.1.2/docs/manual.tex
+preseq-3.1.2/docs/comparing_scWGA_coverage.pdf
+preseq-3.1.2/docs/manual.pdf
+preseq-3.1.2/docs/RELEASE_NOTES.txt
+preseq-3.1.2/docs/biblio.bib
+preseq-3.1.2/docs/TCR_richness_vs_age_lm.pdf
+preseq-3.1.2/docs/compare_RNA_Capture_junction_complexity.pdf
+preseq-3.1.2/docs/FullExperiment_copy.pdf
+preseq-3.1.2/depcomp
+preseq-3.1.2/README.md
+preseq-3.1.2/config.h.in
+preseq-3.1.2/Makefile.in
+preseq-3.1.2/preseqR/
+preseq-3.1.2/preseqR/NAMESPACE
+preseq-3.1.2/preseqR/data/
+preseq-3.1.2/preseqR/data/SRR1301329_base.txt
+preseq-3.1.2/preseqR/data/Twitter.txt
+preseq-3.1.2/preseqR/data/Dickens.txt
+preseq-3.1.2/preseqR/data/SRR061157_k31.txt
+preseq-3.1.2/preseqR/data/SRR1301329_1M_read.txt
+preseq-3.1.2/preseqR/data/SRR611492.txt
+preseq-3.1.2/preseqR/data/SRR1301329_1M_base.txt
+preseq-3.1.2/preseqR/data/Shakespeare.txt
+preseq-3.1.2/preseqR/data/WillButterfly.txt
+preseq-3.1.2/preseqR/data/SRR611492_5M.txt
+preseq-3.1.2/preseqR/data/FisherButterfly.txt
+preseq-3.1.2/preseqR/data/SRR1301329_read.txt
+preseq-3.1.2/preseqR/.git
+preseq-3.1.2/preseqR/R/
+preseq-3.1.2/preseqR/R/sample_coverage.R
+preseq-3.1.2/preseqR/R/tools.R
+preseq-3.1.2/preseqR/R/sequencing.R
+preseq-3.1.2/preseqR/R/ztnb.R
+preseq-3.1.2/preseqR/R/kmer.R
+preseq-3.1.2/preseqR/R/simulation.R
+preseq-3.1.2/preseqR/R/rational_function.R
+preseq-3.1.2/preseqR/R/compared_methods.R
+preseq-3.1.2/preseqR/R/rSAC.R
+preseq-3.1.2/preseqR/man/
+preseq-3.1.2/preseqR/man/SRR1301329_1M_read.Rd
+preseq-3.1.2/preseqR/man/FisherButterfly.Rd
+preseq-3.1.2/preseqR/man/ztp.rSAC.Rd
+preseq-3.1.2/preseqR/man/SRR611492_5M.Rd
+preseq-3.1.2/preseqR/man/fisher.alpha.Rd
+preseq-3.1.2/preseqR/man/kmer.frac.curve.bootstrap.Rd
+preseq-3.1.2/preseqR/man/SRR1301329_read.Rd
+preseq-3.1.2/preseqR/man/preseqR.nonreplace.sampling.Rd
+preseq-3.1.2/preseqR/man/preseqR.rSAC.Rd
+preseq-3.1.2/preseqR/man/cs.rSAC.Rd
+preseq-3.1.2/preseqR/man/preseqR.rSAC.sequencing.rmdup.Rd
+preseq-3.1.2/preseqR/man/preseqR.interpolate.rSAC.Rd
+preseq-3.1.2/preseqR/man/ds.rSAC.bootsrap.Rd
+preseq-3.1.2/preseqR/man/kmer.frac.curve.Rd
+preseq-3.1.2/preseqR/man/preseqR.sample.cov.bootstrap.Rd
+preseq-3.1.2/preseqR/man/preseqR.optimal.sequencing.Rd
+preseq-3.1.2/preseqR/man/Twitter.Rd
+preseq-3.1.2/preseqR/man/preseqR.simu.hist.Rd
+preseq-3.1.2/preseqR/man/preseqR.rSAC.bootstrap.Rd
+preseq-3.1.2/preseqR/man/preseqR.sample.cov.Rd
+preseq-3.1.2/preseqR/man/SRR1301329_1M_base.Rd
+preseq-3.1.2/preseqR/man/preseqR.package.Rd
+preseq-3.1.2/preseqR/man/bbc.rSAC.Rd
+preseq-3.1.2/preseqR/man/SRR611492.Rd
+preseq-3.1.2/preseqR/man/ztnb.rSAC.Rd
+preseq-3.1.2/preseqR/man/SRR1301329_base.Rd
+preseq-3.1.2/preseqR/man/fisher.rSAC.Rd
+preseq-3.1.2/preseqR/man/Dickens.Rd
+preseq-3.1.2/preseqR/man/Shakespeare.Rd
+preseq-3.1.2/preseqR/man/WillButterfly.Rd
+preseq-3.1.2/preseqR/man/SRR061157_k31.Rd
+preseq-3.1.2/preseqR/man/ds.rSAC.Rd
+preseq-3.1.2/preseqR/man/preseqR.ztnb.em.Rd
+preseq-3.1.2/preseqR/README.md
+preseq-3.1.2/preseqR/DESCRIPTION
+preseq-3.1.2/preseqR/inst/
+preseq-3.1.2/preseqR/inst/CITATION
+preseq-3.1.2/m4/
+preseq-3.1.2/m4/ax_cxx_compile_stdcxx_11.m4
+preseq-3.1.2/m4/ax_cxx_compile_stdcxx.m4
+Removing intermediate container 221c45497f1b
+ ---> a501e4b40cfd
+Step 6/15 : WORKDIR /opt2/preseq-3.1.2
+ ---> Running in ef63120f534f
+Removing intermediate container ef63120f534f
+ ---> 12a28195be26
+Step 7/15 : RUN ./configure --prefix=/opt2/preseq --enable-hts && make && make install && cd /opt2 && rm -rf /opt2/preseq-3.1.2
+ ---> Running in 4bdd16195b4f
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking whether g++ supports C++11 features with -std=c++11... yes
+checking for ranlib... ranlib
+checking for hts_version in -lhts... no
+[91mconfigure: error: in `/opt2/preseq-3.1.2':
+[0m[91mconfigure: error: 
+
+Failed to locate HTSLib on your system. Please use the LDFLAGS and
+CPPFLAGS variables to specify the directories where the HTSLib library
+and headers can be found.
+
+See `config.log' for more details
+[0m

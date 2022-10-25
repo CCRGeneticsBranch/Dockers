@@ -1,0 +1,1440 @@
+Sending build context to Docker daemon    469kB
+Step 1/20 : FROM nciccbr/ccrgb_qctools:v1.2
+ ---> a37fe6cc89f9
+Step 2/20 : ENV TAG="v1.3"
+ ---> Using cache
+ ---> c951c5acdddc
+Step 3/20 : ADD https://github.com/samtools/htslib/releases/download/1.15.1/htslib-1.15.1.tar.bz2 /opt2
+
+
+ ---> cfd5c840ae1c
+Step 4/20 : WORKDIR /opt2
+ ---> Running in 3b0359c7236c
+Removing intermediate container 3b0359c7236c
+ ---> c1cc5cb6909a
+Step 5/20 : RUN tar xjvf htslib-1.15.1.tar.bz2 && rm -f htslib-1.15.1.tar.bz2 && mkdir -p /opt2/htslib
+ ---> Running in 3dd35e48e636
+htslib-1.15.1/
+htslib-1.15.1/INSTALL
+htslib-1.15.1/LICENSE
+htslib-1.15.1/Makefile
+htslib-1.15.1/NEWS
+htslib-1.15.1/README
+htslib-1.15.1/README.large_positions.md
+htslib-1.15.1/bcf_sr_sort.c
+htslib-1.15.1/bcf_sr_sort.h
+htslib-1.15.1/bgzf.c
+htslib-1.15.1/bgzip.1
+htslib-1.15.1/bgzip.c
+htslib-1.15.1/builddir_vars.mk.in
+htslib-1.15.1/config.mk.in
+htslib-1.15.1/configure.ac
+htslib-1.15.1/cram/
+htslib-1.15.1/cram/cram.h
+htslib-1.15.1/cram/cram_codecs.c
+htslib-1.15.1/cram/cram_codecs.h
+htslib-1.15.1/cram/cram_decode.c
+htslib-1.15.1/cram/cram_decode.h
+htslib-1.15.1/cram/cram_encode.c
+htslib-1.15.1/cram/cram_encode.h
+htslib-1.15.1/cram/cram_external.c
+htslib-1.15.1/cram/cram_index.c
+htslib-1.15.1/cram/cram_index.h
+htslib-1.15.1/cram/cram_io.c
+htslib-1.15.1/cram/cram_io.h
+htslib-1.15.1/cram/cram_samtools.h
+htslib-1.15.1/cram/cram_stats.c
+htslib-1.15.1/cram/cram_stats.h
+htslib-1.15.1/cram/cram_structs.h
+htslib-1.15.1/cram/mFILE.c
+htslib-1.15.1/cram/mFILE.h
+htslib-1.15.1/cram/misc.h
+htslib-1.15.1/cram/open_trace_file.c
+htslib-1.15.1/cram/open_trace_file.h
+htslib-1.15.1/cram/os.h
+htslib-1.15.1/cram/pooled_alloc.c
+htslib-1.15.1/cram/pooled_alloc.h
+htslib-1.15.1/cram/string_alloc.c
+htslib-1.15.1/cram/string_alloc.h
+htslib-1.15.1/errmod.c
+htslib-1.15.1/faidx.5
+htslib-1.15.1/faidx.c
+htslib-1.15.1/header.c
+htslib-1.15.1/header.h
+htslib-1.15.1/hfile.c
+htslib-1.15.1/hfile_gcs.c
+htslib-1.15.1/hfile_internal.h
+htslib-1.15.1/hfile_libcurl.c
+htslib-1.15.1/hfile_s3.c
+htslib-1.15.1/hfile_s3_write.c
+htslib-1.15.1/hts.c
+htslib-1.15.1/hts_expr.c
+htslib-1.15.1/hts_internal.h
+htslib-1.15.1/hts_os.c
+htslib-1.15.1/htscodecs/
+htslib-1.15.1/htscodecs/LICENSE.md
+htslib-1.15.1/htscodecs/MAINTAINERS.md
+htslib-1.15.1/htscodecs/NEWS
+htslib-1.15.1/htscodecs/htscodecs/
+htslib-1.15.1/htscodecs/htscodecs/arith_dynamic.c
+htslib-1.15.1/htscodecs/htscodecs/arith_dynamic.h
+htslib-1.15.1/htscodecs/htscodecs/c_range_coder.h
+htslib-1.15.1/htscodecs/htscodecs/c_simple_model.h
+htslib-1.15.1/htscodecs/htscodecs/fqzcomp_qual.c
+htslib-1.15.1/htscodecs/htscodecs/fqzcomp_qual.h
+htslib-1.15.1/htscodecs/htscodecs/htscodecs.c
+htslib-1.15.1/htscodecs/htscodecs/htscodecs.h
+htslib-1.15.1/htscodecs/htscodecs/htscodecs_endian.h
+htslib-1.15.1/htscodecs/htscodecs/pack.c
+htslib-1.15.1/htscodecs/htscodecs/pack.h
+htslib-1.15.1/htscodecs/htscodecs/pooled_alloc.h
+htslib-1.15.1/htscodecs/htscodecs/rANS_byte.h
+htslib-1.15.1/htscodecs/htscodecs/rANS_static.c
+htslib-1.15.1/htscodecs/htscodecs/rANS_static.h
+htslib-1.15.1/htscodecs/htscodecs/rANS_static4x16.h
+htslib-1.15.1/htscodecs/htscodecs/rANS_static4x16pr.c
+htslib-1.15.1/htscodecs/htscodecs/rANS_word.h
+htslib-1.15.1/htscodecs/htscodecs/rle.c
+htslib-1.15.1/htscodecs/htscodecs/rle.h
+htslib-1.15.1/htscodecs/htscodecs/tokenise_name3.c
+htslib-1.15.1/htscodecs/htscodecs/tokenise_name3.h
+htslib-1.15.1/htscodecs/htscodecs/utils.h
+htslib-1.15.1/htscodecs/htscodecs/varint.h
+htslib-1.15.1/htscodecs/htscodecs/varint2.h
+htslib-1.15.1/htscodecs/htscodecs/version.h
+htslib-1.15.1/htscodecs/tests/
+htslib-1.15.1/htscodecs/tests/arith.test
+htslib-1.15.1/htscodecs/tests/arith_dynamic_fuzz.c
+htslib-1.15.1/htscodecs/tests/arith_dynamic_test.c
+htslib-1.15.1/htscodecs/tests/dat/
+htslib-1.15.1/htscodecs/tests/dat/arith/
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.0
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.1
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.128
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.129
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.192
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.193
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.64
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.65
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.8
+htslib-1.15.1/htscodecs/tests/dat/arith/q4.9
+htslib-1.15.1/htscodecs/tests/dat/arith/q40+dir.0
+htslib-1.15.1/htscodecs/tests/dat/arith/q40+dir.1
+htslib-1.15.1/htscodecs/tests/dat/arith/q40+dir.64
+htslib-1.15.1/htscodecs/tests/dat/arith/q40+dir.65
+htslib-1.15.1/htscodecs/tests/dat/arith/q40+dir.8
+htslib-1.15.1/htscodecs/tests/dat/arith/q40+dir.9
+htslib-1.15.1/htscodecs/tests/dat/arith/q8.0
+htslib-1.15.1/htscodecs/tests/dat/arith/q8.1
+htslib-1.15.1/htscodecs/tests/dat/arith/q8.128
+htslib-1.15.1/htscodecs/tests/dat/arith/q8.129
+htslib-1.15.1/htscodecs/tests/dat/arith/q8.192
+htslib-1.15.1/htscodecs/tests/dat/arith/q8.193
+htslib-1.15.1/htscodecs/tests/dat/arith/q8.64
+htslib-1.15.1/htscodecs/tests/dat/arith/q8.65
+htslib-1.15.1/htscodecs/tests/dat/arith/qvar.0
+htslib-1.15.1/htscodecs/tests/dat/arith/qvar.1
+htslib-1.15.1/htscodecs/tests/dat/arith/qvar.64
+htslib-1.15.1/htscodecs/tests/dat/arith/qvar.65
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q4.0
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q4.1
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q4.2
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q4.3
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q40+dir.0
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q40+dir.1
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q40+dir.2
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q40+dir.3
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q8.0
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q8.1
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q8.2
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/q8.3
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/qvar.0
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/qvar.1
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/qvar.2
+htslib-1.15.1/htscodecs/tests/dat/fqzcomp/qvar.3
+htslib-1.15.1/htscodecs/tests/dat/q4
+htslib-1.15.1/htscodecs/tests/dat/q40+dir
+htslib-1.15.1/htscodecs/tests/dat/q8
+htslib-1.15.1/htscodecs/tests/dat/qvar
+htslib-1.15.1/htscodecs/tests/dat/r4x16/
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.0
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.1
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.128
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.129
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.192
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.193
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.64
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.65
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.8
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q4.9
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q40+dir.0
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q40+dir.1
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q40+dir.8
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q40+dir.9
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q8.0
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q8.1
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q8.128
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q8.129
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q8.192
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q8.193
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q8.64
+htslib-1.15.1/htscodecs/tests/dat/r4x16/q8.65
+htslib-1.15.1/htscodecs/tests/dat/r4x16/qvar.0
+htslib-1.15.1/htscodecs/tests/dat/r4x16/qvar.1
+htslib-1.15.1/htscodecs/tests/dat/r4x8/
+htslib-1.15.1/htscodecs/tests/dat/r4x8/q4.0
+htslib-1.15.1/htscodecs/tests/dat/r4x8/q4.1
+htslib-1.15.1/htscodecs/tests/dat/r4x8/q40+dir.0
+htslib-1.15.1/htscodecs/tests/dat/r4x8/q40+dir.1
+htslib-1.15.1/htscodecs/tests/dat/r4x8/q8.0
+htslib-1.15.1/htscodecs/tests/dat/r4x8/q8.1
+htslib-1.15.1/htscodecs/tests/dat/r4x8/qvar.0
+htslib-1.15.1/htscodecs/tests/dat/r4x8/qvar.1
+htslib-1.15.1/htscodecs/tests/fqzcomp.test
+htslib-1.15.1/htscodecs/tests/fqzcomp_qual_fuzz.c
+htslib-1.15.1/htscodecs/tests/fqzcomp_qual_test.c
+htslib-1.15.1/htscodecs/tests/names/
+htslib-1.15.1/htscodecs/tests/names/01.names
+htslib-1.15.1/htscodecs/tests/names/02.names
+htslib-1.15.1/htscodecs/tests/names/03.names
+htslib-1.15.1/htscodecs/tests/names/05.names
+htslib-1.15.1/htscodecs/tests/names/08.names
+htslib-1.15.1/htscodecs/tests/names/09.names
+htslib-1.15.1/htscodecs/tests/names/10.names
+htslib-1.15.1/htscodecs/tests/names/20.names
+htslib-1.15.1/htscodecs/tests/names/nv.names
+htslib-1.15.1/htscodecs/tests/names/nv2.names
+htslib-1.15.1/htscodecs/tests/names/rr.names
+htslib-1.15.1/htscodecs/tests/names/tok3/
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/01.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/02.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/03.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/05.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/08.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/09.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/10.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/20.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/nv.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/nv2.names.9
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.1
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.11
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.13
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.15
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.17
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.19
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.3
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.5
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.7
+htslib-1.15.1/htscodecs/tests/names/tok3/rr.names.9
+htslib-1.15.1/htscodecs/tests/rANS_static4x16pr_fuzz.c
+htslib-1.15.1/htscodecs/tests/rANS_static4x16pr_test.c
+htslib-1.15.1/htscodecs/tests/rANS_static_fuzz.c
+htslib-1.15.1/htscodecs/tests/rANS_static_test.c
+htslib-1.15.1/htscodecs/tests/rans4x16.test
+htslib-1.15.1/htscodecs/tests/rans4x8.test
+htslib-1.15.1/htscodecs/tests/tok3.test
+htslib-1.15.1/htscodecs/tests/tokenise_name3_fuzz.c
+htslib-1.15.1/htscodecs/tests/tokenise_name3_test.c
+htslib-1.15.1/htscodecs/tests/varint_test.c
+htslib-1.15.1/htscodecs_bundled.mk
+htslib-1.15.1/htscodecs_external.mk
+htslib-1.15.1/htsfile.1
+htslib-1.15.1/htsfile.c
+htslib-1.15.1/htslib-s3-plugin.7
+htslib-1.15.1/htslib.mk
+htslib-1.15.1/htslib.pc.in
+htslib-1.15.1/htslib/
+htslib-1.15.1/htslib/bgzf.h
+htslib-1.15.1/htslib/cram.h
+htslib-1.15.1/htslib/faidx.h
+htslib-1.15.1/htslib/hfile.h
+htslib-1.15.1/htslib/hts.h
+htslib-1.15.1/htslib/hts_defs.h
+htslib-1.15.1/htslib/hts_endian.h
+htslib-1.15.1/htslib/hts_expr.h
+htslib-1.15.1/htslib/hts_log.h
+htslib-1.15.1/htslib/hts_os.h
+htslib-1.15.1/htslib/kbitset.h
+htslib-1.15.1/htslib/kfunc.h
+htslib-1.15.1/htslib/khash.h
+htslib-1.15.1/htslib/khash_str2int.h
+htslib-1.15.1/htslib/klist.h
+htslib-1.15.1/htslib/knetfile.h
+htslib-1.15.1/htslib/kroundup.h
+htslib-1.15.1/htslib/kseq.h
+htslib-1.15.1/htslib/ksort.h
+htslib-1.15.1/htslib/kstring.h
+htslib-1.15.1/htslib/regidx.h
+htslib-1.15.1/htslib/sam.h
+htslib-1.15.1/htslib/synced_bcf_reader.h
+htslib-1.15.1/htslib/tbx.h
+htslib-1.15.1/htslib/thread_pool.h
+htslib-1.15.1/htslib/vcf.h
+htslib-1.15.1/htslib/vcf_sweep.h
+htslib-1.15.1/htslib/vcfutils.h
+htslib-1.15.1/htslib_vars.mk
+htslib-1.15.1/kfunc.c
+htslib-1.15.1/kstring.c
+htslib-1.15.1/m4/
+htslib-1.15.1/m4/hts_hide_dynamic_syms.m4
+htslib-1.15.1/m4/hts_prog_cc_warnings.m4
+htslib-1.15.1/m4/pkg.m4
+htslib-1.15.1/md5.c
+htslib-1.15.1/multipart.c
+htslib-1.15.1/os/
+htslib-1.15.1/os/lzma_stub.h
+htslib-1.15.1/os/rand.c
+htslib-1.15.1/plugin.c
+htslib-1.15.1/probaln.c
+htslib-1.15.1/realn.c
+htslib-1.15.1/regidx.c
+htslib-1.15.1/region.c
+htslib-1.15.1/sam.5
+htslib-1.15.1/sam.c
+htslib-1.15.1/sam_internal.h
+htslib-1.15.1/synced_bcf_reader.c
+htslib-1.15.1/tabix.1
+htslib-1.15.1/tabix.c
+htslib-1.15.1/tbx.c
+htslib-1.15.1/test/
+htslib-1.15.1/test/auxf#values.sam
+htslib-1.15.1/test/auxf#values_java.cram
+htslib-1.15.1/test/auxf.fa
+htslib-1.15.1/test/auxf.fa.fai
+htslib-1.15.1/test/base_mods/
+htslib-1.15.1/test/base_mods/MM-chebi.out
+htslib-1.15.1/test/base_mods/MM-chebi.sam
+htslib-1.15.1/test/base_mods/MM-double.out
+htslib-1.15.1/test/base_mods/MM-double.sam
+htslib-1.15.1/test/base_mods/MM-multi.out
+htslib-1.15.1/test/base_mods/MM-multi.sam
+htslib-1.15.1/test/base_mods/MM-orient.sam
+htslib-1.15.1/test/base_mods/MM-pileup.out
+htslib-1.15.1/test/base_mods/MM-pileup.sam
+htslib-1.15.1/test/base_mods/MM-pileup2.out
+htslib-1.15.1/test/base_mods/MM-pileup2.sam
+htslib-1.15.1/test/base_mods/base-mods.sh
+htslib-1.15.1/test/base_mods/base-mods.tst
+htslib-1.15.1/test/bcf-sr/
+htslib-1.15.1/test/bcf-sr/merge.noidx.a.vcf
+htslib-1.15.1/test/bcf-sr/merge.noidx.abc.expected.out
+htslib-1.15.1/test/bcf-sr/merge.noidx.b.vcf
+htslib-1.15.1/test/bcf-sr/merge.noidx.c.vcf
+htslib-1.15.1/test/bcf-sr/merge.noidx.hdr_order.vcf
+htslib-1.15.1/test/bcf-sr/merge.noidx.rec_order.vcf
+htslib-1.15.1/test/bgziptest.txt
+htslib-1.15.1/test/bgziptest.txt.gz
+htslib-1.15.1/test/bgziptest.txt.gz.gzi
+htslib-1.15.1/test/c1#bounds.sam
+htslib-1.15.1/test/c1#clip.sam
+htslib-1.15.1/test/c1#noseq.sam
+htslib-1.15.1/test/c1#pad1.sam
+htslib-1.15.1/test/c1#pad2.sam
+htslib-1.15.1/test/c1#pad3.sam
+htslib-1.15.1/test/c1#unknown.sam
+htslib-1.15.1/test/c1.fa
+htslib-1.15.1/test/c1.fa.fai
+htslib-1.15.1/test/c2#pad.sam
+htslib-1.15.1/test/c2.fa
+htslib-1.15.1/test/c2.fa.fai
+htslib-1.15.1/test/ce#1.sam
+htslib-1.15.1/test/ce#1000.sam
+htslib-1.15.1/test/ce#2.sam
+htslib-1.15.1/test/ce#5.sam
+htslib-1.15.1/test/ce#5b.sam
+htslib-1.15.1/test/ce#5b_java.cram
+htslib-1.15.1/test/ce#large_seq.sam
+htslib-1.15.1/test/ce#supp.sam
+htslib-1.15.1/test/ce#tag_depadded.sam
+htslib-1.15.1/test/ce#tag_padded.sam
+htslib-1.15.1/test/ce#unmap.sam
+htslib-1.15.1/test/ce#unmap1.sam
+htslib-1.15.1/test/ce#unmap2.sam
+htslib-1.15.1/test/ce.fa
+htslib-1.15.1/test/ce.fa.fai
+htslib-1.15.1/test/colons.bam
+htslib-1.15.1/test/colons.bam.bai
+htslib-1.15.1/test/compare_sam.pl
+htslib-1.15.1/test/cross_validate.sh
+htslib-1.15.1/test/emptyfile
+htslib-1.15.1/test/faidx.fa
+htslib-1.15.1/test/fastq/
+htslib-1.15.1/test/fastq/fastq.tst
+htslib-1.15.1/test/fastq/filter_casava-q.sam
+htslib-1.15.1/test/fastq/filter_casava.fa
+htslib-1.15.1/test/fastq/filter_casava.fq
+htslib-1.15.1/test/fastq/filter_casava.sam
+htslib-1.15.1/test/fastq/inter_aux-q.sam
+htslib-1.15.1/test/fastq/inter_aux.sam
+htslib-1.15.1/test/fastq/inter_casava-q.sam
+htslib-1.15.1/test/fastq/inter_casava.sam
+htslib-1.15.1/test/fastq/inter_casavaOX-q.sam
+htslib-1.15.1/test/fastq/inter_casavaOX.sam
+htslib-1.15.1/test/fastq/inter_noaux-q.sam
+htslib-1.15.1/test/fastq/inter_noaux.sam
+htslib-1.15.1/test/fastq/interleaved.fa
+htslib-1.15.1/test/fastq/interleaved.fq
+htslib-1.15.1/test/fastq/interleaved_casava.fa
+htslib-1.15.1/test/fastq/interleaved_casava.fq
+htslib-1.15.1/test/fastq/minimal-q.sam
+htslib-1.15.1/test/fastq/minimal.fa
+htslib-1.15.1/test/fastq/minimal.fq
+htslib-1.15.1/test/fastq/minimal.sam
+htslib-1.15.1/test/fastq/multiline-q.sam
+htslib-1.15.1/test/fastq/multiline.fa
+htslib-1.15.1/test/fastq/multiline.fq
+htslib-1.15.1/test/fastq/multiline.sam
+htslib-1.15.1/test/fastq/name2-q.sam
+htslib-1.15.1/test/fastq/name2.fa
+htslib-1.15.1/test/fastq/name2.fq
+htslib-1.15.1/test/fastq/name2.sam
+htslib-1.15.1/test/fastq/r1-q.sam
+htslib-1.15.1/test/fastq/r1.fa
+htslib-1.15.1/test/fastq/r1.fq
+htslib-1.15.1/test/fastq/r1.sam
+htslib-1.15.1/test/fastq/r2-q.sam
+htslib-1.15.1/test/fastq/r2.fa
+htslib-1.15.1/test/fastq/r2.fq
+htslib-1.15.1/test/fastq/r2.sam
+htslib-1.15.1/test/fastq/single.fa
+htslib-1.15.1/test/fastq/single.fq
+htslib-1.15.1/test/fastq/single_aux-q.sam
+htslib-1.15.1/test/fastq/single_aux.sam
+htslib-1.15.1/test/fastq/single_noaux-q.sam
+htslib-1.15.1/test/fastq/single_noaux.sam
+htslib-1.15.1/test/fastq/test-fastq.sh
+htslib-1.15.1/test/fastqs.fq
+htslib-1.15.1/test/fastqs_README.txt
+htslib-1.15.1/test/fieldarith.c
+htslib-1.15.1/test/fieldarith.sam
+htslib-1.15.1/test/formatcols.vcf
+htslib-1.15.1/test/formatmissing-out.vcf
+htslib-1.15.1/test/formatmissing.vcf
+htslib-1.15.1/test/fuzz/
+htslib-1.15.1/test/fuzz/hts_open_fuzzer.c
+htslib-1.15.1/test/header_syms.pl
+htslib-1.15.1/test/hfile.c
+htslib-1.15.1/test/hts_endian.c
+htslib-1.15.1/test/index.bam.bai
+htslib-1.15.1/test/index.bam.csi
+htslib-1.15.1/test/index.bcf.csi
+htslib-1.15.1/test/index.cram.crai
+htslib-1.15.1/test/index.sam
+htslib-1.15.1/test/index.sam.gz.bai
+htslib-1.15.1/test/index.sam.gz.csi
+htslib-1.15.1/test/index.vcf
+htslib-1.15.1/test/index.vcf.gz.csi
+htslib-1.15.1/test/index.vcf.gz.tbi
+htslib-1.15.1/test/index2.sam
+htslib-1.15.1/test/index_dos.sam
+htslib-1.15.1/test/longrefs/
+htslib-1.15.1/test/longrefs/index.expected1.vcf
+htslib-1.15.1/test/longrefs/index.expected2.vcf
+htslib-1.15.1/test/longrefs/index.vcf
+htslib-1.15.1/test/longrefs/longref.sam
+htslib-1.15.1/test/longrefs/longref_itr.expected.sam
+htslib-1.15.1/test/longrefs/longref_multi.expected.sam
+htslib-1.15.1/test/maintainer/
+htslib-1.15.1/test/maintainer/check_copyright.pl
+htslib-1.15.1/test/maintainer/check_spaces.pl
+htslib-1.15.1/test/md#1.sam
+htslib-1.15.1/test/md.fa
+htslib-1.15.1/test/md.fa.fai
+htslib-1.15.1/test/mpileup/
+htslib-1.15.1/test/mpileup/c1#pad1.out
+htslib-1.15.1/test/mpileup/c1#pad1.sam
+htslib-1.15.1/test/mpileup/c1#pad2.out
+htslib-1.15.1/test/mpileup/c1#pad2.sam
+htslib-1.15.1/test/mpileup/c1#pad3.out
+htslib-1.15.1/test/mpileup/c1#pad3.sam
+htslib-1.15.1/test/mpileup/mp_D.out
+htslib-1.15.1/test/mpileup/mp_D.sam
+htslib-1.15.1/test/mpileup/mp_DI.out
+htslib-1.15.1/test/mpileup/mp_DI.sam
+htslib-1.15.1/test/mpileup/mp_I.out
+htslib-1.15.1/test/mpileup/mp_I.sam
+htslib-1.15.1/test/mpileup/mp_ID.out
+htslib-1.15.1/test/mpileup/mp_ID.sam
+htslib-1.15.1/test/mpileup/mp_N.out
+htslib-1.15.1/test/mpileup/mp_N.sam
+htslib-1.15.1/test/mpileup/mp_N2.out
+htslib-1.15.1/test/mpileup/mp_N2.sam
+htslib-1.15.1/test/mpileup/mp_P.out
+htslib-1.15.1/test/mpileup/mp_P.sam
+htslib-1.15.1/test/mpileup/mpileup.tst
+htslib-1.15.1/test/mpileup/small.bam
+htslib-1.15.1/test/mpileup/small.out
+htslib-1.15.1/test/mpileup/test-pileup.sh
+htslib-1.15.1/test/no_hdr_sq_1.bam
+htslib-1.15.1/test/no_hdr_sq_1.bam.csi
+htslib-1.15.1/test/no_hdr_sq_1.expected.sam
+htslib-1.15.1/test/noroundtrip-out.vcf
+htslib-1.15.1/test/noroundtrip.vcf
+htslib-1.15.1/test/pileup.c
+htslib-1.15.1/test/pileup_mod.c
+htslib-1.15.1/test/plugins-dlhts.c
+htslib-1.15.1/test/range.bam
+htslib-1.15.1/test/range.bam.bai
+htslib-1.15.1/test/range.cram
+htslib-1.15.1/test/range.cram.crai
+htslib-1.15.1/test/range.out
+htslib-1.15.1/test/realn01.fa
+htslib-1.15.1/test/realn01.fa.fai
+htslib-1.15.1/test/realn01.sam
+htslib-1.15.1/test/realn01_exp-a.sam
+htslib-1.15.1/test/realn01_exp-e.sam
+htslib-1.15.1/test/realn01_exp.sam
+htslib-1.15.1/test/realn02-r.sam
+htslib-1.15.1/test/realn02.fa
+htslib-1.15.1/test/realn02.fa.fai
+htslib-1.15.1/test/realn02.sam
+htslib-1.15.1/test/realn02_exp-a.sam
+htslib-1.15.1/test/realn02_exp-e.sam
+htslib-1.15.1/test/realn02_exp.sam
+htslib-1.15.1/test/sam.c
+htslib-1.15.1/test/sam_filter/
+htslib-1.15.1/test/sam_filter/filter.sh
+htslib-1.15.1/test/sam_filter/filter.tst
+htslib-1.15.1/test/sam_filter/func1.out
+htslib-1.15.1/test/sam_filter/func2.out
+htslib-1.15.1/test/sam_filter/func3.out
+htslib-1.15.1/test/sam_filter/func4.out
+htslib-1.15.1/test/sam_filter/int1.out
+htslib-1.15.1/test/sam_filter/int2.out
+htslib-1.15.1/test/sam_filter/int3.out
+htslib-1.15.1/test/sam_filter/string1.out
+htslib-1.15.1/test/sam_filter/string2.out
+htslib-1.15.1/test/sam_filter/string3.out
+htslib-1.15.1/test/sam_filter/string4.out
+htslib-1.15.1/test/sam_filter/string5.out
+htslib-1.15.1/test/sam_filter/string6.out
+htslib-1.15.1/test/sam_filter/string7.out
+htslib-1.15.1/test/simple_test_driver.sh
+htslib-1.15.1/test/tabix.out
+htslib-1.15.1/test/tabix/
+htslib-1.15.1/test/tabix/bed_file.Y.100200.out
+htslib-1.15.1/test/tabix/bed_file.bed
+htslib-1.15.1/test/tabix/bed_file.separate.out
+htslib-1.15.1/test/tabix/gff_file.X.2934832.2935190.out
+htslib-1.15.1/test/tabix/gff_file.gff
+htslib-1.15.1/test/tabix/large_chr.20.1.2147483647.out
+htslib-1.15.1/test/tabix/large_chr.vcf
+htslib-1.15.1/test/tabix/tabix.tst
+htslib-1.15.1/test/tabix/test-tabix.sh
+htslib-1.15.1/test/tabix/vcf_file.1.3000151.out
+htslib-1.15.1/test/tabix/vcf_file.2.3199812.out
+htslib-1.15.1/test/tabix/vcf_file.bcf
+htslib-1.15.1/test/tabix/vcf_file.vcf
+htslib-1.15.1/test/test-bcf-sr.c
+htslib-1.15.1/test/test-bcf-sr.pl
+htslib-1.15.1/test/test-bcf-translate.c
+htslib-1.15.1/test/test-bcf-translate.out
+htslib-1.15.1/test/test-logging.pl
+htslib-1.15.1/test/test-parse-reg.c
+htslib-1.15.1/test/test-regidx.c
+htslib-1.15.1/test/test-vcf-api.c
+htslib-1.15.1/test/test-vcf-api.out
+htslib-1.15.1/test/test-vcf-hdr-in.vcf
+htslib-1.15.1/test/test-vcf-hdr.out
+htslib-1.15.1/test/test-vcf-sweep.c
+htslib-1.15.1/test/test-vcf-sweep.out
+htslib-1.15.1/test/test.pl
+htslib-1.15.1/test/test_bgzf.c
+htslib-1.15.1/test/test_expr.c
+htslib-1.15.1/test/test_index.c
+htslib-1.15.1/test/test_introspection.c
+htslib-1.15.1/test/test_kfunc.c
+htslib-1.15.1/test/test_kstring.c
+htslib-1.15.1/test/test_mod.c
+htslib-1.15.1/test/test_realn.c
+htslib-1.15.1/test/test_str2int.c
+htslib-1.15.1/test/test_view.c
+htslib-1.15.1/test/thrash_threads1.c
+htslib-1.15.1/test/thrash_threads2.c
+htslib-1.15.1/test/thrash_threads3.c
+htslib-1.15.1/test/thrash_threads4.c
+htslib-1.15.1/test/thrash_threads5.c
+htslib-1.15.1/test/thrash_threads6.c
+htslib-1.15.1/test/thrash_threads7.c
+htslib-1.15.1/test/thread_pool.md
+htslib-1.15.1/test/vcf_meta_meta.vcf
+htslib-1.15.1/test/with-shlib.sh
+htslib-1.15.1/test/xx#MD.sam
+htslib-1.15.1/test/xx#MD2.sam
+htslib-1.15.1/test/xx#blank.sam
+htslib-1.15.1/test/xx#large_aux.sam
+htslib-1.15.1/test/xx#large_aux2.sam
+htslib-1.15.1/test/xx#large_aux_java.cram
+htslib-1.15.1/test/xx#minimal.sam
+htslib-1.15.1/test/xx#pair.sam
+htslib-1.15.1/test/xx#repeated.sam
+htslib-1.15.1/test/xx#rg.sam
+htslib-1.15.1/test/xx#tlen.sam
+htslib-1.15.1/test/xx#tlen2.sam
+htslib-1.15.1/test/xx#triplet.sam
+htslib-1.15.1/test/xx#unsorted.sam
+htslib-1.15.1/test/xx.fa
+htslib-1.15.1/test/xx.fa.fai
+htslib-1.15.1/textutils.c
+htslib-1.15.1/textutils_internal.h
+htslib-1.15.1/thread_pool.c
+htslib-1.15.1/thread_pool_internal.h
+htslib-1.15.1/vcf.5
+htslib-1.15.1/vcf.c
+htslib-1.15.1/vcf_sweep.c
+htslib-1.15.1/vcfutils.c
+htslib-1.15.1/version.sh
+htslib-1.15.1/config.h.in
+htslib-1.15.1/configure
+Removing intermediate container 3dd35e48e636
+ ---> f7563075bc6f
+Step 6/20 : WORKDIR /opt2/htslib-1.15.1
+ ---> Running in 39917dbaca0c
+Removing intermediate container 39917dbaca0c
+ ---> 0f851ca0605d
+Step 7/20 : RUN ./configure && make && make install && cd /opt2 && rm -rf /opt2/htslib-1.15.1
+ ---> Running in f103a4ddaf04
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for ranlib... ranlib
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for C compiler warning flags... -Wall
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking shared library type for unknown-Linux... plain .so
+checking whether the compiler accepts -fvisibility=hidden... yes
+checking how to run the C preprocessor... gcc -E
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for gmtime_r... yes
+checking for fsync... yes
+checking for drand48... yes
+checking for srand48_deterministic... no
+checking whether fdatasync is declared... yes
+checking for fdatasync... yes
+checking for library containing log... -lm
+checking for zlib.h... yes
+checking for inflate in -lz... yes
+checking for library containing recv... none required
+checking for bzlib.h... yes
+checking for BZ2_bzBuffToBuffCompress in -lbz2... yes
+checking for lzma.h... yes
+checking for lzma_easy_buffer_encode in -llzma... yes
+checking whether htscodecs files are present... yes
+checking for libdeflate.h... no
+checking for libdeflate_deflate_compress in -ldeflate... no
+checking for curl/curl.h... yes
+checking for curl_easy_pause in -lcurl... yes
+checking for CCHmac... no
+checking for library containing HMAC... -lcrypto
+checking for library containing regcomp... none required
+checking whether PTHREAD_MUTEX_RECURSIVE is declared... yes
+configure: creating ./config.status
+config.status: creating config.mk
+config.status: creating htslib.pc.tmp
+config.status: creating config.h
+config.status: linking htscodecs_bundled.mk to htscodecs.mk
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o kfunc.o kfunc.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o kstring.o kstring.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o bcf_sr_sort.o bcf_sr_sort.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o bgzf.o bgzf.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o errmod.o errmod.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o faidx.o faidx.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o header.o header.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o hfile.o hfile.c
+echo '#define HTS_VERSION_TEXT "1.15.1"' > version.h
+echo '#define HTS_CC "gcc"' > config_vars.h
+echo '#define HTS_CPPFLAGS ""' >> config_vars.h
+echo '#define HTS_CFLAGS "-Wall -g -O2 -fvisibility=hidden"' >> config_vars.h
+echo '#define HTS_LDFLAGS "-fvisibility=hidden "' >> config_vars.h
+echo '#define HTS_LIBS "-llzma -lbz2 -lz -lm   -lcurl -lcrypto"' >> config_vars.h
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o hts.o hts.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o hts_expr.o hts_expr.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o hts_os.o hts_os.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o md5.o md5.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o multipart.o multipart.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o probaln.o probaln.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o realn.o realn.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o regidx.o regidx.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o region.o region.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o sam.o sam.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o synced_bcf_reader.o synced_bcf_reader.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o vcf_sweep.o vcf_sweep.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o tbx.o tbx.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o textutils.o textutils.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o thread_pool.o thread_pool.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o vcf.o vcf.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o vcfutils.o vcfutils.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/cram_codecs.o cram/cram_codecs.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/cram_decode.o cram/cram_decode.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/cram_encode.o cram/cram_encode.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/cram_external.o cram/cram_external.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/cram_index.o cram/cram_index.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/cram_io.o cram/cram_io.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/cram_stats.o cram/cram_stats.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/mFILE.o cram/mFILE.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/open_trace_file.o cram/open_trace_file.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/pooled_alloc.o cram/pooled_alloc.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o cram/string_alloc.o cram/string_alloc.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o htscodecs/htscodecs/arith_dynamic.o htscodecs/htscodecs/arith_dynamic.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o htscodecs/htscodecs/fqzcomp_qual.o htscodecs/htscodecs/fqzcomp_qual.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o htscodecs/htscodecs/htscodecs.o htscodecs/htscodecs/htscodecs.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o htscodecs/htscodecs/pack.o htscodecs/htscodecs/pack.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o htscodecs/htscodecs/rANS_static4x16pr.o htscodecs/htscodecs/rANS_static4x16pr.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o htscodecs/htscodecs/rANS_static.o htscodecs/htscodecs/rANS_static.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o htscodecs/htscodecs/rle.o htscodecs/htscodecs/rle.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o htscodecs/htscodecs/tokenise_name3.o htscodecs/htscodecs/tokenise_name3.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o hfile_libcurl.o hfile_libcurl.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o hfile_gcs.o hfile_gcs.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o hfile_s3.o hfile_s3.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o hfile_s3_write.o hfile_s3_write.c
+ar -rc libhts.a kfunc.o kstring.o bcf_sr_sort.o bgzf.o errmod.o faidx.o header.o hfile.o hts.o hts_expr.o hts_os.o md5.o multipart.o probaln.o realn.o regidx.o region.o sam.o synced_bcf_reader.o vcf_sweep.o tbx.o textutils.o thread_pool.o vcf.o vcfutils.o cram/cram_codecs.o cram/cram_decode.o cram/cram_encode.o cram/cram_external.o cram/cram_index.o cram/cram_io.o cram/cram_stats.o cram/mFILE.o cram/open_trace_file.o cram/pooled_alloc.o cram/string_alloc.o htscodecs/htscodecs/arith_dynamic.o htscodecs/htscodecs/fqzcomp_qual.o htscodecs/htscodecs/htscodecs.o htscodecs/htscodecs/pack.o htscodecs/htscodecs/rANS_static4x16pr.o htscodecs/htscodecs/rANS_static.o htscodecs/htscodecs/rle.o htscodecs/htscodecs/tokenise_name3.o   hfile_libcurl.o hfile_gcs.o hfile_s3.o hfile_s3_write.o
+ranlib libhts.a
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o kfunc.pico kfunc.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o kstring.pico kstring.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o bcf_sr_sort.pico bcf_sr_sort.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o bgzf.pico bgzf.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o errmod.pico errmod.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o faidx.pico faidx.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o header.pico header.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o hfile.pico hfile.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o hts.pico hts.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o hts_expr.pico hts_expr.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o hts_os.pico hts_os.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o md5.pico md5.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o multipart.pico multipart.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o probaln.pico probaln.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o realn.pico realn.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o regidx.pico regidx.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o region.pico region.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o sam.pico sam.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o synced_bcf_reader.pico synced_bcf_reader.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o vcf_sweep.pico vcf_sweep.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o tbx.pico tbx.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o textutils.pico textutils.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o thread_pool.pico thread_pool.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o vcf.pico vcf.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o vcfutils.pico vcfutils.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/cram_codecs.pico cram/cram_codecs.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/cram_decode.pico cram/cram_decode.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/cram_encode.pico cram/cram_encode.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/cram_external.pico cram/cram_external.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/cram_index.pico cram/cram_index.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/cram_io.pico cram/cram_io.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/cram_stats.pico cram/cram_stats.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/mFILE.pico cram/mFILE.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/open_trace_file.pico cram/open_trace_file.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/pooled_alloc.pico cram/pooled_alloc.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o cram/string_alloc.pico cram/string_alloc.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o htscodecs/htscodecs/arith_dynamic.pico htscodecs/htscodecs/arith_dynamic.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o htscodecs/htscodecs/fqzcomp_qual.pico htscodecs/htscodecs/fqzcomp_qual.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o htscodecs/htscodecs/htscodecs.pico htscodecs/htscodecs/htscodecs.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o htscodecs/htscodecs/pack.pico htscodecs/htscodecs/pack.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o htscodecs/htscodecs/rANS_static4x16pr.pico htscodecs/htscodecs/rANS_static4x16pr.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o htscodecs/htscodecs/rANS_static.pico htscodecs/htscodecs/rANS_static.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o htscodecs/htscodecs/rle.pico htscodecs/htscodecs/rle.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o htscodecs/htscodecs/tokenise_name3.pico htscodecs/htscodecs/tokenise_name3.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o hfile_libcurl.pico hfile_libcurl.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o hfile_gcs.pico hfile_gcs.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o hfile_s3.pico hfile_s3.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -fpic -c -o hfile_s3_write.pico hfile_s3_write.c
+gcc -shared -Wl,-soname,libhts.so.3 -fvisibility=hidden  -o libhts.so kfunc.pico kstring.pico bcf_sr_sort.pico bgzf.pico errmod.pico faidx.pico header.pico hfile.pico hts.pico hts_expr.pico hts_os.pico md5.pico multipart.pico probaln.pico realn.pico regidx.pico region.pico sam.pico synced_bcf_reader.pico vcf_sweep.pico tbx.pico textutils.pico thread_pool.pico vcf.pico vcfutils.pico cram/cram_codecs.pico cram/cram_decode.pico cram/cram_encode.pico cram/cram_external.pico cram/cram_index.pico cram/cram_io.pico cram/cram_stats.pico cram/mFILE.pico cram/open_trace_file.pico cram/pooled_alloc.pico cram/string_alloc.pico htscodecs/htscodecs/arith_dynamic.pico htscodecs/htscodecs/fqzcomp_qual.pico htscodecs/htscodecs/htscodecs.pico htscodecs/htscodecs/pack.pico htscodecs/htscodecs/rANS_static4x16pr.pico htscodecs/htscodecs/rANS_static.pico htscodecs/htscodecs/rle.pico htscodecs/htscodecs/tokenise_name3.pico hfile_libcurl.pico hfile_gcs.pico hfile_s3.pico hfile_s3_write.pico -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+ln -sf libhts.so libhts.so.3
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o bgzip.o bgzip.c
+gcc -fvisibility=hidden  -o bgzip bgzip.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o htsfile.o htsfile.c
+gcc -fvisibility=hidden  -o htsfile htsfile.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o tabix.o tabix.c
+gcc -fvisibility=hidden  -o tabix tabix.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/hts_endian.o test/hts_endian.c
+gcc -fvisibility=hidden  -o test/hts_endian test/hts_endian.o -llzma -lbz2 -lz -lm   -lcurl -lcrypto
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/fieldarith.o test/fieldarith.c
+gcc -fvisibility=hidden  -o test/fieldarith test/fieldarith.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/hfile.o test/hfile.c
+gcc -fvisibility=hidden  -o test/hfile test/hfile.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/pileup.o test/pileup.c
+gcc -fvisibility=hidden  -o test/pileup test/pileup.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/pileup_mod.o test/pileup_mod.c
+gcc -fvisibility=hidden  -o test/pileup_mod test/pileup_mod.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/plugins-dlhts.o test/plugins-dlhts.c
+gcc -fvisibility=hidden  -o test/plugins-dlhts test/plugins-dlhts.o -llzma -lbz2 -lz -lm   -lcurl -lcrypto
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/sam.o test/sam.c
+gcc -fvisibility=hidden  -o test/sam test/sam.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_bgzf.o test/test_bgzf.c
+gcc -fvisibility=hidden  -o test/test_bgzf test/test_bgzf.o libhts.a -lz -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_expr.o test/test_expr.c
+gcc -fvisibility=hidden  -o test/test_expr test/test_expr.o libhts.a -lz -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_kfunc.o test/test_kfunc.c
+gcc -fvisibility=hidden  -o test/test_kfunc test/test_kfunc.o libhts.a -lz -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_kstring.o test/test_kstring.c
+gcc -fvisibility=hidden  -o test/test_kstring test/test_kstring.o libhts.a -lz -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_mod.o test/test_mod.c
+gcc -fvisibility=hidden  -o test/test_mod test/test_mod.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_realn.o test/test_realn.c
+gcc -fvisibility=hidden  -o test/test_realn test/test_realn.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test-regidx.o test/test-regidx.c
+gcc -fvisibility=hidden  -o test/test-regidx test/test-regidx.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_str2int.o test/test_str2int.c
+gcc -fvisibility=hidden  -o test/test_str2int test/test_str2int.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_view.o test/test_view.c
+gcc -fvisibility=hidden  -o test/test_view test/test_view.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_index.o test/test_index.c
+gcc -fvisibility=hidden  -o test/test_index test/test_index.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test-vcf-api.o test/test-vcf-api.c
+gcc -fvisibility=hidden  -o test/test-vcf-api test/test-vcf-api.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test-vcf-sweep.o test/test-vcf-sweep.c
+gcc -fvisibility=hidden  -o test/test-vcf-sweep test/test-vcf-sweep.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test-bcf-sr.o test/test-bcf-sr.c
+gcc -fvisibility=hidden  -o test/test-bcf-sr test/test-bcf-sr.o libhts.a -lz -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/fuzz/hts_open_fuzzer.o test/fuzz/hts_open_fuzzer.c
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test-bcf-translate.o test/test-bcf-translate.c
+gcc -fvisibility=hidden  -o test/test-bcf-translate test/test-bcf-translate.o libhts.a -lz -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test-parse-reg.o test/test-parse-reg.c
+gcc -fvisibility=hidden  -o test/test-parse-reg test/test-parse-reg.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+gcc -Wall -g -O2 -fvisibility=hidden -I.  -c -o test/test_introspection.o test/test_introspection.c
+gcc -fvisibility=hidden  -o test/test_introspection test/test_introspection.o libhts.a -llzma -lbz2 -lz -lm   -lcurl -lcrypto -lpthread
+sed -n '/^static_libs=/s/[^=]*=/HTSLIB_static_LIBS = /p;/^static_ldflags=/s/[^=]*=/HTSLIB_static_LDFLAGS = /p' htslib.pc.tmp > htslib_static.mk
+sed -e 's#@-includedir@#'`pwd`'#g;s#@-libdir@#'`pwd`'#g' htslib.pc.tmp > htslib-uninstalled.pc
+mkdir -p -m 755 /usr/local/bin /usr/local/include /usr/local/include/htslib /usr/local/lib /usr/local/share/man/man1 /usr/local/share/man/man5 /usr/local/share/man/man7 /usr/local/lib/pkgconfig
+if test -n ""; then mkdir -p -m 755 ; fi
+install -p -m 644 libhts.so /usr/local/lib/libhts.so.1.15.1
+ln -sf libhts.so.1.15.1 /usr/local/lib/libhts.so
+ln -sf libhts.so.1.15.1 /usr/local/lib/libhts.so.3
+sed -e 's#@-includedir@#/usr/local/include#g;s#@-libdir@#/usr/local/lib#g;s#@-PACKAGE_VERSION@#1.15.1#g' htslib.pc.tmp > /usr/local/lib/pkgconfig/htslib.pc
+chmod 644 /usr/local/lib/pkgconfig/htslib.pc
+install -p bgzip htsfile tabix /usr/local/bin
+if test -n ""; then install -p  ; fi
+install -p -m 644 htslib/*.h /usr/local/include/htslib
+install -p -m 644 libhts.a /usr/local/lib/libhts.a
+install -p -m 644 bgzip.1 htsfile.1 tabix.1 /usr/local/share/man/man1
+install -p -m 644 faidx.5 sam.5 vcf.5 /usr/local/share/man/man5
+install -p -m 644 htslib-s3-plugin.7 /usr/local/share/man/man7
+Removing intermediate container f103a4ddaf04
+ ---> f4c2685d4587
+Step 8/20 : ADD https://github.com/smithlabcode/preseq/releases/download/v3.1.2/preseq-3.1.2.tar.gz /opt2
+
+
+ ---> b10d66b617b7
+Step 9/20 : WORKDIR /opt2
+ ---> Running in 8a152da44915
+Removing intermediate container 8a152da44915
+ ---> 5f3c3bcbec2a
+Step 10/20 : RUN tar -zxvf preseq-3.1.2.tar.gz && rm -f preseq-3.1.2.tar.gz && mkdir /opt2/preseq
+ ---> Running in 4c6cec6a5930
+preseq-3.1.2/
+preseq-3.1.2/configure
+preseq-3.1.2/src/
+preseq-3.1.2/src/moment_sequence.cpp
+preseq-3.1.2/src/to-mr.cpp
+preseq-3.1.2/src/preseq.cpp
+preseq-3.1.2/src/continued_fraction.hpp
+preseq-3.1.2/src/load_data_for_complexity.cpp
+preseq-3.1.2/src/moment_sequence.hpp
+preseq-3.1.2/src/continued_fraction.cpp
+preseq-3.1.2/src/smithlab_cpp/
+preseq-3.1.2/src/smithlab_cpp/OptionParser.cpp
+preseq-3.1.2/src/smithlab_cpp/dna_four_bit.cpp
+preseq-3.1.2/src/smithlab_cpp/configure
+preseq-3.1.2/src/smithlab_cpp/bisulfite_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/smithlab_os.cpp
+preseq-3.1.2/src/smithlab_cpp/QualityScore.cpp
+preseq-3.1.2/src/smithlab_cpp/missing
+preseq-3.1.2/src/smithlab_cpp/configure.ac
+preseq-3.1.2/src/smithlab_cpp/aclocal.m4
+preseq-3.1.2/src/smithlab_cpp/sim_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/chromosome_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/ar-lib
+preseq-3.1.2/src/smithlab_cpp/chromosome_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/htslib_wrapper_deprecated.cpp
+preseq-3.1.2/src/smithlab_cpp/zlib_wrapper.hpp
+preseq-3.1.2/src/smithlab_cpp/cigar_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/sim_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/Makefile.am
+preseq-3.1.2/src/smithlab_cpp/install-sh
+preseq-3.1.2/src/smithlab_cpp/smithlab_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/zlib_wrapper.cpp
+preseq-3.1.2/src/smithlab_cpp/dna_four_bit.hpp
+preseq-3.1.2/src/smithlab_cpp/QualityScore.hpp
+preseq-3.1.2/src/smithlab_cpp/cigar_utils.hpp
+preseq-3.1.2/src/smithlab_cpp/depcomp
+preseq-3.1.2/src/smithlab_cpp/MappedRead.hpp
+preseq-3.1.2/src/smithlab_cpp/OptionParser.hpp
+preseq-3.1.2/src/smithlab_cpp/README.md
+preseq-3.1.2/src/smithlab_cpp/bisulfite_utils.cpp
+preseq-3.1.2/src/smithlab_cpp/config.h.in
+preseq-3.1.2/src/smithlab_cpp/MappedRead.cpp
+preseq-3.1.2/src/smithlab_cpp/compile
+preseq-3.1.2/src/smithlab_cpp/GenomicRegion.cpp
+preseq-3.1.2/src/smithlab_cpp/Makefile.in
+preseq-3.1.2/src/smithlab_cpp/GenomicRegion.hpp
+preseq-3.1.2/src/smithlab_cpp/htslib_wrapper_deprecated.hpp
+preseq-3.1.2/src/smithlab_cpp/sam_record.hpp
+preseq-3.1.2/src/smithlab_cpp/m4/
+preseq-3.1.2/src/smithlab_cpp/m4/ax_cxx_compile_stdcxx_11.m4
+preseq-3.1.2/src/smithlab_cpp/m4/ax_cxx_compile_stdcxx.m4
+preseq-3.1.2/src/smithlab_cpp/sam_record.cpp
+preseq-3.1.2/src/smithlab_cpp/smithlab_os.hpp
+preseq-3.1.2/src/smithlab_cpp/smithlab_utils.hpp
+preseq-3.1.2/src/load_data_for_complexity.hpp
+preseq-3.1.2/missing
+preseq-3.1.2/configure.ac
+preseq-3.1.2/aclocal.m4
+preseq-3.1.2/gpl-3.0.txt
+preseq-3.1.2/data/
+preseq-3.1.2/data/SRR1301329_1M_hist.txt
+preseq-3.1.2/data/Shakespeare_hist.txt
+preseq-3.1.2/data/SRR1003759_5M_subset.mr
+preseq-3.1.2/data/Shakespeare_vals.txt
+preseq-3.1.2/data/additional_data.txt
+preseq-3.1.2/data/SRR1106616_5M_subset.bam
+preseq-3.1.2/Makefile.am
+preseq-3.1.2/install-sh
+preseq-3.1.2/docs/
+preseq-3.1.2/docs/InitialExperimentComplexityCurves_copy.pdf
+preseq-3.1.2/docs/manual.tex
+preseq-3.1.2/docs/comparing_scWGA_coverage.pdf
+preseq-3.1.2/docs/manual.pdf
+preseq-3.1.2/docs/RELEASE_NOTES.txt
+preseq-3.1.2/docs/biblio.bib
+preseq-3.1.2/docs/TCR_richness_vs_age_lm.pdf
+preseq-3.1.2/docs/compare_RNA_Capture_junction_complexity.pdf
+preseq-3.1.2/docs/FullExperiment_copy.pdf
+preseq-3.1.2/depcomp
+preseq-3.1.2/README.md
+preseq-3.1.2/config.h.in
+preseq-3.1.2/Makefile.in
+preseq-3.1.2/preseqR/
+preseq-3.1.2/preseqR/NAMESPACE
+preseq-3.1.2/preseqR/data/
+preseq-3.1.2/preseqR/data/SRR1301329_base.txt
+preseq-3.1.2/preseqR/data/Twitter.txt
+preseq-3.1.2/preseqR/data/Dickens.txt
+preseq-3.1.2/preseqR/data/SRR061157_k31.txt
+preseq-3.1.2/preseqR/data/SRR1301329_1M_read.txt
+preseq-3.1.2/preseqR/data/SRR611492.txt
+preseq-3.1.2/preseqR/data/SRR1301329_1M_base.txt
+preseq-3.1.2/preseqR/data/Shakespeare.txt
+preseq-3.1.2/preseqR/data/WillButterfly.txt
+preseq-3.1.2/preseqR/data/SRR611492_5M.txt
+preseq-3.1.2/preseqR/data/FisherButterfly.txt
+preseq-3.1.2/preseqR/data/SRR1301329_read.txt
+preseq-3.1.2/preseqR/.git
+preseq-3.1.2/preseqR/R/
+preseq-3.1.2/preseqR/R/sample_coverage.R
+preseq-3.1.2/preseqR/R/tools.R
+preseq-3.1.2/preseqR/R/sequencing.R
+preseq-3.1.2/preseqR/R/ztnb.R
+preseq-3.1.2/preseqR/R/kmer.R
+preseq-3.1.2/preseqR/R/simulation.R
+preseq-3.1.2/preseqR/R/rational_function.R
+preseq-3.1.2/preseqR/R/compared_methods.R
+preseq-3.1.2/preseqR/R/rSAC.R
+preseq-3.1.2/preseqR/man/
+preseq-3.1.2/preseqR/man/SRR1301329_1M_read.Rd
+preseq-3.1.2/preseqR/man/FisherButterfly.Rd
+preseq-3.1.2/preseqR/man/ztp.rSAC.Rd
+preseq-3.1.2/preseqR/man/SRR611492_5M.Rd
+preseq-3.1.2/preseqR/man/fisher.alpha.Rd
+preseq-3.1.2/preseqR/man/kmer.frac.curve.bootstrap.Rd
+preseq-3.1.2/preseqR/man/SRR1301329_read.Rd
+preseq-3.1.2/preseqR/man/preseqR.nonreplace.sampling.Rd
+preseq-3.1.2/preseqR/man/preseqR.rSAC.Rd
+preseq-3.1.2/preseqR/man/cs.rSAC.Rd
+preseq-3.1.2/preseqR/man/preseqR.rSAC.sequencing.rmdup.Rd
+preseq-3.1.2/preseqR/man/preseqR.interpolate.rSAC.Rd
+preseq-3.1.2/preseqR/man/ds.rSAC.bootsrap.Rd
+preseq-3.1.2/preseqR/man/kmer.frac.curve.Rd
+preseq-3.1.2/preseqR/man/preseqR.sample.cov.bootstrap.Rd
+preseq-3.1.2/preseqR/man/preseqR.optimal.sequencing.Rd
+preseq-3.1.2/preseqR/man/Twitter.Rd
+preseq-3.1.2/preseqR/man/preseqR.simu.hist.Rd
+preseq-3.1.2/preseqR/man/preseqR.rSAC.bootstrap.Rd
+preseq-3.1.2/preseqR/man/preseqR.sample.cov.Rd
+preseq-3.1.2/preseqR/man/SRR1301329_1M_base.Rd
+preseq-3.1.2/preseqR/man/preseqR.package.Rd
+preseq-3.1.2/preseqR/man/bbc.rSAC.Rd
+preseq-3.1.2/preseqR/man/SRR611492.Rd
+preseq-3.1.2/preseqR/man/ztnb.rSAC.Rd
+preseq-3.1.2/preseqR/man/SRR1301329_base.Rd
+preseq-3.1.2/preseqR/man/fisher.rSAC.Rd
+preseq-3.1.2/preseqR/man/Dickens.Rd
+preseq-3.1.2/preseqR/man/Shakespeare.Rd
+preseq-3.1.2/preseqR/man/WillButterfly.Rd
+preseq-3.1.2/preseqR/man/SRR061157_k31.Rd
+preseq-3.1.2/preseqR/man/ds.rSAC.Rd
+preseq-3.1.2/preseqR/man/preseqR.ztnb.em.Rd
+preseq-3.1.2/preseqR/README.md
+preseq-3.1.2/preseqR/DESCRIPTION
+preseq-3.1.2/preseqR/inst/
+preseq-3.1.2/preseqR/inst/CITATION
+preseq-3.1.2/m4/
+preseq-3.1.2/m4/ax_cxx_compile_stdcxx_11.m4
+preseq-3.1.2/m4/ax_cxx_compile_stdcxx.m4
+Removing intermediate container 4c6cec6a5930
+ ---> d16d7c8cbf0a
+Step 11/20 : WORKDIR /opt2/preseq-3.1.2
+ ---> Running in 7923d122968c
+Removing intermediate container 7923d122968c
+ ---> 7ba9522436ea
+Step 12/20 : RUN ./configure --prefix=/opt2/preseq --enable-hts && make && make install && cd /opt2 && rm -rf /opt2/preseq-3.1.2
+ ---> Running in 5ceb3506f936
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking whether g++ supports C++11 features with -std=c++11... yes
+checking for ranlib... ranlib
+checking for hts_version in -lhts... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+=== configuring in src/smithlab_cpp (/opt2/preseq-3.1.2/src/smithlab_cpp)
+configure: running /bin/bash ./configure --disable-option-checking '--prefix=/opt2/preseq'  '--enable-hts' --cache-file=/dev/null --srcdir=.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of g++... gcc3
+checking whether g++ supports C++11 features with -std=c++11... yes
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for ranlib... ranlib
+checking for hts_version in -lhts... yes
+checking for zlibVersion in -lz... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+make  all-recursive
+make[1]: Entering directory '/opt2/preseq-3.1.2'
+Making all in src/smithlab_cpp
+make[2]: Entering directory '/opt2/preseq-3.1.2/src/smithlab_cpp'
+make  all-am
+make[3]: Entering directory '/opt2/preseq-3.1.2/src/smithlab_cpp'
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT GenomicRegion.o -MD -MP -MF .deps/GenomicRegion.Tpo -c -o GenomicRegion.o GenomicRegion.cpp
+mv -f .deps/GenomicRegion.Tpo .deps/GenomicRegion.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT MappedRead.o -MD -MP -MF .deps/MappedRead.Tpo -c -o MappedRead.o MappedRead.cpp
+mv -f .deps/MappedRead.Tpo .deps/MappedRead.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT OptionParser.o -MD -MP -MF .deps/OptionParser.Tpo -c -o OptionParser.o OptionParser.cpp
+mv -f .deps/OptionParser.Tpo .deps/OptionParser.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT QualityScore.o -MD -MP -MF .deps/QualityScore.Tpo -c -o QualityScore.o QualityScore.cpp
+mv -f .deps/QualityScore.Tpo .deps/QualityScore.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT bisulfite_utils.o -MD -MP -MF .deps/bisulfite_utils.Tpo -c -o bisulfite_utils.o bisulfite_utils.cpp
+mv -f .deps/bisulfite_utils.Tpo .deps/bisulfite_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT chromosome_utils.o -MD -MP -MF .deps/chromosome_utils.Tpo -c -o chromosome_utils.o chromosome_utils.cpp
+mv -f .deps/chromosome_utils.Tpo .deps/chromosome_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT sim_utils.o -MD -MP -MF .deps/sim_utils.Tpo -c -o sim_utils.o sim_utils.cpp
+mv -f .deps/sim_utils.Tpo .deps/sim_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT smithlab_os.o -MD -MP -MF .deps/smithlab_os.Tpo -c -o smithlab_os.o smithlab_os.cpp
+mv -f .deps/smithlab_os.Tpo .deps/smithlab_os.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT smithlab_utils.o -MD -MP -MF .deps/smithlab_utils.Tpo -c -o smithlab_utils.o smithlab_utils.cpp
+mv -f .deps/smithlab_utils.Tpo .deps/smithlab_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT zlib_wrapper.o -MD -MP -MF .deps/zlib_wrapper.Tpo -c -o zlib_wrapper.o zlib_wrapper.cpp
+mv -f .deps/zlib_wrapper.Tpo .deps/zlib_wrapper.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT dna_four_bit.o -MD -MP -MF .deps/dna_four_bit.Tpo -c -o dna_four_bit.o dna_four_bit.cpp
+mv -f .deps/dna_four_bit.Tpo .deps/dna_four_bit.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT cigar_utils.o -MD -MP -MF .deps/cigar_utils.Tpo -c -o cigar_utils.o cigar_utils.cpp
+mv -f .deps/cigar_utils.Tpo .deps/cigar_utils.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT htslib_wrapper_deprecated.o -MD -MP -MF .deps/htslib_wrapper_deprecated.Tpo -c -o htslib_wrapper_deprecated.o htslib_wrapper_deprecated.cpp
+mv -f .deps/htslib_wrapper_deprecated.Tpo .deps/htslib_wrapper_deprecated.Po
+g++ -std=c++11 -DHAVE_CONFIG_H -I.     -O3 -MT sam_record.o -MD -MP -MF .deps/sam_record.Tpo -c -o sam_record.o sam_record.cpp
+mv -f .deps/sam_record.Tpo .deps/sam_record.Po
+rm -f libsmithlab_cpp.a
+ar cru libsmithlab_cpp.a GenomicRegion.o MappedRead.o OptionParser.o QualityScore.o bisulfite_utils.o chromosome_utils.o sim_utils.o smithlab_os.o smithlab_utils.o zlib_wrapper.o dna_four_bit.o cigar_utils.o htslib_wrapper_deprecated.o sam_record.o 
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0mranlib libsmithlab_cpp.a
+make[3]: Leaving directory '/opt2/preseq-3.1.2/src/smithlab_cpp'
+make[2]: Leaving directory '/opt2/preseq-3.1.2/src/smithlab_cpp'
+make[2]: Entering directory '/opt2/preseq-3.1.2'
+depbase=`echo src/preseq.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/preseq.o -MD -MP -MF $depbase.Tpo -c -o src/preseq.o src/preseq.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/continued_fraction.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/continued_fraction.o -MD -MP -MF $depbase.Tpo -c -o src/continued_fraction.o src/continued_fraction.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/load_data_for_complexity.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/load_data_for_complexity.o -MD -MP -MF $depbase.Tpo -c -o src/load_data_for_complexity.o src/load_data_for_complexity.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/moment_sequence.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/moment_sequence.o -MD -MP -MF $depbase.Tpo -c -o src/moment_sequence.o src/moment_sequence.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+g++ -std=c++11  -O2    -o preseq src/preseq.o src/continued_fraction.o src/load_data_for_complexity.o src/moment_sequence.o src/smithlab_cpp/libsmithlab_cpp.a -lhts 
+depbase=`echo src/to-mr.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++ -std=c++11 -DHAVE_CONFIG_H -I.  -I ./src/smithlab_cpp -DHAVE_HTSLIB   -O2  -MT src/to-mr.o -MD -MP -MF $depbase.Tpo -c -o src/to-mr.o src/to-mr.cpp &&\
+mv -f $depbase.Tpo $depbase.Po
+g++ -std=c++11  -O2    -o to-mr src/to-mr.o src/smithlab_cpp/libsmithlab_cpp.a -lhts 
+make[2]: Leaving directory '/opt2/preseq-3.1.2'
+make[1]: Leaving directory '/opt2/preseq-3.1.2'
+make[1]: Entering directory '/opt2/preseq-3.1.2'
+make[2]: Entering directory '/opt2/preseq-3.1.2'
+ /usr/bin/mkdir -p '/opt2/preseq/bin'
+  /usr/bin/install -c preseq to-mr '/opt2/preseq/bin'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/opt2/preseq-3.1.2'
+make[1]: Leaving directory '/opt2/preseq-3.1.2'
+Removing intermediate container 5ceb3506f936
+ ---> f19f12815878
+Step 13/20 : ENV PATH="/opt2/preseq:$PATH"
+ ---> Running in 55174ca154a7
+Removing intermediate container 55174ca154a7
+ ---> 8ee16d57a704
+Step 14/20 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> a847f736e2a2
+Step 15/20 : COPY printversions.bash /opt2/printversions
+ ---> 0d3c4fa5ecb0
+Step 16/20 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile &&     chmod a+rx /opt2/printversions
+ ---> Running in 994144e4ff54
+Removing intermediate container 994144e4ff54
+ ---> 5bb64b86f138
+Step 17/20 : RUN /opt2/printversions > /opt2/versions.txt; exit 0
+ ---> Running in af0100cf1342
+[91m
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.17-r1188
+Contact: Heng Li <lh3@sanger.ac.uk>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries
+
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
+
+[0m[91mopenjdk version "1.8.0_342"
+[0m[91mOpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07)
+[0m[91mOpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)
+[0m[91mjavac 1.8.0_342
+[0m[91m[1m[31mUSAGE: PicardCommandLine [32m<program name>[1m[31m [-h]
+
+[0m[1m[31mAvailable Programs:
+[0m[37m--------------------------------------------------------------------------------------
+[0m[31mBase Calling:                                    Tools that process sequencing machine data, e.g. Illumina base calls, and detect sequencing level attributes, e.g. adapters[0m
+[32m    CheckIlluminaDirectory                       [31m[36mAsserts the validity for specified Illumina basecalling data.  [0m
+[32m    CollectIlluminaBasecallingMetrics            [31m[36mCollects Illumina Basecalling metrics for a sequencing run.  [0m
+[32m    CollectIlluminaLaneMetrics                   [31m[36mCollects Illumina lane metrics for the given BaseCalling analysis directory.[0m
+[32m    ExtractIlluminaBarcodes                      [31m[36mTool determines the barcode for each read in an Illumina lane.  [0m
+[32m    IlluminaBasecallsToFastq                     [31m[36mGenerate FASTQ file(s) from Illumina basecall read data.  [0m
+[32m    IlluminaBasecallsToSam                       [31m[36mTransforms raw Illumina sequencing data into an unmapped SAM, BAM or CRAM file.[0m
+[32m    MarkIlluminaAdapters                         [31m[36mReads a SAM/BAM/CRAM file and rewrites it with new adapter-trimming tags.  [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mDiagnostics and Quality Control:                 Tools that collect sequencing quality related and comparative metrics[0m
+[32m    AccumulateQualityYieldMetrics                [31m[36mCombines multiple QualityYieldMetrics files into a single file.[0m
+[32m    AccumulateVariantCallingMetrics              [31m[36mCombines multiple Variant Calling Metrics files into a single file[0m
+[32m    BamIndexStats                                [31m[36mGenerate index statistics from a BAM file[0m
+[32m    CalculateFingerprintMetrics                  [31m[36mCalculate statistics on fingerprints, checking their viability[0m
+[32m    CalculateReadGroupChecksum                   [31m[36mCreates a hash code based on the read groups (RG).  [0m
+[32m    CheckDuplicateMarking                        [31m[36mChecks the consistency of duplicate markings.[0m
+[32m    CheckFingerprint                             [31m[36mComputes a fingerprint from the supplied input (SAM/BAM/CRAM or VCF) file and compares it to the provided genotypes[0m
+[32m    CheckTerminatorBlock                         [31m[36mAsserts the provided gzip file's (e.g., BAM) last block is well-formed; RC 100 otherwise[0m
+[32m    ClusterCrosscheckMetrics                     [31m[36mClusters the results of a CrosscheckFingerprints run by LOD score[0m
+[32m    CollectAlignmentSummaryMetrics               [31m[36m<b>Produces a summary of alignment metrics from a SAM or BAM file.</b>  [0m
+[32m    CollectArraysVariantCallingMetrics           [31m[36mCollects summary and per-sample from the provided arrays VCF file[0m
+[32m    CollectBaseDistributionByCycle               [31m[36mChart the nucleotide distribution per cycle in a SAM or BAM file[0m
+[32m    CollectGcBiasMetrics                         [31m[36mCollect metrics regarding GC bias. [0m
+[32m    CollectHiSeqXPfFailMetrics                   [31m[36mClassify PF-Failing reads in a HiSeqX Illumina Basecalling directory into various categories.[0m
+[32m    CollectHsMetrics                             [31m[36mCollects hybrid-selection (HS) metrics for a SAM or BAM file.  [0m
+[32m    CollectIndependentReplicateMetrics           [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mEstimates the rate of independent replication rate of reads within a bam. 
+[0m
+[32m    CollectInsertSizeMetrics                     [31m[36mCollect metrics about the insert size distribution of a paired-end library. [0m
+[32m    CollectJumpingLibraryMetrics                 [31m[36mCollect jumping library metrics. [0m
+[32m    CollectMultipleMetrics                       [31m[36mCollect multiple classes of metrics. [0m
+[32m    CollectOxoGMetrics                           [31m[36mCollect metrics to assess oxidative artifacts.[0m
+[32m    CollectQualityYieldMetrics                   [31m[36mCollect metrics about reads that pass quality thresholds and Illumina-specific filters.  [0m
+[32m    CollectRawWgsMetrics                         [31m[36mCollect whole genome sequencing-related metrics.  [0m
+[32m    CollectRnaSeqMetrics                         [31m[36mProduces RNA alignment metrics for a SAM or BAM file.  [0m
+[32m    CollectRrbsMetrics                           [31m[36m<b>Collects metrics from reduced representation bisulfite sequencing (Rrbs) data.</b>  [0m
+[32m    CollectSamErrorMetrics                       [31m[36mProgram to collect error metrics on bases stratified in various ways.[0m
+[32m    CollectSequencingArtifactMetrics             [31m[36mCollect metrics to quantify single-base sequencing artifacts.  [0m
+[32m    CollectTargetedPcrMetrics                    [31m[36mCalculate PCR-related metrics from targeted sequencing data. [0m
+[32m    CollectVariantCallingMetrics                 [31m[36mCollects per-sample and aggregate (spanning all samples) metrics from the provided VCF file[0m
+[32m    CollectWgsMetrics                            [31m[36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.[0m
+[32m    CollectWgsMetricsWithNonZeroCoverage         [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.  [0m
+[32m    CompareMetrics                               [31m[36mCompare two metrics files.[0m
+[32m    CompareSAMs                                  [31m[36mCompare two input SAM/BAM/CRAM files.  [0m
+[32m    ConvertHaplotypeDatabaseToVcf                [31m[36mConvert Haplotype database file to vcf[0m
+[32m    ConvertSequencingArtifactToOxoG              [31m[36mExtract OxoG metrics from generalized artifacts metrics.  [0m
+[32m    CrosscheckFingerprints                       [31m[36mChecks that all data in the input files appear to have come from the same individual[0m
+[32m    CrosscheckReadGroupFingerprints              [31m[36mDEPRECATED: USE CrosscheckFingerprints. [0m
+[32m    EstimateLibraryComplexity                    [31m[36mEstimates the numbers of unique molecules in a sequencing library.  [0m
+[32m    ExtractFingerprint                           [31m[36mComputes a fingerprint from the input file.[0m
+[32m    IdentifyContaminant                          [31m[36mComputes a fingerprint from the supplied SAM/BAM file, given a contamination estimate.[0m
+[32m    LiftOverHaplotypeMap                         [31m[36mLifts over a haplotype database from one reference to another[0m
+[32m    MeanQualityByCycle                           [31m[36mCollect mean quality by cycle.[0m
+[32m    QualityScoreDistribution                     [31m[36mChart the distribution of quality scores.  [0m
+[32m    ValidateSamFile                              [31m[36mValidates a SAM/BAM/CRAM file.[0m
+[32m    ViewSam                                      [31m[36mPrints a SAM or BAM file to the screen[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mGenotyping Arrays Manipulation:                  Tools that manipulate data generated by Genotyping arrays[0m
+[32m    BpmToNormalizationManifestCsv                [31m[36mProgram to convert an Illumina bpm file into a bpm.csv file.[0m
+[32m    CombineGenotypingArrayVcfs                   [31m[36mProgram to combine multiple genotyping array VCF files into one VCF.[0m
+[32m    CompareGtcFiles                              [31m[36mCompares two GTC files.[0m
+[32m    CreateBafRegressMetricsFile                  [31m[36mProgram to generate a picard metrics file from the output of the bafRegress tool.[0m
+[32m    CreateExtendedIlluminaManifest               [31m[36mCreate an Extended Illumina Mani[0m[91mfest for usage by the Picard tool GtcToVcf[0m
+[32m    CreateVerifyIDIntensityContaminationMetricsFile    [31m[36mProgram to generate a picard metrics file from the output of the VerifyIDIntensity tool.[0m
+[32m    GtcToVcf                                     [31m[36mProgram to convert an Illumina GTC file to a VCF[0m
+[32m    MergePedIntoVcf                              [31m[36mProgram to merge a single-sample ped file from zCall into a single-sample VCF.[0m
+[32m    VcfToAdpc                                    [31m[36mProgram to convert an Arrays VCF to an ADPC file.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mIntervals Manipulation:                          Tools that process genomic intervals in various formats[0m
+[32m    BedToIntervalList                            [31m[36mConverts a BED file to a Picard Interval List.  [0m
+[32m    IntervalListToBed                            [31m[36mConverts an Picard IntervalList file to a BED file.[0m
+[32m    IntervalListTools                            [31m[36mA tool for performing various IntervalList manipulations[0m
+[32m    LiftOverIntervalList                         [31m[36mLifts over an interval list from one reference build to another. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mOther:                                           Miscellaneous tools, e.g. those that aid in data streaming[0m
+[32m    FifoBuffer                                   [31m[36mProvides a large, FIFO buffer that can be used to buffer input and output streams between programs.[0m
+[32m    SortGff                                      [31m[36mSorts a gff3 file, and adds flush directives[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mRead Data Manipulation:                          Tools that manipulate read data in SAM, BAM or CRAM format[0m
+[32m    AddCommentsToBam                             [31m[36mAdds comments to the header of a BAM file.[0m
+[32m    AddOATag                                     [31m[36mRecord current alignment information to OA tag.[0m
+[32m    AddOrReplaceReadGroups                       [31m[36mAssigns all the reads in a file to a single new read-group.[0m
+[32m    BamToBfq                                     [31m[36mConverts a BAM file into a BFQ (binary fastq formatted) file[0m
+[32m    BuildBamIndex                                [31m[36mGenerates a BAM index ".bai" file.  [0m
+[32m    CleanSam                                     [31m[36mCleans a SAM/BAM/CRAM files, soft-clipping beyond-end-of-reference alignments and setting MAPQ to 0 for unmapped reads[0m
+[32m    CollectDuplicateMetrics                      [31m[36mCollect Duplicate metrics from marked file.[0m
+[32m    DownsampleSam                                [31m[36mDownsample a SAM or BAM file.[0m
+[32m    FastqToSam                                   [31m[36mConverts a FASTQ file to an unaligned BAM or SAM file[0m
+[32m    FilterSamReads                               [31m[36mSubsets reads from a SAM/BAM/CRAM file by applying one of several filters.[0m
+[32m    FixMateInformation                           [31m[36mVerify mate-pair information between mates and fix if needed.[0m
+[32m    GatherBamFiles                               [31m[36mConcatenate efficiently BAM files that resulted from a scattered parallel analysis[0m
+[32m    MarkDuplicates                               [31m[36mIdentifies duplicate reads.  [0m
+[32m    MarkDuplicatesWithMateCigar                  [31m[36mIdentifies duplicate reads, accounting for mate CIGAR.  [0m
+[32m    MergeBamAlignment                            [31m[36mMerge alignment data from a SAM or BAM with data in an unmapped BAM file.  [0m
+[32m    MergeSamFiles                                [31m[36mMerges multiple SAM/BAM/CRAM (and/or) files into a single file.  [0m
+[32m    PositionBasedDownsampleSam                   [31m[36mDownsample a SAM or BAM file to retain a subset of the reads based on the reads location in each tile in the flowcell.[0m
+[32m    ReorderSam                                   [31m[36mReorders reads in a SAM or BAM file to match ordering in a second reference file.[0m
+[32m    ReplaceSamHeader                             [31m[36mReplaces the SAMFileHeader in a SAM/BAM/CRAM file.  [0m
+[32m    RevertOriginalBaseQualitiesAndAddMateCigar   [31m[36mReverts the original base qualities and adds the mate cigar tag to read-group files[0m
+[32m    RevertSam                                    [31m[36mReverts SAM/BAM/CRAM files to a previous state.  [0m
+[32m    SamFormatConverter                           [31m[36mConvert a BAM file to a SAM file, or a SAM to a BAM[0m
+[32m    SamToFastq                                   [31m[36mConverts a SAM/BAM/CRAM file to FASTQ.[0m
+[32m    SamToFastqWithTags                           [31m[36mConverts a SAM or BAM file to FASTQ alongside FASTQs created from tags.[0m
+[32m    SetNmAndUqTags                               [31m[36mDEPRECATED: Use SetNmMdAndUqTags instead.[0m
+[32m    SetNmMdAndUqTags                             [31m[36mFixes the NM, MD, and UQ tags in a SAM/BAM/CRAM file [0m
+[32m    SimpleMarkDuplicatesWithMateCigar            [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mExamines aligned records in the supplied SAM or BAM file to locate duplicate molecules.[0m
+[32m    SortSam                                      [31m[36mSorts a SAM, BAM or CRAM file.  [0m
+[32m    SplitSamByLibrary                            [31m[36mSplits a SAM/BAM/CRAM file into individual files by library[0m
+[32m    SplitSamByNumberOfReads                      [31m[36mSplits a SAM/BAM/CRAM file to multiple files.[0m
+[32m    UmiAwareMarkDuplicatesWithMateCigar          [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mIdentifies duplicate reads using information from read positions and UMIs. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mReference:                                       Tools that analyze and manipulate FASTA format references[0m
+[32m    BaitDesigner                                 [31m[36mDesigns oligonucleotide baits for hybrid selection reactions.[0m
+[32m    CreateSequenceDictionary                     [31m[36mCreates a sequence dictionary for a reference sequence.  [0m
+[32m    ExtractSequences                             [31m[36mSubsets intervals from a reference sequence to a new FASTA file.[0m
+[32m    NonNFastaSize                                [31m[36mCounts the number of non-N bases in a fasta file.[0m
+[32m    NormalizeFasta                               [31m[36mNormalizes lines of sequence in a FASTA file to be of the same length.[0m
+[32m    ScatterIntervalsByNs                         [31m[36mWrites an interval list created by splitting a reference at Ns.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Evaluation and Refinement:               Tools that evaluate and refine variant calls, e.g. with annotations not offered by the engine[0m
+[32m    FindMendelianViolations                      [31m[36mFinds mendelian violations of all types within a VCF[0m
+[32m    GenotypeConcordance                          [31m[36mCalculates the concordance between genotype data of one sample in each of two VCFs - truth (or reference) vs. calls.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Filtering:                               Tools that filter variants by annotating the FILTER column[0m
+[32m    FilterVcf                                    [31m[36mHard filters a VCF.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Manipulation:                            Tools that manipulate variant call format (VCF) data[0m
+[32m    FixVcfHeader                        [0m[91m         [31m[36mReplaces or fixes a VCF header.[0m
+[32m    GatherVcfs                                   [31m[36mGathers multiple VCF files from a scatter operation into a single VCF file[0m
+[32m    LiftoverVcf                                  [31m[36mLifts over a VCF file from one reference build to another.  [0m
+[32m    MakeSitesOnlyVcf                             [31m[36mCreates a VCF that contains all the site-level information for all records in the input VCF but no genotype information.[0m
+[32m    MakeVcfSampleNameMap                         [31m[36mCreates a TSV from sample name to VCF/GVCF path, with one line per input.[0m
+[32m    MergeVcfs                                    [31m[36mCombines multiple variant files into a single variant file[0m
+[32m    RenameSampleInVcf                            [31m[36mRenames a sample within a VCF or BCF.[0m
+[32m    SortVcf                                      [31m[36mSorts one or more VCF files.  [0m
+[32m    SplitVcfs                                    [31m[36mSplits SNPs and INDELs into separate files.  [0m
+[32m    UpdateVcfSequenceDictionary                  [31m[36mTakes a VCF and a second file that contains a sequence dictionary and updates the VCF with the new sequence dictionary.[0m
+[32m    VcfFormatConverter                           [31m[36mConverts VCF to BCF or BCF to VCF.  [0m
+[32m    VcfToIntervalList                            [31m[36mConverts a VCF or BCF file to a Picard Interval List[0m
+
+[37m--------------------------------------------------------------------------------------
+
+[0m[0mRemoving intermediate container af0100cf1342
+ ---> 3cdff2dfdc24
+Step 18/20 : RUN chmod a+r /opt2/versions.txt
+ ---> Running in d55a2d07ce66
+Removing intermediate container d55a2d07ce66
+ ---> 12d9691484a5
+Step 19/20 : WORKDIR /data2
+ ---> Running in 3ee1c073efbb
+Removing intermediate container 3ee1c073efbb
+ ---> f0d6811c3168
+Step 20/20 : RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+ ---> Running in 2f4ecf27474c
+Removing intermediate container 2f4ecf27474c
+ ---> aa4830af67f4
+Successfully built aa4830af67f4
+Successfully tagged nciccbr/ccrgb_qctools:v1.3

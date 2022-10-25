@@ -1,0 +1,1393 @@
+Sending build context to Docker daemon  2.035MB
+Step 1/15 : FROM nciccbr/ccrgb_qctools:v1.5
+ ---> 486dd1b86f4b
+Step 2/15 : ENV TAG="v1.6"
+ ---> Running in 7d068180f7f4
+Removing intermediate container 7d068180f7f4
+ ---> 56cb88ff3405
+Step 3/15 : ADD http://www.cbcb.umd.edu/software/jellyfish/jellyfish-1.1.11.tar.gz /opt2
+
+ ---> 2385aacd84a8
+Step 4/15 : WORKDIR /opt2
+ ---> Running in fd74e68d83f6
+Removing intermediate container fd74e68d83f6
+ ---> 7928fa5f2bad
+Step 5/15 : RUN tar xzvf jellyfish-1.1.11.tar.gz && rm -f jellyfish-1.1.11.tar.gz
+ ---> Running in 2ccb0fd1cad2
+jellyfish-1.1.11/
+jellyfish-1.1.11/aclocal.m4
+jellyfish-1.1.11/HalfLICENSE
+jellyfish-1.1.11/depcomp
+jellyfish-1.1.11/jellyfish-1.1.pc.in
+jellyfish-1.1.11/jellyfish/
+jellyfish-1.1.11/jellyfish/atomic_gcc.hpp
+jellyfish-1.1.11/jellyfish/misc.hpp
+jellyfish-1.1.11/jellyfish/file_parser.hpp
+jellyfish-1.1.11/jellyfish/half.h
+jellyfish-1.1.11/jellyfish/histo_fastq_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/query_cmdline.hpp
+jellyfish-1.1.11/jellyfish/stats_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/time.hpp
+jellyfish-1.1.11/jellyfish/allocators_mmap.hpp
+jellyfish-1.1.11/jellyfish/raw_dumper.hpp
+jellyfish-1.1.11/jellyfish/storage.hpp
+jellyfish-1.1.11/jellyfish/compacted_dumper.hpp
+jellyfish-1.1.11/jellyfish/yaggo.cpp
+jellyfish-1.1.11/jellyfish/sequence_parser.hpp
+jellyfish-1.1.11/jellyfish/toFloat.h
+jellyfish-1.1.11/jellyfish/reversible_hash_function.hpp
+jellyfish-1.1.11/jellyfish/storage.cc
+jellyfish-1.1.11/jellyfish/cite_cmdline.hpp
+jellyfish-1.1.11/jellyfish/capped_integer.hpp
+jellyfish-1.1.11/jellyfish/hash_merge_cmdline.hpp
+jellyfish-1.1.11/jellyfish/thread_exec.cc
+jellyfish-1.1.11/jellyfish/floats.cc
+jellyfish-1.1.11/jellyfish/dump_fastq_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/jellyfish.cc
+jellyfish-1.1.11/jellyfish/seq_qual_parser.cc
+jellyfish-1.1.11/jellyfish/sorted_dumper.hpp
+jellyfish-1.1.11/jellyfish/parse_quake.hpp
+jellyfish-1.1.11/jellyfish/parse_dna.cc
+jellyfish-1.1.11/jellyfish/circular_buffer.hpp
+jellyfish-1.1.11/jellyfish/hash_fastq_merge_cmdline.hpp
+jellyfish-1.1.11/jellyfish/counter.hpp
+jellyfish-1.1.11/jellyfish/floats.hpp
+jellyfish-1.1.11/jellyfish/divisor.hpp
+jellyfish-1.1.11/jellyfish/histo_main.cc
+jellyfish-1.1.11/jellyfish/compacted_hash.hpp
+jellyfish-1.1.11/jellyfish/locking_hash_counters.hpp
+jellyfish-1.1.11/jellyfish/eLut.h
+jellyfish-1.1.11/jellyfish/allocators_mmap.cc
+jellyfish-1.1.11/jellyfish/test_read_parser.cc
+jellyfish-1.1.11/jellyfish/backtrace.cc
+jellyfish-1.1.11/jellyfish/generate_sequence.cc
+jellyfish-1.1.11/jellyfish/double_fifo_input.hpp
+jellyfish-1.1.11/jellyfish/noop_dumper.hpp
+jellyfish-1.1.11/jellyfish/parse_dna.hpp
+jellyfish-1.1.11/jellyfish/dna_codes.hpp
+jellyfish-1.1.11/jellyfish/dump_main.cc
+jellyfish-1.1.11/jellyfish/hash_merge.cc
+jellyfish-1.1.11/jellyfish/mapped_file.cc
+jellyfish-1.1.11/jellyfish/fastq_dumper.hpp
+jellyfish-1.1.11/jellyfish/allocators_malloc.hpp
+jellyfish-1.1.11/jellyfish/misc.cc
+jellyfish-1.1.11/jellyfish/sequence_parser.cc
+jellyfish-1.1.11/jellyfish/direct_sorted_dumper.hpp
+jellyfish-1.1.11/jellyfish/hash_function.hpp
+jellyfish-1.1.11/jellyfish/thread_exec.hpp
+jellyfish-1.1.11/jellyfish/direct_indexing_array.hpp
+jellyfish-1.1.11/jellyfish/half.cpp
+jellyfish-1.1.11/jellyfish/parse_qual_dna.cc
+jellyfish-1.1.11/jellyfish/dump_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/file_parser.cc
+jellyfish-1.1.11/jellyfish/dump_fastq_main.cc
+jellyfish-1.1.11/jellyfish/aligned_values_array.hpp
+jellyfish-1.1.11/jellyfish/square_binary_matrix.hpp
+jellyfish-1.1.11/jellyfish/time.cc
+jellyfish-1.1.11/jellyfish/invertible_hash_array.hpp
+jellyfish-1.1.11/jellyfish/dbg.hpp
+jellyfish-1.1.11/jellyfish/generate_sequence_cmdline.hpp
+jellyfish-1.1.11/jellyfish/concurrent_queues.hpp
+jellyfish-1.1.11/jellyfish/dumper.hpp
+jellyfish-1.1.11/jellyfish/parse_read.hpp
+jellyfish-1.1.11/jellyfish/backtrace.hpp
+jellyfish-1.1.11/jellyfish/mer_counting.hpp
+jellyfish-1.1.11/jellyfish/dbg.cc
+jellyfish-1.1.11/jellyfish/heap.hpp
+jellyfish-1.1.11/jellyfish/simple_growing_array.hpp
+jellyfish-1.1.11/jellyfish/err.cc
+jellyfish-1.1.11/jellyfish/mersenne.cpp
+jellyfish-1.1.11/jellyfish/hash.hpp
+jellyfish-1.1.11/jellyfish/stats_main.cc
+jellyfish-1.1.11/jellyfish/count_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/query_main.cc
+jellyfish-1.1.11/jellyfish/fstream_default.hpp
+jellyfish-1.1.11/jellyfish/err.hpp
+jellyfish-1.1.11/jellyfish/mer_counter.cc
+jellyfish-1.1.11/jellyfish/parse_read.cc
+jellyfish-1.1.11/jellyfish/randomc.h
+jellyfish-1.1.11/jellyfish/hash_fastq_merge.cc
+jellyfish-1.1.11/jellyfish/parse_quake.cc
+jellyfish-1.1.11/jellyfish/read_parser.cc
+jellyfish-1.1.11/jellyfish/allocators_shm.hpp
+jellyfish-1.1.11/jellyfish/seq_qual_parser.hpp
+jellyfish-1.1.11/jellyfish/simple_circular_buffer.hpp
+jellyfish-1.1.11/jellyfish/offsets_key_value.hpp
+jellyfish-1.1.11/jellyfish/yaggo.hpp
+jellyfish-1.1.11/jellyfish/histo_main_cmdline.hpp
+jellyfish-1.1.11/jellyfish/token_ring.hpp
+jellyfish-1.1.11/jellyfish/histo_fastq_main.cc
+jellyfish-1.1.11/jellyfish/parse_qual_dna.hpp
+jellyfish-1.1.11/jellyfish/locks_pthread.hpp
+jellyfish-1.1.11/jellyfish/square_binary_matrix.cc
+jellyfish-1.1.11/jellyfish/cite.cc
+jellyfish-1.1.11/jellyfish/mapped_file.hpp
+jellyfish-1.1.11/jellyfish/read_parser.hpp
+jellyfish-1.1.11/jellyfish/dna_codes.cc
+jellyfish-1.1.11/jellyfish/test_double_fifo_input.cc
+jellyfish-1.1.11/Makefile.in
+jellyfish-1.1.11/m4/
+jellyfish-1.1.11/m4/ltsugar.m4
+jellyfish-1.1.11/m4/lt~obsolete.m4
+jellyfish-1.1.11/m4/ltversion.m4
+jellyfish-1.1.11/m4/ltoptions.m4
+jellyfish-1.1.11/m4/libtool.m4
+jellyfish-1.1.11/config.sub
+jellyfish-1.1.11/gtest.mk
+jellyfish-1.1.11/LICENSE
+jellyfish-1.1.11/Makefile.am
+jellyfish-1.1.11/missing
+jellyfish-1.1.11/install-sh
+jellyfish-1.1.11/README
+jellyfish-1.1.11/configure
+jellyfish-1.1.11/tests/
+jellyfish-1.1.11/tests/multi_file.sh
+jellyfish-1.1.11/tests/parallel_fastq_sequence_hashing.sh
+jellyfish-1.1.11/tests/parallel_hashing.sh
+jellyfish-1.1.11/tests/merge.sh
+jellyfish-1.1.11/tests/raw_hash.sh
+jellyfish-1.1.11/tests/compat.sh.in
+jellyfish-1.1.11/tests/big.sh
+jellyfish-1.1.11/tests/small.sh
+jellyfish-1.1.11/tests/from_stream.sh
+jellyfish-1.1.11/tests/multi_file_fastq.sh
+jellyfish-1.1.11/tests/generate_sequence.sh
+jellyfish-1.1.11/tests/parsers.sh
+jellyfish-1.1.11/tests/from_stream_fastq.sh
+jellyfish-1.1.11/tests/parallel_fastq_hashing.sh
+jellyfish-1.1.11/tests/min_qual.sh
+jellyfish-1.1.11/tests/parallel_direct_indexing.sh
+jellyfish-1.1.11/tests/generate_fastq_sequence.sh
+jellyfish-1.1.11/tests/serial_direct_indexing.sh
+jellyfish-1.1.11/tests/serial_hashing.sh
+jellyfish-1.1.11/tests/parallel_fastq_direct_indexing.sh
+jellyfish-1.1.11/config.h.in
+jellyfish-1.1.11/configure.ac
+jellyfish-1.1.11/unit_tests/
+jellyfish-1.1.11/unit_tests/unit_tests.sh
+jellyfish-1.1.11/unit_tests/test_square_binary_matrix.cc
+jellyfish-1.1.11/unit_tests/gtest/
+jellyfish-1.1.11/unit_tests/gtest/include/
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-port.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-tuple.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-filepath.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-type-util.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-linked_ptr.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-string.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-param-util-generated.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-death-test-internal.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-param-util.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/internal/gtest-internal.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-typed-test.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest_pred_impl.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-message.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-death-test.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-param-test.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-spi.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-test-part.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest_prod.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest-printers.h
+jellyfish-1.1.11/unit_tests/gtest/include/gtest/gtest.h
+jellyfish-1.1.11/unit_tests/gtest/src/
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-port.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-all.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-death-test.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-filepath.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-typed-test.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-test-part.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest_main.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-printers.cc
+jellyfish-1.1.11/unit_tests/gtest/src/gtest-internal-inl.h
+jellyfish-1.1.11/unit_tests/test_offsets_key_value.cc
+jellyfish-1.1.11/unit_tests/test_simple_circular_buffer.cc
+jellyfish-1.1.11/config.guess
+jellyfish-1.1.11/doc/
+jellyfish-1.1.11/doc/jellyfish.pdf
+jellyfish-1.1.11/doc/jellyfish.man
+jellyfish-1.1.11/ltmain.sh
+Removing intermediate container 2ccb0fd1cad2
+ ---> a07fc1dec10f
+Step 6/15 : WORKDIR /opt2/jellyfish-1.1.11
+ ---> Running in a65d4aabe887
+Removing intermediate container a65d4aabe887
+ ---> 1694a189cdbb
+Step 7/15 : RUN ./configure && make && make install && cd /opt2 && rm -rf jellyfish-1.1.11
+ ---> Running in f4e211104899
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to print strings... printf
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for md5sum... md5sum
+checking for __int128... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking execinfo.h usability... yes
+checking execinfo.h presence... yes
+checking for execinfo.h... yes
+checking sys/syscall.h usability... yes
+checking sys/syscall.h presence... yes
+checking for sys/syscall.h... yes
+checking for siginfo_t.si_int... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating tests/compat.sh
+config.status: creating jellyfish-1.1.pc
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make  all-am
+make[1]: Entering directory '/opt2/jellyfish-1.1.11'
+  CXX    jellyfish/square_binary_matrix.lo
+[91mIn file included from ./jellyfish/square_binary_matrix.hpp:27,
+                 from jellyfish/square_binary_matrix.cc:21:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::SingularMatrix]':
+jellyfish/square_binary_matrix.cc:93:2:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from jellyfish/square_binary_matrix.cc:21:
+./jellyfish/square_binary_matrix.hpp: In member function 'uint64_t* SquareBinaryMatrix::first_alloc(size_t)':
+./jellyfish/square_binary_matrix.hpp:46:12: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   46 |     return res;
+      |            ^~~
+[0m[91m./jellyfish/square_binary_matrix.hpp: In member function 'void SquareBinaryMatrix::alloc_columns()':
+./jellyfish/square_binary_matrix.hpp:55:13: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   55 |     columns = first_alloc(size);
+      |     ~~~~~~~~^~~~~~~~~~~~~~~~~~~
+[0m[91mIn file included from jellyfish/square_binary_matrix.cc:20:
+./jellyfish/misc.hpp: In member function 'SquareBinaryMatrix SquareBinaryMatrix::inverse() const':
+./jellyfish/misc.hpp:106:11: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m[91mjellyfish/square_binary_matrix.cc:110:19: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  110 |  pivot.columns[j] ^= pivot.columns[i];
+      |  ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+[0m  CXX    jellyfish/err.lo
+  CXX    jellyfish/misc.lo
+  CXX    jellyfish/storage.lo
+  CXX    jellyfish/thread_exec.lo
+[91mIn file included from jellyfish/thread_exec.hpp:26,
+                 from jellyfish/thread_exec.cc:17:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = thread_exec::Error]':
+jellyfish/thread_exec.cc:28:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m  CXX    jellyfish/time.lo
+  CXX    jellyfish/file_parser.lo
+[91mIn file included from jellyfish/file_parser.cc:17:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::file_parser::FileParserError]':
+jellyfish/file_parser.cc:33:5:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m  CXX    jellyfish/read_parser.lo
+[91mIn file included from ./jellyfish/file_parser.hpp:24,
+                 from ./jellyfish/read_parser.hpp:20,
+                 from jellyfish/read_parser.cc:17:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::file_parser::FileParserError]':
+jellyfish/read_parser.cc:30:5:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m  CXX    jellyfish/parse_read.lo
+  CXX    jellyfish/half.lo
+  CXX    jellyfish/mapped_file.lo
+[91mIn file included from ./jellyfish/mapped_file.hpp:29,
+                 from jellyfish/mapped_file.cc:17:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m  CXX    jellyfish/parse_dna.lo
+  CXX    jellyfish/parse_quake.lo
+[91mIn file included from ./jellyfish/double_fifo_input.hpp:23,
+                 from ./jellyfish/parse_quake.hpp:22,
+                 from jellyfish/parse_quake.cc:17:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::double_fifo_input<jellyfish::seq_qual_parser::sequence_t>::Error]':
+./jellyfish/double_fifo_input.hpp:101:7:   required from 'jellyfish::double_fifo_input<T>::double_fifo_input(long unsigned int) [with T = jellyfish::seq_qual_parser::sequence_t]'
+jellyfish/parse_quake.cc:27:40:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m  CXX    jellyfish/parse_qual_dna.lo
+[91mIn file included from ./jellyfish/double_fifo_input.hpp:23,
+                 from ./jellyfish/parse_qual_dna.hpp:22,
+                 from jellyfish/parse_qual_dna.cc:17:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::double_fifo_input<jellyfish::seq_qual_parser::sequence_t>::Error]':
+./jellyfish/double_fifo_input.hpp:101:7:   required from 'jellyfish::double_fifo_input<T>::double_fifo_input(long unsigned int) [with T = jellyfish::seq_qual_parser::sequence_t]'
+jellyfish/parse_qual_dna.cc:27:55:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m  CXX    jellyfish/sequence_parser.lo
+[91mIn file included from ./jellyfish/sequence_parser.hpp:21,
+                 from jellyfish/sequence_parser.cc:18:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::file_parser::FileParserError]':
+jellyfish/sequence_parser.cc:32:5:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m  CXX    jellyfish/seq_qual_parser.lo
+[91mIn file included from ./jellyfish/seq_qual_parser.hpp:21,
+                 from jellyfish/seq_qual_parser.cc:17:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::file_parser::FileParserError]':
+jellyfish/seq_qual_parser.cc:31:5:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_seq_qual_parser::FastqSeqQualParserError]':
+jellyfish/seq_qual_parser.cc:47:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m  CXX    jellyfish/backtrace.lo
+  CXX    jellyfish/floats.lo
+  CXX    jellyfish/dbg.lo
+  CXX    jellyfish/allocators_mmap.lo
+  CXX    jellyfish/dna_codes.lo
+  CXXLD  libjellyfish-1.1.la
+[91mar: `u' modifier ignored since `D' is the default (see `U')
+[0m  CXX    jellyfish/jellyfish.o
+  CXX    jellyfish/stats_main.o
+[91mIn file included from jellyfish/stats_main.cc:24:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::dumper_t::ErrorWriting]':
+./jellyfish/dumper.hpp:44:9:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::compacted_hash::ErrorReading]':
+./jellyfish/compacted_hash.hpp:50:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_hash::ErrorReading]':
+./jellyfish/fastq_dumper.hpp:46:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::raw_hash::ErrorReading]':
+./jellyfish/raw_dumper.hpp:169:11:   required from 'static jellyfish::raw_hash::query<_storage_t>::storage_t* jellyfish::raw_hash::query<_storage_t>::init(mapped_file&, SquareBinaryMatrix&, SquareBinaryMatrix&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>; jellyfish::raw_hash::query<_storage_t>::storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]'
+./jellyfish/raw_dumper.hpp:98:20:   required from 'jellyfish::raw_hash::query<_storage_t>::query(mapped_file&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]'
+jellyfish/stats_main.cc:83:34:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/stats_main.cc:26:
+./jellyfish/square_binary_matrix.hpp: In static member function 'static jellyfish::raw_hash::query<_storage_t>::storage_t* jellyfish::raw_hash::query<_storage_t>::init(mapped_file&, SquareBinaryMatrix&, SquareBinaryMatrix&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]':
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+[0m[91mIn file included from jellyfish/stats_main.cc:25:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+In file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/stats_main.cc:26:
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/stats_main.cc:25:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m  CXX    jellyfish/hash_merge.o
+[91mIn file included from jellyfish/hash_merge.cc:32:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::dumper_t::ErrorWriting]':
+./jellyfish/dumper.hpp:44:9:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::compacted_hash::ErrorReading]':
+./jellyfish/compacted_hash.hpp:50:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_hash::ErrorReading]':
+./jellyfish/fastq_dumper.hpp:46:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/mer_counting.hpp:31,
+                 from jellyfish/hash_merge.cc:34:
+./jellyfish/compacted_hash.hpp: In instantiation of 'void jellyfish::compacted_hash::writer<storage_t>::write_header(std::ostream*) const [with storage_t = jellyfish::compacted_hash::reader<long unsigned int, long unsigned int>; std::ostream = std::basic_ostream<char>]':
+jellyfish/hash_merge.cc:189:43:   required from here
+./jellyfish/compacted_hash.hpp:114:15: warning: 'void* memset(void*, int, size_t)' clearing an object of non-trivial type 'struct jellyfish::compacted_hash::header'; use assignment or value-initialization instead [-Wclass-memaccess]
+  114 |         memset(&head, '\0', sizeof(head));
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+./jellyfish/compacted_hash.hpp:36:12: note: 'struct jellyfish::compacted_hash::header' declared here
+   36 |     struct header {
+      |            ^~~~~~
+[0m[91mIn file included from jellyfish/hash_merge.cc:32:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/hash_merge.cc:34:
+./jellyfish/square_binary_matrix.hpp: In function 'int merge_main(int, char**)':
+./jellyfish/square_binary_matrix.hpp:138:19: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  138 |       if(columns[i] != other.columns[i])
+      |          ~~~~~~~~~^
+In file included from jellyfish/hash_merge.cc:33:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/hash_merge.cc:34:
+./jellyfish/square_binary_matrix.hpp:87:11: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   87 |       free(columns);
+      |       ~~~~^~~~~~~~~
+In file included from jellyfish/hash_merge.cc:33:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+In file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/hash_merge.cc:34:
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/hash_merge.cc:33:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+In file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/hash_merge.cc:34:
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/hash_merge.cc:33:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m  CXX    jellyfish/mer_counter.o
+[91mIn file included from jellyfish/mer_counter.cc:33:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::dumper_t::ErrorWriting]':
+./jellyfish/dumper.hpp:44:9:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::compacted_hash::ErrorReading]':
+./jellyfish/compacted_hash.hpp:50:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_hash::ErrorReading]':
+./jellyfish/fastq_dumper.hpp:46:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::invertible_hash::ErrorAllocation]':
+./jellyfish/invertible_hash_array.hpp:116:11:   required from 'jellyfish::invertible_hash::array<word, atomic_t, mem_block_t>::array(size_t, uint_t, uint_t, uint_t, size_t*) [with word = long unsigned int; atomic_t = atomic::gcc; mem_block_t = allocators::mmap; size_t = long unsigned int; uint_t = long unsigned int]'
+jellyfish/mer_counter.cc:142:66:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::invertible_hash::InvalidMatrix]':
+./jellyfish/invertible_hash_array.hpp:185:11:   required from 'void jellyfish::invertible_hash::array<word, atomic_t, mem_block_t>::set_matrix(SquareBinaryMatrix&) [with word = long unsigned int; atomic_t = atomic::gcc; mem_block_t = allocators::mmap]'
+jellyfish/mer_counter.cc:149:24:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::double_fifo_input<jellyfish::sequence_parser::sequence_t>::Error]':
+./jellyfish/double_fifo_input.hpp:101:7:   required from 'jellyfish::double_fifo_input<T>::double_fifo_input(long unsigned int) [with T = jellyfish::sequence_parser::sequence_t]'
+./jellyfish/parse_dna.hpp:178:75:   required from 'jellyfish::parse_dna::parse_dna(T, T, uint_t, unsigned int, size_t) [with T = __gnu_cxx::__normal_iterator<const char* const*, std::vector<const char*> >; uint_t = long unsigned int; size_t = long unsigned int]'
+jellyfish/mer_counter.cc:138:60:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/mer_counting.hpp:31,
+                 from jellyfish/mer_counter.cc:38:
+./jellyfish/compacted_hash.hpp: In instantiation of 'void jellyfish::compacted_hash::writer<storage_t>::write_header(std::ostream*) const [with storage_t = jellyfish::direct_indexing::array<long unsigned int, jellyfish::capped_integer<unsigned int>, atomic::gcc, allocators::mmap>; std::ostream = std::basic_ostream<char>]':
+./jellyfish/direct_sorted_dumper.hpp:101:5:   required from 'void jellyfish::direct_sorted_dumper<storage_t, atomic_t>::_dump() [with storage_t = jellyfish::direct_indexing::array<long unsigned int, jellyfish::capped_integer<unsigned int>, atomic::gcc, allocators::mmap>; atomic_t = atomic::gcc]'
+./jellyfish/direct_sorted_dumper.hpp:91:8:   required from here
+./jellyfish/compacted_hash.hpp:114:15: warning: 'void* memset(void*, int, size_t)' clearing an object of non-trivial type 'struct jellyfish::compacted_hash::header'; use assignment or value-initialization instead [-Wclass-memaccess]
+  114 |         memset(&head, '\0', sizeof(head));
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+./jellyfish/compacted_hash.hpp:36:12: note: 'struct jellyfish::compacted_hash::header' declared here
+   36 |     struct header {
+      |            ^~~~~~
+[0m[91m./jellyfish/compacted_hash.hpp: In instantiation of 'void jellyfish::compacted_hash::writer<storage_t>::write_header(std::ostream*) const [with storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>; std::ostream = std::basic_ostream<char>]':
+./jellyfish/sorted_dumper.hpp:116:5:   required from 'void jellyfish::sorted_dumper<storage_t, atomic_t>::_dump() [with storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>; atomic_t = atomic::gcc]'
+./jellyfish/sorted_dumper.hpp:105:8:   required from here
+./jellyfish/compacted_hash.hpp:114:15: warning: 'void* memset(void*, int, size_t)' clearing an object of non-trivial type 'struct jellyfish::compacted_hash::header'; use assignment or value-initialization instead [-Wclass-memaccess]
+  114 |         memset(&head, '\0', sizeof(head));
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+./jellyfish/compacted_hash.hpp:36:12: note: 'struct jellyfish::compacted_hash::header' declared here
+   36 |     struct header {
+      |            ^~~~~~
+[0m[91mIn file included from jellyfish/mer_counter.cc:33:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::hash<long unsigned int, jellyfish::Float, jellyfish::aligned_values::array<long unsigned int, jellyfish::Float, atomic::gcc, allocators::mmap>, atomic::gcc>::TableFull]':
+./jellyfish/hash.hpp:151:9:   required from 'void jellyfish::hash<key_t, val_t, ary_t, atomic>::dump() [with key_t = long unsigned int; val_t = jellyfish::Float; ary_t = jellyfish::aligned_values::array<long unsigned int, jellyfish::Float, atomic::gcc, allocators::mmap>; atomic = atomic::gcc]'
+jellyfish/mer_counter.cc:114:7:   required from 'void mer_counting<parser_t, hash_t>::start(int) [with parser_t = jellyfish::parse_quake; hash_t = jellyfish::hash<long unsigned int, jellyfish::Float, jellyfish::aligned_values::array<long unsigned int, jellyfish::Float, atomic::gcc, allocators::mmap>, atomic::gcc>]'
+jellyfish/mer_counter.cc:97:8:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::hash<long unsigned int, jellyfish::capped_integer<unsigned int>, jellyfish::direct_indexing::array<long unsigned int, jellyfish::capped_integer<unsigned int>, atomic::gcc, allocators::mmap>, atomic::gcc>::TableFull]':
+./jellyfish/hash.hpp:151:9:   required from 'void jellyfish::hash<key_t, val_t, ary_t, atomic>::dump() [with key_t = long unsigned int; val_t = jellyfish::capped_integer<unsigned int>; ary_t = jellyfish::direct_indexing::array<long unsigned int, jellyfish::capped_integer<unsigned int>, atomic::gcc, allocators::mmap>; atomic = atomic::gcc]'
+jellyfish/mer_counter.cc:114:7:   required from 'void mer_counting<parser_t, hash_t>::start(int) [with parser_t = jellyfish::parse_qual_dna; hash_t = jellyfish::hash<long unsigned int, jellyfish::capped_integer<unsigned int>, jellyfish::direct_indexing::array<long unsigned int, jellyfish::capped_integer<unsigned int>, atomic::gcc, allocators::mmap>, atomic::gcc>]'
+jellyfish/mer_counter.cc:97:8:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::hash<long unsigned int, long unsigned int, jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>, atomic::gcc>::TableFull]':
+./jellyfish/hash.hpp:151:9:   required from 'void jellyfish::hash<key_t, val_t, ary_t, atomic>::dump() [with key_t = long unsigned int; val_t = long unsigned int; ary_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>; atomic = atomic::gcc]'
+jellyfish/mer_counter.cc:114:7:   required from 'void mer_counting<parser_t, hash_t>::start(int) [with parser_t = jellyfish::parse_qual_dna; hash_t = jellyfish::hash<long unsigned int, long unsigned int, jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>, atomic::gcc>]'
+jellyfish/mer_counter.cc:97:8:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from jellyfish/mer_counter.cc:36:
+./jellyfish/misc.hpp: In member function 'void jellyfish::direct_sorted_dumper<storage_t, atomic_t>::_dump() [with storage_t = jellyfish::direct_indexing::array<long unsigned int, jellyfish::capped_integer<unsigned int>, atomic::gcc, allocators::mmap>; atomic_t = atomic::gcc]':
+./jellyfish/misc.hpp:106:11: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/mer_counter.cc:38:
+./jellyfish/square_binary_matrix.hpp: In constructor 'mer_counting_qual_fasta_hash::mer_counting_qual_fasta_hash(const std::vector<const char*>&, count_args&)':
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/mer_counter.cc:36:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/mer_counter.cc:38:
+./jellyfish/square_binary_matrix.hpp: In constructor 'mer_counting_fasta_hash::mer_counting_fasta_hash(const std::vector<const char*>&, count_args&)':
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/mer_counter.cc:36:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m  CXX    jellyfish/histo_main.o
+[91mIn file included from jellyfish/histo_main.cc:25:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::dumper_t::ErrorWriting]':
+./jellyfish/dumper.hpp:44:9:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::compacted_hash::ErrorReading]':
+./jellyfish/compacted_hash.hpp:50:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_hash::ErrorReading]':
+./jellyfish/fastq_dumper.hpp:46:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::raw_hash::ErrorReading]':
+./jellyfish/raw_dumper.hpp:169:11:   required from 'static jellyfish::raw_hash::query<_storage_t>::storage_t* jellyfish::raw_hash::query<_storage_t>::init(mapped_file&, SquareBinaryMatrix&, SquareBinaryMatrix&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>; jellyfish::raw_hash::query<_storage_t>::storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]'
+./jellyfish/raw_dumper.hpp:98:20:   required from 'jellyfish::raw_hash::query<_storage_t>::query(mapped_file&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]'
+jellyfish/histo_main.cc:111:34:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/histo_main.cc:27:
+./jellyfish/square_binary_matrix.hpp: In static member function 'static jellyfish::raw_hash::query<_storage_t>::storage_t* jellyfish::raw_hash::query<_storage_t>::init(mapped_file&, SquareBinaryMatrix&, SquareBinaryMatrix&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]':
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/histo_main.cc:26:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/histo_main.cc:27:
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/histo_main.cc:26:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/histo_main.cc:27:
+./jellyfish/square_binary_matrix.hpp: In function 'int histo_main(int, char**)':
+./jellyfish/square_binary_matrix.hpp:87:11: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   87 |       free(columns);
+      |       ~~~~^~~~~~~~~
+In file included from jellyfish/histo_main.cc:26:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+In file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/histo_main.cc:27:
+./jellyfish/square_binary_matrix.hpp:87:11: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   87 |       free(columns);
+      |       ~~~~^~~~~~~~~
+In file included from jellyfish/histo_main.cc:26:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m  CXX    jellyfish/dump_main.o
+[91mjellyfish/dump_main.cc: In function 'int dump_main(int, char**)':
+jellyfish/dump_main.cc:86:24: warning: catching polymorphic type 'class mapped_file::ErrorMMap' by value [-Wcatch-value=]
+   86 |   } catch(mapped_file::ErrorMMap) {
+      |                        ^~~~~~~~~
+[0m[91mIn file included from jellyfish/dump_main.cc:24:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::dumper_t::ErrorWriting]':
+./jellyfish/dumper.hpp:44:9:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::compacted_hash::ErrorReading]':
+./jellyfish/compacted_hash.hpp:50:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_hash::ErrorReading]':
+./jellyfish/fastq_dumper.hpp:46:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::raw_hash::ErrorReading]':
+./jellyfish/raw_dumper.hpp:169:11:   required from 'static jellyfish::raw_hash::query<_storage_t>::storage_t* jellyfish::raw_hash::query<_storage_t>::init(mapped_file&, SquareBinaryMatrix&, SquareBinaryMatrix&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>; jellyfish::raw_hash::query<_storage_t>::storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]'
+./jellyfish/raw_dumper.hpp:98:20:   required from 'jellyfish::raw_hash::query<_storage_t>::query(mapped_file&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]'
+jellyfish/dump_main.cc:65:44:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/dump_main.cc:26:
+./jellyfish/square_binary_matrix.hpp: In static member function 'static jellyfish::raw_hash::query<_storage_t>::storage_t* jellyfish::raw_hash::query<_storage_t>::init(mapped_file&, SquareBinaryMatrix&, SquareBinaryMatrix&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]':
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/dump_main.cc:25:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/dump_main.cc:26:
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/dump_main.cc:25:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m  CXX    jellyfish/query_main.o
+[91mIn file included from ./jellyfish/mapped_file.hpp:29,
+                 from ./jellyfish/hash.hpp:27,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/query_main.cc:24:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::dumper_t::ErrorWriting]':
+./jellyfish/dumper.hpp:44:9:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::compacted_hash::ErrorReading]':
+./jellyfish/compacted_hash.hpp:50:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_hash::ErrorReading]':
+./jellyfish/fastq_dumper.hpp:46:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::raw_hash::ErrorReading]':
+./jellyfish/raw_dumper.hpp:169:11:   required from 'static jellyfish::raw_hash::query<_storage_t>::storage_t* jellyfish::raw_hash::query<_storage_t>::init(mapped_file&, SquareBinaryMatrix&, SquareBinaryMatrix&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>; jellyfish::raw_hash::query<_storage_t>::storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]'
+./jellyfish/raw_dumper.hpp:98:20:   required from 'jellyfish::raw_hash::query<_storage_t>::query(mapped_file&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]'
+jellyfish/query_main.cc:63:34:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/query_main.cc:24:
+./jellyfish/square_binary_matrix.hpp: In static member function 'static jellyfish::raw_hash::query<_storage_t>::storage_t* jellyfish::raw_hash::query<_storage_t>::init(mapped_file&, SquareBinaryMatrix&, SquareBinaryMatrix&) [with _storage_t = jellyfish::invertible_hash::array<long unsigned int, atomic::gcc, allocators::mmap>]':
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+[0m[91mIn file included from jellyfish/query_main.cc:23:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+In file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/query_main.cc:24:
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/query_main.cc:23:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m  CXX    jellyfish/dump_fastq_main.o
+[91mIn file included from jellyfish/dump_fastq_main.cc:25:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::dumper_t::ErrorWriting]':
+./jellyfish/dumper.hpp:44:9:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::compacted_hash::ErrorReading]':
+./jellyfish/compacted_hash.hpp:50:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_hash::ErrorReading]':
+./jellyfish/fastq_dumper.hpp:46:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/dump_fastq_main.cc:27:
+./jellyfish/square_binary_matrix.hpp: In static member function 'static storage_t* jellyfish::fastq_hash::raw_dumper<storage_t>::read(const mapped_file&) [with storage_t = jellyfish::aligned_values::array<long unsigned int, jellyfish::Float, atomic::gcc, allocators::mmap>]':
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+[0m[91mIn file included from jellyfish/dump_fastq_main.cc:26:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+In file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/dump_fastq_main.cc:27:
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/dump_fastq_main.cc:26:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m  CXX    jellyfish/histo_fastq_main.o
+[91mIn file included from jellyfish/histo_fastq_main.cc:26:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::dumper_t::ErrorWriting]':
+./jellyfish/dumper.hpp:44:9:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::compacted_hash::ErrorReading]':
+./jellyfish/compacted_hash.hpp:50:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_hash::ErrorReading]':
+./jellyfish/fastq_dumper.hpp:46:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/histo_fastq_main.cc:28:
+./jellyfish/square_binary_matrix.hpp: In static member function 'static storage_t* jellyfish::fastq_hash::raw_dumper<storage_t>::read(const mapped_file&) [with storage_t = jellyfish::aligned_values::array<long unsigned int, jellyfish::Float, atomic::gcc, allocators::mmap>]':
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/histo_fastq_main.cc:27:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/histo_fastq_main.cc:28:
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/histo_fastq_main.cc:27:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m  CXX    jellyfish/cite.o
+  CXX    jellyfish/hash_fastq_merge.o
+[91mIn file included from jellyfish/hash_fastq_merge.cc:17:
+./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = mapped_file::ErrorMMap]':
+./jellyfish/mapped_file.hpp:46:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+  123 |     ~raise_t() { throw err_t(oss.str()); }
+      |                                       ^
+[0m[91m./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::ErrorAllocation]':
+./jellyfish/square_binary_matrix.hpp:45:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = SquareBinaryMatrix::MismatchingSize]':
+./jellyfish/square_binary_matrix.hpp:54:7:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::dumper_t::ErrorWriting]':
+./jellyfish/dumper.hpp:44:9:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::compacted_hash::ErrorReading]':
+./jellyfish/compacted_hash.hpp:50:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::fastq_hash::ErrorReading]':
+./jellyfish/fastq_dumper.hpp:46:11:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::hash<long unsigned int, jellyfish::Float, jellyfish::aligned_values::array<long unsigned int, jellyfish::Float, atomic::gcc, allocators::mmap>, atomic::gcc>::TableFull]':
+./jellyfish/hash.hpp:151:9:   required from 'void jellyfish::hash<key_t, val_t, ary_t, atomic>::dump() [with key_t = long unsigned int; val_t = jellyfish::Float; ary_t = jellyfish::aligned_values::array<long unsigned int, jellyfish::Float, atomic::gcc, allocators::mmap>; atomic = atomic::gcc]'
+jellyfish/hash_fastq_merge.cc:49:13:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::simple_growing_array<char>::SimpleGrowingArrayError]':
+./jellyfish/simple_growing_array.hpp:55:9:   required from 'void jellyfish::simple_growing_array<T>::resize() [with T = char]'
+./jellyfish/simple_growing_array.hpp:27:53:   required from 'jellyfish::simple_growing_array<T>::simple_growing_array(size_t) [with T = char; size_t = long unsigned int]'
+./jellyfish/seq_qual_parser.hpp:53:41:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91m./jellyfish/err.hpp: In instantiation of 'err::raise_t<err_t>::~raise_t() [with err_t = jellyfish::invertible_hash::ErrorAllocation]':
+./jellyfish/invertible_hash_array.hpp:116:11:   required from 'jellyfish::invertible_hash::array<word, atomic_t, mem_block_t>::array(size_t, uint_t, uint_t, uint_t, size_t*) [with word = long unsigned int; atomic_t = atomic::gcc; mem_block_t = allocators::mmap; size_t = long unsigned int; uint_t = long unsigned int]'
+./jellyfish/aligned_values_array.hpp:42:30:   required from 'jellyfish::aligned_values::array<_key_t, _val_t, atomic, mem_block_t>::array(size_t, uint_t, uint_t, size_t*) [with _key_t = long unsigned int; _val_t = jellyfish::Float; atomic = atomic::gcc; mem_block_t = allocators::mmap; size_t = long unsigned int; uint_t = long unsigned int]'
+jellyfish/hash_fastq_merge.cc:28:79:   required from here
+./jellyfish/err.hpp:123:39: warning: throw will always call terminate() [-Wterminate]
+./jellyfish/err.hpp:123:39: note: in C++11 destructors default to noexcept
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/hash_fastq_merge.cc:19:
+./jellyfish/square_binary_matrix.hpp: In static member function 'static storage_t* jellyfish::fastq_hash::raw_dumper<storage_t>::read(const mapped_file&) [with storage_t = jellyfish::aligned_values::array<long unsigned int, jellyfish::Float, atomic::gcc, allocators::mmap>]':
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/hash_fastq_merge.cc:18:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m[91mIn file included from ./jellyfish/hash.hpp:31,
+                 from ./jellyfish/mer_counting.hpp:28,
+                 from jellyfish/hash_fastq_merge.cc:19:
+./jellyfish/square_binary_matrix.hpp:69:18: warning: 'ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   69 |       columns[i] = rhs.columns[i] & _mask;
+      |       ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from jellyfish/hash_fastq_merge.cc:18:
+./jellyfish/misc.hpp:106:11: note: 'ptr' was declared here
+  106 |   Tptr<T> ptr;
+      |           ^~~
+[0m  CXX    jellyfish/yaggo.o
+  CXXLD  bin/jellyfish
+make[1]: Leaving directory '/opt2/jellyfish-1.1.11'
+make[1]: Entering directory '/opt2/jellyfish-1.1.11'
+ /usr/bin/mkdir -p '/usr/local/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libjellyfish-1.1.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libjellyfish-1.1.so.1.0.1 /usr/local/lib/libjellyfish-1.1.so.1.0.1
+libtool: install: (cd /usr/local/lib && { ln -s -f libjellyfish-1.1.so.1.0.1 libjellyfish-1.1.so.1 || { rm -f libjellyfish-1.1.so.1 && ln -s libjellyfish-1.1.so.1.0.1 libjellyfish-1.1.so.1; }; })
+libtool: install: (cd /usr/local/lib && { ln -s -f libjellyfish-1.1.so.1.0.1 libjellyfish-1.1.so || { rm -f libjellyfish-1.1.so && ln -s libjellyfish-1.1.so.1.0.1 libjellyfish-1.1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libjellyfish-1.1.lai /usr/local/lib/libjellyfish-1.1.la
+libtool: install: /usr/bin/install -c .libs/libjellyfish-1.1.a /usr/local/lib/libjellyfish-1.1.a
+libtool: install: chmod 644 /usr/local/lib/libjellyfish-1.1.a
+libtool: install: ranlib /usr/local/lib/libjellyfish-1.1.a
+libtool: finish: PATH="/opt2/preseq/bin:/opt2/:/opt2/samtools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt2/fastQValidator/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/usr/local/bin'
+  /bin/bash ./libtool   --mode=install /usr/bin/install -c bin/jellyfish '/usr/local/bin'
+libtool: install: /usr/bin/install -c bin/.libs/jellyfish /usr/local/bin/jellyfish
+ /usr/bin/mkdir -p '/usr/local/include/jellyfish-1.1.11/jellyfish'
+ /usr/bin/install -c -m 644 jellyfish/allocators_malloc.hpp jellyfish/allocators_mmap.hpp jellyfish/allocators_shm.hpp jellyfish/atomic_gcc.hpp jellyfish/compacted_dumper.hpp jellyfish/compacted_hash.hpp jellyfish/concurrent_queues.hpp jellyfish/direct_indexing_array.hpp jellyfish/direct_sorted_dumper.hpp jellyfish/divisor.hpp jellyfish/dumper.hpp jellyfish/hash_function.hpp jellyfish/hash.hpp jellyfish/heap.hpp jellyfish/invertible_hash_array.hpp jellyfish/locking_hash_counters.hpp jellyfish/locks_pthread.hpp jellyfish/mapped_file.hpp jellyfish/mer_counting.hpp jellyfish/err.hpp jellyfish/misc.hpp jellyfish/offsets_key_value.hpp jellyfish/reversible_hash_function.hpp jellyfish/sorted_dumper.hpp jellyfish/square_binary_matrix.hpp jellyfish/storage.hpp jellyfish/thread_exec.hpp jellyfish/time.hpp jellyfish/token_ring.hpp jellyfish/raw_dumper.hpp jellyfish/capped_integer.hpp jellyfish/aligned_values_array.hpp jellyfish/fastq_dumper.hpp jellyfish/floats.hpp jellyfish/circular_buffer.hpp jellyfish/counter.hpp jellyfish/parse_quake.hpp jellyfish/parse_dna.hpp jellyfish/parse_qual_dna.hpp jellyfish/file_parser.hpp '/usr/local/include/jellyfish-1.1.11/jellyfish'
+ /usr/bin/install -c -m 644 jellyfish/sequence_parser.hpp jellyfish/seq_qual_parser.hpp jellyfish/double_fifo_input.hpp jellyfish/read_parser.hpp jellyfish/parse_read.hpp jellyfish/simple_growing_array.hpp jellyfish/toFloat.h jellyfish/eLut.h jellyfish/dbg.hpp jellyfish/half.h jellyfish/backtrace.hpp jellyfish/dna_codes.hpp jellyfish/simple_circular_buffer.hpp '/usr/local/include/jellyfish-1.1.11/jellyfish'
+ /usr/bin/mkdir -p '/usr/local/share/man/man1'
+ /usr/bin/install -c -m 644 'doc/jellyfish.man' '/usr/local/share/man/man1/jellyfish.1'
+ /usr/bin/mkdir -p '/usr/local/lib/pkgconfig'
+ /usr/bin/install -c -m 644 jellyfish-1.1.pc '/usr/local/lib/pkgconfig'
+make[1]: Leaving directory '/opt2/jellyfish-1.1.11'
+Removing intermediate container f4e211104899
+ ---> 834d7b794535
+Step 8/15 : ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/lib"
+ ---> Running in 064d4c980d5c
+Removing intermediate container 064d4c980d5c
+ ---> 49ef0da96c19
+Step 9/15 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> 8a2b7b56913b
+Step 10/15 : COPY printversions.bash /opt2/printversions
+ ---> 2596c11b7dfd
+Step 11/15 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile &&     chmod a+rx /opt2/printversions
+ ---> Running in 57ca821a36d2
+Removing intermediate container 57ca821a36d2
+ ---> 33e05af28bfb
+Step 12/15 : RUN /opt2/printversions > /opt2/versions.txt; exit 0
+ ---> Running in f2f1b326e755
+[91m
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.17-r1188
+Contact: Heng Li <lh3@sanger.ac.uk>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries
+
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
+
+[0m[91mopenjdk version "1.8.0_342"[0m[91m
+[0m[91mOpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07[0m[91m)[0m[91m
+[0m[91mOpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)[0m[91m
+[0m[91mjavac 1.8.0_342
+[0m[91m[1m[31mUSAGE: PicardCommandLine [32m<program name>[1m[31m [-h]
+
+[0m[1m[31mAvailable Programs:
+[0m[37m--------------------------------------------------------------------------------------
+[0m[31mBase Calling:                                    Tools that process sequencing machine data, e.g. Illumina base calls, and detect sequencing level attributes, e.g. adapters[0m
+[32m    CheckIlluminaDirectory                       [31m[36mAsserts the validity for specified Illumina basecalling data.  [0m
+[32m    CollectIlluminaBasecallingMetrics            [31m[36mCollects Illumina Basecalling metrics for a sequencing run.  [0m
+[32m    CollectIlluminaLaneMetrics                   [31m[36mCollects Illumina lane metrics for the given BaseCalling analysis directory.[0m
+[32m    ExtractIlluminaBarcodes                      [31m[36mTool determines the barcode for each read in an Illumina lane.  [0m
+[32m    IlluminaBasecallsToFastq                     [31m[36mGenerate FASTQ file(s) from Illumina basecall read data.  [0m
+[32m    IlluminaBasecallsToSam                       [31m[36mTransforms raw Illumina sequencing data into an unmapped SAM, BAM or CRAM file.[0m
+[32m    MarkIlluminaAdapters                         [31m[36mReads a SAM/BAM/CRAM file and rewrites it with new adapter-trimming tags.  [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mDiagnostics and Quality Control:                 Tools that collect sequencing quality related and comparative metrics[0m
+[32m    AccumulateQualityYieldMetrics                [31m[36mCombines multiple QualityYieldMetrics files into a single file.[0m
+[32m    AccumulateVariantCallingMetrics              [31m[36mCombines multiple Variant Calling Metrics files into a single file[0m
+[32m    BamIndexStats                                [31m[36mGenerate index statistics from a BAM file[0m
+[32m    CalculateFingerprintMetrics                  [31m[36mCalculate statistics on fingerprints, checking their viability[0m
+[32m    CalculateReadGroupChecksum                   [31m[36mCreates a hash code based on the read groups (RG).  [0m
+[32m    CheckDuplicateMarking                        [31m[36mChecks the consistency of duplicate markings.[0m
+[32m    CheckFingerprint                             [31m[36mComputes a fingerprint from the supplied input (SAM/BAM/CRAM or VCF) file and compares it to the provided genotypes[0m
+[32m    CheckTerminatorBlock                         [31m[36mAsserts the provided gzip file's (e.g., BAM) last block is well-formed; RC 100 otherwise[0m
+[32m    ClusterCrosscheckMetrics                     [31m[36mClusters the results of a CrosscheckFingerprints run by LOD score[0m
+[32m    CollectAlignmentSummaryMetrics               [31m[36m<b>Produces a summary of alignment metrics from a SAM or BAM file.</b>  [0m
+[32m    CollectArraysVariantCallingMetrics           [31m[36mCollects summary and per-sample from the provided arrays VCF file[0m
+[32m    CollectBaseDistributionByCycle               [31m[36mChart the nucleotide distribution per cycle in a SAM or BAM file[0m
+[32m    CollectGcBiasMetrics                         [31m[36mCollect metrics regarding GC bias. [0m
+[32m    CollectHiSeqXPfFailMetrics                   [31m[36mClassify PF-Failing reads in a HiSeqX Illumina Basecalling directory into various categories.[0m
+[32m    CollectHsMetrics                             [31m[36mCollects hybrid-selection (HS) metrics for a SAM or BAM file.  [0m
+[32m    CollectIndependentReplicateMetrics           [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mEstimates the rate of independent replication rate of reads within a bam. 
+[0m
+[32m    CollectInsertSizeMetrics                     [31m[36mCollect metrics about the insert size distribution of a paired-end library. [0m
+[32m    CollectJumpingLibraryMetrics                 [31m[36mCollect jumping library metrics. [0m
+[32m    CollectMultipleMetrics                       [31m[36mCollect multiple classes of metrics. [0m
+[32m    CollectOxoGMetrics                           [31m[36mCollect metrics to assess oxidative artifacts.[0m
+[32m    CollectQualityYieldMetrics                   [31m[36mCollect metrics about reads that pass quality thresholds and Illumina-specific filters.  [0m
+[32m    CollectRawWgsMetrics                         [31m[36mCollect whole genome sequencing-related metrics.  [0m
+[32m    CollectRnaSeqMetrics                         [31m[36mProduces RNA alignment metrics for a SAM or BAM file.  [0m
+[32m    CollectRrbsMetrics                           [31m[36m<b>Collects metrics from reduced representation bisulfite sequencing (Rrbs) data.</b>  [0m
+[32m    CollectSamErrorMetrics                       [31m[36mProgram to collect error metrics on bases stratified in various ways.[0m
+[32m    CollectSequencingArtifactMetrics             [31m[36mCollect metrics to quantify single-base sequencing artifacts.  [0m
+[32m    CollectTargetedPcrMetrics                    [31m[36mCalculate PCR-related metrics from targeted sequencing data. [0m
+[32m    CollectVariantCallingMetrics                 [31m[36mCollects per-sample and aggregate (spanning all samples) metrics from the provided VCF file[0m
+[32m    CollectWgsMetrics                            [31m[36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.[0m
+[32m    CollectWgsMetricsWithNonZeroCoverage         [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.  [0m
+[32m    CompareMetrics                               [31m[36mCompare two metrics files.[0m
+[32m    CompareSAMs                                  [31m[36mCompare two input SAM/BAM/CRAM files.  [0m
+[32m    ConvertHaplotypeDatabaseToVcf                [31m[36mConvert Haplotype database file to vcf[0m
+[32m    ConvertSequencingArtifactToOxoG              [31m[36mExtract OxoG metrics from generalized artifacts metrics.  [0m
+[32m    CrosscheckFingerprints                       [31m[36mChecks that all data in the input files appear to have come from the same individual[0m
+[32m    CrosscheckReadGroupFingerprints              [31m[36mDEPRECATED: USE CrosscheckFingerprints. [0m
+[32m    EstimateLibraryComplexity                    [31m[36mEstimates the numbers of unique molecules in a sequencing library.  [0m
+[32m    ExtractFingerprint                           [31m[36mComputes a fingerprint from the input file.[0m
+[32m    IdentifyContaminant                          [31m[36mComputes a fingerprint from the supplied SAM/BAM file, given a contamination estimate.[0m
+[32m    LiftOverHaplotypeMap                         [31m[36mLifts over a haplotype database from one reference to another[0m
+[32m    MeanQualityByCycle                           [31m[36mCollect mean quality by cycle.[0m
+[32m    QualityScoreDistribution                     [31m[36mChart the distribution of quality scores.  [0m
+[32m    ValidateSamFile                              [31m[36mValidates a SAM/BAM/CRAM file.[0m
+[32m    ViewSam                                      [31m[36mPrints a SAM or BAM file to the screen[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mGenotyping Arrays Manipulation:                  Tools that manipulate data generated by Genotyping arrays[0m
+[32m    BpmToNormalizationManifestCsv                [31m[36mProgram to convert an Illumina bpm file into a bpm.csv file.[0m
+[32m    CombineGenotypingArrayVcfs                   [31m[36mProgram to combine multiple genotyping array VCF files into one VCF.[0m
+[32m    CompareGtcFiles                              [31m[36mCompares two GTC files.[0m
+[32m    CreateBafRegressMetricsFile                  [31m[36mProgram to generate a picard metrics file from the output of the bafRegress tool.[0m
+[32m    CreateExtendedIlluminaManifest               [31m[36mCreate an Extended Illumina Mani[0m[91mfest for usage by the Picard tool GtcToVcf[0m
+[32m    CreateVerifyIDIntensityContaminationMetricsFile    [31m[36mProgram to generate a picard metrics file from the output of the VerifyIDIntensity tool.[0m
+[32m    GtcToVcf                                     [31m[36mProgram to convert an Illumina GTC file to a VCF[0m
+[32m    MergePedIntoVcf                              [31m[36mProgram to merge a single-sample ped file from zCall into a single-sample VCF.[0m
+[32m    VcfToAdpc                                    [31m[36mProgram to convert an Arrays VCF to an ADPC file.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mIntervals Manipulation:                          Tools that process genomic intervals in various formats[0m
+[32m    BedToIntervalList                            [31m[36mConverts a BED file to a Picard Interval List.  [0m
+[32m    IntervalListToBed                            [31m[36mConverts an Picard IntervalList file to a BED file.[0m
+[32m    IntervalListTools                            [31m[36mA tool for performing various IntervalList manipulations[0m
+[32m    LiftOverIntervalList                         [31m[36mLifts over an interval list from one reference build to another. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mOther:                                           Miscellaneous tools, e.g. those that aid in data streaming[0m
+[32m    FifoBuffer                                   [31m[36mProvides a large, FIFO buffer that can be used to buffer input and output streams between programs.[0m
+[32m    SortGff                                      [31m[36mSorts a gff3 file, and adds flush directives[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mRead Data Manipulation:                          Tools that manipulate read data in SAM, BAM or CRAM format[0m
+[32m    AddCommentsToBam                             [31m[36mAdds comments to the header of a BAM file.[0m
+[32m    AddOATag                                     [31m[36mRecord current alignment information to OA tag.[0m
+[32m    AddOrReplaceReadGroups                       [31m[36mAssigns all the reads in a file to a single new read-group.[0m
+[32m    BamToBfq                                     [31m[36mConverts a BAM file into a BFQ (binary fastq formatted) file[0m
+[32m    BuildBamIndex                                [31m[36mGenerates a BAM index ".bai" file.  [0m
+[32m    CleanSam                                     [31m[36mCleans a SAM/BAM/CRAM files, soft-clipping beyond-end-of-reference alignments and setting MAPQ to 0 for unmapped reads[0m
+[32m    CollectDuplicateMetrics                      [31m[36mCollect Duplicate metrics from marked file.[0m
+[32m    DownsampleSam                                [31m[36mDownsample a SAM or BAM file.[0m
+[32m    FastqToSam                                   [31m[36mConverts a FASTQ file to an unaligned BAM or SAM file[0m
+[32m    FilterSamReads                               [31m[36mSubsets reads from a SAM/BAM/CRAM file by applying one of several filters.[0m
+[32m    FixMateInformation                           [31m[36mVerify mate-pair information between mates and fix if needed.[0m
+[32m    GatherBamFiles                               [31m[36mConcatenate efficiently BAM files that resulted from a scattered parallel analysis[0m
+[32m    MarkDuplicates                               [31m[36mIdentifies duplicate reads.  [0m
+[32m    MarkDuplicatesWithMateCigar                  [31m[36mIdentifies duplicate reads, accounting for mate CIGAR.  [0m
+[32m    MergeBamAlignment                            [31m[36mMerge alignment data from a SAM or BAM with data in an unmapped BAM file.  [0m
+[32m    MergeSamFiles                                [31m[36mMerges multiple SAM/BAM/CRAM (and/or) files into a single file.  [0m
+[32m    PositionBasedDownsampleSam                   [31m[36mDownsample a SAM or BAM file to retain a subset of the reads based on the reads location in each tile in the flowcell.[0m
+[32m    ReorderSam                                   [31m[36mReorders reads in a SAM or BAM file to match ordering in a second reference file.[0m
+[32m    ReplaceSamHeader                             [31m[36mReplaces the SAMFileHeader in a SAM/BAM/CRAM file.  [0m
+[32m    RevertOriginalBaseQualitiesAndAddMateCigar   [31m[36mReverts the original base qualities and adds the mate cigar tag to read-group files[0m
+[32m    RevertSam                                    [31m[36mReverts SAM/BAM/CRAM files to a previous state.  [0m
+[32m    SamFormatConverter                           [31m[36mConvert a BAM file to a SAM file, or a SAM to a BAM[0m
+[32m    SamToFastq                                   [31m[36mConverts a SAM/BAM/CRAM file to FASTQ.[0m
+[32m    SamToFastqWithTags                           [31m[36mConverts a SAM or BAM file to FASTQ alongside FASTQs created from tags.[0m
+[32m    SetNmAndUqTags                               [31m[36mDEPRECATED: Use SetNmMdAndUqTags instead.[0m
+[32m    SetNmMdAndUqTags                             [31m[36mFixes the NM, MD, and UQ tags in a SAM/BAM/CRAM file [0m
+[32m    SimpleMarkDuplicatesWithMateCigar            [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mExamines aligned records in the supplied SAM or BAM file to locate duplicate molecules.[0m
+[32m    SortSam                                      [31m[36mSorts a SAM, BAM or CRAM file.  [0m
+[32m    SplitSamByLibrary                            [31m[36mSplits a SAM/BAM/CRAM file into individual files by library[0m
+[32m    SplitSamByNumberOfReads                      [31m[36mSplits a SAM/BAM/CRAM file to multiple files.[0m
+[32m    UmiAwareMarkDuplicatesWithMateCigar          [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mIdentifies duplicate reads using information from read positions and UMIs. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mReference:                                       Tools that analyze and manipulate FASTA format references[0m
+[32m    BaitDesigner                                 [31m[36mDesigns oligonucleotide baits for hybrid selection reactions.[0m
+[32m    CreateSequenceDictionary                     [31m[36mCreates a sequence dictionary for a reference sequence.  [0m
+[32m    ExtractSequences                             [31m[36mSubsets intervals from a reference sequence to a new FASTA file.[0m
+[32m    NonNFastaSize                                [31m[36mCounts the number of non-N bases in a fasta file.[0m
+[32m    NormalizeFasta                               [31m[36mNormalizes lines of sequence in a FASTA file to be of the same length.[0m
+[32m    ScatterIntervalsByNs                         [31m[36mWrites an interval list created by splitting a reference at Ns.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Evaluation and Refinement:               Tools that evaluate and refine variant calls, e.g. with annotations not offered by the engine[0m
+[32m    FindMendelianViolations                      [31m[36mFinds mendelian violations of all types within a VCF[0m
+[32m    GenotypeConcordance                          [31m[36mCalculates the concordance between genotype data of one sample in each of two VCFs - truth (or reference) vs. calls.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Filtering:                               Tools that filter variants by annotating the FILTER column[0m
+[32m    FilterVcf                                    [31m[36mHard filters a VCF.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Manipulation:                            Tools that manipulate variant call format (VCF) data[0m
+[32m    FixVcfHeader                        [0m[91m         [31m[36mReplaces or fixes a VCF header.[0m
+[32m    GatherVcfs                                   [31m[36mGathers multiple VCF files from a scatter operation into a single VCF file[0m
+[32m    LiftoverVcf                                  [31m[36mLifts over a VCF file from one reference build to another.  [0m
+[32m    MakeSitesOnlyVcf                             [31m[36mCreates a VCF that contains all the site-level information for all records in the input VCF but no genotype information.[0m
+[32m    MakeVcfSampleNameMap                         [31m[36mCreates a TSV from sample name to VCF/GVCF path, with one line per input.[0m
+[32m    MergeVcfs                                    [31m[36mCombines multiple variant files into a single variant file[0m
+[32m    RenameSampleInVcf                            [31m[36mRenames a sample within a VCF or BCF.[0m
+[32m    SortVcf                                      [31m[36mSorts one or more VCF files.  [0m
+[32m    SplitVcfs                                    [31m[36mSplits SNPs and INDELs into separate files.  [0m
+[32m    UpdateVcfSequenceDictionary                  [31m[36mTakes a VCF and a second file that contains a sequence dictionary and updates the VCF with the new sequence dictionary.[0m
+[32m    VcfFormatConverter                           [31m[36mConverts VCF to BCF or BCF to VCF.  [0m
+[32m    VcfToIntervalList                            [31m[36mConverts a VCF or BCF file to a Picard Interval List[0m
+
+[37m--------------------------------------------------------------------------------------
+
+[0m[0mRemoving intermediate container f2f1b326e755
+ ---> 8d6997726d38
+Step 13/15 : RUN chmod a+r /opt2/versions.txt
+ ---> Running in ded1874c3ad1
+Removing intermediate container ded1874c3ad1
+ ---> 3d8239c5d4f0
+Step 14/15 : WORKDIR /data2
+ ---> Running in c2652c5e3fcf
+Removing intermediate container c2652c5e3fcf
+ ---> 5d06e8d466a5
+Step 15/15 : RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+ ---> Running in 7e57b4dbf4aa
+Removing intermediate container 7e57b4dbf4aa
+ ---> f2e46ca70bfb
+Successfully built f2e46ca70bfb
+Successfully tagged nciccbr/ccrgb_qctools:v1.6

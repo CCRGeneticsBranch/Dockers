@@ -1,0 +1,31 @@
+Sending build context to Docker daemon  713.2kB
+Step 1/14 : FROM nciccbr/ccrgb_qctools:v1.3
+ ---> 00987c3b8177
+Step 2/14 : ENV TAG="v1.4"
+ ---> Running in 9e71d3ded118
+Removing intermediate container 9e71d3ded118
+ ---> 280b0896821d
+Step 3/14 : WORKDIR	/opt2
+ ---> Running in 60cee688b6fa
+Removing intermediate container 60cee688b6fa
+ ---> 944a5af2f146
+Step 4/14 : RUN	git clone https://github.com/statgen/fastQValidator.git
+ ---> Running in 039f18ab3901
+[91mCloning into 'fastQValidator'...
+[0mRemoving intermediate container 039f18ab3901
+ ---> 269629ebe436
+Step 5/14 : WORKDIR	/opt2/fastQValidator
+ ---> Running in 9a6570927325
+Removing intermediate container 9a6570927325
+ ---> 5e178772aa3c
+Step 6/14 : RUN	export CXXFLAGS="-static-libgcc -static-libstdc++" && 	export LD_FLAGS="-static -lpthread" && 	make cloneLib && make
+ ---> Running in f649f38992c7
+Unable to locate: ./../libStatGen/Makefiles/Makefile.tool
+To change the location, set LIB_PATH_GENERAL or LIB_PATH_FASTQ_VALIDATOR to the appropriate path to libStatGen. Or specify "make LIB_PATH_GENERAL=yourPath" or "make LIB_PATH_FASTQ_VALIDATOR=yourPath"
+Use make cloneLib if you have git and want to clone the current libStatGen at that location.
+[91mCloning into '../libStatGen'...
+[0m[91mfatal: unable to connect to github.com:
+github.com[0: 140.82.112.4]: errno=Connection timed out
+
+[0m[91mmake: *** [Makefile.inc:42: cloneLib] Error 128
+[0m
