@@ -1,0 +1,75 @@
+Sending build context to Docker daemon  31.43MB
+Step 1/21 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/21 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> b68b0f2b4a5c
+Step 3/21 : WORKDIR /opt2
+ ---> Using cache
+ ---> c08809055452
+Step 4/21 : RUN wget https://storage.googleapis.com/gatk-software/package-archive/gatk/GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2 && 	tar xjvf GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2 && 	rm -f GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2
+ ---> Using cache
+ ---> 42c0bf41588d
+Step 5/21 : ENV GATK_JAR="/opt2/GenomeAnalysisTK-3.8-1-0-gf15c1c3ef/GenomeAnalysisTK.jar"
+ ---> Using cache
+ ---> 65a82bbd3ab6
+Step 6/21 : ENV CONDA_DIR /opt2/conda
+ ---> Using cache
+ ---> ae13883fa195
+Step 7/21 : WORKDIR /opt2
+ ---> Using cache
+ ---> be22ef0891da
+Step 8/21 : RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /opt2/miniconda.sh &&   /bin/bash /opt2/miniconda.sh -b -p /opt2/conda
+ ---> Using cache
+ ---> 37e7ab5daa13
+Step 9/21 : ENV PATH=$CONDA_DIR/bin:$PATH
+ ---> Using cache
+ ---> 555abb9c017f
+Step 10/21 : RUN . /opt2/conda/etc/profile.d/conda.sh && conda create -n conpair python=2.7 && conda activate conpair && conda config --add channels defaults && conda config --add channels bioconda && conda config --add channels conda-forge && conda install numpy=1.7
+ ---> Using cache
+ ---> bd3e4bb35115
+Step 11/21 : RUN git clone https://github.com/nygenome/Conpair.git && 	cd Conpair && 	git checkout v0.2
+ ---> Using cache
+ ---> ad9eaa6a6d61
+Step 12/21 : ENV CONPAIR_DIR="/opt2/Conpair"
+ ---> Using cache
+ ---> 8b6fe385ce61
+Step 13/21 : ENV PATH="$PATH:$CONPAIR_DIR/scripts"
+ ---> Using cache
+ ---> 047ef5cb0ca2
+Step 14/21 : ENV PYTHONPATH="$PYTHONPATH:$CONPAIR_DIR/modules/"
+ ---> Using cache
+ ---> e0d233732f95
+Step 15/21 : COPY conpair /opt2/conpair
+ ---> e1344ddca9a8
+Step 16/21 : RUN chmod a+x /opt2/conpair
+ ---> Running in c2ccebd78e0a
+Removing intermediate container c2ccebd78e0a
+ ---> affe129ba08a
+Step 17/21 : ENTRYPOINT ["/opt2/conpair"]
+ ---> Running in 57d5dfa2fadf
+Removing intermediate container 57d5dfa2fadf
+ ---> 3b086ba31be4
+Step 18/21 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> 8caf9337d42d
+Step 19/21 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in f79b9843c3f2
+Removing intermediate container f79b9843c3f2
+ ---> 64dd6e9c824a
+Step 20/21 : WORKDIR /data2
+ ---> Running in 820d4ec4eb17
+Removing intermediate container 820d4ec4eb17
+ ---> 71d715cfd4a6
+Step 21/21 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in ef1a9c1a1375
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container ef1a9c1a1375
+ ---> abf471360b9c
+Successfully built abf471360b9c
+Successfully tagged nciccbr/ccrgb_conpair:v1.0

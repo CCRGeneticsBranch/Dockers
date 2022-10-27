@@ -1,0 +1,107 @@
+Sending build context to Docker daemon  30.44MB
+Step 1/14 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/14 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> fca334e0deed
+Step 3/14 : WORKDIR /opt2
+ ---> Using cache
+ ---> 2eedaac8ca48
+Step 4/14 : RUN wget https://storage.googleapis.com/gatk-software/package-archive/gatk/GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2 && 	tar xjvf GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2 && 	rm -f GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2
+ ---> Using cache
+ ---> 762d009ef123
+Step 5/14 : ENV GATK_JAR="/opt2/GenomeAnalysisTK-3.8-1-0-gf15c1c3ef/GenomeAnalysisTK.jar"
+ ---> Using cache
+ ---> 14f443ad07de
+Step 6/14 : RUN git clone https://github.com/nygenome/Conpair.git && 	cd Conpair && 	git checkout v0.2
+ ---> Using cache
+ ---> 0978bcbadd3c
+Step 7/14 : ENV CONPAIR_DIR="/opt2/Conpair"
+ ---> Using cache
+ ---> 497c1b3ec6ca
+Step 8/14 : ENV PATH="$PATH:$CONPAIR_DIR/scripts"
+ ---> Using cache
+ ---> 7dfbbddc9166
+Step 9/14 : ENV PYTHONPATH="$PYTHONPATH:$CONPAIR_DIR/modules/"
+ ---> Running in aa8553cc61f2
+Removing intermediate container aa8553cc61f2
+ ---> aa85ff714281
+Step 10/14 : RUN pip install numpy
+ ---> Running in 60612c43f100
+Requirement already satisfied: numpy in /usr/local/lib/python3.8/dist-packages (1.23.1)
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/utils/logging.py", line 177, in emit
+    self.console.print(renderable, overflow="ignore", crop=False, style=style)
+  File "/usr/local/lib/python3.8/dist-packages/pip/_vendor/rich/console.py", line 1673, in print
+    extend(render(renderable, render_options))
+  File "/usr/local/lib/python3.8/dist-packages/pip/_vendor/rich/console.py", line 1305, in render
+    for render_output in iter_render:
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/utils/logging.py", line 134, in __rich_console__
+    for line in lines:
+  File "/usr/local/lib/python3.8/dist-packages/pip/_vendor/rich/segment.py", line 249, in split_lines
+    for segment in segments:
+  File "/usr/local/lib/python3.8/dist-packages/pip/_vendor/rich/console.py", line 1283, in render
+    renderable = rich_cast(renderable)
+  File "/usr/local/lib/python3.8/dist-packages/pip/_vendor/rich/protocol.py", line 36, in rich_cast
+    renderable = cast_method()
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/self_outdated_check.py", line 130, in __rich__
+    pip_cmd = get_best_invocation_for_this_pip()
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/utils/entrypoints.py", line 58, in get_best_invocation_for_this_pip
+    if found_executable and os.path.samefile(
+  File "/usr/lib/python3.8/genericpath.py", line 101, in samefile
+    s2 = os.stat(f2)
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/bin/pip3.8'
+Call stack:
+  File "/usr/local/bin/pip", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/cli/main.py", line 70, in main
+    return command.main(cmd_args)
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/cli/base_command.py", line 101, in main
+    return self._main(args)
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/cli/base_command.py", line 223, in _main
+    self.handle_pip_version_check(options)
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/cli/req_command.py", line 190, in handle_pip_version_check
+    pip_self_version_check(session, options)
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/self_outdated_check.py", line 236, in pip_self_version_check
+    logger.warning("[present-rich] %s", upgrade_prompt)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1458, in warning
+    self._log(WARNING, msg, args, **kwargs)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1589, in _log
+    self.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1599, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1661, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 954, in handle
+    self.emit(record)
+  File "/usr/local/lib/python3.8/dist-packages/pip/_internal/utils/logging.py", line 179, in emit
+    self.handleError(record)
+Message: '[present-rich] %s'
+Arguments: (UpgradePrompt(old='22.2.2', new='22.3'),)
+[0mRemoving intermediate container 60612c43f100
+ ---> c07ea923a7be
+Step 11/14 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> 7c70798039a8
+Step 12/14 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in bb3306978b9f
+Removing intermediate container bb3306978b9f
+ ---> 6f5afee552a8
+Step 13/14 : WORKDIR /data2
+ ---> Running in 571e3d981087
+Removing intermediate container 571e3d981087
+ ---> c2d55cb3d79b
+Step 14/14 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 36125b87bbbc
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 36125b87bbbc
+ ---> 1c976856d22e
+Successfully built 1c976856d22e
+Successfully tagged nciccbr/ccrgb_conpair:v1.0

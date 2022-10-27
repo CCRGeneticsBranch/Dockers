@@ -1,0 +1,154 @@
+Sending build context to Docker daemon  31.44MB
+Step 1/20 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/20 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> b68b0f2b4a5c
+Step 3/20 : WORKDIR /opt2
+ ---> Using cache
+ ---> c08809055452
+Step 4/20 : RUN wget https://storage.googleapis.com/gatk-software/package-archive/gatk/GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2 && 	tar xjvf GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2 && 	rm -f GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2
+ ---> Using cache
+ ---> 42c0bf41588d
+Step 5/20 : ENV GATK_JAR="/opt2/GenomeAnalysisTK-3.8-1-0-gf15c1c3ef/GenomeAnalysisTK.jar"
+ ---> Using cache
+ ---> 65a82bbd3ab6
+Step 6/20 : ENV CONDA_DIR /opt2/conda
+ ---> Using cache
+ ---> ae13883fa195
+Step 7/20 : WORKDIR /opt2
+ ---> Using cache
+ ---> be22ef0891da
+Step 8/20 : RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /opt2/miniconda.sh &&   /bin/bash /opt2/miniconda.sh -b -p /opt2/conda
+ ---> Using cache
+ ---> 37e7ab5daa13
+Step 9/20 : ENV PATH=$CONDA_DIR/bin:$PATH
+ ---> Using cache
+ ---> 555abb9c017f
+Step 10/20 : RUN . /opt2/conda/etc/profile.d/conda.sh && conda create -n conpair python=2.7 && conda activate conpair && conda config --add channels defaults && conda config --add channels bioconda && conda config --add channels conda-forge && conda install numpy=1.7 scipy=0.14
+ ---> Running in 5b75236f78e6
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+[91m
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.12.0
+  latest version: 22.9.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+[0m
+## Package Plan ##
+
+  environment location: /opt2/conda/envs/conpair
+
+  added / updated specs:
+    - python=2.7
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _openmp_mutex-5.1          |            1_gnu          21 KB
+    ca-certificates-2022.07.19 |       h06a4308_0         124 KB
+    certifi-2020.6.20          |     pyhd3eb1b0_3         155 KB
+    libgcc-ng-11.2.0           |       h1234567_1         5.3 MB
+    libgomp-11.2.0             |       h1234567_1         474 KB
+    libstdcxx-ng-11.2.0        |       h1234567_1         4.7 MB
+    ncurses-6.3                |       h5eee18b_3         781 KB
+    pip-19.3.1                 |           py27_0         1.7 MB
+    python-2.7.18              |       ha1903f6_2         9.8 MB
+    readline-8.2               |       h5eee18b_0         357 KB
+    setuptools-44.0.0          |           py27_0         512 KB
+    sqlite-3.39.3              |       h5082296_0         1.1 MB
+    tk-8.6.12                  |       h1ccaba5_0         3.0 MB
+    zlib-1.2.13                |       h5eee18b_0         103 KB
+    ------------------------------------------------------------
+                                           Total:        28.1 MB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main
+  _openmp_mutex      pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2022.07.19-h06a4308_0
+  certifi            pkgs/main/noarch::certifi-2020.6.20-pyhd3eb1b0_3
+  libffi             pkgs/main/linux-64::libffi-3.3-he6710b0_2
+  libgcc-ng          pkgs/main/linux-64::libgcc-ng-11.2.0-h1234567_1
+  libgomp            pkgs/main/linux-64::libgomp-11.2.0-h1234567_1
+  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-11.2.0-h1234567_1
+  ncurses            pkgs/main/linux-64::ncurses-6.3-h5eee18b_3
+  pip                pkgs/main/linux-64::pip-19.3.1-py27_0
+  python             pkgs/main/linux-64::python-2.7.18-ha1903f6_2
+  readline           pkgs/main/linux-64::readline-8.2-h5eee18b_0
+  setuptools         pkgs/main/linux-64::setuptools-44.0.0-py27_0
+  sqlite             pkgs/main/linux-64::sqlite-3.39.3-h5082296_0
+  tk                 pkgs/main/linux-64::tk-8.6.12-h1ccaba5_0
+  wheel              pkgs/main/noarch::wheel-0.37.1-pyhd3eb1b0_0
+  zlib               pkgs/main/linux-64::zlib-1.2.13-h5eee18b_0
+
+
+Proceed ([y]/n)? 
+
+Downloading and Extracting Packages
+sqlite-3.39.3        | 1.1 MB    |            |   0% sqlite-3.39.3        | 1.1 MB    | ####5      |  46% sqlite-3.39.3        | 1.1 MB    | ########## | 100% sqlite-3.39.3        | 1.1 MB    | ########## | 100% 
+zlib-1.2.13          | 103 KB    |            |   0% zlib-1.2.13          | 103 KB    | ########## | 100% zlib-1.2.13          | 103 KB    | ########## | 100% 
+libgomp-11.2.0       | 474 KB    |            |   0% libgomp-11.2.0       | 474 KB    | ########## | 100% libgomp-11.2.0       | 474 KB    | ########## | 100% 
+ncurses-6.3          | 781 KB    |            |   0% ncurses-6.3          | 781 KB    | ########## | 100% ncurses-6.3          | 781 KB    | ########## | 100% 
+python-2.7.18        | 9.8 MB    |            |   0% python-2.7.18        | 9.8 MB    | ######7    |  68% python-2.7.18        | 9.8 MB    | ########## | 100% 
+certifi-2020.6.20    | 155 KB    |            |   0% certifi-2020.6.20    | 155 KB    | ########## | 100% 
+pip-19.3.1           | 1.7 MB    |            |   0% pip-19.3.1           | 1.7 MB    | ########## | 100% pip-19.3.1           | 1.7 MB    | ########## | 100% 
+setuptools-44.0.0    | 512 KB    |            |   0% setuptools-44.0.0    | 512 KB    | ########## | 100% setuptools-44.0.0    | 512 KB    | ########## | 100% 
+libgcc-ng-11.2.0     | 5.3 MB    |            |   0% libgcc-ng-11.2.0     | 5.3 MB    | ########## | 100% libgcc-ng-11.2.0     | 5.3 MB    | ########## | 100% 
+_openmp_mutex-5.1    | 21 KB     |            |   0% _openmp_mutex-5.1    | 21 KB     | ########## | 100% _openmp_mutex-5.1    | 21 KB     | ########## | 100% 
+ca-certificates-2022 | 124 KB    |            |   0% ca-certificates-2022 | 124 KB    | ########## | 100% ca-certificates-2022 | 124 KB    | ########## | 100% 
+tk-8.6.12            | 3.0 MB    |            |   0% tk-8.6.12            | 3.0 MB    | ########## | 100% tk-8.6.12            | 3.0 MB    | ########## | 100% 
+libstdcxx-ng-11.2.0  | 4.7 MB    |            |   0% libstdcxx-ng-11.2.0  | 4.7 MB    | ########## | 100% libstdcxx-ng-11.2.0  | 4.7 MB    | ########## | 100% 
+readline-8.2         | 357 KB    |            |   0% readline-8.2         | 357 KB    | ########## | 100% readline-8.2         | 357 KB    | ########## | 100% 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate conpair
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+[91mWarning: 'defaults' already in 'channels' list, moving to the top
+[0mCollecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... failed with initial frozen solve. Retrying with flexible solve.
+[91m
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - scipy=0.14
+
+Current channels:
+
+  - https://conda.anaconda.org/conda-forge/linux-64
+  - https://conda.anaconda.org/conda-forge/noarch
+  - https://conda.anaconda.org/bioconda/linux-64
+  - https://conda.anaconda.org/bioconda/noarch
+  - https://repo.anaconda.com/pkgs/main/linux-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/linux-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+[0m
