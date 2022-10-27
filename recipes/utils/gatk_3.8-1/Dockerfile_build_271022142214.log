@@ -1,0 +1,38 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/9 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/9 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> d6386f7a9f0f
+Step 3/9 : WORKDIR /opt2
+ ---> Using cache
+ ---> b7498f7310d7
+Step 4/9 : RUN wget https://storage.googleapis.com/gatk-software/package-archive/gatk/GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2 && 	tar xjvf GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2 && 	rm -f GenomeAnalysisTK-3.8-1-0-gf15c1c3ef.tar.bz2
+ ---> Using cache
+ ---> 7f3c89582c77
+Step 5/9 : ENV GATK_JAR="/opt2/GenomeAnalysisTK-3.8-1-0-gf15c1c3ef/GenomeAnalysisTK.jar"
+ ---> Using cache
+ ---> 2e2e87a5493c
+Step 6/9 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> f6c308d0a6a0
+Step 7/9 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 3f0fca5b225d
+Removing intermediate container 3f0fca5b225d
+ ---> 59c6a2744649
+Step 8/9 : WORKDIR /data2
+ ---> Running in f3a1dd7ac7ab
+Removing intermediate container f3a1dd7ac7ab
+ ---> ef470ddc9fdb
+Step 9/9 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 2e29b0753e85
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 2e29b0753e85
+ ---> 9d79be829de4
+Successfully built 9d79be829de4
+Successfully tagged nciccbr/ccrgb_gatk_3.8-1:v1.0
