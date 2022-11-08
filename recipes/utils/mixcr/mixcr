@@ -12,5 +12,5 @@ __conda_setup="$('/opt2/conda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 eval "$__conda_setup"
 unset __conda_setup
 conda activate mixcr
->&2 echo "USING mixcr CONDA env!"
+>&2 echo "USING mixcr CONDA env!... Please use the license found at s3://ccr-genomics-testdata/Licenses/mi.license"
 exec mixcr $@
