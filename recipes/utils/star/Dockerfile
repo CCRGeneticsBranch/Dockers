@@ -31,6 +31,11 @@ RUN wget --no-check-certificate https://github.com/suhrig/arriba/releases/downlo
     make
 ENV PATH=/opt2/arriba_v${ARRIBA_VERSION}:$PATH
 
+# arriba dependencies
+WORKDIR /opt2
+COPY dependencies.R /opt2
+RUN Rscript dependencies.R
+
 # cleanup etc
 COPY Dockerfile /opt2/Dockerfile
 RUN chmod a+rX /opt2/Dockerfile
