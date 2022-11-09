@@ -2,23 +2,34 @@ FROM nciccbr/ccbr_ubuntu_base_20.04:v1.4
 
 ENV STAR_VERSION 2.7.10a
 ENV RSEM_VERSION 1.3.3
+ENV ARRIBA_VERSION 2.3.0
 
 # install star
 WORKDIR /opt2
-RUN wget --no-check-certificate https://github.com/alexdobin/STAR/archive/${STAR_VERSION}.tar.gz
-RUN tar -xzf ${STAR_VERSION}.tar.gz
-WORKDIR /opt2/STAR-${STAR_VERSION}/source
-RUN make STAR
-ENV PATH="/opt2/STAR-${STAR_VERSION}/source":$PATH
+RUN wget --no-check-certificate https://github.com/alexdobin/STAR/archive/${STAR_VERSION}.tar.gz && \
+    tar -xzf ${STAR_VERSION}.tar.gz && \
+    rm -f ${STAR_VERSION}.tar.gz && \
+    cd /opt2/STAR-${STAR_VERSION}/source && \
+    make STAR
+ENV PATH=/opt2/STAR-${STAR_VERSION}/source:$PATH
 
 # install rsem
 WORKDIR /opt2
-RUN wget --no-check-certificate https://github.com/deweylab/RSEM/archive/refs/tags/v${RSEM_VERSION}.tar.gz
-RUN tar -xzf v${RSEM_VERSION}.tar.gz
-WORKDIR /opt2/RSEM-${RSEM_VERSION}
-RUN make
-RUN make ebseq
-ENV PATH="/opt2/RSEM-${RSEM_VERSION}":$PATH
+RUN wget --no-check-certificate https://github.com/deweylab/RSEM/archive/refs/tags/v${RSEM_VERSION}.tar.gz && \
+    tar -xzf v${RSEM_VERSION}.tar.gz && \
+    rm -f v${RSEM_VERSION}.tar.gz && \
+    cd /opt2/RSEM-${RSEM_VERSION} && \
+    make && make ebseq
+ENV PATH=/opt2/RSEM-${RSEM_VERSION}:$PATH
+
+# install arriba
+WORKDIR /opt2
+RUN wget --no-check-certificate https://github.com/suhrig/arriba/releases/download/v${ARRIBA_VERSION}/arriba_v${ARRIBA_VERSION}.tar.gz && \
+    tar -xzf arriba_v${ARRIBA_VERSION}.tar.gz && \
+    rm -f arriba_v${ARRIBA_VERSION}.tar.gz && \
+    cd /opt2/arriba_v${ARRIBA_VERSION} && \
+    make
+ENV PATH=/opt2/arriba_v${ARRIBA_VERSION}:$PATH
 
 # cleanup etc
 COPY Dockerfile /opt2/Dockerfile
