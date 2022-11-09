@@ -10,6 +10,7 @@ fi
 dt=$(date +"%d%m%y%H%M%S")
 
 docker build \
+	--build-arg BUILD_DATE=${dt} \
 	-f $1 \
 	-t $2 \
  	. | \

@@ -1,0 +1,5 @@
+install.packages("circlize")
+install.packages("BiocManager")
+BiocManager::install("GenomeInfoDb")
+BiocManager::install("GenomicRanges")
+BiocManager::install("GenomicAlignments")
