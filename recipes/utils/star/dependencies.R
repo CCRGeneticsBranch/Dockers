@@ -1,6 +1,5 @@
 install.packages("circlize")
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+install.packages("BiocManager")
 BiocManager::install("GenomeInfoDb")
 BiocManager::install("GenomicRanges")
 BiocManager::install("GenomicAlignments")
