@@ -8,11 +8,14 @@ RUN wget https://github.com/mikessh/vdjtools/releases/download/1.2.1/vdjtools-1.
 ENV VDJTOOLS_JAR="/opt2/vdjtools-1.2.1/vdjtools-1.2.1.jar"
 
 # dependencies
-# RUN apt-get update && \
-#     apt-get -y install libcurl4-openssl-dev libxml2 libxml2-dev
-# WORKDIR /opt2
-# COPY dependencies.R /opt2
-# RUN Rscript dependencies.R
+RUN apt-get update && \
+    apt-get -y install \
+    r-cran-ape r-cran-ggplot2 r-cran-gplots r-cran-mass \
+    r-cran-plotrix r-cran-rcolorbrewer r-cran-reshape r-cran-reshape2 \
+    r-cran-scaleslibcurl4-openssl-dev libxml2 libxml2-dev
+WORKDIR /opt2
+COPY dependencies.R /opt2
+RUN Rscript dependencies.R
 
 # cleanup etc
 COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
