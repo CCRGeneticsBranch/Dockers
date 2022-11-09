@@ -1,0 +1,66 @@
+Sending build context to Docker daemon  2.026MB
+Step 1/21 : FROM nciccbr/ccbr_ubuntu_base_20.04:v1.4
+ ---> 9e5ea1156c2d
+Step 2/21 : ENV STAR_VERSION 2.7.10a
+ ---> Using cache
+ ---> 2444cb7c1470
+Step 3/21 : ENV RSEM_VERSION 1.3.3
+ ---> Using cache
+ ---> a031b007f243
+Step 4/21 : ENV ARRIBA_VERSION 2.3.0
+ ---> Using cache
+ ---> c26bbe99a30f
+Step 5/21 : WORKDIR /opt2
+ ---> Using cache
+ ---> ef23b841e4d1
+Step 6/21 : RUN wget --no-check-certificate https://github.com/alexdobin/STAR/archive/${STAR_VERSION}.tar.gz &&     tar -xzf ${STAR_VERSION}.tar.gz &&     rm -f ${STAR_VERSION}.tar.gz &&     cd /opt2/STAR-${STAR_VERSION}/source &&     make STAR
+ ---> Using cache
+ ---> 342d0bf0cc2b
+Step 7/21 : ENV PATH=/opt2/STAR-${STAR_VERSION}/source:$PATH
+ ---> Using cache
+ ---> fac0400dda03
+Step 8/21 : WORKDIR /opt2
+ ---> Using cache
+ ---> 86a9b5f85a86
+Step 9/21 : RUN wget --no-check-certificate https://github.com/deweylab/RSEM/archive/refs/tags/v${RSEM_VERSION}.tar.gz &&     tar -xzf v${RSEM_VERSION}.tar.gz &&     rm -f v${RSEM_VERSION}.tar.gz &&     cd /opt2/RSEM-${RSEM_VERSION} &&     make && make ebseq
+ ---> Using cache
+ ---> a9af6546f80a
+Step 10/21 : ENV PATH=/opt2/RSEM-${RSEM_VERSION}:$PATH
+ ---> Using cache
+ ---> d24f35f4a38b
+Step 11/21 : WORKDIR /opt2
+ ---> Using cache
+ ---> b688b32d046d
+Step 12/21 : RUN wget --no-check-certificate https://github.com/suhrig/arriba/releases/download/v${ARRIBA_VERSION}/arriba_v${ARRIBA_VERSION}.tar.gz &&     tar -xzf arriba_v${ARRIBA_VERSION}.tar.gz &&     rm -f arriba_v${ARRIBA_VERSION}.tar.gz &&     cd /opt2/arriba_v${ARRIBA_VERSION} &&     make
+ ---> Using cache
+ ---> 7641b8dc66fd
+Step 13/21 : ENV PATH=/opt2/arriba_v${ARRIBA_VERSION}:$PATH
+ ---> Using cache
+ ---> e74b9458cd17
+Step 14/21 : COPY Dockerfile /opt2/Dockerfile
+ ---> Using cache
+ ---> cadf9759ffb2
+Step 15/21 : RUN chmod a+rX /opt2/Dockerfile
+ ---> Using cache
+ ---> 04fc7cbb3d59
+Step 16/21 : WORKDIR /data2
+ ---> Using cache
+ ---> 0e086f94dfac
+Step 17/21 : RUN apt-get clean
+ ---> Using cache
+ ---> 0adc11f72787
+Step 18/21 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Using cache
+ ---> 93d6b6cb7059
+Step 19/21 : LABEL github_handle="kopardev"
+ ---> Using cache
+ ---> a733d484ebee
+Step 20/21 : ARG BUILD_DATE
+ ---> Using cache
+ ---> 5e4714f55763
+Step 21/21 : LABEL build_date=$BUILD_DATE
+ ---> Running in 4fb66751e0e8
+Removing intermediate container 4fb66751e0e8
+ ---> 6a85891e3b7b
+Successfully built 6a85891e3b7b
+Successfully tagged nciccbr/ccrgb_starplus:v1.0

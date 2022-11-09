@@ -1,0 +1,268 @@
+Sending build context to Docker daemon  2.155MB
+Step 1/25 : FROM nciccbr/ccbr_ubuntu_base_20.04:v1.4
+ ---> 9e5ea1156c2d
+Step 2/25 : ENV STAR_VERSION 2.7.10a
+ ---> Using cache
+ ---> 2444cb7c1470
+Step 3/25 : ENV RSEM_VERSION 1.3.3
+ ---> Using cache
+ ---> a031b007f243
+Step 4/25 : ENV ARRIBA_VERSION 2.3.0
+ ---> Using cache
+ ---> c26bbe99a30f
+Step 5/25 : WORKDIR /opt2
+ ---> Using cache
+ ---> ef23b841e4d1
+Step 6/25 : RUN wget --no-check-certificate https://github.com/alexdobin/STAR/archive/${STAR_VERSION}.tar.gz &&     tar -xzf ${STAR_VERSION}.tar.gz &&     rm -f ${STAR_VERSION}.tar.gz &&     cd /opt2/STAR-${STAR_VERSION}/source &&     make STAR
+ ---> Using cache
+ ---> 342d0bf0cc2b
+Step 7/25 : ENV PATH=/opt2/STAR-${STAR_VERSION}/source:$PATH
+ ---> Using cache
+ ---> fac0400dda03
+Step 8/25 : WORKDIR /opt2
+ ---> Using cache
+ ---> 86a9b5f85a86
+Step 9/25 : RUN wget --no-check-certificate https://github.com/deweylab/RSEM/archive/refs/tags/v${RSEM_VERSION}.tar.gz &&     tar -xzf v${RSEM_VERSION}.tar.gz &&     rm -f v${RSEM_VERSION}.tar.gz &&     cd /opt2/RSEM-${RSEM_VERSION} &&     make && make ebseq
+ ---> Using cache
+ ---> a9af6546f80a
+Step 10/25 : ENV PATH=/opt2/RSEM-${RSEM_VERSION}:$PATH
+ ---> Using cache
+ ---> d24f35f4a38b
+Step 11/25 : WORKDIR /opt2
+ ---> Using cache
+ ---> b688b32d046d
+Step 12/25 : RUN wget --no-check-certificate https://github.com/suhrig/arriba/releases/download/v${ARRIBA_VERSION}/arriba_v${ARRIBA_VERSION}.tar.gz &&     tar -xzf arriba_v${ARRIBA_VERSION}.tar.gz &&     rm -f arriba_v${ARRIBA_VERSION}.tar.gz &&     cd /opt2/arriba_v${ARRIBA_VERSION} &&     make
+ ---> Using cache
+ ---> 7641b8dc66fd
+Step 13/25 : ENV PATH=/opt2/arriba_v${ARRIBA_VERSION}:$PATH
+ ---> Using cache
+ ---> e74b9458cd17
+Step 14/25 : RUN apt-get update &&     apt-get -y install libcurl4-openssl-dev
+ ---> Running in 8152dd502564
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [927 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [2269 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [1655 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [27.5 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [37.7 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [1772 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [2738 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1225 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [55.2 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [27.5 kB]
+Fetched 11.1 MB in 2s (5863 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  curl libcurl4
+Suggested packages:
+  libcurl4-doc libidn11-dev libkrb5-dev libldap2-dev libssh2-1-dev
+The following NEW packages will be installed:
+  libcurl4-openssl-dev
+The following packages will be upgraded:
+  curl libcurl4
+2 upgraded, 1 newly installed, 0 to remove and 238 not upgraded.
+Need to get 718 kB of archives.
+After this operation, 1552 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.14 [161 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl4 amd64 7.68.0-1ubuntu2.14 [235 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl4-openssl-dev amd64 7.68.0-1ubuntu2.14 [322 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 718 kB in 1s (837 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71930 files and directories currently installed.)
+Preparing to unpack .../curl_7.68.0-1ubuntu2.14_amd64.deb ...
+Unpacking curl (7.68.0-1ubuntu2.14) over (7.68.0-1ubuntu2.5) ...
+Preparing to unpack .../libcurl4_7.68.0-1ubuntu2.14_amd64.deb ...
+Unpacking libcurl4:amd64 (7.68.0-1ubuntu2.14) over (7.68.0-1ubuntu2.5) ...
+Selecting previously unselected package libcurl4-openssl-dev:amd64.
+Preparing to unpack .../libcurl4-openssl-dev_7.68.0-1ubuntu2.14_amd64.deb ...
+Unpacking libcurl4-openssl-dev:amd64 (7.68.0-1ubuntu2.14) ...
+Setting up libcurl4:amd64 (7.68.0-1ubuntu2.14) ...
+Setting up curl (7.68.0-1ubuntu2.14) ...
+Setting up libcurl4-openssl-dev:amd64 (7.68.0-1ubuntu2.14) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+Removing intermediate container 8152dd502564
+ ---> 8ebfe20b4fdc
+Step 15/25 : WORKDIR /opt2
+ ---> Running in e4027c316bbe
+Removing intermediate container e4027c316bbe
+ ---> f9c598b980e6
+Step 16/25 : COPY dependencies.R /opt2
+ ---> 6824d09990f0
+Step 17/25 : RUN Rscript dependencies.R
+ ---> Running in 8bb799a0cc6f
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91malso installing the dependencies 'GlobalOptions', 'shape', 'colorspace'
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/GlobalOptions_0.1.2.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 305898 bytes (298 KB)
+==[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m===[0m[91m==[0m[91m===
+downloaded 298 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/shape_1.4.6.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 677262 bytes (661 KB)
+=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m
+[0m[91mdownloaded 661 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/colorspace_2.0-3.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 2199185 bytes (2.1 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m
+downloaded 2.1 MB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/circlize_0.4.15.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 2497140 bytes (2.4 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m
+downloaded 2.4 MB
+
+[0m[91m* installing *source* package 'GlobalOptions' ...
+[0m[91m** package 'GlobalOptions' successfully unpacked and MD5 sums checked
+** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (GlobalOptions)
+[0m[91m* installing *source* package 'shape' ...
+[0m[91m** package 'shape' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** demo
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m   'shape.Rnw' using 'latin1' 
+[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (shape)
+[0m[91m* installing *source* package 'colorspace' ...
+[0m[91m** package 'colorspace' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c colorspace.c -o colorspace.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o colorspace.so colorspace.o init.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-colorspace/00new/colorspace/libs
+[0m[91m** R
+[0m[91m** data
+[0m[91m*** moving datasets to lazyload DB
+[0m[91m** demo
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (colorspace)
+[0m[91m* installing *source* package 'circlize' ...
+[0m[91m** package 'circlize' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** demo
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (circlize)
+[0m[91m
+The downloaded source packages are in
+	'/tmp/RtmpM6LK2I/downloaded_packages'
+[0m[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/BiocManager_1.30.19.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 264151 bytes (257 KB)
+===[0m[91m===[0m[91m===[0m[91m===[0m[91m===[0m[91m===[0m[91m===[0m[91m===[0m[91m===[0m[91m===[0m[91m===[0m[91m====[0m[91m===[0m[91m===[0m[91m===[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m
+[0m[91mdownloaded 257 KB
+
+[0m[91m* installing *source* package 'BiocManager' ...
+[0m[91m** package 'BiocManager' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (BiocManager)
+[0m[91m
+[0m[91mThe downloaded source packages are in
+	'/tmp/RtmpM6LK2I/downloaded_packages'[0m[91m
+[0m[91m'getOption("repos")' replaces Bioconductor standard repositories, see
+'?repositories' for details
+
+replacement repositories:
+    CRAN: https://cloud.r-project.org
+
+[0m[91mWarning: unable to access index for repository https://bioconductor.org/packages/3.10/bioc/src/contrib:
+  cannot open URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/PACKAGES'
+[0m[91mBioconductor version 3.10 (BiocManager 1.30.19), R 3.6.3 (2020-02-29)
+[0m[91mInstalling package(s) 'BiocVersion', 'GenomicRanges', 'GenomicAlignments'
+[0m[91mWarning:[0m[91m unable to access index for repository https://bioconductor.org/packages/3.10/bioc/src/contrib:
+  cannot open URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/PACKAGES'
+[0m[91mOld packages: 'KernSmooth', 'MASS', 'Matrix', 'boot', 'class', 'cluster',
+  'codetools', 'lattice', 'mgcv', 'nlme', 'nnet', 'rpart', 'spatial',
+  'survival'
+[0m[91mWarning message:
+packages 'BiocVersion', 'GenomicRanges', 'GenomicAlignments' are not available (for R version 3.6.3) 
+[0mRemoving intermediate container 8bb799a0cc6f
+ ---> dce99aea33f8
+Step 18/25 : COPY Dockerfile /opt2/Dockerfile
+ ---> 90046eee8f9d
+Step 19/25 : RUN chmod a+rX /opt2/Dockerfile
+ ---> Running in 24674d003635
+Removing intermediate container 24674d003635
+ ---> fd5d047581c9
+Step 20/25 : WORKDIR /data2
+ ---> Running in 95079cf490aa
+Removing intermediate container 95079cf490aa
+ ---> 03d34064cb87
+Step 21/25 : RUN apt-get clean
+ ---> Running in 45e423449051
+Removing intermediate container 45e423449051
+ ---> f019972d54d5
+Step 22/25 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in 38563de55c16
+Removing intermediate container 38563de55c16
+ ---> 41284e70eb47
+Step 23/25 : LABEL github_handle="kopardev"
+ ---> Running in e2d97e2cbcad
+Removing intermediate container e2d97e2cbcad
+ ---> 4c33db50f8b7
+Step 24/25 : ARG BUILD_DATE
+ ---> Running in 98478ea45529
+Removing intermediate container 98478ea45529
+ ---> 813fa0777a8c
+Step 25/25 : LABEL build_date=$BUILD_DATE
+ ---> Running in 324dae83fd6c
+Removing intermediate container 324dae83fd6c
+ ---> 8ce1b62db3b0
+Successfully built 8ce1b62db3b0
+Successfully tagged nciccbr/ccrgb_starplus:v1.0

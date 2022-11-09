@@ -1,0 +1,78 @@
+Sending build context to Docker daemon  2.545MB
+Step 1/25 : FROM nciccbr/ccbr_ubuntu_base_20.04:v1.4
+ ---> 9e5ea1156c2d
+Step 2/25 : ENV STAR_VERSION 2.7.10a
+ ---> Using cache
+ ---> 2444cb7c1470
+Step 3/25 : ENV RSEM_VERSION 1.3.3
+ ---> Using cache
+ ---> a031b007f243
+Step 4/25 : ENV ARRIBA_VERSION 2.3.0
+ ---> Using cache
+ ---> c26bbe99a30f
+Step 5/25 : WORKDIR /opt2
+ ---> Using cache
+ ---> ef23b841e4d1
+Step 6/25 : RUN wget --no-check-certificate https://github.com/alexdobin/STAR/archive/${STAR_VERSION}.tar.gz &&     tar -xzf ${STAR_VERSION}.tar.gz &&     rm -f ${STAR_VERSION}.tar.gz &&     cd /opt2/STAR-${STAR_VERSION}/source &&     make STAR
+ ---> Using cache
+ ---> 342d0bf0cc2b
+Step 7/25 : ENV PATH=/opt2/STAR-${STAR_VERSION}/source:$PATH
+ ---> Using cache
+ ---> fac0400dda03
+Step 8/25 : WORKDIR /opt2
+ ---> Using cache
+ ---> 86a9b5f85a86
+Step 9/25 : RUN wget --no-check-certificate https://github.com/deweylab/RSEM/archive/refs/tags/v${RSEM_VERSION}.tar.gz &&     tar -xzf v${RSEM_VERSION}.tar.gz &&     rm -f v${RSEM_VERSION}.tar.gz &&     cd /opt2/RSEM-${RSEM_VERSION} &&     make && make ebseq
+ ---> Using cache
+ ---> a9af6546f80a
+Step 10/25 : ENV PATH=/opt2/RSEM-${RSEM_VERSION}:$PATH
+ ---> Using cache
+ ---> d24f35f4a38b
+Step 11/25 : WORKDIR /opt2
+ ---> Using cache
+ ---> b688b32d046d
+Step 12/25 : RUN wget --no-check-certificate https://github.com/suhrig/arriba/releases/download/v${ARRIBA_VERSION}/arriba_v${ARRIBA_VERSION}.tar.gz &&     tar -xzf arriba_v${ARRIBA_VERSION}.tar.gz &&     rm -f arriba_v${ARRIBA_VERSION}.tar.gz &&     cd /opt2/arriba_v${ARRIBA_VERSION} &&     make
+ ---> Using cache
+ ---> 7641b8dc66fd
+Step 13/25 : ENV PATH=/opt2/arriba_v${ARRIBA_VERSION}:$PATH
+ ---> Using cache
+ ---> e74b9458cd17
+Step 14/25 : RUN apt-get update &&     apt-get -y install libcurl4-openssl-dev libxml2 libxml2-dev
+ ---> Using cache
+ ---> ccf1dca9d79e
+Step 15/25 : WORKDIR /opt2
+ ---> Using cache
+ ---> 363fad2a55d1
+Step 16/25 : COPY dependencies.R /opt2
+ ---> Using cache
+ ---> c51a2e820371
+Step 17/25 : RUN Rscript dependencies.R
+ ---> Using cache
+ ---> 7237a6d399f0
+Step 18/25 : COPY Dockerfile /opt2/Dockerfile
+ ---> Using cache
+ ---> b5907e60f687
+Step 19/25 : RUN chmod a+rX /opt2/Dockerfile
+ ---> Using cache
+ ---> 104de6e919e8
+Step 20/25 : WORKDIR /data2
+ ---> Using cache
+ ---> ed82a76fb9ee
+Step 21/25 : RUN apt-get clean
+ ---> Using cache
+ ---> 71c236069530
+Step 22/25 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Using cache
+ ---> 6aee8fef102b
+Step 23/25 : LABEL github_handle="kopardev"
+ ---> Using cache
+ ---> 80e1c46f3044
+Step 24/25 : ARG BUILD_DATE
+ ---> Using cache
+ ---> 78232d47c9f7
+Step 25/25 : LABEL build_date=$BUILD_DATE
+ ---> Running in 132cbb92cb25
+Removing intermediate container 132cbb92cb25
+ ---> 0c67aaa85210
+Successfully built 0c67aaa85210
+Successfully tagged nciccbr/ccrgb_starplus:v1.0

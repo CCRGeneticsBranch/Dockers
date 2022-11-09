@@ -1,0 +1,75 @@
+Sending build context to Docker daemon  2.148MB
+Step 1/24 : FROM nciccbr/ccbr_ubuntu_base_20.04:v1.4
+ ---> 9e5ea1156c2d
+Step 2/24 : ENV STAR_VERSION 2.7.10a
+ ---> Using cache
+ ---> 2444cb7c1470
+Step 3/24 : ENV RSEM_VERSION 1.3.3
+ ---> Using cache
+ ---> a031b007f243
+Step 4/24 : ENV ARRIBA_VERSION 2.3.0
+ ---> Using cache
+ ---> c26bbe99a30f
+Step 5/24 : WORKDIR /opt2
+ ---> Using cache
+ ---> ef23b841e4d1
+Step 6/24 : RUN wget --no-check-certificate https://github.com/alexdobin/STAR/archive/${STAR_VERSION}.tar.gz &&     tar -xzf ${STAR_VERSION}.tar.gz &&     rm -f ${STAR_VERSION}.tar.gz &&     cd /opt2/STAR-${STAR_VERSION}/source &&     make STAR
+ ---> Using cache
+ ---> 342d0bf0cc2b
+Step 7/24 : ENV PATH=/opt2/STAR-${STAR_VERSION}/source:$PATH
+ ---> Using cache
+ ---> fac0400dda03
+Step 8/24 : WORKDIR /opt2
+ ---> Using cache
+ ---> 86a9b5f85a86
+Step 9/24 : RUN wget --no-check-certificate https://github.com/deweylab/RSEM/archive/refs/tags/v${RSEM_VERSION}.tar.gz &&     tar -xzf v${RSEM_VERSION}.tar.gz &&     rm -f v${RSEM_VERSION}.tar.gz &&     cd /opt2/RSEM-${RSEM_VERSION} &&     make && make ebseq
+ ---> Using cache
+ ---> a9af6546f80a
+Step 10/24 : ENV PATH=/opt2/RSEM-${RSEM_VERSION}:$PATH
+ ---> Using cache
+ ---> d24f35f4a38b
+Step 11/24 : WORKDIR /opt2
+ ---> Using cache
+ ---> b688b32d046d
+Step 12/24 : RUN wget --no-check-certificate https://github.com/suhrig/arriba/releases/download/v${ARRIBA_VERSION}/arriba_v${ARRIBA_VERSION}.tar.gz &&     tar -xzf arriba_v${ARRIBA_VERSION}.tar.gz &&     rm -f arriba_v${ARRIBA_VERSION}.tar.gz &&     cd /opt2/arriba_v${ARRIBA_VERSION} &&     make
+ ---> Using cache
+ ---> 7641b8dc66fd
+Step 13/24 : ENV PATH=/opt2/arriba_v${ARRIBA_VERSION}:$PATH
+ ---> Using cache
+ ---> e74b9458cd17
+Step 14/24 : WORKDIR /opt2
+ ---> Using cache
+ ---> cb8723f90e40
+Step 15/24 : COPY dependencies.R /opt2/dependencies.R
+ ---> Using cache
+ ---> 51dfef29f421
+Step 16/24 : RUN Rscript dependencies.R
+ ---> Using cache
+ ---> 2bd2b3ac3bf6
+Step 17/24 : COPY Dockerfile /opt2/Dockerfile
+ ---> Using cache
+ ---> a68723fa1663
+Step 18/24 : RUN chmod a+rX /opt2/Dockerfile
+ ---> Using cache
+ ---> 0a7bde67f3a7
+Step 19/24 : WORKDIR /data2
+ ---> Using cache
+ ---> 6a22f349a4e0
+Step 20/24 : RUN apt-get clean
+ ---> Using cache
+ ---> fe7134e399ec
+Step 21/24 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Using cache
+ ---> b0ba6cf6e6ec
+Step 22/24 : LABEL github_handle="kopardev"
+ ---> Using cache
+ ---> f8404be54fdc
+Step 23/24 : ARG BUILD_DATE
+ ---> Using cache
+ ---> 6d0d1feeb383
+Step 24/24 : LABEL build_date=$BUILD_DATE
+ ---> Running in e35c72776a6b
+Removing intermediate container e35c72776a6b
+ ---> a30c0c7d07fb
+Successfully built a30c0c7d07fb
+Successfully tagged nciccbr/ccrgb_starplus:v1.0
