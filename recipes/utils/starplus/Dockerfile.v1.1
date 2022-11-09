@@ -1,0 +1,28 @@
+FROM nciccbr/ccrgb_starplus:v1.0
+ENV TAG="v1.1"
+
+# adding STAR fusion
+ENV STARFUSION_VERSION 1.11.1
+
+# install star fusion
+WORKDIR /opt2
+COPY dependencies_starfusion.R /opt2/
+RUN Rscript dependencies_starfusion.R
+RUN wget --no-check-certificate https://github.com/STAR-Fusion/STAR-Fusion/releases/download/STAR-Fusion-v${STARFUSION_VERSION}/STAR-Fusion-v${STARFUSION_VERSION}.FULL.tar.gz && \
+    tar -xzvf STAR-Fusion-v${STARFUSION_VERSION}.FULL.tar.gz && \
+    rm -f STAR-Fusion-v${STARFUSION_VERSION}.FULL.tar.gz && \
+    cd /opt2/STAR-Fusion-v${STARFUSION_VERSION} && \
+    make
+ENV PATH=/opt2/STAR-Fusion-v${STARFUSION_VERSION}:$PATH
+
+# cleanup etc
+COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+RUN chmod a+rX /opt2/Dockerfile.${TAG}
+WORKDIR /data2
+RUN apt-get clean
+
+# details
+LABEL maintainer="vishal.koparde@nih.gov"
+LABEL github_handle="kopardev"
+ARG BUILD_DATE
+LABEL build_date=$BUILD_DATE

@@ -3,7 +3,6 @@ FROM nciccbr/ccbr_ubuntu_base_20.04:v1.4
 ENV STAR_VERSION 2.7.10a
 ENV RSEM_VERSION 1.3.3
 ENV ARRIBA_VERSION 2.3.0
-ENV STARFUSION_VERSION 1.11.1
 
 # install star
 WORKDIR /opt2
@@ -38,17 +37,6 @@ RUN apt-get update && \
 WORKDIR /opt2
 COPY dependencies.R /opt2
 RUN Rscript dependencies.R
-
-# install star fusion
-WORKDIR /opt2
-COPY dependencies_starfusion.R /opt2/
-RUN Rscript dependencies_starfusion.R
-RUN wget --no-check-certificate https://github.com/STAR-Fusion/STAR-Fusion/releases/download/STAR-Fusion-v${STARFUSION_VERSION}/STAR-Fusion-v${STARFUSION_VERSION}.FULL.tar.gz && \
-    tar -xzvf STAR-Fusion-v${STARFUSION_VERSION}.FULL.tar.gz && \
-    rm -f STAR-Fusion-v${STARFUSION_VERSION}.FULL.tar.gz && \
-    cd /opt2/STAR-Fusion-v${STARFUSION_VERSION} && \
-    make
-ENV PATH=/opt2/STAR-Fusion-v${STARFUSION_VERSION}:$PATH
 
 # cleanup etc
 COPY Dockerfile /opt2/Dockerfile
