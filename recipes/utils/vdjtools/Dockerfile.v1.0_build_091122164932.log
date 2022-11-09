@@ -1,0 +1,16 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/12 : FROM nciccbr/ccbr_ubuntu_base_20.04:v1.4
+ ---> 9e5ea1156c2d
+Step 2/12 : ENV TAG="v1.0"
+ ---> Running in c5ded7b4937f
+Removing intermediate container c5ded7b4937f
+ ---> b2f1b5c9de12
+Step 3/12 : WORKDIR /opt2
+ ---> Running in 1362ced26af7
+Removing intermediate container 1362ced26af7
+ ---> 61d29bfd3b89
+Step 4/12 : RUN git clone https://github.com/mikessh/vdjtools.git &&     cd vdjtools/ &&     mvn clean install
+ ---> Running in 0e40616a46d4
+[91mCloning into 'vdjtools'...
+[0m[91m/bin/sh: 1: mvn: not found
+[0m

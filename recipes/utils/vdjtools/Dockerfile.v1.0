@@ -1,0 +1,30 @@
+FROM nciccbr/ccbr_ubuntu_base_20.04:v1.4
+ENV TAG="v1.0"
+
+# install vdjtools
+WORKDIR /opt2
+RUN wget https://github.com/mikessh/vdjtools/releases/download/1.2.1/vdjtools-1.2.1.zip && \
+    unzip vdjtools-1.2.1.zip && rm -f vdjtools-1.2.1.zip
+ENV VDJTOOLS_JAR="/opt2/vdjtools-1.2.1/vdjtools-1.2.1.jar"
+
+# dependencies
+RUN apt-get update && \
+    apt-get -y install \
+    r-cran-ape r-cran-ggplot2 r-cran-gplots r-cran-mass \
+    r-cran-plotrix r-cran-rcolorbrewer r-cran-reshape r-cran-reshape2 \
+    r-cran-scales libcurl4-openssl-dev libxml2 libxml2-dev
+WORKDIR /opt2
+COPY dependencies.R /opt2
+RUN Rscript dependencies.R
+
+# cleanup etc
+COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+RUN chmod a+rX /opt2/Dockerfile.${TAG}
+WORKDIR /data2
+RUN apt-get clean
+
+# details
+LABEL maintainer="vishal.koparde@nih.gov"
+LABEL github_handle="kopardev"
+ARG BUILD_DATE
+LABEL build_date=$BUILD_DATE
