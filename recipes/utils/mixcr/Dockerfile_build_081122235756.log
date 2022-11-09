@@ -1,0 +1,50 @@
+Sending build context to Docker daemon  236.5kB
+Step 1/13 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/13 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 31d06ce101e8
+Step 3/13 : ENV CONDA_DIR /opt2/conda
+ ---> Using cache
+ ---> ace0263c2d3c
+Step 4/13 : WORKDIR /opt2
+ ---> Using cache
+ ---> dda6239d3d07
+Step 5/13 : RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /opt2/miniconda.sh &&   /bin/bash /opt2/miniconda.sh -b -p /opt2/conda
+ ---> Using cache
+ ---> c9a76437b974
+Step 6/13 : ENV PATH=$CONDA_DIR/bin:$PATH
+ ---> Using cache
+ ---> ac7b0e9f52fb
+Step 7/13 : RUN . /opt2/conda/etc/profile.d/conda.sh && conda create -n mixcr && conda activate mixcr && conda install -c milaboratories mixcr --no-deps
+ ---> Using cache
+ ---> 919000b2e520
+Step 8/13 : COPY mixcr /opt2/mixcr
+ ---> 6803af08aca1
+Step 9/13 : RUN chmod a+x /opt2/mixcr
+ ---> Running in a4b201aef2ec
+Removing intermediate container a4b201aef2ec
+ ---> 7fc501244b92
+Step 10/13 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> c8784a24ddae
+Step 11/13 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 08315d90da6f
+Removing intermediate container 08315d90da6f
+ ---> fbc75182ccee
+Step 12/13 : WORKDIR /data2
+ ---> Running in ef7899687cc1
+Removing intermediate container ef7899687cc1
+ ---> d529c3d47de0
+Step 13/13 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in cae3a36c1c48
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container cae3a36c1c48
+ ---> a8878be3820c
+Successfully built a8878be3820c
+Successfully tagged nciccbr/ccrgb_mixcr:v1.0
