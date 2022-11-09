@@ -33,7 +33,7 @@ ENV PATH=/opt2/arriba_v${ARRIBA_VERSION}:$PATH
 
 # arriba dependencies
 RUN apt-get update && \
-    apt-get -y install libcurl4-openssl-dev
+    apt-get -y install libcurl4-openssl-dev libxml2 libxml2-dev
 WORKDIR /opt2
 COPY dependencies.R /opt2
 RUN Rscript dependencies.R
