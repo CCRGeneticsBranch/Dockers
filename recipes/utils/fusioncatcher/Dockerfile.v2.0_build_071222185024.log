@@ -1,0 +1,25 @@
+Sending build context to Docker daemon  21.79MB
+Step 1/17 : FROM ubuntu:trusty
+ ---> 13b66b487594
+Step 2/17 : ENV TAG="v2.0"
+ ---> Using cache
+ ---> 237e15a6c13d
+Step 3/17 : RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade     && DEBIAN_FRONTEND=noninteractive apt-get update     && apt-get -y install software-properties-common     && add-apt-repository ppa:fkrull/deadsnakes
+ ---> Using cache
+ ---> 8e19e9180012
+Step 4/17 : RUN DEBIAN_FRONTEND=noninteractive apt-get update     && apt-get -y install     make     python2.7     python-pip     python-dev build-essential libncurses5-dev default-jdk gawk gcc g++ bzip2 make cmake automake gzip zip unzip zlib1g-dev zlib1g wget curl pigz tar parallel libtbb-dev libtbb2 python-numpy python-biopython python-xlrd python-openpyxl
+ ---> Using cache
+ ---> aa436f60cc08
+Step 5/17 : WORKDIR /opt2
+ ---> Using cache
+ ---> c7f9337c07a2
+Step 6/17 : RUN wget --no-check-certificate http://sf.net/projects/fusioncatcher/files/bootstrap.py -O bootstrap.py
+ ---> Using cache
+ ---> 8502a1ac803f
+Step 7/17 : RUN python bootstrap.py --prefix=/opt2/fusioncatcher -t -y
+ ---> Using cache
+ ---> 3d5e111d8de7
+Step 8/17 : RUN cd /opt2/fusioncatcher/bin &&     chmod a+x /opt2/fusioncatcher/bin/*.py     ln -s fusioncatcher.py fusioncatcher
+ ---> Running in efaaa14e99fd
+[91m/bin/sh: 1: cd: can't cd to /opt2/fusioncatcher/bin
+[0m

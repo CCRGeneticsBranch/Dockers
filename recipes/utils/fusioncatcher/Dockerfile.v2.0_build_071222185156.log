@@ -1,0 +1,68 @@
+Sending build context to Docker daemon   21.8MB
+Step 1/17 : FROM ubuntu:trusty
+ ---> 13b66b487594
+Step 2/17 : ENV TAG="v2.0"
+ ---> Using cache
+ ---> 237e15a6c13d
+Step 3/17 : RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade     && DEBIAN_FRONTEND=noninteractive apt-get update     && apt-get -y install software-properties-common     && add-apt-repository ppa:fkrull/deadsnakes
+ ---> Using cache
+ ---> 8e19e9180012
+Step 4/17 : RUN DEBIAN_FRONTEND=noninteractive apt-get update     && apt-get -y install     make     python2.7     python-pip     python-dev build-essential libncurses5-dev default-jdk gawk gcc g++ bzip2 make cmake automake gzip zip unzip zlib1g-dev zlib1g wget curl pigz tar parallel libtbb-dev libtbb2 python-numpy python-biopython python-xlrd python-openpyxl
+ ---> Using cache
+ ---> aa436f60cc08
+Step 5/17 : WORKDIR /opt2
+ ---> Using cache
+ ---> c7f9337c07a2
+Step 6/17 : RUN wget --no-check-certificate http://sf.net/projects/fusioncatcher/files/bootstrap.py -O bootstrap.py
+ ---> Using cache
+ ---> 8502a1ac803f
+Step 7/17 : RUN python bootstrap.py --prefix=/opt2/fusioncatcher -t -y
+ ---> Using cache
+ ---> 3d5e111d8de7
+Step 8/17 : RUN cd /opt2/fusioncatcher/fusioncatcher/bin &&     chmod a+x *.py &&     ln -s fusioncatcher.py fusioncatcher
+ ---> Running in f844c3491eab
+Removing intermediate container f844c3491eab
+ ---> e339502397de
+Step 9/17 : ENV PATH="/opt2/fusioncatcher/bin":$PATH
+ ---> Running in 125c11cfb244
+Removing intermediate container 125c11cfb244
+ ---> c3a738d8b9a7
+Step 10/17 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> e727846b7a01
+Step 11/17 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 84da693a6208
+Removing intermediate container 84da693a6208
+ ---> e6b25c3c07de
+Step 12/17 : WORKDIR /data2
+ ---> Running in 446b4a9303c2
+Removing intermediate container 446b4a9303c2
+ ---> e6a7110e331a
+Step 13/17 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 43b572f8bce6
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 43b572f8bce6
+ ---> 22476b0d40ad
+Step 14/17 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in 2960ac235aa7
+Removing intermediate container 2960ac235aa7
+ ---> d3cee6cb1f38
+Step 15/17 : LABEL github_handle="kopardev"
+ ---> Running in 3e6f4712ec1c
+Removing intermediate container 3e6f4712ec1c
+ ---> fdb5a678cd9e
+Step 16/17 : ARG BUILD_DATE
+ ---> Running in fe913fcd42f1
+Removing intermediate container fe913fcd42f1
+ ---> bb7c67f8cfcc
+Step 17/17 : LABEL build_date=$BUILD_DATE
+ ---> Running in c8d072327bc4
+Removing intermediate container c8d072327bc4
+ ---> 9de1c901d4a0
+Successfully built 9de1c901d4a0
+Successfully tagged nciccbr/ccrgb_fusioncatcher:v2.0

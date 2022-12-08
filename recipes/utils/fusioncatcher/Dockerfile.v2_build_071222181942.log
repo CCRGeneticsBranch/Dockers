@@ -1,0 +1,163 @@
+Sending build context to Docker daemon  21.61MB
+Step 1/12 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/12 : ENV TAG="v2.0"
+ ---> Using cache
+ ---> 176759967d2c
+Step 3/12 : WORKDIR /opt2
+ ---> Using cache
+ ---> 6e20da42504a
+Step 4/12 : RUN wget http://sf.net/projects/fusioncatcher/files/bootstrap.py -O bootstrap.py && python2 bootstrap.py -t -y
+ ---> Running in a7997a6bd9b2
+[91m--2022-12-07 13:19:50--  http://sf.net/projects/fusioncatcher/files/bootstrap.py
+Resolving sf.net (sf.net)... [0m[91m204.68.111.105
+[0m[91mConnecting to sf.net (sf.net)|204.68.111.105|:80... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+[0m[91mLocation: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py [following]
+[0m[91m--2022-12-07 13:19:50--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py
+[0m[91mResolving sourceforge.net (sourceforge.net)... [0m[91m104.18.10.128, 104.18.11.128, 2606:4700::6812:b80, ...
+Connecting to sourceforge.net (sourceforge.net)|104.18.10.128|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+[0m[91mLocation: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/ [following]
+[0m[91m--2022-12-07 13:19:50--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/
+[0m[91mReusing existing connection to sourceforge.net:443.
+HTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+[0m[91mLocation: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/download [following]
+[0m[91m--2022-12-07 13:19:50--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/download
+Reusing existing connection to sourceforge.net:443.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://downloads.sourceforge.net/project/fusioncatcher/bootstrap.py?ts=gAAAAABjkNlH0x8no4pxulq03mD_J1ClOj_nQLVdER4ik11FJ6K64IOR9VehgJItpHkPyEQHuagTbaaInv7ZvAqlRZSprQibmQ%3D%3D&use_mirror=phoenixnap&r= [following]
+[0m[91m--2022-12-07 13:19:51--  https://downloads.sourceforge.net/project/fusioncatcher/bootstrap.py?ts=gAAAAABjkNlH0x8no4pxulq03mD_J1ClOj_nQLVdER4ik11FJ6K64IOR9VehgJItpHkPyEQHuagTbaaInv7ZvAqlRZSprQibmQ%3D%3D&use_mirror=phoenixnap&r=
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... [0m[91m204.68.111.105
+[0m[91mConnecting to downloads.sourceforge.net (downloads.sourceforge.net)|204.68.111.105|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://phoenixnap.dl.sourceforge.net/project/fusioncatcher/bootstrap.py [following]
+--2022-12-07 13:19:51--  https://phoenixnap.dl.sourceforge.net/project/fusioncatcher/bootstrap.py
+Resolving phoenixnap.dl.sourceforge.net (phoenixnap.dl.sourceforge.net)... [0m[91m184.164.141.26[0m[91m
+Connecting to phoenixnap.dl.sourceforge.net (phoenixnap.dl.sourceforge.net)|184.164.141.26|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+[0m[91mLength: 100548 (98K) [application/octet-stream]
+Saving to: 'bootstrap.py'
+
+     0K .......... .....[0m[91m..... .......... .[0m[91m......... .......... 50%  729K 0s
+    50K .......... ...[0m[91m.[0m[91m.[0m[91m..... .......... .......... ........  100%  606K=0.1s
+
+[0m[91m2022-12-07 13:19:52 (663 KB/s) - 'bootstrap.py' saved [100548/100548]
+
+[0m[91m  * WARNING: The Python module 'NumPy' is not installed!
+[0m[91m
+             Please, install the Python module: NumPy (see <http://pypi.python.org/pypi/numpy> for more info),
+             like for example using the commands: 
+               sudo apt-get install python-numpy
+             or
+               sudo yum install python-numpy
+             or
+               sudo easy_install numpy
+
+  * HINTS: Please, also make sure that the following are installed also, before installing the above Python library:
+     - Building tools:
+         sudo apt-get install build-essential
+         or
+         sudo yum groupinstall "Development Tools"
+         sudo yum install ncurses
+         sudo yum install ncurses-devel
+           or
+         sudo zypper install --type pattern Basis-Devel
+         sudo zypper in ncurses
+         sudo zypper in ncurses-devel
+     - Python development:
+         sudo apt-get install python-dev
+           or
+         sudo yum install python-devel
+     - GCC:
+         sudo apt-get install gcc
+           or
+         sudo yum install gcc
+     - ZLIB development:
+         sudo apt-get install zlib-dev
+           or
+         sudo yum install zlib-devel
+     - NumPy library:
+         sudo apt-get install python-numpy
+           or
+         sudo yum install python-numpy
+     - BioPython library:
+         sudo apt-get install python-biopython
+           or
+         sudo yum install python-biopython
+     - TBB:
+         sudo apt-get install libtbb-dev
+           or
+         sudo yum install libtbb-dev
+
+[0mChecking latest version of Ensembl database that is available...
+   * Version v108 found!
+
+================================================================================
+NOTE: On a Ubuntu running these before installing FusionCatcher might make the installation go smoother:
+    
+sudo apt-get -y install \
+build-essential\
+libncurses5-dev \
+default-jdk \
+gawk \
+gcc \
+g++ \
+bzip2 \
+make \
+cmake \
+automake \
+gzip \
+zip \
+unzip \
+zlib1g-dev \
+zlib1g \
+wget \
+curl \
+pigz \
+tar \
+parallel \
+libtbb-dev \
+libtbb2 \
+python \
+python-dev \
+python-numpy \
+python-biopython \
+python-xlrd \
+python-openpyxl
+================================================================================
+
+Current working directory: '/opt2'
+Obtaining the absolute path of the Python executable...
+  * Ok! '/usr/bin/python2' found!
+Python used for installation of FusionCatcher: '/usr/bin/python2'
+Checking Python version...
+  * Ok! Found Python version: 2.7
+Checking if this environment is a 64-bit environment...
+  * Ok! 64-bit environment found.
+
+Installing FusionCatcher from <http://github.com/ndaniel/fusioncatcher>
+------------------------------------------------------------------------
+
+Path for installation of FusionCatcher: '/opt/fusioncatcher'
+Checking latest version of Ensembl database that is available...
+   * Version v108 found!
+Default number of threads/CPUs to be used by FusionCatcher (use 0 for using the number of CPUs detected at the runtime): '1'
+Installing tool 'FusionCatcher (fusion genes finder in RNA-seq data)' at '/opt/fusioncatcher/bin' from 'http://sourceforge.net/projects/fusioncatcher/files/fusioncatcher_v1.33.zip'
+    # mkdir -p /opt/fusioncatcher
+    # rm -rf /opt/fusioncatcher/fusioncatcher_v1.33.zip
+    # wget http://sourceforge.net/projects/fusioncatcher/files/fusioncatcher_v1.33.zip -O /opt/fusioncatcher/fusioncatcher_v1.33.zip --no-check-certificate
+    # rm -rf /opt/fusioncatcher/bin
+    # rm -rf /opt/fusioncatcher/fusioncatcher_v1.33
+    # unzip -o /opt/fusioncatcher/fusioncatcher_v1.33.zip -d /opt/fusioncatcher
+    # ln -s /opt/fusioncatcher/fusioncatcher_v1.33 /opt/fusioncatcher/bin
+    # cd /opt/fusioncatcher/fusioncatcher_v1.33
+    # chmod +x custom_install.sh
+    # ./custom_install.sh
+    # cd /opt2
+  * Done!
+    # rm -f /usr/bin/fusioncatcher
+    # ln -s /opt/fusioncatcher/bin/fusioncatcher /usr/bin/fusioncatcher
+    # rm -f /usr/bin/fusioncatcher-build
+    # ln -s /opt/fusioncatcher/bin/fusioncatcher-build /usr/bin/fusioncatcher-build
+Checking if the Python module named 'NumPy' is installed...

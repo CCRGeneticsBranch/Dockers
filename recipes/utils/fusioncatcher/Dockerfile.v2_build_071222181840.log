@@ -1,0 +1,94 @@
+Sending build context to Docker daemon  21.61MB
+Step 1/12 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/12 : ENV TAG="v2.0"
+ ---> Using cache
+ ---> 176759967d2c
+Step 3/12 : WORKDIR /opt2
+ ---> Using cache
+ ---> 6e20da42504a
+Step 4/12 : RUN wget http://sf.net/projects/fusioncatcher/files/bootstrap.py -O bootstrap.py && python2 bootstrap.py -t
+ ---> Running in f8d483172c64
+[91m--2022-12-07 13:18:47--  http://sf.net/projects/fusioncatcher/files/bootstrap.py
+Resolving sf.net (sf.net)... [0m[91m204.68.111.105[0m[91m
+Connecting to sf.net (sf.net)|204.68.111.105|:80... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+[0m[91mLocation: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py [following]
+[0m[91m--2022-12-07 13:18:47--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py
+[0m[91mResolving sourceforge.net (sourceforge.net)... [0m[91m104.18.11.128, 104.18.10.128, [0m[91m2606:4700::6812:b80, ...
+[0m[91mConnecting to sourceforge.net (sourceforge.net)|104.18.11.128|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+[0m[91mLocation: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/ [following]
+[0m[91m--2022-12-07 13:18:48--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/
+[0m[91mReusing existing connection to sourceforge.net:443.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+Location: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/download [following]
+[0m[91m--2022-12-07 13:18:48--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/download
+[0m[91mReusing existing connection to sourceforge.net:443.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://downloads.sourceforge.net/project/fusioncatcher/bootstrap.py?ts=gAAAAABjkNkIIDBqiVyF_UgWHZzrnnG_mS6ORtZ55b_1iC-WSAV4wEsmXwBI8fGf8pCcM-XkP23E_C-vXiiqSAlQCz11YmWJ6g%3D%3D&use_mirror=cfhcable&r= [following]
+[0m[91m--2022-12-07 13:18:48--  https://downloads.sourceforge.net/project/fusioncatcher/bootstrap.py?ts=gAAAAABjkNkIIDBqiVyF_UgWHZzrnnG_mS6ORtZ55b_1iC-WSAV4wEsmXwBI8fGf8pCcM-XkP23E_C-vXiiqSAlQCz11YmWJ6g%3D%3D&use_mirror=cfhcable&r=
+[0m[91mResolving downloads.sourceforge.net (downloads.sourceforge.net)... [0m[91m204.68.111.105[0m[91m
+Connecting to downloads.sourceforge.net (downloads.sourceforge.net)|204.68.111.105|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://cfhcable.dl.sourceforge.net/project/fusioncatcher/bootstrap.py [following]
+[0m[91m--2022-12-07 13:18:49--  https://cfhcable.dl.sourceforge.net/project/fusioncatcher/bootstrap.py
+[0m[91mResolving cfhcable.dl.sourceforge.net (cfhcable.dl.sourceforge.net)... [0m[91m146.71.73.6[0m[91m
+Connecting to cfhcable.dl.sourceforge.net (cfhcable.dl.sourceforge.net)|146.71.73.6|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 100548 (98K) [application/octet-stream]
+Saving to: 'bootstrap.py'
+[0m[91m
+     0K[0m[91m ........[0m[91m.. .....[0m[91m..... ..[0m[91m.[0m[91m....... .[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m 50%[0m[91m 2.13M[0m[91m 0s[0m[91m
+    50K[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m [0m[91m [0m[91m100%[0m[91m 3.07M[0m[91m=0.04s[0m[91m
+
+[0m[91m2022-12-07 13:18:49 (2.50 MB/s) - 'bootstrap.py' saved [100548/100548]
+
+[0mChecking latest version of Ensembl database that is available...
+   * Version v108 found!
+
+================================================================================
+NOTE: On a Ubuntu running these before installing FusionCatcher might make the installation go smoother:
+    
+sudo apt-get -y install \
+build-essential\
+libncurses5-dev \
+default-jdk \
+gawk \
+gcc \
+g++ \
+bzip2 \
+make \
+cmake \
+automake \
+gzip \
+zip \
+unzip \
+zlib1g-dev \
+zlib1g \
+wget \
+curl \
+pigz \
+tar \
+parallel \
+libtbb-dev \
+libtbb2 \
+python \
+python-dev \
+python-numpy \
+python-biopython \
+python-xlrd \
+python-openpyxl
+================================================================================
+
+Current working directory: '/opt2'
+Obtaining the absolute path of the Python executable...
+  * Ok! '/usr/bin/python2' found!
+Python used for installation of FusionCatcher: '/usr/bin/python2'
+  Do you accept this Python? [Y/n]: [91mTraceback (most recent call last):
+[0m[91m  File "bootstrap.py", line 1231, in <module>
+[0m[91m    [0m[91mforce = options.force_yes)
+  File "bootstrap.py", line 860, in accept
+[0m[91m    [0m[91mtext = raw_input("%s [%s/%s]: " % (question, y, n))
+EOFError: [0m[91mEOF when reading a line[0m[91m
+[0m

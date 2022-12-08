@@ -1,0 +1,69 @@
+FROM ubuntu:trusty
+ENV TAG="v2.0"
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade \
+    && DEBIAN_FRONTEND=noninteractive apt-get update \
+    && apt-get -y install software-properties-common \
+    && add-apt-repository ppa:fkrull/deadsnakes
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && apt-get -y install \
+    make \
+    python2.7 \
+    python-pip \
+    python-dev \
+build-essential \
+libncurses5-dev \
+default-jdk \
+gawk \
+gcc \
+g++ \
+bzip2 \
+make \
+cmake \
+automake \
+gzip \
+zip \
+unzip \
+zlib1g-dev \
+zlib1g \
+wget \
+curl \
+pigz \
+tar \
+parallel \
+libtbb-dev \
+libtbb2 \
+python-numpy \
+python-biopython \
+python-xlrd \
+python-openpyxl
+
+# install fusioncatcher
+WORKDIR /opt2
+RUN wget --no-check-certificate http://sf.net/projects/fusioncatcher/files/bootstrap.py -O bootstrap.py 
+RUN python bootstrap.py --prefix=/opt2/fusioncatcher -t -y
+RUN cd /opt2/fusioncatcher/fusioncatcher/bin && \
+    chmod a+x *.py && \
+    ln -s fusioncatcher.py fusioncatcher
+ENV PATH="/opt2/fusioncatcher/fusioncatcher/bin":$PATH
+
+# tagging
+COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi && \
+    chmod a+r /opt2/Dockerfile.${TAG} && \
+    ln -s Dockerfile.${TAG} /opt2/Dockerfile 
+WORKDIR /data2
+
+# clean up
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    apt-get autoclean && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+# details
+LABEL maintainer="vishal.koparde@nih.gov"
+LABEL github_handle="kopardev"
+ARG BUILD_DATE
+LABEL build_date=$BUILD_DATE

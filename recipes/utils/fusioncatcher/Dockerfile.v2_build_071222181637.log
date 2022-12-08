@@ -1,0 +1,182 @@
+Sending build context to Docker daemon   21.6MB
+Step 1/12 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+v2.0: Pulling from nciccbr/ccbr_ubuntu_base_20.04
+3b65ec22a9e9: Pulling fs layer
+10ceb438865c: Pulling fs layer
+aab707835907: Pulling fs layer
+625b0c14d41b: Pulling fs layer
+375fd82da226: Pulling fs layer
+4faae6904470: Pulling fs layer
+3a0584074529: Pulling fs layer
+0d62c252c62e: Pulling fs layer
+8aec5b04915d: Pulling fs layer
+eb35dcebf5f0: Pulling fs layer
+9120fb1fc8cb: Pulling fs layer
+f4783e0118a3: Pulling fs layer
+db35d98d120e: Pulling fs layer
+870ae27479ac: Pulling fs layer
+9b3ac3b90fd5: Pulling fs layer
+1e855a499ff2: Pulling fs layer
+17d743a62b4c: Pulling fs layer
+331e2137023c: Pulling fs layer
+938169d3fa53: Pulling fs layer
+67aec46cc9bc: Pulling fs layer
+733443d9da67: Pulling fs layer
+86c9aea85eab: Pulling fs layer
+77d76b322aa3: Pulling fs layer
+eddd13839d27: Pulling fs layer
+92bf6f086eef: Pulling fs layer
+6c7b675a2d94: Pulling fs layer
+625b0c14d41b: Waiting
+375fd82da226: Waiting
+4faae6904470: Waiting
+3a0584074529: Waiting
+0d62c252c62e: Waiting
+8aec5b04915d: Waiting
+eb35dcebf5f0: Waiting
+9120fb1fc8cb: Waiting
+f4783e0118a3: Waiting
+db35d98d120e: Waiting
+870ae27479ac: Waiting
+9b3ac3b90fd5: Waiting
+1e855a499ff2: Waiting
+17d743a62b4c: Waiting
+331e2137023c: Waiting
+938169d3fa53: Waiting
+67aec46cc9bc: Waiting
+733443d9da67: Waiting
+86c9aea85eab: Waiting
+77d76b322aa3: Waiting
+eddd13839d27: Waiting
+92bf6f086eef: Waiting
+6c7b675a2d94: Waiting
+aab707835907: Verifying Checksum
+aab707835907: Download complete
+10ceb438865c: Verifying Checksum
+10ceb438865c: Download complete
+3b65ec22a9e9: Verifying Checksum
+3b65ec22a9e9: Download complete
+625b0c14d41b: Verifying Checksum
+625b0c14d41b: Download complete
+4faae6904470: Download complete
+3a0584074529: Verifying Checksum
+3a0584074529: Download complete
+8aec5b04915d: Verifying Checksum
+8aec5b04915d: Download complete
+eb35dcebf5f0: Verifying Checksum
+eb35dcebf5f0: Download complete
+0d62c252c62e: Verifying Checksum
+0d62c252c62e: Download complete
+375fd82da226: Verifying Checksum
+375fd82da226: Download complete
+3b65ec22a9e9: Pull complete
+10ceb438865c: Pull complete
+aab707835907: Pull complete
+f4783e0118a3: Verifying Checksum
+f4783e0118a3: Download complete
+625b0c14d41b: Pull complete
+870ae27479ac: Verifying Checksum
+870ae27479ac: Download complete
+9b3ac3b90fd5: Verifying Checksum
+9b3ac3b90fd5: Download complete
+1e855a499ff2: Verifying Checksum
+1e855a499ff2: Download complete
+17d743a62b4c: Verifying Checksum
+17d743a62b4c: Download complete
+331e2137023c: Verifying Checksum
+331e2137023c: Download complete
+938169d3fa53: Verifying Checksum
+938169d3fa53: Download complete
+9120fb1fc8cb: Verifying Checksum
+9120fb1fc8cb: Download complete
+733443d9da67: Verifying Checksum
+733443d9da67: Download complete
+86c9aea85eab: Verifying Checksum
+86c9aea85eab: Download complete
+77d76b322aa3: Verifying Checksum
+77d76b322aa3: Download complete
+eddd13839d27: Verifying Checksum
+eddd13839d27: Download complete
+67aec46cc9bc: Verifying Checksum
+67aec46cc9bc: Download complete
+6c7b675a2d94: Verifying Checksum
+6c7b675a2d94: Download complete
+92bf6f086eef: Verifying Checksum
+92bf6f086eef: Download complete
+db35d98d120e: Verifying Checksum
+db35d98d120e: Download complete
+375fd82da226: Pull complete
+4faae6904470: Pull complete
+3a0584074529: Pull complete
+0d62c252c62e: Pull complete
+8aec5b04915d: Pull complete
+eb35dcebf5f0: Pull complete
+9120fb1fc8cb: Pull complete
+f4783e0118a3: Pull complete
+db35d98d120e: Pull complete
+870ae27479ac: Pull complete
+9b3ac3b90fd5: Pull complete
+1e855a499ff2: Pull complete
+17d743a62b4c: Pull complete
+331e2137023c: Pull complete
+938169d3fa53: Pull complete
+67aec46cc9bc: Pull complete
+733443d9da67: Pull complete
+86c9aea85eab: Pull complete
+77d76b322aa3: Pull complete
+eddd13839d27: Pull complete
+92bf6f086eef: Pull complete
+6c7b675a2d94: Pull complete
+Digest: sha256:d74f5e4d505aaa3a03b8ee10ca10884f25940da69cdd51fed1a786d7b50dc1ee
+Status: Downloaded newer image for nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/12 : ENV TAG="v2.0"
+ ---> Running in c797d9317ac9
+Removing intermediate container c797d9317ac9
+ ---> 176759967d2c
+Step 3/12 : WORKDIR /opt2
+ ---> Running in 877d0a38e64e
+Removing intermediate container 877d0a38e64e
+ ---> 6e20da42504a
+Step 4/12 : RUN wget http://sf.net/projects/fusioncatcher/files/bootstrap.py -O bootstrap.py && python bootstrap.py -t
+ ---> Running in 2ea82774a031
+[91m--2022-12-07 13:17:50--  http://sf.net/projects/fusioncatcher/files/bootstrap.py
+Resolving sf.net (sf.net)... [0m[91m204.68.111.105
+Connecting to sf.net (sf.net)|204.68.111.105|:80... [0m[91mconnected.
+HTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+Location: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py [following]
+--2022-12-07 13:17:50--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py
+Resolving sourceforge.net (sourceforge.net)... [0m[91m104.18.11.128, [0m[91m104.18.10.128, [0m[91m2606:4700::6812:b80[0m[91m, ...[0m[91m
+[0m[91mConnecting to sourceforge.net (sourceforge.net)|104.18.11.128|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+[0m[91mLocation: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/ [following]
+--2022-12-07 13:17:50--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/
+[0m[91mReusing existing connection to sourceforge.net:443.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+Location: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/download [following]
+[0m[91m--2022-12-07 13:17:50--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/download
+[0m[91mReusing existing connection to sourceforge.net:443.
+HTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://downloads.sourceforge.net/project/fusioncatcher/bootstrap.py?ts=gAAAAABjkNjO0O7AmqYsHzZmis69Z8V3Jvypo-r_YwacB6nkTrokxE6sf32e6cXOmM7D4VYR-9TWnSlsOnmLnv8ocSOKAPK4tQ%3D%3D&use_mirror=versaweb&r= [following]
+[0m[91m--2022-12-07 13:17:50--  https://downloads.sourceforge.net/project/fusioncatcher/bootstrap.py?ts=gAAAAABjkNjO0O7AmqYsHzZmis69Z8V3Jvypo-r_YwacB6nkTrokxE6sf32e6cXOmM7D4VYR-9TWnSlsOnmLnv8ocSOKAPK4tQ%3D%3D&use_mirror=versaweb&r=
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... [0m[91m204.68.111.105
+[0m[91mConnecting to downloads.sourceforge.net (downloads.sourceforge.net)|204.68.111.105|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://versaweb.dl.sourceforge.net/project/fusioncatcher/bootstrap.py [following]
+--2022-12-07 13:17:51--  https://versaweb.dl.sourceforge.net/project/fusioncatcher/bootstrap.py
+[0m[91mResolving versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)... [0m[91m162.251.232.173
+Connecting to versaweb.dl.sourceforge.net (versaweb.dl.sourceforge.net)|162.251.232.173|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+[0m[91mLength: 100548[0m[91m (98K)[0m[91m [application/octet-stream]
+[0m[91mSaving to: 'bootstrap.py'
+[0m[91m
+     0K[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m...... .......... .......... .[0m[91m.[0m[91m........ .......[0m[91m.[0m[91m.[0m[91m.[0m[91m 50%[0m[91m  580K[0m[91m 0s[0m[91m
+    50K[0m[91m [0m[91m.[0m[91m...[0m[91m.[0m[91m.[0m[91m....[0m[91m ...[0m[91m.[0m[91m.[0m[91m...[0m[91m.[0m[91m. [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m..[0m[91m.[0m[91m.[0m[91m.[0m[91m. .......... .....[0m[91m...  100%  606K=0.2s
+
+[0m[91m2022-12-07 13:17:51 (592 KB/s) - 'bootstrap.py' saved [100548/100548]
+
+[0m[91m  File "bootstrap.py", line 47
+    print "ERROR: Python 3 or newer detected! Python 2.X is needed! FIX: run '/some/python/2.7/python bootstrap.py"
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("ERROR: Python 3 or newer detected! Python 2.X is needed! FIX: run '/some/python/2.7/python bootstrap.py")?
+[0m

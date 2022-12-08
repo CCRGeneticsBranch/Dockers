@@ -1,0 +1,60 @@
+Sending build context to Docker daemon  21.77MB
+Step 1/15 : FROM ubuntu:trusty
+ ---> 13b66b487594
+Step 2/15 : ENV TAG="v2.0"
+ ---> Using cache
+ ---> 237e15a6c13d
+Step 3/15 : RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade     && DEBIAN_FRONTEND=noninteractive apt-get update     && apt-get -y install software-properties-common     && add-apt-repository ppa:fkrull/deadsnakes
+ ---> Using cache
+ ---> 8e19e9180012
+Step 4/15 : RUN DEBIAN_FRONTEND=noninteractive apt-get update     && apt-get -y install     make     python2.7     python-pip     python-dev build-essential libncurses5-dev default-jdk gawk gcc g++ bzip2 make cmake automake gzip zip unzip zlib1g-dev zlib1g wget curl pigz tar parallel libtbb-dev libtbb2 python-numpy python-biopython python-xlrd python-openpyxl
+ ---> Using cache
+ ---> aa436f60cc08
+Step 5/15 : WORKDIR /opt2
+ ---> Using cache
+ ---> c7f9337c07a2
+Step 6/15 : RUN wget --no-check-certificate http://sf.net/projects/fusioncatcher/files/bootstrap.py -O bootstrap.py
+ ---> Using cache
+ ---> 8502a1ac803f
+Step 7/15 : RUN python bootstrap.py -t -y
+ ---> Using cache
+ ---> 6c34aef2894d
+Step 8/15 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> bbe702cf3f95
+Step 9/15 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 71383b5ef580
+Removing intermediate container 71383b5ef580
+ ---> 7d63b6bec138
+Step 10/15 : WORKDIR /data2
+ ---> Running in 88d2654985f4
+Removing intermediate container 88d2654985f4
+ ---> a620aba126d4
+Step 11/15 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in a4014618612c
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container a4014618612c
+ ---> 6cf5fe1725e6
+Step 12/15 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in 79355190165a
+Removing intermediate container 79355190165a
+ ---> 6c78ff75cac0
+Step 13/15 : LABEL github_handle="kopardev"
+ ---> Running in 0bcf6fcea647
+Removing intermediate container 0bcf6fcea647
+ ---> 0339f06ac173
+Step 14/15 : ARG BUILD_DATE
+ ---> Running in 88b63d4d2404
+Removing intermediate container 88b63d4d2404
+ ---> 0cc7f1ec8ab0
+Step 15/15 : LABEL build_date=$BUILD_DATE
+ ---> Running in de92ddfac27c
+Removing intermediate container de92ddfac27c
+ ---> 59f289a11e94
+Successfully built 59f289a11e94
+Successfully tagged nciccbr/ccrgb_fusioncatcher:v2.0

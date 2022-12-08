@@ -1,0 +1,330 @@
+Sending build context to Docker daemon  21.75MB
+Step 1/15 : FROM ubuntu:trusty
+ ---> 13b66b487594
+Step 2/15 : ENV TAG="v2.0"
+ ---> Using cache
+ ---> 237e15a6c13d
+Step 3/15 : RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade     && DEBIAN_FRONTEND=noninteractive apt-get update     && apt-get -y install software-properties-common     && add-apt-repository ppa:fkrull/deadsnakes
+ ---> Using cache
+ ---> 8e19e9180012
+Step 4/15 : RUN DEBIAN_FRONTEND=noninteractive apt-get update     && apt-get -y install     make     python2.7     python-pip     python-dev build-essential libncurses5-dev default-jdk gawk gcc g++ bzip2 make cmake automake gzip zip unzip zlib1g-dev zlib1g wget curl pigz tar parallel libtbb-dev libtbb2 python-numpy python-biopython python-xlrd python-openpyxl
+ ---> Using cache
+ ---> aa436f60cc08
+Step 5/15 : WORKDIR /opt2
+ ---> Using cache
+ ---> c7f9337c07a2
+Step 6/15 : RUN wget --no-check-certificate http://sf.net/projects/fusioncatcher/files/bootstrap.py -O bootstrap.py
+ ---> Running in 4f31ce8b8c5b
+[91m--2022-12-07 18:32:44--  http://sf.net/projects/fusioncatcher/files/bootstrap.py
+Resolving sf.net (sf.net)... [0m[91m204.68.111.105
+Connecting to sf.net (sf.net)|204.68.111.105|:80... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+[0m[91mLocation: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py [following]
+--2022-12-07 18:32:44--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py
+[0m[91mResolving sourceforge.net (sourceforge.net)... [0m[91m104.18.11.128, 104.18.10.128[0m[91m, [0m[91m2606:4700::6812:b80, ...[0m[91m
+[0m[91mConnecting to sourceforge.net (sourceforge.net)|104.18.11.128|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+[0m[91mLocation: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/ [following]
+[0m[91m--2022-12-07 18:32:45--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/
+[0m[91mReusing existing connection to sourceforge.net:443.
+HTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+[0m[91mLocation: https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/download [following]
+[0m[91m--2022-12-07 18:32:45--  https://sourceforge.net/projects/fusioncatcher/files/bootstrap.py/download
+Reusing existing connection to sourceforge.net:443.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://downloads.sourceforge.net/project/fusioncatcher/bootstrap.py?ts=gAAAAABjkNxNS6f1hLfoCiHl4vETvliEAX1vzOfVvuS_ZrW1Qf7QxYT8cMQxwy_uD9IfSd9Xt37bphp1hgK3_xmKdAfoVzL4Zw%3D%3D&use_mirror=phoenixnap&r= [following]
+[0m[91m--2022-12-07 18:32:45--  https://downloads.sourceforge.net/project/fusioncatcher/bootstrap.py?ts=gAAAAABjkNxNS6f1hLfoCiHl4vETvliEAX1vzOfVvuS_ZrW1Qf7QxYT8cMQxwy_uD9IfSd9Xt37bphp1hgK3_xmKdAfoVzL4Zw%3D%3D&use_mirror=phoenixnap&r=
+[0m[91mResolving downloads.sourceforge.net (downloads.sourceforge.net)... [0m[91m204.68.111.105[0m[91m
+Connecting to downloads.sourceforge.net (downloads.sourceforge.net)|204.68.111.105|:443... [0m[91mconnected.
+[0m[91mWARNING: cannot verify downloads.sourceforge.net's certificate, issued by '/C=US/O=Let\'s Encrypt/CN=R3':
+[0m[91m  Issued certificate has expired.
+HTTP request sent, awaiting response... [0m[91m302 Found
+[0m[91mLocation: https://phoenixnap.dl.sourceforge.net/project/fusioncatcher/bootstrap.py [following]
+[0m[91m--2022-12-07 18:32:45--  https://phoenixnap.dl.sourceforge.net/project/fusioncatcher/bootstrap.py
+[0m[91mResolving phoenixnap.dl.sourceforge.net (phoenixnap.dl.sourceforge.net)... [0m[91m184.164.141.26
+Connecting to phoenixnap.dl.sourceforge.net (phoenixnap.dl.sourceforge.net)|184.164.141.26|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+[0m[91mLength: [0m[91m100548[0m[91m (98K) [application/octet-stream]
+Saving to: 'bootstrap.py'
+[0m[91m
+     0K .......... .....[0m[91m..... ...[0m[91m....... .[0m[91m......... .......[0m[91m... 50%  620K 0s
+    50K .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m...  100%  597K=0.2s
+
+2022-12-07 18:32:46 (609 KB/s) - 'bootstrap.py' saved [100548/100548]
+
+[0mRemoving intermediate container 4f31ce8b8c5b
+ ---> 8502a1ac803f
+Step 7/15 : RUN python bootstrap.py -t -y
+ ---> Running in d5e3cd3849db
+Checking latest version of Ensembl database that is available...
+   * Version v108 found!
+
+================================================================================
+NOTE: On a Ubuntu running these before installing FusionCatcher might make the installation go smoother:
+    
+sudo apt-get -y install \
+build-essential\
+libncurses5-dev \
+default-jdk \
+gawk \
+gcc \
+g++ \
+bzip2 \
+make \
+cmake \
+automake \
+gzip \
+zip \
+unzip \
+zlib1g-dev \
+zlib1g \
+wget \
+curl \
+pigz \
+tar \
+parallel \
+libtbb-dev \
+libtbb2 \
+python \
+python-dev \
+python-numpy \
+python-biopython \
+python-xlrd \
+python-openpyxl
+================================================================================
+
+Current working directory: '/opt2'
+Obtaining the absolute path of the Python executable...
+  * Ok! '/usr/bin/python' found!
+Python used for installation of FusionCatcher: '/usr/bin/python'
+Checking Python version...
+  * Ok! Found Python version: 2.7
+Checking if this environment is a 64-bit environment...
+  * Ok! 64-bit environment found.
+
+Installing FusionCatcher from <http://github.com/ndaniel/fusioncatcher>
+------------------------------------------------------------------------
+
+Path for installation of FusionCatcher: '/opt/fusioncatcher'
+Checking latest version of Ensembl database that is available...
+   * Version v108 found!
+Default number of threads/CPUs to be used by FusionCatcher (use 0 for using the number of CPUs detected at the runtime): '1'
+Installing tool 'FusionCatcher (fusion genes finder in RNA-seq data)' at '/opt/fusioncatcher/bin' from 'http://sourceforge.net/projects/fusioncatcher/files/fusioncatcher_v1.33.zip'
+    # mkdir -p /opt/fusioncatcher
+    # rm -rf /opt/fusioncatcher/fusioncatcher_v1.33.zip
+    # wget http://sourceforge.net/projects/fusioncatcher/files/fusioncatcher_v1.33.zip -O /opt/fusioncatcher/fusioncatcher_v1.33.zip --no-check-certificate
+    # rm -rf /opt/fusioncatcher/bin
+    # rm -rf /opt/fusioncatcher/fusioncatcher_v1.33
+    # unzip -o /opt/fusioncatcher/fusioncatcher_v1.33.zip -d /opt/fusioncatcher
+    # ln -s /opt/fusioncatcher/fusioncatcher_v1.33 /opt/fusioncatcher/bin
+    # cd /opt/fusioncatcher/fusioncatcher_v1.33
+    # chmod +x custom_install.sh
+    # ./custom_install.sh
+    # cd /opt2
+  * Done!
+    # rm -f /usr/bin/fusioncatcher
+    # ln -s /opt/fusioncatcher/bin/fusioncatcher /usr/bin/fusioncatcher
+    # rm -f /usr/bin/fusioncatcher-build
+    # ln -s /opt/fusioncatcher/bin/fusioncatcher-build /usr/bin/fusioncatcher-build
+Checking if the Python module named 'NumPy' is installed...
+  * Ok! Python module 'NumPy' found at '/usr/lib/python2.7/dist-packages/numpy'!
+Checking if the Python module named 'BioPython' is installed...
+  * Ok! Python module 'BioPython' found at '/usr/lib/python2.7/dist-packages/Bio'!
+Checking if the Python module named 'Xlrd' is installed...
+  * Ok! Python module 'Xlrd' found at '/usr/lib/python2.7/dist-packages/xlrd'!
+Installing tool 'BOWTIE (short read aligner)' at '/opt/fusioncatcher/tools/bowtie' from 'https://github.com/BenLangmead/bowtie/releases/download/v1.2.3/bowtie-1.2.3-linux-x86_64.zip'
+    # mkdir -p /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/bowtie-1.2.3-linux-x86_64.zip
+    # wget https://github.com/BenLangmead/bowtie/releases/download/v1.2.3/bowtie-1.2.3-linux-x86_64.zip -O /opt/fusioncatcher/tools/bowtie-1.2.3-linux-x86_64.zip --no-check-certificate
+    # rm -rf /opt/fusioncatcher/tools/bowtie
+    # rm -rf /opt/fusioncatcher/tools/bowtie-1.2.3-linux-x86_64
+    # unzip -o /opt/fusioncatcher/tools/bowtie-1.2.3-linux-x86_64.zip -d /opt/fusioncatcher/tools
+    # ln -s /opt/fusioncatcher/tools/bowtie-1.2.3-linux-x86_64 /opt/fusioncatcher/tools/bowtie
+    # chmod -R +x /opt/fusioncatcher/tools/bowtie
+  * Done!
+Installing tool 'BOWTIE2 (short read aligner)' at '/opt/fusioncatcher/tools/bowtie2' from 'https://github.com/BenLangmead/bowtie2/releases/download/v2.3.5.1/bowtie2-2.3.5.1-linux-x86_64.zip'
+    # mkdir -p /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/bowtie2-2.3.5.1-linux-x86_64.zip
+    # wget https://github.com/BenLangmead/bowtie2/releases/download/v2.3.5.1/bowtie2-2.3.5.1-linux-x86_64.zip -O /opt/fusioncatcher/tools/bowtie2-2.3.5.1-linux-x86_64.zip --no-check-certificate
+    # rm -rf /opt/fusioncatcher/tools/bowtie2
+    # rm -rf /opt/fusioncatcher/tools/bowtie2-2.3.5.1-linux-x86_64
+    # unzip -o /opt/fusioncatcher/tools/bowtie2-2.3.5.1-linux-x86_64.zip -d /opt/fusioncatcher/tools
+    # ln -s /opt/fusioncatcher/tools/bowtie2-2.3.5.1-linux-x86_64 /opt/fusioncatcher/tools/bowtie2
+    # chmod -R +x /opt/fusioncatcher/tools/bowtie2
+  * Done!
+Installing tool 'NCBI SRA Toolkit (SRA System Development Kit)' at '/opt/fusioncatcher/tools/sratoolkit' from 'https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.6/sratoolkit.2.9.6-centos_linux64.tar.gz'
+    # mkdir -p /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/sratoolkit.2.9.6-centos_linux64.tar.gz
+    # wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.6/sratoolkit.2.9.6-centos_linux64.tar.gz -O /opt/fusioncatcher/tools/sratoolkit.2.9.6-centos_linux64.tar.gz --no-check-certificate
+    # rm -rf /opt/fusioncatcher/tools/sratoolkit
+    # rm -rf /opt/fusioncatcher/tools/sratoolkit.2.9.6-centos_linux64
+    # tar --overwrite -xvzf /opt/fusioncatcher/tools/sratoolkit.2.9.6-centos_linux64.tar.gz -C /opt/fusioncatcher/tools
+    # ln -s /opt/fusioncatcher/tools/sratoolkit.2.9.6-centos_linux64 /opt/fusioncatcher/tools/sratoolkit
+    # chmod -R +x /opt/fusioncatcher/tools/sratoolkit
+  * Done!
+Installing tool 'LiftOver (Batch Coordinate Conversion)' at '/opt/fusioncatcher/tools/liftover' from 'http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver'
+    # mkdir -p /opt/fusioncatcher/tools/liftover
+    # rm -rf /opt/fusioncatcher/tools/liftover/liftOver
+    # wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver -O /opt/fusioncatcher/tools/liftover/liftOver --no-check-certificate
+    # chmod +x /opt/fusioncatcher/tools/liftover/liftOver
+  * Done!
+Installing tool 'BLAT (alignment tool)' at '/opt/fusioncatcher/tools/blat' from 'http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/blat'
+    # mkdir -p /opt/fusioncatcher/tools/blat
+    # rm -rf /opt/fusioncatcher/tools/blat/blat
+    # wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/blat -O /opt/fusioncatcher/tools/blat/blat --no-check-certificate
+    # chmod +x /opt/fusioncatcher/tools/blat/blat
+  * Done!
+Installing tool 'FaToTwoBit (companion of BLAT alignment tool)' at '/opt/fusioncatcher/tools/fatotwobit' from 'http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/faToTwoBit'
+    # mkdir -p /opt/fusioncatcher/tools/fatotwobit
+    # rm -rf /opt/fusioncatcher/tools/fatotwobit/faToTwoBit
+    # wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/faToTwoBit -O /opt/fusioncatcher/tools/fatotwobit/faToTwoBit --no-check-certificate
+    # chmod +x /opt/fusioncatcher/tools/fatotwobit/faToTwoBit
+  * Done!
+Installing tool 'SEQTK (Toolkit for processing sequences in FASTA/Q formats)' at '/opt/fusioncatcher/tools/seqtk' from 'http://github.com/ndaniel/seqtk/archive/1.2-r101c.tar.gz'
+    # mkdir -p /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/1.2-r101c.tar.gz
+    # wget http://github.com/ndaniel/seqtk/archive/1.2-r101c.tar.gz -O /opt/fusioncatcher/tools/1.2-r101c.tar.gz --no-check-certificate
+    # rm -rf /opt/fusioncatcher/tools/seqtk
+    # rm -rf /opt/fusioncatcher/tools/1.2-r101c
+    # tar --overwrite -xvzf /opt/fusioncatcher/tools/1.2-r101c.tar.gz -C /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/1.2-r101c
+    # mv /opt/fusioncatcher/tools/seqtk-1.2-r101c /opt/fusioncatcher/tools/1.2-r101c
+    # ln -s /opt/fusioncatcher/tools/1.2-r101c /opt/fusioncatcher/tools/seqtk
+    # make -C /opt/fusioncatcher/tools/1.2-r101c
+    # chmod -R +x /opt/fusioncatcher/tools/seqtk
+  * Done!
+Installing tool 'FASTQ-LEAVE (lightweight tools for FASTQ files)' at '/opt/fusioncatcher/tools/fastqtk' from 'https://github.com/ndaniel/fastqtk/archive/v0.27.tar.gz'
+    # mkdir -p /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/v0.27.tar.gz
+    # wget https://github.com/ndaniel/fastqtk/archive/v0.27.tar.gz -O /opt/fusioncatcher/tools/v0.27.tar.gz --no-check-certificate
+    # rm -rf /opt/fusioncatcher/tools/fastqtk
+    # rm -rf /opt/fusioncatcher/tools/v0.27
+    # tar --overwrite -xvzf /opt/fusioncatcher/tools/v0.27.tar.gz -C /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/v0.27
+    # mv /opt/fusioncatcher/tools/fastqtk-0.27 /opt/fusioncatcher/tools/v0.27
+    # ln -s /opt/fusioncatcher/tools/v0.27 /opt/fusioncatcher/tools/fastqtk
+    # make -C /opt/fusioncatcher/tools/v0.27
+    # chmod -R +x /opt/fusioncatcher/tools/fastqtk
+  * Done!
+Installing tool 'STAR (alignment tool)' at '/opt/fusioncatcher/tools/star' from 'https://github.com/alexdobin/STAR/archive/2.7.2b.tar.gz'
+    # mkdir -p /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/2.7.2b.tar.gz
+    # wget https://github.com/alexdobin/STAR/archive/2.7.2b.tar.gz -O /opt/fusioncatcher/tools/2.7.2b.tar.gz --no-check-certificate
+    # rm -rf /opt/fusioncatcher/tools/star
+    # rm -rf /opt/fusioncatcher/tools/2.7.2b
+    # tar --overwrite -xvzf /opt/fusioncatcher/tools/2.7.2b.tar.gz -C /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/2.7.2b
+    # mv /opt/fusioncatcher/tools/STAR-2.7.2b /opt/fusioncatcher/tools/2.7.2b
+    # ln -s /opt/fusioncatcher/tools/2.7.2b /opt/fusioncatcher/tools/star
+    # cd /opt/fusioncatcher/tools/2.7.2b
+    # chmod +x custom_install.sh
+    # ./custom_install.sh
+    # cd /opt2
+  * Done!
+Installing tool 'BBMap short read aligner, and other bioinformatic tools.' at '/opt/fusioncatcher/tools/bbmap' from 'https://sourceforge.net/projects/bbmap/files/BBMap_38.44.tar.gz'
+    # mkdir -p /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/BBMap_38.44.tar.gz
+    # wget https://sourceforge.net/projects/bbmap/files/BBMap_38.44.tar.gz -O /opt/fusioncatcher/tools/BBMap_38.44.tar.gz --no-check-certificate
+    # rm -rf /opt/fusioncatcher/tools/bbmap
+    # rm -rf /opt/fusioncatcher/tools/BBMap_38.44
+    # tar --overwrite -xvzf /opt/fusioncatcher/tools/BBMap_38.44.tar.gz -C /opt/fusioncatcher/tools
+    # rm -rf /opt/fusioncatcher/tools/BBMap_38.44
+    # mv /opt/fusioncatcher/tools/bbmap /opt/fusioncatcher/tools/BBMap_38.44
+    # ln -s /opt/fusioncatcher/tools/BBMap_38.44 /opt/fusioncatcher/tools/bbmap
+    # chmod -R +x /opt/fusioncatcher/tools/bbmap
+  * Done!
+Installing tool 'PICARD (Java-based command-line utilities that manipulate SAM files)' at '/opt/fusioncatcher/tools/picard' from 'https://github.com/broadinstitute/picard/releases/download/2.21.2/picard.jar'
+    # mkdir -p /opt/fusioncatcher/tools/picard
+    # rm -rf /opt/fusioncatcher/tools/picard/picard.jar
+    # wget https://github.com/broadinstitute/picard/releases/download/2.21.2/picard.jar -O /opt/fusioncatcher/tools/picard/picard.jar --no-check-certificate
+    # chmod +x /opt/fusioncatcher/tools/picard/picard.jar
+  * Done!
+Checking the shebang of FusionCatcher Python scripts...
+  * Updating the SHEBANG of Python scripts with '/usr/bin/python'
+  * Done!
+Updating the configuration file of FusionCatcher...
+  * configuration file '/opt/fusioncatcher/etc/configuration.cfg'
+-------------------------------------------------------------------------------
+FusionCatcher is installed here:
+  /opt/fusioncatcher
+FusionCatcher's scripts are here:
+  /opt/fusioncatcher/bin
+FusionCatcher's dependencies and tools are installed here:
+  /opt/fusioncatcher/tools
+FusionCatcher's organism data is here:
+  /opt/fusioncatcher/data
+Run FusionCatcher as following:
+  /opt/fusioncatcher/bin/fusioncatcher
+In order to download and build the files for FusionCatcher run the following:
+  /opt/fusioncatcher/bin/fusioncatcher-build
+
+[33;7m=== Installed successfully! ===[0m
+
+*****************************************************************
+*  DON'T FORGET to download (or build) the organism's data needed by FusionCatcher to run!
+*****************************************************************
+
+Several options to get the data needed by FusionCatcher are shown below (please try them in this order)!
+
+---------------------------------------------------------------------------
+*  OPTION 1: Download the data needed by FusionCatcher from SOURCEFORGE!
+             THIS IS HIGHLY RECOMMENDED
+---------------------------------------------------------------------------
+In order to download the latest human data files needed by FusionCatcher, please run these (it will take several hours):
+
+set -e
+rm -rf /opt/fusioncatcher/data/current
+rm -f /opt/fusioncatcher/data/human_v102.tar.gz.*
+rm -rf /opt/fusioncatcher/data/human_v102
+rm -f /opt/fusioncatcher/data/human_v102.md5
+mkdir -p /opt/fusioncatcher/data
+ln -s /opt/fusioncatcher/data/human_v102 /opt/fusioncatcher/data/current
+wget --no-check-certificate http://sourceforge.net/projects/fusioncatcher/files/data/human_v102.tar.gz.aa -O /opt/fusioncatcher/data/human_v102.tar.gz.aa
+wget --no-check-certificate http://sourceforge.net/projects/fusioncatcher/files/data/human_v102.tar.gz.ab -O /opt/fusioncatcher/data/human_v102.tar.gz.ab
+wget --no-check-certificate http://sourceforge.net/projects/fusioncatcher/files/data/human_v102.tar.gz.ac -O /opt/fusioncatcher/data/human_v102.tar.gz.ac
+wget --no-check-certificate http://sourceforge.net/projects/fusioncatcher/files/data/human_v102.tar.gz.ad -O /opt/fusioncatcher/data/human_v102.tar.gz.ad
+wget --no-check-certificate http://sourceforge.net/projects/fusioncatcher/files/data/human_v102.md5 -O /opt/fusioncatcher/data/human_v102.md5
+cd /opt/fusioncatcher/data
+md5sum -c /opt/fusioncatcher/data/human_v102.md5
+if [ "$?" -ne "0" ]; then
+  echo -e "\n\n\n\033[33;7m   ERROR: The downloaded files from above have errors! MD5 checksums do not match! Please, download them again or re-run this script again!   \033[0m\n"
+  exit 1
+fi
+cat /opt/fusioncatcher/data/human_v102.tar.gz.* > /opt/fusioncatcher/data/human_v102.tar.gz
+rm -f /opt/fusioncatcher/data/human_v102.tar.gz.*
+if ! tar -xzf /opt/fusioncatcher/data/human_v102.tar.gz -C /opt/fusioncatcher/data; then
+    echo -e "\n\n\n\033[33;7m   ERROR: The downloaded files are corrupted!   \033[0m\n"
+    exit 1
+fi
+rm -f /opt/fusioncatcher/data/human_v102.tar.gz
+rm -f /opt/fusioncatcher/data/human_v102.md5
+
+All these commands are saved in '/opt/fusioncatcher/bin/download-human_v102.sh' file! You may execute '/opt/fusioncatcher/bin/download-human_v102.sh' shell script or copy/paste all the previous commands and run them manually in the terminal!
+
+
+---------------------------------------------------------------------------
+*  OPTION 2: Build yourself the data needed by FusionCatcher!
+             TRY THIS ONLY IF OPTION 1!
+---------------------------------------------------------------------------
+In order to build yourself the latest human data files needed by FusionCatcher, please run these (it will take several hours):
+
+rm  -rf  /opt/fusioncatcher/data/current
+rm  -rf  /opt/fusioncatcher/data/v108
+mkdir  -p  /opt/fusioncatcher/data/v108
+ln  -s  /opt/fusioncatcher/data/v108  /opt/fusioncatcher/data/current
+/opt/fusioncatcher/bin/fusioncatcher-build  -g  homo_sapiens  -o /opt/fusioncatcher/data/v108
+
+All these commands are saved in '/opt/fusioncatcher/bin/build.sh' file! You may execute '/opt/fusioncatcher/bin/build.sh' shell script or copy/paste all the previous commands and run them manually in the terminal!
+
+---------------------------------------------------------------------------
+
+[33;7m--------------> THE END! <---------------------------[0m
+
+
+*****************************************************************
+*  DON'T FORGET to download (or build) the organism's data needed
+   by FusionCatcher to run (see above for options)!
+*****************************************************************
+Removing intermediate container d5e3cd3849db
+ ---> 6c34aef2894d
+Step 8/15 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
