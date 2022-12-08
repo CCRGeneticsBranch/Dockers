@@ -1,0 +1,10 @@
+FROM nciccbr/ccrgb_fusioncatcher:v1.0
+ENV TAG="v1.1"
+
+# get data
+WORKDIR /opt2
+COPY fusioncatcher_getdata.sh /opt2
+RUN mkdir -p /opt2/data && \
+	cd /opt2/data && \
+	chmod a+x /opt2/fusioncatcher_getdata.sh && \
+	fusioncatcher_getdata.sh
