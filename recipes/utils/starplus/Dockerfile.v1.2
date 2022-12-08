@@ -1,0 +1,19 @@
+FROM nciccbr/ccrgb_starplus:v1.1
+ENV TAG="v1.2"
+
+# GenomicAlignments package is missing adding it.
+# install star fusion
+WORKDIR /opt2
+RUN Rscript dependencies.R
+
+# cleanup etc
+COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+RUN chmod a+rX /opt2/Dockerfile.${TAG}
+WORKDIR /data2
+RUN apt-get clean
+
+# details
+LABEL maintainer="vishal.koparde@nih.gov"
+LABEL github_handle="kopardev"
+ARG BUILD_DATE
+LABEL build_date=$BUILD_DATE

@@ -1,0 +1,384 @@
+Sending build context to Docker daemon  7.017MB
+Step 1/12 : FROM nciccbr/ccrgb_starplus:v1.1
+v1.1: Pulling from nciccbr/ccrgb_starplus
+Digest: sha256:12a4167293aecc0ed1d92377124db36b196d887e3f38cb4dcf10289847a481b9
+Status: Downloaded newer image for nciccbr/ccrgb_starplus:v1.1
+ ---> 32d3b65c6f2b
+Step 2/12 : ENV TAG="v1.2"
+ ---> Running in f5351434e701
+Removing intermediate container f5351434e701
+ ---> 9d4da78b95be
+Step 3/12 : WORKDIR /opt2
+ ---> Running in 297445a4e2a1
+Removing intermediate container 297445a4e2a1
+ ---> 99928ca7d8b0
+Step 4/12 : RUN Rscript dependencies.R
+ ---> Running in 0f492336c000
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/circlize_0.4.15.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 2497140 bytes (2.4 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=
+downloaded 2.4 MB
+
+[0m[91m* installing *source* package 'circlize' ...
+[0m[91m** package 'circlize' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** demo
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (circlize)
+[0m[91m
+The downloaded source packages are in
+	'/tmp/RtmpXqFjPF/downloaded_packages'
+[0m[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/BiocManager_1.30.19.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 264151 bytes (257 KB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m===[0m[91m===[0m[91m==[0m[91m=[0m[91m=[0m[91m==[0m[91m===[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m===[0m[91m===[0m[91m====
+downloaded 257 KB
+
+[0m[91m* installing *source* package 'BiocManager' ...
+[0m[91m** package 'BiocManager' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (BiocManager)
+[0m[91m
+[0m[91mThe downloaded source packages are in
+	'/tmp/RtmpXqFjPF/downloaded_packages'[0m[91m
+[0m[91m'getOption("repos")' replaces Bioconductor standard repositories, see
+'?repositories' for details
+
+replacement repositories:
+    CRAN: https://cloud.r-project.org
+
+[0m[91mBioconductor version 3.10 (BiocManager 1.30.19), R 3.6.3 (2020-02-29)
+[0m[91mOld packages: 'bit', 'data.table', 'jsonlite', 'knitr', 'matrixStats',
+  'modelr', 'openssl', 'sass', 'stringr', 'vctrs', 'xfun', 'KernSmooth',
+  'MASS', 'Matrix', 'boot', 'class', 'cluster', 'codetools', 'lattice', 'mgcv',
+  'nlme', 'nnet', 'rpart', 'spatial', 'survival'
+[0m[91mWarning message:
+package(s) not installed when version(s) same as or greater than current; use
+  `force = TRUE` to re-install: 'GenomeInfoDb' 
+[0m[91m'getOption("repos")' replaces Bioconductor standard repositories, see
+'?repositories' for details
+
+replacement repositories:
+    CRAN: https://cloud.r-project.org
+
+[0m[91mBioconductor version 3.10 (BiocManager 1.30.19), R 3.6.3 (2020-02-29)
+[0m[91mOld packages: 'bit', 'data.table', 'jsonlite', 'knitr', 'matrixStats',
+  'modelr', 'openssl', 'sass', 'stringr', 'vctrs', 'xfun', 'KernSmooth',
+  'MASS', 'Matrix', 'boot', 'class', 'cluster', 'codetools', 'lattice', 'mgcv',
+  'nlme', 'nnet', 'rpart', 'spatial', 'survival'
+[0m[91mWarning message:
+package(s) not installed when version(s) same as or greater than current; use
+  `force = TRUE` to re-install: 'GenomicRanges' 
+[0m[91m'getOption("repos")' replaces Bioconductor standard repositories, see
+'?repositories' for details
+
+replacement repositories:
+    CRAN: https://cloud.r-project.org
+
+[0m[91mBioconductor version 3.10 (BiocManager 1.30.19), R 3.6.3 (2020-02-29)
+[0m[91mInstalling package(s) 'GenomicAlignments'
+[0m[91malso installing the dependencies 'Biobase', 'DelayedArray', 'SummarizedExperiment', 'Rsamtools'
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/Biobase_2.46.0.tar.gz'
+[0m[91mContent type 'application/octet-stream' length 1657663 bytes (1.6 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=
+downloaded 1.6 MB
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/DelayedArray_0.12.3.tar.gz'
+[0m[91mContent type 'application/octet-stream'[0m[91m length 558370 bytes (545 KB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m====[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m======[0m[91m=[0m[91m==[0m[91m==
+[0m[91mdownloaded 545 KB
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/SummarizedExperiment_1.16.1.tar.gz'
+[0m[91mContent type 'application/octet-stream' length 1518022 bytes (1.4 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m
+[0m[91mdownloaded 1.4 MB
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/Rsamtools_2.2.3.tar.gz'
+[0m[91mContent type 'application/octet-stream' length 3034507 bytes (2.9 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=
+downloaded 2.9 MB
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/GenomicAlignments_1.22.1.tar.gz'
+[0m[91mContent type 'application/octet-stream' length 2316288 bytes (2.2 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m
+[0m[91mdownloaded 2.2 MB
+
+[0m[91m* installing *source* package 'Biobase' ...
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Rinit.c -o Rinit.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c anyMissing.c -o anyMissing.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c envir.c -o envir.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c matchpt.c -o matchpt.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rowMedians.c -o rowMedians.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c sublist_extract.c -o sublist_extract.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o Biobase.so Rinit.o anyMissing.o envir.o matchpt.o rowMedians.o sublist_extract.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-Biobase/00new/Biobase/libs
+[0m[91m** R
+[0m[91m** data
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (Biobase)
+[0m[91m* installing *source* package 'DelayedArray' ...
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c R_init_DelayedArray.c -o R_init_DelayedArray.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c S4Vectors_stubs.c -o S4Vectors_stubs.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c abind.c -o abind.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c array_selection.c -o array_selection.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c compress_atomic_vector.c -o compress_atomic_vector.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o DelayedArray.so R_init_DelayedArray.o S4Vectors_stubs.o abind.o array_selection.o compress_atomic_vector.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-DelayedArray/00new/DelayedArray/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0mCreating a new generic function for 'aperm' in package 'DelayedArray'
+Creating a generic function for 'sweep' from package 'base' in package 'DelayedArray'
+Creating a new generic function for 'apply' in package 'DelayedArray'
+Creating a new generic function for 'rowsum' in package 'DelayedArray'
+Creating a generic function for 'dnorm' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'pnorm' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'qnorm' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'dbinom' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'pbinom' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'qbinom' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'dpois' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'ppois' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'qpois' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'dlogis' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'plogis' from package 'stats' in package 'DelayedArray'
+Creating a generic function for 'qlogis' from package 'stats' in package 'DelayedArray'
+Creating a new generic function for 'rowMaxs' in package 'DelayedArray'
+Creating a new generic function for 'colMaxs' in package 'DelayedArray'
+Creating a new generic function for 'rowMins' in package 'DelayedArray'
+Creating a new generic function for 'colMins' in package 'DelayedArray'
+Creating a new generic function for 'rowRanges' in package 'DelayedArray'
+Creating a new generic function for 'colRanges' in package 'DelayedArray'
+[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (DelayedArray)
+[0m[91m* installing *source* package 'Rsamtools' ...
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Biostrings_stubs.c -o Biostrings_stubs.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c COMPAT_bcf_hdr_read.c -o COMPAT_bcf_hdr_read.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c IRanges_stubs.c -o IRanges_stubs.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c PileupBuffer.cpp -o PileupBuffer.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c PosCacheColl.cpp -o PosCacheColl.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c R_init_Rsamtools.c -o R_init_Rsamtools.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c ResultManager.cpp -o ResultManager.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c S4Vectors_stubs.c -o S4Vectors_stubs.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c XVector_stubs.c -o XVector_stubs.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c as_bam.c -o as_bam.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bam.c -o bam.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bam_data.c -o bam_data.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bam_mate_iter.cpp -o bam_mate_iter.o
+[91mIn file included from /usr/local/lib/R/site-library/Rhtslib/include/sam.h:29,
+                 from Template.h:9,
+                 from BamIterator.h:10,
+                 from BamRangeIterator.h:7,
+                 from bam_mate_iter.cpp:2:
+BamRangeIterator.h: In member function 'virtual void BamRangeIterator::finalize_inprogress(bamFile)':
+/usr/local/lib/R/site-library/Rhtslib/include/bam.h:57:41: warning: ignoring return value of 'int64_t bgzf_seek(BGZF*, int64_t, int)', declared with attribute warn_unused_result [-Wunused-result]
+   57 | #define bam_seek(fp, pos, dir) bgzf_seek(fp, pos, dir)
+      |                                ~~~~~~~~~^~~~~~~~~~~~~~
+BamRangeIterator.h:138:9: note: in expansion of macro 'bam_seek'
+  138 |         bam_seek(bfile, pos, SEEK_SET);
+      |         ^~~~~~~~
+[0m[91mBamIterator.h: In constructor 'BamIterator::BamIterator(bamFile, const bam_index_t*)':
+/usr/local/lib/R/site-library/Rhtslib/include/bam.h:57:41: warning: ignoring return value of 'int64_t bgzf_seek(BGZF*, int64_t, int)', declared with attribute warn_unused_result [-Wunused-result]
+   57 | #define bam_seek(fp, pos, dir) bgzf_seek(fp, pos, dir)
+      |                                ~~~~~~~~~^~~~~~~~~~~~~~
+BamIterator.h:87:9: note: in expansion of macro 'bam_seek'
+   87 |         bam_seek(bfile, 0, 0);
+      |         ^~~~~~~~
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bam_plbuf.c -o bam_plbuf.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bam_sort.c -o bam_sort.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bambuffer.c -o bambuffer.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bamfile.c -o bamfile.o
+[91mbamfile.c: In function 'bamfile_isincomplete':
+[0m[91mbamfile.c:168:13: warning: ignoring return value of 'bgzf_seek', declared with attribute warn_unused_result [-Wunused-result]
+  168 |             bgzf_seek(bfile->file->x.bam, offset, SEEK_SET);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bcffile.c -o bcffile.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c encode.c -o encode.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fafile.c -o fafile.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c idxstats.c -o idxstats.o
+[91mIn file included from /usr/local/lib/R/site-library/Rhtslib/include/sam.h:29,
+                 from bamfile.h:5,
+                 from idxstats.c:1:
+idxstats.c: In function 'idxstats_bamfile':
+/usr/local/lib/R/site-library/Rhtslib/include/bam.h:57:32: warning: ignoring return value of 'bgzf_seek', declared with attribute warn_unused_result [-Wunused-result]
+   57 | #define bam_seek(fp, pos, dir) bgzf_seek(fp, pos, dir)
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+idxstats.c:20:5: note: in expansion of macro 'bam_seek'
+   20 |     bam_seek(fp, 0, 0);
+      |     ^~~~~~~~
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c io_sam.c -o io_sam.o
+[91mIn file included from /usr/local/lib/R/site-library/Rhtslib/include/sam.h:29,
+                 from io_sam.c:2:
+io_sam.c: In function '_scan_bam_all':
+/usr/local/lib/R/site-library/Rhtslib/include/bam.h:57:32: warning: ignoring return value of 'bgzf_seek', declared with attribute warn_unused_result [-Wunused-result]
+   57 | #define bam_seek(fp, pos, dir) bgzf_seek(fp, pos, dir)
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+io_sam.c:304:5: note: in expansion of macro 'bam_seek'
+  304 |     bam_seek(bfile->file->x.bam, bfile->pos0, SEEK_SET);
+      |     ^~~~~~~~
+[0mg++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c pbuffer_wrapper.cpp -o pbuffer_wrapper.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c pileup.cpp -o pileup.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c pileupbam.c -o pileupbam.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c sam.c -o sam.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c sam_opts.c -o sam_opts.o
+[91mIn file included from /usr/include/stdio.h:867,
+                 from /usr/local/lib/R/site-library/Rhtslib/include/sam_opts.c:27,
+                 from sam_opts.c:1:
+In function 'fprintf',
+    inlined from 'parse_sam_global_opt' at /usr/local/lib/R/site-library/Rhtslib/include/sam_opts.c:85:9:
+[0m[91m/usr/include/x86_64-linux-gnu/bits/stdio2.h:100:10: warning: '%s' directive argument is null [-Wformat-overflow=]
+  100 |   return __fprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  101 |    __va_arg_pack ());
+      |    ~~~~~~~~~~~~~~~~~
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c sam_utils.c -o sam_utils.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c samtools_patch.c -o samtools_patch.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c scan_bam_data.c -o scan_bam_data.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tabixfile.c -o tabixfile.o
+[91mtabixfile.c: In function 'index_tabix':
+[0m[91mtabixfile.c:190:5: warning: 'bgzf_is_bgzf' is deprecated: Use bgzf_compression() or hts_detect_format() instead [-Wdeprecated-declarations]
+  190 |     if (bgzf_is_bgzf(fn) != 1)
+      |     ^~
+In file included from tabixfile.c:3:
+/usr/local/lib/R/site-library/Rhtslib/include/htslib/bgzf.h:243:9: note: declared here
+  243 |     int bgzf_is_bgzf(const char *fn) HTS_DEPRECATED("Use bgzf_compression() or hts_detect_format() instead");
+      |         ^~~~~~~~~~~~
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tagfilter.c -o tagfilter.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utilities.c -o utilities.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_FILE_OFFSET_BITS=64 -I"/usr/local/lib/R/site-library/Rhtslib/include" -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include" -I"/usr/local/lib/R/site-library/XVector/include" -I"/usr/local/lib/R/site-library/Biostrings/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zip_compression.c -o zip_compression.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o Rsamtools.so Biostrings_stubs.o COMPAT_bcf_hdr_read.o IRanges_stubs.o PileupBuffer.o PosCacheColl.o R_init_Rsamtools.o ResultManager.o S4Vectors_stubs.o XVector_stubs.o as_bam.o bam.o bam_data.o bam_mate_iter.o bam_plbuf.o bam_sort.o bambuffer.o bamfile.o bcffile.o encode.o fafile.o idxstats.o io_sam.o pbuffer_wrapper.o pileup.o pileupbam.o sam.o sam_opts.o sam_utils.o samtools_patch.o scan_bam_data.o tabixfile.o tagfilter.o utilities.o zip_compression.o /usr/local/lib/R/site-library/Rhtslib/usrlib/libhts.a -lcurl -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-Rsamtools/00new/Rsamtools/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (Rsamtools)
+[0m[91m* installing *source* package 'SummarizedExperiment' ...
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (SummarizedExperiment)
+[0m[91m* installing *source* package 'GenomicAlignments' ...
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c IRanges_stubs.c -o IRanges_stubs.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c R_init_GenomicAlignments.c -o R_init_GenomicAlignments.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c S4Vectors_stubs.c -o S4Vectors_stubs.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cigar_utils.c -o cigar_utils.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c coordinate_mapping_methods.c -o coordinate_mapping_methods.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/S4Vectors/include" -I"/usr/local/lib/R/site-library/IRanges/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c encodeOverlaps_methods.c -o encodeOverlaps_methods.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o GenomicAlignments.so IRanges_stubs.o R_init_GenomicAlignments.o S4Vectors_stubs.o cigar_utils.o coordinate_mapping_methods.o encodeOverlaps_methods.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-GenomicAlignments/00new/GenomicAlignments/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (GenomicAlignments)
+[0m[91m
+The downloaded source packages are in
+	'/tmp/RtmpXqFjPF/downloaded_packages'
+[0m[91mOld packages: 'bit', 'data.table', 'jsonlite', 'knitr', 'matrixStats',
+  'modelr', 'openssl', 'sass', 'stringr', 'vctrs', 'xfun', 'KernSmooth',
+  'MASS', 'Matrix', 'boot', 'class', 'cluster', 'codetools', 'lattice', 'mgcv',
+  'nlme', 'nnet', 'rpart', 'spatial', 'survival'
+[0mRemoving intermediate container 0f492336c000
+ ---> 13479b8ae0c0
+Step 5/12 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> 0fc70d7ccc08
+Step 6/12 : RUN chmod a+rX /opt2/Dockerfile.${TAG}
+ ---> Running in 94a6bc6ef372
+Removing intermediate container 94a6bc6ef372
+ ---> 50eec5aaec34
+Step 7/12 : WORKDIR /data2
+ ---> Running in 841895e5af94
+Removing intermediate container 841895e5af94
+ ---> c5b3c8dc27dd
+Step 8/12 : RUN apt-get clean
+ ---> Running in 7ce88c84a75f
+Removing intermediate container 7ce88c84a75f
+ ---> dc3344f2a4e6
+Step 9/12 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in d0493813d814
+Removing intermediate container d0493813d814
+ ---> ce29f9f059da
+Step 10/12 : LABEL github_handle="kopardev"
+ ---> Running in 0e8235eb3479
+Removing intermediate container 0e8235eb3479
+ ---> 719f2478200a
+Step 11/12 : ARG BUILD_DATE
+ ---> Running in 4b99cbe8919d
+Removing intermediate container 4b99cbe8919d
+ ---> a79620843419
+Step 12/12 : LABEL build_date=$BUILD_DATE
+ ---> Running in 5a14bea87bf9
+Removing intermediate container 5a14bea87bf9
+ ---> 662ebc49d474
+Successfully built 662ebc49d474
+Successfully tagged nciccbr/ccrgb_starplus:v1.2
