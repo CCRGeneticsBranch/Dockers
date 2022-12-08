@@ -1,0 +1,57 @@
+Sending build context to Docker daemon  121.9kB
+Step 1/14 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+ ---> bf65e40a3e88
+Step 2/14 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> cf9240a23037
+Step 3/14 : WORKDIR /opt2
+ ---> Using cache
+ ---> 973254da1031
+Step 4/14 : RUN wget https://github.com/bcgsc/HLAminer/releases/download/v1.4/HLAminer_1-4.tar.gz &&     tar xzvf HLAminer_1-4.tar.gz && rm -f HLAminer_1-4.tar.gz
+ ---> Using cache
+ ---> 8cc5bfda9b83
+Step 5/14 : ENV PATH="$PATH:/opt2/HLAminer_1-4/bin"
+ ---> Using cache
+ ---> ce8347800832
+Step 6/14 : RUN cpanm Bio::SearchIO
+ ---> Using cache
+ ---> 98d169f89b65
+Step 7/14 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> 0eede1565ef7
+Step 8/14 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 9d2c5d0d190d
+Removing intermediate container 9d2c5d0d190d
+ ---> e1d0c0c53c31
+Step 9/14 : WORKDIR /data2
+ ---> Running in 4ca81f43ba12
+Removing intermediate container 4ca81f43ba12
+ ---> cfcf132681eb
+Step 10/14 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 062907dd3944
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 062907dd3944
+ ---> e9eca3fac9d4
+Step 11/14 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in 42b7136b6464
+Removing intermediate container 42b7136b6464
+ ---> 635a528de331
+Step 12/14 : LABEL github_handle="kopardev"
+ ---> Running in 6935b2c4cf77
+Removing intermediate container 6935b2c4cf77
+ ---> 2794ded78356
+Step 13/14 : ARG BUILD_DATE
+ ---> Running in 7bd07df02efd
+Removing intermediate container 7bd07df02efd
+ ---> e07b0c9475d8
+Step 14/14 : LABEL build_date=$BUILD_DATE
+ ---> Running in 9bc62e235b54
+Removing intermediate container 9bc62e235b54
+ ---> 6ce7646d0be2
+Successfully built 6ce7646d0be2
+Successfully tagged nciccbr/ccrgb_hlaminer:v1.0

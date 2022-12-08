@@ -1,0 +1,51 @@
+Sending build context to Docker daemon  124.9kB
+Step 1/14 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+ ---> bf65e40a3e88
+Step 2/14 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> cf9240a23037
+Step 3/14 : WORKDIR /opt2
+ ---> Using cache
+ ---> 973254da1031
+Step 4/14 : RUN wget https://github.com/bcgsc/HLAminer/releases/download/v1.4/HLAminer_1-4.tar.gz &&     tar xzvf HLAminer_1-4.tar.gz && rm -f HLAminer_1-4.tar.gz
+ ---> Using cache
+ ---> 8cc5bfda9b83
+Step 5/14 : ENV PATH="$PATH:/opt2/HLAminer-1.4/HLAminer_v1.4/bin"
+ ---> Running in e778076f925b
+Removing intermediate container e778076f925b
+ ---> b5fc3f36d5a7
+Step 6/14 : RUN cpanm Bio::SearchIO
+ ---> Running in 871065b02221
+--> Working on Bio::SearchIO
+Fetching http://www.cpan.org/authors/id/C/CJ/CJFIELDS/BioPerl-1.7.8.tar.gz ... OK
+Configuring BioPerl-1.7.8 ... OK
+==> Found dependencies: XML::DOM, Graph::Directed, Data::Stag, YAML, Test::Memory::Cycle, Test::Weaken, Test::Most, Set::Scalar, Test::RequiresInternet, XML::Parser::PerlSAX, XML::SAX::Writer, IPC::Run, XML::Writer, IO::String
+--> Working on XML::DOM
+Fetching http://www.cpan.org/authors/id/T/TJ/TJMATHER/XML-DOM-1.46.tar.gz ... OK
+Configuring XML-DOM-1.46 ... OK
+==> Found dependencies: XML::RegExp, XML::Parser::PerlSAX
+--> Working on XML::RegExp
+Fetching http://www.cpan.org/authors/id/T/TJ/TJMATHER/XML-RegExp-0.04.tar.gz ... OK
+Configuring XML-RegExp-0.04 ... OK
+Building and testing XML-RegExp-0.04 ... OK
+Successfully installed XML-RegExp-0.04
+--> Working on XML::Parser::PerlSAX
+Fetching http://www.cpan.org/authors/id/K/KM/KMACLEOD/libxml-perl-0.08.tar.gz ... OK
+Configuring libxml-perl-0.08 ... OK
+Building and testing libxml-perl-0.08 ... OK
+Successfully installed libxml-perl-0.08
+Building and testing XML-DOM-1.46 ... OK
+Successfully installed XML-DOM-1.46
+--> Working on Graph::Directed
+Fetching http://www.cpan.org/authors/id/E/ET/ETJ/Graph-0.9725.tar.gz ... OK
+Configuring Graph-0.9725 ... OK
+==> Found dependencies: Heap, Set::Object
+--> Working on Heap
+Fetching http://www.cpan.org/authors/id/J/JM/JMM/Heap-0.80.tar.gz ... OK
+Configuring Heap-0.80 ... OK
+Building and testing Heap-0.80 ... OK
+Successfully installed Heap-0.80
+--> Working on Set::Object
+Fetching http://www.cpan.org/authors/id/R/RU/RURBAN/Set-Object-1.42.tar.gz ... OK
+Configuring Set-Object-1.42 ... OK
+Building and testing Set-Object-1.42 ... 

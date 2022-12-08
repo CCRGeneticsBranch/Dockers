@@ -1,0 +1,42 @@
+Sending build context to Docker daemon  119.3kB
+Step 1/10 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+ ---> bf65e40a3e88
+Step 2/10 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> cf9240a23037
+Step 3/10 : WORKDIR /opt2
+ ---> Using cache
+ ---> 973254da1031
+Step 4/10 : RUN wget https://github.com/bcgsc/HLAminer/releases/download/v1.4/HLAminer_1-4.tar.gz &&     tar xzvf HLAminer_1-4.tar.gz && rm -f HLAminer_1-4.tar.gz
+ ---> Using cache
+ ---> 8cc5bfda9b83
+Step 5/10 : ENV PATH="$PATH:/opt2/HLAminer_1-4/bin"
+ ---> Using cache
+ ---> ce8347800832
+Step 6/10 : RUN cpanm Bio::SearchIO
+ ---> Using cache
+ ---> 98d169f89b65
+Step 7/10 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> c3f60ff60553
+Step 8/10 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 3f7a217727ea
+Removing intermediate container 3f7a217727ea
+ ---> 18921de51da4
+Step 9/10 : WORKDIR /data2
+ ---> Running in 34893c0e0523
+Removing intermediate container 34893c0e0523
+ ---> a5bcc7d9e1c7
+Step 10/10 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 2d7bebab6c5f
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 2d7bebab6c5f
+ ---> 870ede6de2ce
+[Warning] One or more build-args [BUILD_DATE] were not consumed
+Successfully built 870ede6de2ce
+Successfully tagged nciccbr/ccrgb_hlaminer:v1.0
