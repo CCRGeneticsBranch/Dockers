@@ -1,0 +1,17 @@
+FROM nciccbr/ccrgb_starplus:v1.2
+ENV TAG="v1.3"
+
+# JSON::XS 
+RUN cpanm JSON::XS
+
+# cleanup etc
+COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+RUN chmod a+rX /opt2/Dockerfile.${TAG}
+WORKDIR /data2
+RUN apt-get clean
+
+# details
+LABEL maintainer="vishal.koparde@nih.gov"
+LABEL github_handle="kopardev"
+ARG BUILD_DATE
+LABEL build_date=$BUILD_DATE

@@ -1,0 +1,69 @@
+Sending build context to Docker daemon  11.43MB
+Step 1/11 : FROM nciccbr/ccrgb_starplus:v1.2
+v1.2: Pulling from nciccbr/ccrgb_starplus
+Digest: sha256:5474198145a493e70560ce87e6d2aa5bac67ad4f3efda34676244d864b7cbd7d
+Status: Downloaded newer image for nciccbr/ccrgb_starplus:v1.2
+ ---> 662ebc49d474
+Step 2/11 : ENV TAG="v1.3"
+ ---> Running in 43daa945ec4b
+Removing intermediate container 43daa945ec4b
+ ---> a419e5de3a26
+Step 3/11 : RUN cpanm JSON::XS
+ ---> Running in e05d95709a90
+--> Working on JSON::XS
+Fetching http://www.cpan.org/authors/id/M/ML/MLEHMANN/JSON-XS-4.03.tar.gz ... OK
+==> Found dependencies: Canary::Stability
+--> Working on Canary::Stability
+Fetching http://www.cpan.org/authors/id/M/ML/MLEHMANN/Canary-Stability-2013.tar.gz ... OK
+Configuring Canary-Stability-2013 ... OK
+Building and testing Canary-Stability-2013 ... OK
+Successfully installed Canary-Stability-2013
+Configuring JSON-XS-4.03 ... OK
+==> Found dependencies: common::sense, Types::Serialiser
+--> Working on common::sense
+Fetching http://www.cpan.org/authors/id/M/ML/MLEHMANN/common-sense-3.75.tar.gz ... OK
+Configuring common-sense-3.75 ... OK
+Building and testing common-sense-3.75 ... OK
+Successfully installed common-sense-3.75
+--> Working on Types::Serialiser
+Fetching http://www.cpan.org/authors/id/M/ML/MLEHMANN/Types-Serialiser-1.01.tar.gz ... OK
+Configuring Types-Serialiser-1.01 ... OK
+Building and testing Types-Serialiser-1.01 ... OK
+Successfully installed Types-Serialiser-1.01
+Building and testing JSON-XS-4.03 ... OK
+Successfully installed JSON-XS-4.03
+4 distributions installed
+Removing intermediate container e05d95709a90
+ ---> 38703b4da003
+Step 4/11 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> 1fabff733215
+Step 5/11 : RUN chmod a+rX /opt2/Dockerfile.${TAG}
+ ---> Running in b41d70f966f9
+Removing intermediate container b41d70f966f9
+ ---> e979ac8b774c
+Step 6/11 : WORKDIR /data2
+ ---> Running in e20064dc5b2b
+Removing intermediate container e20064dc5b2b
+ ---> 1cb9eabc8985
+Step 7/11 : RUN apt-get clean
+ ---> Running in 3ebd732c9004
+Removing intermediate container 3ebd732c9004
+ ---> 217686ee298d
+Step 8/11 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in f5c5e704604d
+Removing intermediate container f5c5e704604d
+ ---> 4b0ba496e33d
+Step 9/11 : LABEL github_handle="kopardev"
+ ---> Running in 08cb630610d3
+Removing intermediate container 08cb630610d3
+ ---> 9bac9d6cf429
+Step 10/11 : ARG BUILD_DATE
+ ---> Running in 4be3d24875b3
+Removing intermediate container 4be3d24875b3
+ ---> 0651c5d134e4
+Step 11/11 : LABEL build_date=$BUILD_DATE
+ ---> Running in c6da492ce7ba
+Removing intermediate container c6da492ce7ba
+ ---> da1082dd5030
+Successfully built da1082dd5030
+Successfully tagged nciccbr/ccrgb_starplus:v1.3
