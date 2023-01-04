@@ -31,3 +31,9 @@ RUN apt-get clean && \
     apt-get autoclean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+# details
+LABEL maintainer="vishal.koparde@nih.gov"
+LABEL github_handle="kopardev"
+ARG BUILD_DATE
+LABEL build_date=$BUILD_DATE
