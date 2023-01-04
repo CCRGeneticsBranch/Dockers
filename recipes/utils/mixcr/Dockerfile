@@ -12,7 +12,7 @@ ENV PATH=$CONDA_DIR/bin:$PATH
 RUN . /opt2/conda/etc/profile.d/conda.sh && \
 conda create -n mixcr && \
 conda activate mixcr && \
-conda install -c milaboratories mixcr --no-deps
+conda install -c milaboratories mixcr=4.1.2 --no-deps
 
 # add wrapper scripts for conpair calls
 COPY mixcr /opt2/mixcr
