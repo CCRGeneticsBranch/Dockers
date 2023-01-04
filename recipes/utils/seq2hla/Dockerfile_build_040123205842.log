@@ -1,0 +1,45 @@
+Sending build context to Docker daemon  3.072kB
+Step 1/10 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+ ---> bf65e40a3e88
+Step 2/10 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 141370eeaf24
+Step 3/10 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> a0fe212435dd
+Step 4/10 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 92ffd24bb7b5
+Removing intermediate container 92ffd24bb7b5
+ ---> 289a4a26c3c1
+Step 5/10 : WORKDIR /data2
+ ---> Running in c4e76020eb76
+Removing intermediate container c4e76020eb76
+ ---> a1b330556ebd
+Step 6/10 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in cb4e0be7ca65
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container cb4e0be7ca65
+ ---> 9d05af8fd0e1
+Step 7/10 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in 9f6330c48d85
+Removing intermediate container 9f6330c48d85
+ ---> 1cfdcbaa7771
+Step 8/10 : LABEL github_handle="kopardev"
+ ---> Running in 8511a359d117
+Removing intermediate container 8511a359d117
+ ---> 25bb88a2a4b5
+Step 9/10 : ARG BUILD_DATE
+ ---> Running in 3a5afcc4652b
+Removing intermediate container 3a5afcc4652b
+ ---> 4e196c71787b
+Step 10/10 : LABEL build_date=$BUILD_DATE
+ ---> Running in f78349eeb8d2
+Removing intermediate container f78349eeb8d2
+ ---> de6ff8b6218b
+Successfully built de6ff8b6218b
+Successfully tagged nciccbr/ccrgb_seq2hla:v1.0

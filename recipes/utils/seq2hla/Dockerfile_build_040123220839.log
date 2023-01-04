@@ -1,0 +1,120 @@
+Sending build context to Docker daemon  933.4kB
+Step 1/39 : FROM ubuntu:18.04
+ ---> e28a50f651f9
+Step 2/39 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> c64f7174eecb
+Step 3/39 : ENV seq2HLA_version 2.3
+ ---> Using cache
+ ---> a68dc9ed201d
+Step 4/39 : ENV bowtie_version 0.12.9
+ ---> Using cache
+ ---> 7ab9a00a418c
+Step 5/39 : ENV r_version 2.12.2
+ ---> Using cache
+ ---> c1c979566bdf
+Step 6/39 : ENV biopython_version 1.58
+ ---> Using cache
+ ---> 8c0cb6eb1a96
+Step 7/39 : RUN apt-get update -y && apt-get install -y     build-essential     cmake     zlib1g-dev     libhdf5-dev     libnss-sss     curl     git     gfortran     libreadline-dev     libpcre3-dev     libbz2-dev     liblzma-dev     libxml2-dev     less     vim     unzip     python2.7-dev     python-pip
+ ---> Using cache
+ ---> 1f2fa05bf4bc
+Step 8/39 : RUN pip install numpy
+ ---> Using cache
+ ---> 3fc8114c0221
+Step 9/39 : WORKDIR /usr/local/bin
+ ---> Using cache
+ ---> 7535e0d15806
+Step 10/39 : RUN curl -SL http://biopython.org/DIST/biopython-${biopython_version}.tar.gz     > ${biopython_version}-1.58.tar.gz
+ ---> Using cache
+ ---> ff85c7c91175
+Step 11/39 : RUN tar -xzvf ${biopython_version}-1.58.tar.gz
+ ---> Using cache
+ ---> ce0b8132715a
+Step 12/39 : WORKDIR /usr/local/bin/biopython-${biopython_version}
+ ---> Using cache
+ ---> 47f75c59b171
+Step 13/39 : RUN python2.7 setup.py build
+ ---> Using cache
+ ---> 7cabc64543cc
+Step 14/39 : RUN python2.7 setup.py test
+ ---> Using cache
+ ---> a69a784fd958
+Step 15/39 : RUN python2.7 setup.py install
+ ---> Using cache
+ ---> 6bf004106a82
+Step 16/39 : WORKDIR /usr/local/bin
+ ---> Using cache
+ ---> b572d1259f91
+Step 17/39 : RUN curl -SL https://github.com/BenLangmead/bowtie/archive/v${bowtie_version}.tar.gz     > v${bowtie_version}.tar.gz
+ ---> Using cache
+ ---> 2a4101bc4bed
+Step 18/39 : RUN tar -xzvf v${bowtie_version}.tar.gz
+ ---> Using cache
+ ---> ab53864f2aed
+Step 19/39 : WORKDIR /usr/local/bin/bowtie-${bowtie_version}
+ ---> Using cache
+ ---> ccd7dd499ff1
+Step 20/39 : RUN make
+ ---> Using cache
+ ---> 759c1b0dd945
+Step 21/39 : WORKDIR /usr/local/bin
+ ---> Using cache
+ ---> 9a17d256509b
+Step 22/39 : RUN curl https://cran.r-project.org/src/base/R-2/R-${r_version}.tar.gz     > R-${r_version}.tar.gz
+ ---> Using cache
+ ---> f2d999f9b6c1
+Step 23/39 : RUN tar -zxvf R-${r_version}.tar.gz
+ ---> Using cache
+ ---> fad2d2d24f75
+Step 24/39 : WORKDIR /usr/local/bin/R-${r_version}
+ ---> Using cache
+ ---> e42eeeefea8f
+Step 25/39 : RUN ./configure --prefix=/usr/local/ --with-x=no
+ ---> Using cache
+ ---> e6c285b829b0
+Step 26/39 : RUN make
+ ---> Using cache
+ ---> 0e176988df2d
+Step 27/39 : RUN make install
+ ---> Using cache
+ ---> 1ec53fd06605
+Step 28/39 : WORKDIR /usr/local/bin
+ ---> Using cache
+ ---> c129aff171d8
+Step 29/39 : RUN curl -SL https://github.com/TRON-Bioinformatics/seq2HLA/archive/master.zip > master.zip
+ ---> Using cache
+ ---> 55f92d1f0dc5
+Step 30/39 : RUN unzip master.zip
+ ---> Using cache
+ ---> a7cca4726621
+Step 31/39 : WORKDIR /usr/local/bin/seq2HLA-master
+ ---> Using cache
+ ---> 67886343a15e
+Step 32/39 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> Using cache
+ ---> cab47ab2b081
+Step 33/39 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Using cache
+ ---> 8e327f8793d6
+Step 34/39 : WORKDIR /data2
+ ---> Using cache
+ ---> b88b03e903f6
+Step 35/39 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Using cache
+ ---> 88901b986904
+Step 36/39 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Using cache
+ ---> 50e67636ce28
+Step 37/39 : LABEL github_handle="kopardev"
+ ---> Using cache
+ ---> b8cf13b09df6
+Step 38/39 : ARG BUILD_DATE
+ ---> Using cache
+ ---> 6e8e346c061b
+Step 39/39 : LABEL build_date=$BUILD_DATE
+ ---> Running in 1e2d2ad28a90
+Removing intermediate container 1e2d2ad28a90
+ ---> 0b92135e7d56
+Successfully built 0b92135e7d56
+Successfully tagged nciccbr/ccrgb_seq2hla:v1.0

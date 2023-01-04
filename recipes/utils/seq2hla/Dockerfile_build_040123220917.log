@@ -1,0 +1,140 @@
+Sending build context to Docker daemon  938.5kB
+Step 1/41 : FROM ubuntu:18.04
+ ---> e28a50f651f9
+Step 2/41 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> c64f7174eecb
+Step 3/41 : ENV seq2HLA_version 2.3
+ ---> Using cache
+ ---> a68dc9ed201d
+Step 4/41 : ENV bowtie_version 0.12.9
+ ---> Using cache
+ ---> 7ab9a00a418c
+Step 5/41 : ENV r_version 2.12.2
+ ---> Using cache
+ ---> c1c979566bdf
+Step 6/41 : ENV biopython_version 1.58
+ ---> Using cache
+ ---> 8c0cb6eb1a96
+Step 7/41 : RUN apt-get update -y && apt-get install -y     build-essential     cmake     zlib1g-dev     libhdf5-dev     libnss-sss     curl     git     gfortran     libreadline-dev     libpcre3-dev     libbz2-dev     liblzma-dev     libxml2-dev     less     vim     unzip     python2.7-dev     python-pip
+ ---> Using cache
+ ---> 1f2fa05bf4bc
+Step 8/41 : RUN pip install numpy
+ ---> Using cache
+ ---> 3fc8114c0221
+Step 9/41 : WORKDIR /usr/local/bin
+ ---> Using cache
+ ---> 7535e0d15806
+Step 10/41 : RUN curl -SL http://biopython.org/DIST/biopython-${biopython_version}.tar.gz     > ${biopython_version}-1.58.tar.gz
+ ---> Using cache
+ ---> ff85c7c91175
+Step 11/41 : RUN tar -xzvf ${biopython_version}-1.58.tar.gz
+ ---> Using cache
+ ---> ce0b8132715a
+Step 12/41 : WORKDIR /usr/local/bin/biopython-${biopython_version}
+ ---> Using cache
+ ---> 47f75c59b171
+Step 13/41 : RUN python2.7 setup.py build
+ ---> Using cache
+ ---> 7cabc64543cc
+Step 14/41 : RUN python2.7 setup.py test
+ ---> Using cache
+ ---> a69a784fd958
+Step 15/41 : RUN python2.7 setup.py install
+ ---> Using cache
+ ---> 6bf004106a82
+Step 16/41 : WORKDIR /usr/local/bin
+ ---> Using cache
+ ---> b572d1259f91
+Step 17/41 : RUN curl -SL https://github.com/BenLangmead/bowtie/archive/v${bowtie_version}.tar.gz     > v${bowtie_version}.tar.gz
+ ---> Using cache
+ ---> 2a4101bc4bed
+Step 18/41 : RUN tar -xzvf v${bowtie_version}.tar.gz
+ ---> Using cache
+ ---> ab53864f2aed
+Step 19/41 : WORKDIR /usr/local/bin/bowtie-${bowtie_version}
+ ---> Using cache
+ ---> ccd7dd499ff1
+Step 20/41 : RUN make
+ ---> Using cache
+ ---> 759c1b0dd945
+Step 21/41 : WORKDIR /usr/local/bin
+ ---> Using cache
+ ---> 9a17d256509b
+Step 22/41 : RUN curl https://cran.r-project.org/src/base/R-2/R-${r_version}.tar.gz     > R-${r_version}.tar.gz
+ ---> Using cache
+ ---> f2d999f9b6c1
+Step 23/41 : RUN tar -zxvf R-${r_version}.tar.gz
+ ---> Using cache
+ ---> fad2d2d24f75
+Step 24/41 : WORKDIR /usr/local/bin/R-${r_version}
+ ---> Using cache
+ ---> e42eeeefea8f
+Step 25/41 : RUN ./configure --prefix=/usr/local/ --with-x=no
+ ---> Using cache
+ ---> e6c285b829b0
+Step 26/41 : RUN make
+ ---> Using cache
+ ---> 0e176988df2d
+Step 27/41 : RUN make install
+ ---> Using cache
+ ---> 1ec53fd06605
+Step 28/41 : WORKDIR /usr/local/bin
+ ---> Using cache
+ ---> c129aff171d8
+Step 29/41 : RUN curl -SL https://github.com/TRON-Bioinformatics/seq2HLA/archive/master.zip > master.zip
+ ---> Using cache
+ ---> 55f92d1f0dc5
+Step 30/41 : RUN unzip master.zip
+ ---> Using cache
+ ---> a7cca4726621
+Step 31/41 : WORKDIR /usr/local/bin/seq2HLA-master
+ ---> Using cache
+ ---> 67886343a15e
+Step 32/41 : RUN mv seq2HLA.py seq2HLA.py.tmp &&     echo "#!/usr/bin/env python" > seq2HLA.py &&     cat seq2HLA.py.tmp >> seq2HLA.py &&     chmod a+x seq2HLA.py &&     rm -f seq2HLA.py.tmp
+ ---> Running in 13061dc7af37
+Removing intermediate container 13061dc7af37
+ ---> e5152d9c88ea
+Step 33/41 : ENV PATH=${PATH}:/usr/local/bin/seq2HLA-master
+ ---> Running in 886cf017cf81
+Removing intermediate container 886cf017cf81
+ ---> 968a635e745a
+Step 34/41 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> f6359fac26b3
+Step 35/41 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in bd37ad4cb21f
+Removing intermediate container bd37ad4cb21f
+ ---> ef25097128e8
+Step 36/41 : WORKDIR /data2
+ ---> Running in 189b0eb463b6
+Removing intermediate container 189b0eb463b6
+ ---> 8ed2af88b3e7
+Step 37/41 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in c4f3d933d81c
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container c4f3d933d81c
+ ---> 8a92adb9c0af
+Step 38/41 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in 92cd7261f16f
+Removing intermediate container 92cd7261f16f
+ ---> a320d02e6f7a
+Step 39/41 : LABEL github_handle="kopardev"
+ ---> Running in 10a9f880cf55
+Removing intermediate container 10a9f880cf55
+ ---> f2575d1d8a18
+Step 40/41 : ARG BUILD_DATE
+ ---> Running in 29a58f4b9233
+Removing intermediate container 29a58f4b9233
+ ---> 0123cd906b0c
+Step 41/41 : LABEL build_date=$BUILD_DATE
+ ---> Running in 800dc7d9a15d
+Removing intermediate container 800dc7d9a15d
+ ---> 356bca23dfce
+Successfully built 356bca23dfce
+Successfully tagged nciccbr/ccrgb_seq2hla:v1.0
