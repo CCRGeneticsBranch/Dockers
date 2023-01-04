@@ -67,6 +67,12 @@ WORKDIR /usr/local/bin
 RUN curl -SL https://github.com/TRON-Bioinformatics/seq2HLA/archive/master.zip > master.zip
 RUN unzip master.zip
 WORKDIR /usr/local/bin/seq2HLA-master
+RUN mv seq2HLA.py seq2HLA.py.tmp && \
+    echo "#!/usr/bin/env python" > seq2HLA.py && \
+    cat seq2HLA.py.tmp >> seq2HLA.py && \
+    chmod a+x seq2HLA.py && \
+    rm -f seq2HLA.py.tmp
+ENV PATH=${PATH}:/usr/local/bin/seq2HLA-master
 
 COPY Dockerfile /opt2/Dockerfile.${TAG}
 RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi && \
