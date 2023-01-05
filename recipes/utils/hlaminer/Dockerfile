@@ -7,8 +7,9 @@ WORKDIR /opt2
 RUN wget https://github.com/bcgsc/HLAminer/releases/download/v1.4/HLAminer_1-4.tar.gz && \
     tar xzvf HLAminer_1-4.tar.gz && \
     rm -f HLAminer_1-4.tar.gz && \
-    for f in $(ls /opt2/HLAminer-1.4/HLAminer_v1.4/bin/*.sh);do echo $f;sed -i "s/..\/bin\//\/opt2\/HLAminer-1.4\/HLAminer_v1.4\/bin\//g" $f;sed -i "s/..\/database/\/opt2\/HLAminer-1.4\/HLAminer_v1.4\/database/g" $f;done && \
-    for f in $(ls /opt2/HLAminer-1.4/HLAminer_v1.4/bin/*.pl);do echo $f;sed -i "s/..\/database/\/opt2\/HLAminer-1.4\/HLAminer_v1.4\/database/g" $f;sed -i "s/\/home\/martink\/bin\/perl/\/usr\/bin\/perl/g" $f;sed -i "s/\/home\/martink\/bin\/perl510/\/usr\/bin\/perl/g" $f;sed -i "s/\/usr\/bin\/perl510/\/usr\/bin\/perl/g" $f;done
+    for f in $(ls /opt2/HLAminer-1.4/HLAminer_v1.4/bin/*.sh);do echo $f;sed -i "s/..\/bin\//\/opt2\/HLAminer-1.4\/HLAminer_v1.4\/bin\//g" $f;sed -i "s/..\/database/\/opt2\/HLAminer-1.4\/HLAminer_v1.4\/database/g" $f; sed -i "s/-c ncbiBlastConfig.txt/-c \/opt2\/HLAminer-1.4\/HLAminer_v1.4\/bin\/ncbiBlastConfig.txt/g" $f; done && \
+    for f in $(ls /opt2/HLAminer-1.4/HLAminer_v1.4/bin/*.pl);do echo $f;sed -i "s/..\/database/\/opt2\/HLAminer-1.4\/HLAminer_v1.4\/database/g" $f;sed -i "s/\/home\/martink\/bin\/perl/\/usr\/bin\/perl/g" $f;sed -i "s/\/home\/martink\/bin\/perl510/\/usr\/bin\/perl/g" $f;sed -i "s/\/usr\/bin\/perl510/\/usr\/bin\/perl/g" $f;done && \
+    for f in $(ls /opt2/HLAminer-1.4/HLAminer_v1.4/bin/*.txt);do echo $f;sed -i "s/..\/bin\//\/opt2\/HLAminer-1.4\/HLAminer_v1.4\/bin\//g" $f;done
 ENV PATH="$PATH:/opt2/HLAminer-1.4/HLAminer_v1.4/bin"
 
 COPY Dockerfile /opt2/Dockerfile.${TAG}
