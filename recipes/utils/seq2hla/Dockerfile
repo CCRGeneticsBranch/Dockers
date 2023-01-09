@@ -72,7 +72,7 @@ RUN mv seq2HLA.py seq2HLA.py.tmp && \
     cat seq2HLA.py.tmp >> seq2HLA.py && \
     chmod a+x seq2HLA.py && \
     rm -f seq2HLA.py.tmp
-ENV PATH=${PATH}:/usr/local/bin/seq2HLA-master
+ENV PATH=${PATH}:/usr/local/bin/seq2HLA-master:/usr/local/bin/bowtie-0.12.9
 
 COPY Dockerfile /opt2/Dockerfile.${TAG}
 RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi && \
