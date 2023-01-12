@@ -1,5 +1,5 @@
-FROM nciccbr/ccrgb_qctools:v1.6
-ENV TAG="v1.7"
+FROM nciccbr/ccrgb_qctools:v1.7
+ENV TAG="v1.8"
 
 # TAG v1.0 has
 # Fastqc v0.11.9
@@ -24,8 +24,13 @@ ENV TAG="v1.7"
 # TAG v1.6 has
 # rnaseqc 2.4.2
 
-# fixing access to $PICARDJAR (singularity fix)
-RUN chmod a+rX $PICARDJAR
+# add stringr R library
+RUN Rscript -e 'install.packages("stringr")'
+
+# adding igvtools
+WORKDIR /opt2
+RUN wget -O igvtools.zip https://data.broadinstitute.org/igv/projects/downloads/2.15/IGV_2.15.4.zip && \
+    unzip igvtools.zip && rm -f igvtools.zip
 
 # tagging
 COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
@@ -44,3 +49,10 @@ RUN apt-get clean && \
     apt-get autoclean && \
     apt-get autoremove -y && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+# details
+LABEL maintainer="vishal.koparde@nih.gov"
+LABEL github_handle="kopardev"
+ARG BUILD_DATE
+LABEL build_date=$BUILD_DATE
+
