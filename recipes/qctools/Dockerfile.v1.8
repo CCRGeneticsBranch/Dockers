@@ -26,6 +26,11 @@ ENV TAG="v1.8"
 
 # add stringr R library
 RUN Rscript -e 'install.packages("stringr")'
+RUN Rscript -e 'install.packages("RColorBrewer")'
+RUN Rscript -e 'BiocManager::install("OmicCircos")'
+RUN Rscript -e 'install.packages("optparse")'
+RUN Rscript -e 'install.packages("deconstructSigs")'
+RUN Rscript -e 'install.packages("sequenza")'
 
 # tagging
 COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
