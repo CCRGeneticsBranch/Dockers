@@ -27,15 +27,6 @@ ENV TAG="v1.8"
 # add stringr R library
 RUN Rscript -e 'install.packages("stringr")'
 
-# adding igvtools
-WORKDIR /opt2
-# RUN wget -O igvtools.zip https://data.broadinstitute.org/igv/projects/downloads/2.15/IGV_2.15.4.zip && \
-#     unzip igvtools.zip && rm -f igvtools.zip
-RUN wget -O igvtools.zip https://data.broadinstitute.org/igv/projects/downloads/2.3/IGV_2.3.31.zip && \
-    unzip  igvtools.zip && rm -f igvtools.zip
-# COPY igvtools /opt2/IGV_2.15.4/
-# RUN chmod a+x /opt2/IGV_2.15.4/igvtools
-
 # tagging
 COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
 COPY printversions.bash /opt2/printversions
