@@ -1,0 +1,15 @@
+Sending build context to Docker daemon  239.1kB
+Step 1/13 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+v2.0: Pulling from nciccbr/ccbr_ubuntu_base_20.04
+3b65ec22a9e9: Already exists
+10ceb438865c: Already exists
+aab707835907: Already exists
+625b0c14d41b: Already exists
+375fd82da226: Already exists
+4faae6904470: Already exists
+3a0584074529: Already exists
+0d62c252c62e: Already exists
+8aec5b04915d: Already exists
+eb35dcebf5f0: Already exists
+9120fb1fc8cb: Already exists
+f4783e0118a3: Already exists

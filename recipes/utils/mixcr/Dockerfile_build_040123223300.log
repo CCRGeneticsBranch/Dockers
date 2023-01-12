@@ -1,0 +1,66 @@
+Sending build context to Docker daemon  434.7kB
+Step 1/17 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/17 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> c3944bc318e0
+Step 3/17 : ENV CONDA_DIR /opt2/conda
+ ---> Using cache
+ ---> 089f508e9d73
+Step 4/17 : WORKDIR /opt2
+ ---> Using cache
+ ---> f928d1f3c935
+Step 5/17 : RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /opt2/miniconda.sh &&   /bin/bash /opt2/miniconda.sh -b -p /opt2/conda
+ ---> Using cache
+ ---> 9c32e1a5051d
+Step 6/17 : ENV PATH=$CONDA_DIR/bin:$PATH
+ ---> Using cache
+ ---> 66424149a172
+Step 7/17 : RUN . /opt2/conda/etc/profile.d/conda.sh && conda create -n mixcr && conda activate mixcr && conda install -c milaboratories mixcr=4.1.2 --no-deps
+ ---> Using cache
+ ---> b7823aea28a2
+Step 8/17 : COPY mixcr /opt2/mixcr
+ ---> Using cache
+ ---> 18a8050ee6ba
+Step 9/17 : RUN chmod a+x /opt2/mixcr
+ ---> Using cache
+ ---> 1d4d838b24df
+Step 10/17 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> e3cfc17e3e6f
+Step 11/17 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 2853b4d87c41
+Removing intermediate container 2853b4d87c41
+ ---> aa97dc66bf6f
+Step 12/17 : WORKDIR /data2
+ ---> Running in 19b88ac0f4c7
+Removing intermediate container 19b88ac0f4c7
+ ---> 6be39745c515
+Step 13/17 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in efec93954eed
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container efec93954eed
+ ---> 927185270623
+Step 14/17 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in d58a930da198
+Removing intermediate container d58a930da198
+ ---> 2c13fb22336f
+Step 15/17 : LABEL github_handle="kopardev"
+ ---> Running in 599b1f8efdbf
+Removing intermediate container 599b1f8efdbf
+ ---> 7fa2a6ff8536
+Step 16/17 : ARG BUILD_DATE
+ ---> Running in f1044ab5b33d
+Removing intermediate container f1044ab5b33d
+ ---> 22c7b807d50d
+Step 17/17 : LABEL build_date=$BUILD_DATE
+ ---> Running in d84a80615a22
+Removing intermediate container d84a80615a22
+ ---> aab846b65ac7
+Successfully built aab846b65ac7
+Successfully tagged nciccbr/ccrgb_mixcr:v1.1

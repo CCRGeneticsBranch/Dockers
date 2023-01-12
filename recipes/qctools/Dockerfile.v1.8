@@ -1,0 +1,46 @@
+FROM nciccbr/ccrgb_qctools:v1.6
+ENV TAG="v1.7"
+
+# TAG v1.0 has
+# Fastqc v0.11.9
+# picard tools v2.27.4
+
+# TAG v1.1 has
+# install multiqc 1.12
+
+# TAG v1.2 has
+# rseqc 4.0.0
+
+# TAG v1.3 has
+# htslib 1.15.1
+# preseq 3.1.1
+
+# TAG v1.4 has
+# fastqvalidator 6d619a34749e9d33c34ef0d3e0e87324ca77f320
+
+# TAG v1.5 has
+# deeptools 3.5.1
+
+# TAG v1.6 has
+# rnaseqc 2.4.2
+
+# fixing access to $PICARDJAR (singularity fix)
+RUN chmod a+rX $PICARDJAR
+
+# tagging
+COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+COPY printversions.bash /opt2/printversions
+RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi && \
+    chmod a+r /opt2/Dockerfile.${TAG} && \
+    ln -s Dockerfile.${TAG} /opt2/Dockerfile && \
+    chmod a+rx /opt2/printversions
+RUN /opt2/printversions > /opt2/versions.txt; exit 0
+RUN chmod a+r /opt2/versions.txt
+WORKDIR /data2
+
+# clean up
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    apt-get autoclean && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/{apt,dpkg,cache,log}/

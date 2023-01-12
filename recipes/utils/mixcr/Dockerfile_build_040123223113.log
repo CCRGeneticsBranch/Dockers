@@ -1,0 +1,105 @@
+Sending build context to Docker daemon  429.6kB
+Step 1/13 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.0
+ ---> 6e1428b3958a
+Step 2/13 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> c3944bc318e0
+Step 3/13 : ENV CONDA_DIR /opt2/conda
+ ---> Using cache
+ ---> 089f508e9d73
+Step 4/13 : WORKDIR /opt2
+ ---> Using cache
+ ---> f928d1f3c935
+Step 5/13 : RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /opt2/miniconda.sh &&   /bin/bash /opt2/miniconda.sh -b -p /opt2/conda
+ ---> Using cache
+ ---> 9c32e1a5051d
+Step 6/13 : ENV PATH=$CONDA_DIR/bin:$PATH
+ ---> Using cache
+ ---> 66424149a172
+Step 7/13 : RUN . /opt2/conda/etc/profile.d/conda.sh && conda create -n mixcr && conda activate mixcr && conda install -c milaboratories mixcr=4.1.2 --no-deps
+ ---> Running in 9a0f34312fdb
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /opt2/conda/envs/mixcr
+
+
+
+Proceed ([y]/n)? 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate mixcr
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /opt2/conda/envs/mixcr
+
+  added / updated specs:
+    - mixcr=4.1.2
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    mixcr-4.1.2                |                0        94.7 MB  milaboratories
+    ------------------------------------------------------------
+                                           Total:        94.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  mixcr              milaboratories/noarch::mixcr-4.1.2-0 
+
+
+Proceed ([y]/n)? 
+
+Downloading and Extracting Packages
+mixcr-4.1.2          | 94.7 MB   |            |   0% mixcr-4.1.2          | 94.7 MB   | ########## | 100% mixcr-4.1.2          | 94.7 MB   | ########## | 100%                                                      
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Removing intermediate container 9a0f34312fdb
+ ---> b7823aea28a2
+Step 8/13 : COPY mixcr /opt2/mixcr
+ ---> 18a8050ee6ba
+Step 9/13 : RUN chmod a+x /opt2/mixcr
+ ---> Running in 497ed65d125f
+Removing intermediate container 497ed65d125f
+ ---> 1d4d838b24df
+Step 10/13 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> 4544dfdc4dc2
+Step 11/13 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 335dede9021d
+Removing intermediate container 335dede9021d
+ ---> c1f761ed9d38
+Step 12/13 : WORKDIR /data2
+ ---> Running in f6d240622312
+Removing intermediate container f6d240622312
+ ---> e2c3866b92c9
+Step 13/13 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 16f806b973cd
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 16f806b973cd
+ ---> 6991c8345746
+[Warning] One or more build-args [BUILD_DATE] were not consumed
+Successfully built 6991c8345746
+Successfully tagged nciccbr/ccrgb_mixcr:v1.1

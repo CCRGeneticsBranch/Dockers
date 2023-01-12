@@ -11,6 +11,12 @@ RUN wget https://github.com/bcgsc/HLAminer/releases/download/v1.4/HLAminer_1-4.t
     for f in $(ls /opt2/HLAminer-1.4/HLAminer_v1.4/bin/*.pl);do echo $f;sed -i "s/..\/database/\/opt2\/HLAminer-1.4\/HLAminer_v1.4\/database/g" $f;sed -i "s/\/home\/martink\/bin\/perl/\/usr\/bin\/perl/g" $f;sed -i "s/\/home\/martink\/bin\/perl510/\/usr\/bin\/perl/g" $f;sed -i "s/\/usr\/bin\/perl510/\/usr\/bin\/perl/g" $f;done && \
     for f in $(ls /opt2/HLAminer-1.4/HLAminer_v1.4/bin/*.txt);do echo $f;sed -i "s/..\/bin\//\/opt2\/HLAminer-1.4\/HLAminer_v1.4\/bin\//g" $f;done
 ENV PATH="$PATH:/opt2/HLAminer-1.4/HLAminer_v1.4/bin"
+WORKDIR /opt2/HLAminer-1.4/HLAminer_v1.4/bin
+COPY HPTASRrnaseq_classI-II.sh .
+COPY HPTASRrnaseq_classI.sh .
+COPY HPTASRwgs_classI-II.sh .
+COPY HPTASRwgs_classI.sh .
+RUN chmod a+x *.sh
 
 COPY Dockerfile /opt2/Dockerfile.${TAG}
 RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi && \
