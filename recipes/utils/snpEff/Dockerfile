@@ -6,6 +6,12 @@ WORKDIR /opt2
 RUN wget -O snpEff_v4_3t_core.zip https://sourceforge.net/projects/snpeff/files/snpEff_v4_3t_core.zip/download && \
     unzip snpEff_v4_3t_core.zip && \
     rm -f snpEff_v4_3t_core.zip
+ENV SNPEFF_EXAMPLES=/opt2/snpEff/examples
+ENV SNPSIFT_JAR=/opt2/snpEff/SnpSift.jar
+ENV SNPEFF_HOME=/opt2/snpEff
+ENV SNPEFF_JAR=/opt2/snpEff/snpEff.jar
+ENV SNPEFF_JARPATH=/opt2/snpEff
+ENV SNPEFFHOME=/opt2/snpEff
 WORKDIR /opt2/snpEff
 RUN java -jar snpEff.jar download GRCh38.86 && \
     java -jar snpEff.jar download GRCh37.75
