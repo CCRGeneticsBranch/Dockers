@@ -31,7 +31,7 @@ RUN Rscript -e 'install.packages("stringr")'
 WORKDIR /opt2
 # RUN wget -O igvtools.zip https://data.broadinstitute.org/igv/projects/downloads/2.15/IGV_2.15.4.zip && \
 #     unzip igvtools.zip && rm -f igvtools.zip
-RUN wget -O igvtools https://data.broadinstitute.org/igv/projects/downloads/2.3/IGV_2.3.31.zip && \
+RUN wget -O igvtools.zip https://data.broadinstitute.org/igv/projects/downloads/2.3/IGV_2.3.31.zip && \
     unzip  igvtools.zip && rm -f igvtools.zip
 # COPY igvtools /opt2/IGV_2.15.4/
 # RUN chmod a+x /opt2/IGV_2.15.4/igvtools
