@@ -20,7 +20,9 @@ ENV PATH=/opt2/annovar:$PATH
 WORKDIR /opt2
 RUN wget $TARBALL_LOCATION/$TARBALL ; \
     tar xf $TARBALL --wildcards *pl ; \
-    rm -rf $TARBALL 
+    rm -rf $TARBALL
+WORKDIR /opt2/annovar/
+RUN ln -s /databases/ .
 
 # tagging
 COPY Dockerfile /opt2/Dockerfile.${TAG}
