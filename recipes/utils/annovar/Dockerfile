@@ -22,7 +22,7 @@ RUN wget $TARBALL_LOCATION/$TARBALL ; \
     tar xf $TARBALL --wildcards *pl ; \
     rm -rf $TARBALL
 WORKDIR /opt2/annovar/
-RUN ln -s /databases/ .
+RUN ln -s /databases/ humandb
 
 # tagging
 COPY Dockerfile /opt2/Dockerfile.${TAG}
