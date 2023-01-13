@@ -12,23 +12,15 @@ ENV TOOL_NAME=annovar
 ENV TOOL_VERSION=current
 ENV TARBALL_LOCATION=http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/
 ENV TARBALL=annovar.latest.tar.gz
-ENV TARBALL_FOLDER=$TOOL_NAME
-ENV PATH=$TOOLS/$TOOL_NAME/$TOOL_VERSION/bin:$PATH
+ENV PATH=/opt2/annovar:$PATH
 # http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/annovar.latest.tar.gz
 
 
 # INSTALL
-
+WORKDIR /opt2
 RUN wget $TARBALL_LOCATION/$TARBALL ; \
     tar xf $TARBALL --wildcards *pl ; \
-    rm -rf $TARBALL ; \
-    cd $TARBALL_FOLDER ; \
-    mkdir -p $TOOLS/$TOOL_NAME/$TOOL_VERSION/bin ; \
-    cp *pl $TOOLS/$TOOL_NAME/$TOOL_VERSION/bin/ -R ; \
-    mkdir /databases ; \
-    ln -s /databases/ $TOOLS/$TOOL_NAME/$TOOL_VERSION/bin/humandb ; \
-    cd ../ ; 
-
+    rm -rf $TARBALL 
 
 # tagging
 COPY Dockerfile /opt2/Dockerfile.${TAG}
