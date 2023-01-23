@@ -1,0 +1,77 @@
+Sending build context to Docker daemon  494.6kB
+Step 1/20 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+ ---> bf65e40a3e88
+Step 2/20 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 88c8f83f40b0
+Step 3/20 : ENV TOOLS=/opt2
+ ---> Using cache
+ ---> 1d052ff7a4c0
+Step 4/20 : ENV TOOL_NAME=annovar
+ ---> Using cache
+ ---> 953168368811
+Step 5/20 : ENV TOOL_VERSION=current
+ ---> Using cache
+ ---> 470264e2afa8
+Step 6/20 : ENV TARBALL_LOCATION=http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/
+ ---> Using cache
+ ---> 807f2dbd7aa3
+Step 7/20 : ENV TARBALL=annovar.latest.tar.gz
+ ---> Using cache
+ ---> 0ab60cd752b1
+Step 8/20 : ENV PATH=/opt2/annovar:$PATH
+ ---> Using cache
+ ---> c5c55765989b
+Step 9/20 : WORKDIR /opt2
+ ---> Using cache
+ ---> 2737cb0b3ca5
+Step 10/20 : RUN wget $TARBALL_LOCATION/$TARBALL ;     tar xf $TARBALL --wildcards *pl ;     rm -rf $TARBALL
+ ---> Using cache
+ ---> f67596f07998
+Step 11/20 : WORKDIR /opt2/annovar/
+ ---> Running in 5c2ba4702fa5
+Removing intermediate container 5c2ba4702fa5
+ ---> f9d19dfa91c5
+Step 12/20 : RUN ln -s /databases/ .
+ ---> Running in c695926e65fb
+Removing intermediate container c695926e65fb
+ ---> 68123bdf17e6
+Step 13/20 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> 55d3e88d18cf
+Step 14/20 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 065f807647e6
+Removing intermediate container 065f807647e6
+ ---> 61e8f446160e
+Step 15/20 : WORKDIR /data2
+ ---> Running in 25ef99809059
+Removing intermediate container 25ef99809059
+ ---> 795e33aebe7f
+Step 16/20 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 8bf0a6008264
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 8bf0a6008264
+ ---> fdbd335c9124
+Step 17/20 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in bfef87240441
+Removing intermediate container bfef87240441
+ ---> 42a77424ec77
+Step 18/20 : LABEL github_handle="kopardev"
+ ---> Running in cb00e615331a
+Removing intermediate container cb00e615331a
+ ---> 06c5c9455b9e
+Step 19/20 : ARG BUILD_DATE
+ ---> Running in b107429d6896
+Removing intermediate container b107429d6896
+ ---> 23324a12bdb8
+Step 20/20 : LABEL build_date=$BUILD_DATE
+ ---> Running in f5d737f3b88a
+Removing intermediate container f5d737f3b88a
+ ---> 266330bdcb1b
+Successfully built 266330bdcb1b
+Successfully tagged nciccbr/ccrgb_annovar:v1.0

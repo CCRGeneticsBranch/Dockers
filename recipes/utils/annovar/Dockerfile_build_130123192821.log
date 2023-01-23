@@ -1,0 +1,76 @@
+Sending build context to Docker daemon  498.2kB
+Step 1/20 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+ ---> bf65e40a3e88
+Step 2/20 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 88c8f83f40b0
+Step 3/20 : ENV TOOLS=/opt2
+ ---> Using cache
+ ---> 1d052ff7a4c0
+Step 4/20 : ENV TOOL_NAME=annovar
+ ---> Using cache
+ ---> 953168368811
+Step 5/20 : ENV TOOL_VERSION=current
+ ---> Using cache
+ ---> 470264e2afa8
+Step 6/20 : ENV TARBALL_LOCATION=http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/
+ ---> Using cache
+ ---> 807f2dbd7aa3
+Step 7/20 : ENV TARBALL=annovar.latest.tar.gz
+ ---> Using cache
+ ---> 0ab60cd752b1
+Step 8/20 : ENV PATH=/opt2/annovar:$PATH
+ ---> Using cache
+ ---> c5c55765989b
+Step 9/20 : WORKDIR /opt2
+ ---> Using cache
+ ---> 2737cb0b3ca5
+Step 10/20 : RUN wget $TARBALL_LOCATION/$TARBALL ;     tar xf $TARBALL --wildcards *pl ;     rm -rf $TARBALL
+ ---> Using cache
+ ---> f67596f07998
+Step 11/20 : WORKDIR /opt2/annovar/
+ ---> Using cache
+ ---> f9d19dfa91c5
+Step 12/20 : RUN ln -s /databases/ humandb
+ ---> Running in 9c122f5d7e7d
+Removing intermediate container 9c122f5d7e7d
+ ---> dbecfc194a51
+Step 13/20 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> efd0c87a458c
+Step 14/20 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 118a39dbbd20
+Removing intermediate container 118a39dbbd20
+ ---> 54d4b14eff45
+Step 15/20 : WORKDIR /data2
+ ---> Running in 31c582ec119d
+Removing intermediate container 31c582ec119d
+ ---> 9efae2f19451
+Step 16/20 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 828911c8a66d
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 828911c8a66d
+ ---> 4b95148724dc
+Step 17/20 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in aad0f2c4193c
+Removing intermediate container aad0f2c4193c
+ ---> bcd994959707
+Step 18/20 : LABEL github_handle="kopardev"
+ ---> Running in 3aca5f6b37e0
+Removing intermediate container 3aca5f6b37e0
+ ---> dab37356480c
+Step 19/20 : ARG BUILD_DATE
+ ---> Running in 91e52db50992
+Removing intermediate container 91e52db50992
+ ---> 8d0a3ff074d7
+Step 20/20 : LABEL build_date=$BUILD_DATE
+ ---> Running in e6b2a8e7121f
+Removing intermediate container e6b2a8e7121f
+ ---> 903ea4b28a2d
+Successfully built 903ea4b28a2d
+Successfully tagged nciccbr/ccrgb_annovar:v1.0

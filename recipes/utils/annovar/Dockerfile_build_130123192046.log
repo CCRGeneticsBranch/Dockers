@@ -1,0 +1,57 @@
+Sending build context to Docker daemon  246.8kB
+Step 1/18 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+ ---> bf65e40a3e88
+Step 2/18 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 88c8f83f40b0
+Step 3/18 : ENV TOOLS=/opt2
+ ---> Using cache
+ ---> 1d052ff7a4c0
+Step 4/18 : ENV TOOL_NAME=annovar
+ ---> Using cache
+ ---> 953168368811
+Step 5/18 : ENV TOOL_VERSION=current
+ ---> Using cache
+ ---> 470264e2afa8
+Step 6/18 : ENV TARBALL_LOCATION=http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/
+ ---> Using cache
+ ---> 807f2dbd7aa3
+Step 7/18 : ENV TARBALL=annovar.latest.tar.gz
+ ---> Using cache
+ ---> 0ab60cd752b1
+Step 8/18 : ENV TARBALL_FOLDER=$TOOL_NAME
+ ---> Using cache
+ ---> f79e776efe9e
+Step 9/18 : ENV PATH=$TOOLS/$TOOL_NAME/$TOOL_VERSION/bin:$PATH
+ ---> Using cache
+ ---> ecaba58f7a00
+Step 10/18 : RUN wget $TARBALL_LOCATION/$TARBALL ;     tar xf $TARBALL --wildcards *pl ;     rm -rf $TARBALL ;     cd $TARBALL_FOLDER ;     mkdir -p $TOOLS/$TOOL_NAME/$TOOL_VERSION/bin ;     cp *pl $TOOLS/$TOOL_NAME/$TOOL_VERSION/bin/ -R ;     mkdir /databases ;     ln -s /databases/ $TOOLS/$TOOL_NAME/$TOOL_VERSION/bin/humandb ;     cd ../ ;
+ ---> Using cache
+ ---> 478dd42c72a6
+Step 11/18 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> Using cache
+ ---> 387b850ad58c
+Step 12/18 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Using cache
+ ---> 720371d31ede
+Step 13/18 : WORKDIR /data2
+ ---> Using cache
+ ---> 588de4a85cee
+Step 14/18 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Using cache
+ ---> ff3884857cad
+Step 15/18 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Using cache
+ ---> adf3855f8ea0
+Step 16/18 : LABEL github_handle="kopardev"
+ ---> Using cache
+ ---> 757983b27dc9
+Step 17/18 : ARG BUILD_DATE
+ ---> Using cache
+ ---> ea9e687caf0f
+Step 18/18 : LABEL build_date=$BUILD_DATE
+ ---> Running in 201a4d4c0366
+Removing intermediate container 201a4d4c0366
+ ---> 1c5c74263089
+Successfully built 1c5c74263089
+Successfully tagged nciccbr/ccrgb_annovar:v1.0
