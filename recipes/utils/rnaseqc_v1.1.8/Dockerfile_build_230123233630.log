@@ -1,0 +1,67 @@
+Sending build context to Docker daemon  245.9MB
+Step 1/17 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+ ---> bf65e40a3e88
+Step 2/17 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 1bf1baf32c9e
+Step 3/17 : RUN curl -s "https://get.sdkman.io" --output /opt2/getsdkman.bash
+ ---> Using cache
+ ---> 5f5230716716
+Step 4/17 : RUN bash getsdkman.bash
+ ---> Using cache
+ ---> 1ca5dbc0c6e4
+Step 5/17 : COPY install_java.sh /opt2
+ ---> Using cache
+ ---> b617e8705a9a
+Step 6/17 : RUN bash /opt2/install_java.sh
+ ---> Using cache
+ ---> 763fc238cc47
+Step 7/17 : ADD http://www.broadinstitute.org/cancer/cga/tools/rnaseqc/RNA-SeQC_v1.1.8.jar /opt2
+
+ ---> Using cache
+ ---> ef3e94f816bd
+Step 8/17 : ENV RNASEQCJAR="/opt2/RNA-SeQC_v1.1.8.jar"
+ ---> Using cache
+ ---> 1c9ef25c4750
+Step 9/17 : RUN chmod a+rX $RNASEQCJAR
+ ---> Using cache
+ ---> d57abaa0fbed
+Step 10/17 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> 94317e83d05c
+Step 11/17 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in b4f33249327f
+Removing intermediate container b4f33249327f
+ ---> 6c1a3e18328c
+Step 12/17 : WORKDIR /data2
+ ---> Running in a3e04dc4505e
+Removing intermediate container a3e04dc4505e
+ ---> a5d4085700a3
+Step 13/17 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 29e2d909c348
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 29e2d909c348
+ ---> 584a1d074a7f
+Step 14/17 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in bf109f902ea0
+Removing intermediate container bf109f902ea0
+ ---> cf6ca1e1bda0
+Step 15/17 : LABEL github_handle="kopardev"
+ ---> Running in 3439b7d7d29d
+Removing intermediate container 3439b7d7d29d
+ ---> 6dd608c70154
+Step 16/17 : ARG BUILD_DATE
+ ---> Running in 6c2483655710
+Removing intermediate container 6c2483655710
+ ---> 7dc9b8cab2c1
+Step 17/17 : LABEL build_date=$BUILD_DATE
+ ---> Running in 1995ef183884
+Removing intermediate container 1995ef183884
+ ---> 3b9a2a4aef84
+Successfully built 3b9a2a4aef84
+Successfully tagged nciccbr/ccrgb_rnaseqc_v1.1.8:v1.0

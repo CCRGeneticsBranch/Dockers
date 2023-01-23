@@ -1,0 +1,32 @@
+Sending build context to Docker daemon  245.9MB
+Step 1/20 : FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+ ---> bf65e40a3e88
+Step 2/20 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> 1bf1baf32c9e
+Step 3/20 : RUN curl -s "https://get.sdkman.io" --output /opt2/getsdkman.bash
+ ---> Using cache
+ ---> 5f5230716716
+Step 4/20 : RUN bash getsdkman.bash
+ ---> Using cache
+ ---> 1ca5dbc0c6e4
+Step 5/20 : COPY install_java.sh /opt2
+ ---> Using cache
+ ---> b617e8705a9a
+Step 6/20 : RUN bash /opt2/install_java.sh
+ ---> Using cache
+ ---> 763fc238cc47
+Step 7/20 : ADD http://www.broadinstitute.org/cancer/cga/tools/rnaseqc/RNA-SeQC_v1.1.8.jar /opt2
+
+ ---> ef3e94f816bd
+Step 8/20 : ENV RNASEQCJAR="/opt2/RNA-SeQC_v1.1.8.jar"
+ ---> Running in e254eec4bc59
+Removing intermediate container e254eec4bc59
+ ---> 1c9ef25c4750
+Step 9/20 : RUN chmod a+rX $RNASEQCJAR
+ ---> Running in 473331754b0d
+Removing intermediate container 473331754b0d
+ ---> d57abaa0fbed
+Step 10/20 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> b6a4b35b2298
+Step 11/20 : COPY printversions.bash /opt2/printversions
