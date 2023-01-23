@@ -1,0 +1,18 @@
+Sending build context to Docker daemon  1.882MB
+Step 1/19 : FROM nciccbr/ccrgb_qctools:v1.7
+ ---> 1200400e4a90
+Step 2/19 : ENV TAG="v1.8"
+ ---> Using cache
+ ---> dffcd9c4dcac
+Step 3/19 : RUN Rscript -e 'install.packages("stringr")'
+ ---> Using cache
+ ---> 7988586f5fff
+Step 4/19 : RUN Rscript -e 'install.packages("RColorBrewer")'
+ ---> Using cache
+ ---> 273b2d7a6b0e
+Step 5/19 : RUN Rscript -e 'BiocManager::install("OmicCircos")'
+ ---> Running in 5b4915cd1797
+[91mError in loadNamespace(name) : there is no package called 'BiocManager'
+Calls: :: ... loadNamespace -> withRestarts -> withOneRestart -> doWithOneRestart
+Execution halted
+[0m

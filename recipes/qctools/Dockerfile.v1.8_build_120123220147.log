@@ -1,0 +1,943 @@
+Sending build context to Docker daemon  1.884MB
+Step 1/20 : FROM nciccbr/ccrgb_qctools:v1.7
+ ---> 1200400e4a90
+Step 2/20 : ENV TAG="v1.8"
+ ---> Using cache
+ ---> dffcd9c4dcac
+Step 3/20 : RUN Rscript -e 'install.packages("stringr")'
+ ---> Using cache
+ ---> 7988586f5fff
+Step 4/20 : RUN Rscript -e 'install.packages("RColorBrewer")'
+ ---> Using cache
+ ---> 273b2d7a6b0e
+Step 5/20 : RUN Rscript -e 'install.packages("optparse")'
+ ---> Running in efef245e8b92
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91malso installing the dependency 'getopt'
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/getopt_1.20.3.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 18573 bytes (18 KB)
+===========================================[0m[91m=======
+downloaded 18 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/optparse_1.7.3.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 41707 bytes (40 KB)
+=========[0m[91m==[0m[91m====[0m[91m====[0m[91m===================[0m[91m=[0m[91m===========
+downloaded 40 KB
+
+[0m[91m* installing *source* package 'getopt' ...
+[0m[91m** package 'getopt' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** exec
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (getopt)
+[0m[91m* installing *source* package 'optparse' ...
+[0m[91m** package 'optparse' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** exec
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m*** copying figures
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (optparse)
+[0m[91m
+The downloaded source packages are in
+	'/tmp/RtmpYXUl8F/downloaded_packages'
+[0mRemoving intermediate container efef245e8b92
+ ---> 11995e0cba5a
+Step 6/20 : RUN Rscript -e 'install.packages("deconstructSigs")'
+ ---> Running in e89c6ca0a3a4
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mWarning: dependencies 'BSgenome', 'BSgenome.Hsapiens.UCSC.hg19', 'GenomeInfoDb' are not available
+[0m[91malso installing the dependencies 'plyr', 'Rcpp', 'reshape2'
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/plyr_1.8.8.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 401438 bytes (392 KB)
+==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m====
+downloaded 392 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/Rcpp_1.0.9.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 2957812 bytes (2.8 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m===[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m===[0m[91m=[0m[91m=
+downloaded 2.8 MB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/reshape2_1.4.4.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 37307 bytes (36 KB)
+[0m[91m=============[0m[91m==[0m[91m==[0m[91m====[0m[91m===[0m[91m===================[0m[91m=======
+downloaded 36 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/deconstructSigs_1.8.0.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 211160 bytes (206 KB)
+===[0m[91m====[0m[91m====[0m[91m====[0m[91m====[0m[91m====[0m[91m====[0m[91m===[0m[91m====[0m[91m====[0m[91m====[0m[91m====[0m[91m====
+downloaded 206 KB
+
+[0m[91m* installing *source* package 'Rcpp' ...
+[0m[91m** package 'Rcpp' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mg++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c api.cpp -o api.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c attributes.cpp -o attributes.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c barrier.cpp -o barrier.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c date.cpp -o date.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c module.cpp -o module.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rcpp_init.cpp -o rcpp_init.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o Rcpp.so api.o attributes.o barrier.o date.o module.o rcpp_init.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-Rcpp/00new/Rcpp/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (Rcpp)
+[0m[91m* installing *source* package 'plyr' ...
+[0m[91m** package 'plyr' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mg++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/Rcpp/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RcppExports.cpp -o RcppExports.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/Rcpp/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c loop_apply.c -o loop_apply.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/Rcpp/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c split-numeric.cpp -o split-numeric.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o plyr.so RcppExports.o loop_apply.o split-numeric.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-plyr/00new/plyr/libs
+[0m[91m** R
+[0m[91m** data
+[0m[91m*** moving datasets to lazyload DB
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (plyr)
+[0m[91m* installing *source* package 'reshape2' ...
+[0m[91m** package 'reshape2' successfully unpacked and MD5 sums checked
+** using staged installation
+[0m[91m** libs
+[0mg++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/Rcpp/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/Rcpp/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c melt.cpp -o melt.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o reshape2.so RcppExports.o melt.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-reshape2/00new/reshape2/libs
+[0m[91m** R
+[0m[91m** data
+[0m[91m*** moving datasets to lazyload DB
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (reshape2)
+[0m[91mERROR: dependencies 'BSgenome', 'BSgenome.Hsapiens.UCSC.hg19', 'GenomeInfoDb' are not available for package 'deconstructSigs'
+[0m[91m* removing '/usr/local/lib/R/site-library/deconstructSigs'
+[0m[91m
+[0m[91mThe downloaded source packages are in
+	'/tmp/RtmpjGR2VH/downloaded_packages'[0m[91m
+[0m[91mWarning message:
+[0m[91mIn install.packages("deconstructSigs") :[0m[91m
+ [0m[91m installation of package 'deconstructSigs' had non-zero exit status
+[0mRemoving intermediate container e89c6ca0a3a4
+ ---> d3eca67b08d8
+Step 7/20 : RUN Rscript -e 'install.packages("sequenza")'
+ ---> Running in 61217d8c62c4
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mWarning: dependency 'copynumber' is not available
+[0m[91malso installing the dependencies 'utf8', 'bit', 'prettyunits', 'ellipsis', 'pkgconfig', 'fansi', 'pillar', 'bit64', 'tidyselect', 'withr', 'progress', 'clipr', 'crayon', 'hms', 'R6', 'tibble', 'vroom', 'cpp11', 'tzdb', 'pbapply', 'squash', 'iotools', 'readr', 'seqminer'
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/utf8_1.2.2.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 240327 bytes (234 KB)
+===[0m[91m===[0m[91m=[0m[91m===[0m[91m===[0m[91m===[0m[91m===[0m[91m=[0m[91m===[0m[91m=[0m[91m===[0m[91m===[0m[91m===[0m[91m====[0m[91m===[0m[91m====[0m[91m===[0m[91m===
+downloaded 234 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/bit_4.0.5.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 827745 bytes (808 KB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=
+downloaded 808 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/prettyunits_1.1.1.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 10366 bytes (10 KB)
+==================================================
+downloaded 10 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/ellipsis_0.3.2.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 8066 bytes
+[0m[91m==================================================
+downloaded 8066 bytes
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/pkgconfig_2.0.3.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 6080 bytes
+==================================================
+downloaded 6080 bytes
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/fansi_1.0.3.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 481163 bytes (469 KB)
+[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m==[0m[91m==[0m[91m=[0m[91m==
+downloaded 469 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/pillar_1.8.1.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 479977 bytes (468 KB)
+=[0m[91m=[0m[91m==[0m[91m==[0m[91m==[0m[91m=[0m[91m=[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m==[0m[91m==[0m[91m===[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m====
+downloaded 468 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/bit64_4.0.5.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 135091 bytes (131 KB)
+=====[0m[91m======[0m[91m=======[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=======[0m[91m======[0m[91m========
+downloaded 131 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/tidyselect_1.2.0.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 101498 bytes (99 KB)
+=====[0m[91m==[0m[91m=[0m[91m=[0m[91m======[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=======[0m[91m========[0m[91m========[0m[91m===
+downloaded 99 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/withr_2.5.0.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 102089 bytes (99 KB)
+=======[0m[91m========[0m[91m========[0m[91m========[0m[91m========[0m[91m========[0m[91m===
+downloaded 99 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/progress_1.2.2.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 29506 bytes (28 KB)
+===========================[0m[91m=======================
+downloaded 28 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/clipr_0.8.0.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 21898 bytes (21 KB)
+====================================[0m[91m==============
+downloaded 21 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/crayon_1.5.2.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 40567 bytes (39 KB)
+===================[0m[91m====================[0m[91m===========
+downloaded 39 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/hms_1.1.2.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 43270 bytes (42 KB)
+==================[0m[91m===================[0m[91m=[0m[91m======[0m[91m==[0m[91m====
+downloaded 42 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/R6_2.5.1.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 63422 bytes (61 KB)
+============[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m========[0m[91m=============[0m[91m============
+downloaded 61 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/tibble_3.1.8.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 672336 bytes (656 KB)
+=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m===[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m===[0m[91m=[0m[91m=[0m[91m===
+downloaded 656 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/vroom_1.6.0.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 719194 bytes (702 KB)
+=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m==[0m[91m==[0m[91m===[0m[91m=[0m[91m=[0m[91m==[0m[91m==[0m[91m=
+downloaded 702 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/cpp11_0.4.3.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 304530 bytes (297 KB)
+==[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==
+downloaded 297 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/tzdb_0.3.0.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 567544 bytes (554 KB)
+=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m===[0m[91m===[0m[91m==
+downloaded 554 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/pbapply_1.6-0.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 18885 bytes (18 KB)
+===========================================[0m[91m=======
+downloaded 18 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/squash_1.0.9.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 23335 bytes (22 KB)
+==================================[0m[91m=[0m[91m=[0m[91m==============
+downloaded 22 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/iotools_0.3-2.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 40742 bytes (39 KB)
+===================[0m[91m=[0m[91m===================[0m[91m===========
+downloaded 39 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/readr_2.1.3.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 301790 bytes (294 KB)
+[0m[91m=[0m[91m=[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==[0m[91m===[0m[91m===[0m[91m==[0m[91m=[0m[91m==[0m[91m===[0m[91m==[0m[91m========
+downloaded 294 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/seqminer_8.5.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 4151012 bytes (4.0 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m===[0m[91m==[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m===[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==
+downloaded 4.0 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/sequenza_3.0.0.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 3478653 bytes (3.3 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m===[0m[91m===[0m[91m=
+downloaded 3.3 MB
+
+[0m[91m* installing *source* package 'utf8' ...
+[0m[91m** package 'utf8' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c as_utf8.c -o as_utf8.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bytes.c -o bytes.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c context.c -o context.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c render.c -o render.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c render_table.c -o render_table.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c string.c -o string.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c text.c -o text.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8_encode.c -o utf8_encode.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8_format.c -o utf8_format.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8_normalize.c -o utf8_normalize.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8_valid.c -o utf8_valid.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8_width.c -o utf8_width.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c util.c -o util.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/array.c -o utf8lite/src/array.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/char.c -o utf8lite/src/char.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/encode.c -o utf8lite/src/encode.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/error.c -o utf8lite/src/error.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/escape.c -o utf8lite/src/escape.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/graph.c -o utf8lite/src/graph.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/graphscan.c -o utf8lite/src/graphscan.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/normalize.c -o utf8lite/src/normalize.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/render.c -o utf8lite/src/render.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/text.c -o utf8lite/src/text.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/textassign.c -o utf8lite/src/textassign.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/textiter.c -o utf8lite/src/textiter.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -Iutf8lite/src -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8lite/src/textmap.c -o utf8lite/src/textmap.o
+ar rcs libcutf8lite.a utf8lite/src/array.o utf8lite/src/char.o utf8lite/src/encode.o utf8lite/src/error.o utf8lite/src/escape.o utf8lite/src/graph.o utf8lite/src/graphscan.o utf8lite/src/normalize.o utf8lite/src/render.o utf8lite/src/text.o utf8lite/src/textassign.o utf8lite/src/textiter.o utf8lite/src/textmap.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o utf8.so as_utf8.o bytes.o context.o init.o render.o render_table.o string.o text.o utf8_encode.o utf8_format.o utf8_normalize.o utf8_valid.o utf8_width.o util.o -L. -lcutf8lite -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-utf8/00new/utf8/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (utf8)
+[0m[91m* installing *source* package 'bit' ...
+[0m[91m** package 'bit' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c attrutil.c -o attrutil.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bit.c -o bit.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c chunkutil.c -o chunkutil.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c clone.c -o clone.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c integerutil.c -o integerutil.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c merge.c -o merge.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rle.c -o rle.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c sort.c -o sort.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o bit.so attrutil.o bit.o chunkutil.o clone.o init.o integerutil.o merge.o rle.o sort.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-bit/00new/bit/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (bit)
+[0m[91m* installing *source* package 'prettyunits' ...
+[0m[91m** package 'prettyunits' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (prettyunits)
+[0m[91m* installing *source* package 'ellipsis' ...
+[0m[91m** package 'ellipsis' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c dots.c -o dots.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o ellipsis.so dots.o init.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-ellipsis/00new/ellipsis/libs
+[0m[91m** R
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (ellipsis)
+[0m[91m* installing *source* package 'pkgconfig' ...
+[0m[91m** package 'pkgconfig' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (pkgconfig)
+[0m[91m* installing *source* package 'fansi' ...
+[0m[91m** package 'fansi' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c assumptions.c -o assumptions.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c carry.c -o carry.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c has.c -o has.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c nchar.c -o nchar.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c normalize.c -o normalize.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c read.c -o read.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rnchar.c -o rnchar.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c state.c -o state.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c strip.c -o strip.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c substr.c -o substr.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tabs.c -o tabs.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tohtml.c -o tohtml.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c trimws.c -o trimws.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unhandled.c -o unhandled.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utf8.c -o utf8.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utils.c -o utils.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c wrap.c -o wrap.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG    -fvisibility=hidden -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c write.c -o write.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o fansi.so assumptions.o carry.o has.o init.o nchar.o normalize.o read.o rnchar.o state.o strip.o substr.o tabs.o tohtml.o trimws.o unhandled.o utf8.o utils.o wrap.o write.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-fansi/00new/fansi/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (fansi)
+[0m[91m* installing *source* package 'withr' ...
+[0m[91m** package 'withr' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m*** copying figures
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (withr)
+[0m[91m* installing *source* package 'clipr' ...
+[0m[91m** package 'clipr' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (clipr)
+[0m[91m* installing *source* package 'crayon' ...
+[0m[91m** package 'crayon' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (crayon)
+[0m[91m* installing *source* package 'R6' ...
+[0m[91m** package 'R6' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m*** copying figures
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (R6)
+[0m[91m* installing *source* package 'cpp11' ...
+[0m[91m** package 'cpp11' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (cpp11)
+[0m[91m* installing *source* package 'pbapply' ...
+[0m[91m** package 'pbapply' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (pbapply)
+[0m[91m* installing *source* package 'squash' ...
+[0m[91m** package 'squash' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (squash)
+[0m[91m* installing *source* package 'iotools' ...
+[0m[91m** package 'iotools' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c as_output.c -o as_output.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c ctapply.c -o ctapply.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lnchunk.c -o lnchunk.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rbind.c -o rbind.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c split.c -o split.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c split_df.c -o split_df.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c split_df_fw.c -o split_df_fw.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c stdio.c -o stdio.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c strutil.c -o strutil.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tparse.c -o tparse.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utils.c -o utils.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o iotools.so as_output.o ctapply.o lnchunk.o rbind.o split.o split_df.o split_df_fw.o stdio.o strutil.o tparse.o utils.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-iotools/00new/iotools/libs
+[0m[91m** R
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (iotools)
+[0m[91m* installing *source* package 'seqminer' ...
+[0m[91m** package 'seqminer' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0mconfigure: CC = gcc -std=gnu99
+configure: CFLAGS = -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g
+configure: CXX = g++ -std=gnu++11
+configure: CXXFLAGS = -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ -std=gnu++11 accepts -g... yes
+checking how to run the C++ preprocessor... g++ -std=gnu++11 -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for BZ2_bzDecompressInit in -lbz2... yes
+checking bzlib.h usability... yes
+checking bzlib.h presence... yes
+checking for bzlib.h... yes
+configure: Will use system-wide bzip2 library
+checking for ZSTD_compress in -lzstd... no
+configure: Will build zstd library from the package
+checking for sqlite3_open in -lsqlite3... no
+configure: Will build sqlite library from the package
+checking for regcomp in -lc... yes
+checking regex.h usability... yes
+checking regex.h presence... yes
+checking for regex.h... yes
+checking for working REG_STARTEND... yes
+configure: creating ./config.status
+config.status: creating src/Makevars
+config.status: creating src/config.h
+[91m** libs
+[0mhave bzip2
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c BCFReader.cpp -o BCFReader.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c BGenFile.cpp -o BGenFile.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c BGenIndex.cpp -o BGenIndex.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c BGenVariant.cpp -o BGenVariant.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Exception.cpp -o Exception.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c FileIO.cpp -o FileIO.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c GeneLoader.cpp -o GeneLoader.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c MmapFile.cpp -o MmapFile.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c PatternMatch.cpp -o PatternMatch.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c PeopleSet.cpp -o PeopleSet.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c PlinkInputFile.cpp -o PlinkInputFile.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c PlinkOutputFile.cpp -o PlinkOutputFile.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Profiler.cpp -o Profiler.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c R_CPP_interface.cpp -o R_CPP_interface.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RangeList.cpp -o RangeList.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Rannotation.cpp -o Rannotation.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c SimpleMatrix.cpp -o SimpleMatrix.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c SingleChromosomeBCFIndex.cpp -o SingleChromosomeBCFIndex.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c SingleChromosomeVCFIndex.cpp -o SingleChromosomeVCFIndex.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c TypeConversion.cpp -o TypeConversion.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Utils.cpp -o Utils.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c VCFHeader.cpp -o VCFHeader.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c VCFIndividual.cpp -o VCFIndividual.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c VCFInfo.cpp -o VCFInfo.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c VCFInputFile.cpp -o VCFInputFile.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c VCFUtil.cpp -o VCFUtil.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bcf.c -o bcf.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bcf_index.c -o bcf_index.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bcfutils.c -o bcfutils.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bedidx.c -o bedidx.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bgen2genoLoader.cpp -o bgen2genoLoader.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bgzf.c -o bgzf.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c knetfile.c -o knetfile.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c kstring.c -o kstring.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c plink2genoLoader.cpp -o plink2genoLoader.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rvMetaLoader.cpp -o rvMetaLoader.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c scbcf2genoLoader.cpp -o scbcf2genoLoader.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c scvcf2genoLoader.cpp -o scvcf2genoLoader.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c seqForStat.c -o seqForStat.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c seqminer.c -o seqminer.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c seqminer_init.c -o seqminer_init.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tabixLoader.cpp -o tabixLoader.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tabix_index.c -o tabix_index.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vcf.c -o vcf.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vcf2genoLoader.cpp -o vcf2genoLoader.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/common/debug.c -o zstd/lib/common/debug.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/common/entropy_common.c -o zstd/lib/common/entropy_common.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/common/error_private.c -o zstd/lib/common/error_private.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/common/fse_decompress.c -o zstd/lib/common/fse_decompress.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/common/pool.c -o zstd/lib/common/pool.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/common/threading.c -o zstd/lib/common/threading.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/common/xxhash.c -o zstd/lib/common/xxhash.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/common/zstd_common.c -o zstd/lib/common/zstd_common.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/fse_compress.c -o zstd/lib/compress/fse_compress.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/hist.c -o zstd/lib/compress/hist.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/huf_compress.c -o zstd/lib/compress/huf_compress.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/zstd_compress.c -o zstd/lib/compress/zstd_compress.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/zstd_double_fast.c -o zstd/lib/compress/zstd_double_fast.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/zstd_fast.c -o zstd/lib/compress/zstd_fast.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/zstd_lazy.c -o zstd/lib/compress/zstd_lazy.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/zstd_ldm.c -o zstd/lib/compress/zstd_ldm.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/zstd_opt.c -o zstd/lib/compress/zstd_opt.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/compress/zstdmt_compress.c -o zstd/lib/compress/zstdmt_compress.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/decompress/huf_decompress.c -o zstd/lib/decompress/huf_decompress.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/decompress/zstd_decompress.c -o zstd/lib/decompress/zstd_decompress.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/deprecated/zbuff_common.c -o zstd/lib/deprecated/zbuff_common.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/deprecated/zbuff_compress.c -o zstd/lib/deprecated/zbuff_compress.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/deprecated/zbuff_decompress.c -o zstd/lib/deprecated/zbuff_decompress.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/dictBuilder/cover.c -o zstd/lib/dictBuilder/cover.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/dictBuilder/divsufsort.c -o zstd/lib/dictBuilder/divsufsort.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/dictBuilder/fastcover.c -o zstd/lib/dictBuilder/fastcover.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/dictBuilder/zdict.c -o zstd/lib/dictBuilder/zdict.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/legacy/zstd_v05.c -o zstd/lib/legacy/zstd_v05.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/legacy/zstd_v06.c -o zstd/lib/legacy/zstd_v06.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c zstd/lib/legacy/zstd_v07.c -o zstd/lib/legacy/zstd_v07.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -I. -DRSQLITE_USE_BUNDLED_SQLITE -DSQLITE_ENABLE_RTREE -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -DSQLITE_ENABLE_STAT4 -DSQLITE_SOUNDEX -Izstd/lib -Izstd/lib/common -DXXH_NAMESPACE=ZSTD_ -Izstd/lib/legacy -DZSTD_LEGACY_SUPPORT=5   -D_USE_KNETFILE -I. -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c sqlite/sqlite3.c -o sqlite/sqlite3.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o seqminer.so BCFReader.o BGenFile.o BGenIndex.o BGenVariant.o Exception.o FileIO.o GeneLoader.o MmapFile.o PatternMatch.o PeopleSet.o PlinkInputFile.o PlinkOutputFile.o Profiler.o R_CPP_interface.o RangeList.o Rannotation.o SimpleMatrix.o SingleChromosomeBCFIndex.o SingleChromosomeVCFIndex.o TypeConversion.o Utils.o VCFHeader.o VCFIndividual.o VCFInfo.o VCFInputFile.o VCFUtil.o bcf.o bcf_index.o bcfutils.o bedidx.o bgen2genoLoader.o bgzf.o knetfile.o kstring.o plink2genoLoader.o rvMetaLoader.o scbcf2genoLoader.o scvcf2genoLoader.o seqForStat.o seqminer.o seqminer_init.o tabixLoader.o tabix_index.o vcf.o vcf2genoLoader.o -lz -lm -lbz2 zstd/lib/common/debug.o zstd/lib/common/entropy_common.o zstd/lib/common/error_private.o zstd/lib/common/fse_decompress.o zstd/lib/common/pool.o zstd/lib/common/threading.o zstd/lib/common/xxhash.o zstd/lib/common/zstd_common.o zstd/lib/compress/fse_compress.o zstd/lib/compress/hist.o zstd/lib/compress/huf_compress.o zstd/lib/compress/zstd_compress.o zstd/lib/compress/zstd_double_fast.o zstd/lib/compress/zstd_fast.o zstd/lib/compress/zstd_lazy.o zstd/lib/compress/zstd_ldm.o zstd/lib/compress/zstd_opt.o zstd/lib/compress/zstdmt_compress.o zstd/lib/decompress/huf_decompress.o zstd/lib/decompress/zstd_decompress.o zstd/lib/deprecated/zbuff_common.o zstd/lib/deprecated/zbuff_compress.o zstd/lib/deprecated/zbuff_decompress.o zstd/lib/dictBuilder/cover.o zstd/lib/dictBuilder/divsufsort.o zstd/lib/dictBuilder/fastcover.o zstd/lib/dictBuilder/zdict.o zstd/lib/legacy/zstd_v05.o zstd/lib/legacy/zstd_v06.o zstd/lib/legacy/zstd_v07.o sqlite/sqlite3.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-seqminer/00new/seqminer/libs
+[0m[91m** R
+[0m[91m** demo
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (seqminer)
+[0m[91m* installing *source* package 'pillar' ...
+[0m[91m** package 'pillar' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m*** copying figures
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (pillar)
+[0m[91m* installing *source* package 'bit64' ...
+[0m[91m** package 'bit64' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bsearch.c -o bsearch.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cache.c -o cache.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c hash64.c -o hash64.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c integer64.c -o integer64.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c sort64.c -o sort64.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c sortuse64.c -o sortuse64.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o bit64.so bsearch.o cache.o hash64.o init.o integer64.o sort64.o sortuse64.o -lm -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-bit64/00new/bit64/libs
+[0m[91m** R
+[0m[91m** data
+[0m[91m** exec
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (bit64)
+[0m[91m* installing *source* package 'tidyselect' ...
+[0m[91m** package 'tidyselect' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+* DONE (tidyselect)
+[0m[91m* installing *source* package 'hms' ...
+** package 'hms' successfully unpacked and MD5 sums checked
+** using staged installation
+[0m[91m** R
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m*** copying figures
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (hms)
+[0m[91m* installing *source* package 'tzdb' ...
+[0m[91m** package 'tzdb' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mg++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include"  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c api.cpp -o api.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include"  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include"  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c names.cpp -o names.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include"  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c path.cpp -o path.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include"  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tz.cpp -o tz.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include"  -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c version.cpp -o version.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o tzdb.so api.o cpp11.o names.o path.o tz.o version.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-tzdb/00new/tzdb/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (tzdb)
+[0m[91m* installing *source* package 'progress' ...
+[0m[91m** package 'progress' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m*** copying figures
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (progress)
+[0m[91m* installing *source* package 'tibble' ...
+[0m[91m** package 'tibble' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mgcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c attributes.c -o attributes.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c coerce.c -o coerce.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG     -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c matrixToDataFrame.c -o matrixToDataFrame.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o tibble.so attributes.o coerce.o init.o matrixToDataFrame.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-tibble/00new/tibble/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m*** copying figures
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (tibble)
+[0m[91m* installing *source* package 'vroom' ...
+[0m[91m** package 'vroom' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mg++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Iconv.cpp -o Iconv.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c LocaleInfo.cpp -o LocaleInfo.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c altrep.cc -o altrep.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c delimited_index.cc -o delimited_index.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c delimited_index_connection.cc -o delimited_index_connection.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fixed_width_index_connection.cc -o fixed_width_index_connection.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c gen.cc -o gen.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c grisu3.c -o grisu3.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c guess_type.cc -o guess_type.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c iconv_file.cc -o iconv_file.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c index_collection.cc -o index_collection.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom.cc -o vroom.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_big_int.cc -o vroom_big_int.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_chr.cc -o vroom_chr.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_date.cc -o vroom_date.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_dbl.cc -o vroom_dbl.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_dttm.cc -o vroom_dttm.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_errors.cpp -o vroom_errors.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_fct.cc -o vroom_fct.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_fwf.cc -o vroom_fwf.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_int.cc -o vroom_int.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_num.cc -o vroom_num.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_rle.cc -o vroom_rle.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_time.cc -o vroom_time.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -Imio/include -DWIN32_LEAN_AND_MEAN -Ispdlog/include -DFMT_HEADER_ONLY -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/progress/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vroom_write.cc -o vroom_write.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o vroom.so Iconv.o LocaleInfo.o altrep.o cpp11.o delimited_index.o delimited_index_connection.o fixed_width_index_connection.o gen.o grisu3.o guess_type.o iconv_file.o index_collection.o vroom.o vroom_big_int.o vroom_chr.o vroom_date.o vroom_dbl.o vroom_dttm.o vroom_errors.o vroom_fct.o vroom_fwf.o vroom_int.o vroom_num.o vroom_rle.o vroom_time.o vroom_write.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-vroom/00new/vroom/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m*** copying figures
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (vroom)
+[0m[91m* installing *source* package 'readr' ...
+[0m[91m** package 'readr' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mg++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Collector.cpp -o Collector.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c CollectorGuess.cpp -o CollectorGuess.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Iconv.cpp -o Iconv.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c LocaleInfo.cpp -o LocaleInfo.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Reader.cpp -o Reader.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Source.cpp -o Source.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c Tokenizer.cpp -o Tokenizer.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c TokenizerDelim.cpp -o TokenizerDelim.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c TokenizerFwf.cpp -o TokenizerFwf.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c TokenizerWs.cpp -o TokenizerWs.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c connection.cpp -o connection.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c datetime.cpp -o datetime.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c grisu3.c -o grisu3.o
+gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c parse.cpp -o parse.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c read.cpp -o read.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c type_convert.cpp -o type_convert.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c write.cpp -o write.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/cpp11/include" -I"/usr/local/lib/R/site-library/tzdb/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c write_delim.cpp -o write_delim.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o readr.so Collector.o CollectorGuess.o Iconv.o LocaleInfo.o Reader.o Source.o Tokenizer.o TokenizerDelim.o TokenizerFwf.o TokenizerWs.o connection.o cpp11.o datetime.o grisu3.o init.o parse.o read.o type_convert.o write.o write_delim.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-readr/00new/readr/libs
+[0m[91m** R
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m*** copying figures
+[0m[91m** building package indices
+[0m[91m** installing vignettes
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (readr)
+[0m[91mERROR: dependency 'copynumber' is not available for package 'sequenza'
+[0m[91m* removing '/usr/local/lib/R/site-library/sequenza'
+[0m[91m
+The downloaded source packages are in
+	'/tmp/Rtmp2fi0mP/downloaded_packages'
+[0m[91mWarning message:
+In install.packages("sequenza") :
+  installation of package 'sequenza' had non-zero exit status
+[0mRemoving intermediate container 61217d8c62c4
+ ---> f56245e488da
+Step 8/20 : RUN Rscript -e 'install.packages("BiocManger")'
+ ---> Running in 794ef6ab9cea
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mWarning message:
+package 'BiocManger' is not available (for R version 3.6.3) 
+[0mRemoving intermediate container 794ef6ab9cea
+ ---> 65624a0ddf1a
+Step 9/20 : RUN Rscript -e 'BiocManager::install("OmicCircos")'
+ ---> Running in 50ad956fb890
+[91mError in loadNamespace(name) : there is no package called 'BiocManager'
+Calls: :: ... loadNamespace -> withRestarts -> withOneRestart -> doWithOneRestart
+Execution halted
+[0m

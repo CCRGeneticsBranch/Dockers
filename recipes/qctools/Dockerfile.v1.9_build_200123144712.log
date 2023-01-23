@@ -1,0 +1,2181 @@
+Sending build context to Docker daemon  2.548MB
+Step 1/17 : FROM nciccbr/ccrgb_qctools:v1.8.1
+v1.8.1: Pulling from nciccbr/ccrgb_qctools
+3b65ec22a9e9: Pulling fs layer
+10ceb438865c: Pulling fs layer
+aab707835907: Pulling fs layer
+625b0c14d41b: Pulling fs layer
+375fd82da226: Pulling fs layer
+4faae6904470: Pulling fs layer
+3a0584074529: Pulling fs layer
+0d62c252c62e: Pulling fs layer
+8aec5b04915d: Pulling fs layer
+eb35dcebf5f0: Pulling fs layer
+9120fb1fc8cb: Pulling fs layer
+f4783e0118a3: Pulling fs layer
+db35d98d120e: Pulling fs layer
+870ae27479ac: Pulling fs layer
+9b3ac3b90fd5: Pulling fs layer
+1e855a499ff2: Pulling fs layer
+17d743a62b4c: Pulling fs layer
+331e2137023c: Pulling fs layer
+938169d3fa53: Pulling fs layer
+67aec46cc9bc: Pulling fs layer
+733443d9da67: Pulling fs layer
+86c9aea85eab: Pulling fs layer
+77d76b322aa3: Pulling fs layer
+eddd13839d27: Pulling fs layer
+92bf6f086eef: Pulling fs layer
+6c7b675a2d94: Pulling fs layer
+8da4be3d4392: Pulling fs layer
+a9c7137e8cc8: Pulling fs layer
+7e75fb3fd89b: Pulling fs layer
+340095faa29b: Pulling fs layer
+2548bfcccac2: Pulling fs layer
+43fc68e209c7: Pulling fs layer
+3336c7dc6dbb: Pulling fs layer
+402c9e3415ea: Pulling fs layer
+08c20900754b: Pulling fs layer
+4324a545100f: Pulling fs layer
+ed3ccf39156c: Pulling fs layer
+3b350f3a9e25: Pulling fs layer
+858548d616f8: Pulling fs layer
+4c8da057f5c9: Pulling fs layer
+73ea2e5a8d99: Pulling fs layer
+c90f32b3401c: Pulling fs layer
+28dc40835211: Pulling fs layer
+fd806e0216fe: Pulling fs layer
+2c7659662c4a: Pulling fs layer
+2f147b58d187: Pulling fs layer
+3d37a4b11670: Pulling fs layer
+f07574eb06f8: Pulling fs layer
+bfccc20a9e31: Pulling fs layer
+8971da4d1983: Pulling fs layer
+5d164e3e49ae: Pulling fs layer
+eff89550b0c9: Pulling fs layer
+24f7f719b4f5: Pulling fs layer
+bc7a0a0b4a6e: Pulling fs layer
+9ad233a034d9: Pulling fs layer
+6f62ec8be385: Pulling fs layer
+2dfa182f8dab: Pulling fs layer
+8d73da89abb4: Pulling fs layer
+a837a6e9faa5: Pulling fs layer
+e94619e1041f: Pulling fs layer
+76d8e1031bce: Pulling fs layer
+2063dec4e92d: Pulling fs layer
+07d0856aa8e8: Pulling fs layer
+250f4bb59a73: Pulling fs layer
+2f66c5690317: Pulling fs layer
+1ec78f690a8f: Pulling fs layer
+c771b320b201: Pulling fs layer
+936e6b4c6030: Pulling fs layer
+bbba63c997c7: Pulling fs layer
+d402c2fe2775: Pulling fs layer
+3eb82335ab93: Pulling fs layer
+0d11eb50814a: Pulling fs layer
+7d0ab944b7da: Pulling fs layer
+4e9fda4801f4: Pulling fs layer
+e6f2255a4288: Pulling fs layer
+7a9be19c5122: Pulling fs layer
+0d2a3202373c: Pulling fs layer
+bf33e0240346: Pulling fs layer
+b168bebe31c2: Pulling fs layer
+7968a0317dc7: Pulling fs layer
+a4e0f030513e: Pulling fs layer
+f73a7be15a05: Pulling fs layer
+b31ae3e158be: Pulling fs layer
+237fca587c8a: Pulling fs layer
+32df639ea92f: Pulling fs layer
+818eb6ca6e33: Pulling fs layer
+b64277d31cbf: Pulling fs layer
+625b0c14d41b: Waiting
+de4f4310f018: Pulling fs layer
+375fd82da226: Waiting
+d5e5942a4bc7: Pulling fs layer
+40ab301ff48b: Pulling fs layer
+5a6b1c54be18: Pulling fs layer
+4faae6904470: Waiting
+3fcb0554cd37: Pulling fs layer
+9bc2337bb5de: Pulling fs layer
+3a0584074529: Waiting
+625bde96d388: Pulling fs layer
+0d62c252c62e: Waiting
+06f90756c794: Pulling fs layer
+f0715d42123e: Pulling fs layer
+15f296d64569: Pulling fs layer
+75d059a8f06f: Pulling fs layer
+5b3cd62dd72b: Pulling fs layer
+3514e18e6167: Pulling fs layer
+38ddda254ef9: Pulling fs layer
+a81304ae43bd: Pulling fs layer
+2924e36f2f10: Pulling fs layer
+7471ea23e90e: Pulling fs layer
+f1ebbedcd970: Pulling fs layer
+093e035c3441: Pulling fs layer
+cc5827b24d1b: Pulling fs layer
+7854fcc3c8a8: Pulling fs layer
+1b0b3dcd67b7: Pulling fs layer
+e04bcc97ca19: Pulling fs layer
+1c3ca85c0872: Pulling fs layer
+e44eb38e012f: Pulling fs layer
+923555a29b9d: Pulling fs layer
+02115f260c1b: Pulling fs layer
+4e9fda4801f4: Waiting
+e6f2255a4288: Waiting
+7a9be19c5122: Waiting
+8aec5b04915d: Waiting
+0d2a3202373c: Waiting
+eb35dcebf5f0: Waiting
+bf33e0240346: Waiting
+9120fb1fc8cb: Waiting
+b168bebe31c2: Waiting
+f4783e0118a3: Waiting
+7968a0317dc7: Waiting
+db35d98d120e: Waiting
+a4e0f030513e: Waiting
+f73a7be15a05: Waiting
+870ae27479ac: Waiting
+b31ae3e158be: Waiting
+237fca587c8a: Waiting
+9b3ac3b90fd5: Waiting
+32df639ea92f: Waiting
+1e855a499ff2: Waiting
+818eb6ca6e33: Waiting
+17d743a62b4c: Waiting
+b64277d31cbf: Waiting
+de4f4310f018: Waiting
+d5e5942a4bc7: Waiting
+40ab301ff48b: Waiting
+5a6b1c54be18: Waiting
+3fcb0554cd37: Waiting
+9bc2337bb5de: Waiting
+625bde96d388: Waiting
+06f90756c794: Waiting
+f0715d42123e: Waiting
+15f296d64569: Waiting
+75d059a8f06f: Waiting
+5b3cd62dd72b: Waiting
+3514e18e6167: Waiting
+38ddda254ef9: Waiting
+a81304ae43bd: Waiting
+2924e36f2f10: Waiting
+7471ea23e90e: Waiting
+093e035c3441: Waiting
+cc5827b24d1b: Waiting
+7854fcc3c8a8: Waiting
+331e2137023c: Waiting
+938169d3fa53: Waiting
+67aec46cc9bc: Waiting
+733443d9da67: Waiting
+86c9aea85eab: Waiting
+77d76b322aa3: Waiting
+eddd13839d27: Waiting
+92bf6f086eef: Waiting
+2f5aa88aa2d1: Pulling fs layer
+23a068ba7aa0: Pulling fs layer
+fa2895487d59: Pulling fs layer
+02115f260c1b: Waiting
+2f5aa88aa2d1: Waiting
+23a068ba7aa0: Waiting
+fa2895487d59: Waiting
+6c7b675a2d94: Waiting
+8da4be3d4392: Waiting
+a9c7137e8cc8: Waiting
+7e75fb3fd89b: Waiting
+340095faa29b: Waiting
+2548bfcccac2: Waiting
+43fc68e209c7: Waiting
+3336c7dc6dbb: Waiting
+402c9e3415ea: Waiting
+08c20900754b: Waiting
+4324a545100f: Waiting
+ed3ccf39156c: Waiting
+3b350f3a9e25: Waiting
+858548d616f8: Waiting
+4c8da057f5c9: Waiting
+7d0ab944b7da: Waiting
+73ea2e5a8d99: Waiting
+c90f32b3401c: Waiting
+28dc40835211: Waiting
+fd806e0216fe: Waiting
+2c7659662c4a: Waiting
+2f147b58d187: Waiting
+3d37a4b11670: Waiting
+f07574eb06f8: Waiting
+bfccc20a9e31: Waiting
+8971da4d1983: Waiting
+5d164e3e49ae: Waiting
+eff89550b0c9: Waiting
+24f7f719b4f5: Waiting
+bc7a0a0b4a6e: Waiting
+9ad233a034d9: Waiting
+6f62ec8be385: Waiting
+2dfa182f8dab: Waiting
+8d73da89abb4: Waiting
+a837a6e9faa5: Waiting
+e94619e1041f: Waiting
+76d8e1031bce: Waiting
+2063dec4e92d: Waiting
+07d0856aa8e8: Waiting
+250f4bb59a73: Waiting
+2f66c5690317: Waiting
+1ec78f690a8f: Waiting
+c771b320b201: Waiting
+936e6b4c6030: Waiting
+bbba63c997c7: Waiting
+d402c2fe2775: Waiting
+3eb82335ab93: Waiting
+0d11eb50814a: Waiting
+f1ebbedcd970: Waiting
+1b0b3dcd67b7: Waiting
+e04bcc97ca19: Waiting
+1c3ca85c0872: Waiting
+e44eb38e012f: Waiting
+923555a29b9d: Waiting
+aab707835907: Verifying Checksum
+aab707835907: Download complete
+10ceb438865c: Verifying Checksum
+10ceb438865c: Download complete
+3b65ec22a9e9: Verifying Checksum
+3b65ec22a9e9: Download complete
+4faae6904470: Verifying Checksum
+4faae6904470: Download complete
+3a0584074529: Verifying Checksum
+3a0584074529: Download complete
+625b0c14d41b: Verifying Checksum
+625b0c14d41b: Download complete
+8aec5b04915d: Verifying Checksum
+8aec5b04915d: Download complete
+eb35dcebf5f0: Verifying Checksum
+eb35dcebf5f0: Download complete
+375fd82da226: Verifying Checksum
+375fd82da226: Download complete
+0d62c252c62e: Verifying Checksum
+0d62c252c62e: Download complete
+3b65ec22a9e9: Pull complete
+f4783e0118a3: Verifying Checksum
+f4783e0118a3: Download complete
+10ceb438865c: Pull complete
+aab707835907: Pull complete
+9120fb1fc8cb: Verifying Checksum
+9120fb1fc8cb: Download complete
+9b3ac3b90fd5: Verifying Checksum
+9b3ac3b90fd5: Download complete
+870ae27479ac: Verifying Checksum
+870ae27479ac: Download complete
+1e855a499ff2: Verifying Checksum
+1e855a499ff2: Download complete
+db35d98d120e: Verifying Checksum
+db35d98d120e: Download complete
+17d743a62b4c: Verifying Checksum
+17d743a62b4c: Download complete
+331e2137023c: Verifying Checksum
+331e2137023c: Download complete
+938169d3fa53: Verifying Checksum
+938169d3fa53: Download complete
+733443d9da67: Verifying Checksum
+733443d9da67: Download complete
+625b0c14d41b: Pull complete
+86c9aea85eab: Verifying Checksum
+86c9aea85eab: Download complete
+77d76b322aa3: Verifying Checksum
+77d76b322aa3: Download complete
+92bf6f086eef: Verifying Checksum
+92bf6f086eef: Download complete
+eddd13839d27: Verifying Checksum
+eddd13839d27: Download complete
+67aec46cc9bc: Verifying Checksum
+67aec46cc9bc: Download complete
+6c7b675a2d94: Verifying Checksum
+6c7b675a2d94: Download complete
+8da4be3d4392: Verifying Checksum
+8da4be3d4392: Download complete
+a9c7137e8cc8: Verifying Checksum
+a9c7137e8cc8: Download complete
+7e75fb3fd89b: Verifying Checksum
+7e75fb3fd89b: Download complete
+43fc68e209c7: Download complete
+2548bfcccac2: Verifying Checksum
+2548bfcccac2: Download complete
+3336c7dc6dbb: Verifying Checksum
+3336c7dc6dbb: Download complete
+402c9e3415ea: Verifying Checksum
+402c9e3415ea: Download complete
+08c20900754b: Verifying Checksum
+08c20900754b: Download complete
+4324a545100f: Verifying Checksum
+4324a545100f: Download complete
+340095faa29b: Verifying Checksum
+340095faa29b: Download complete
+3b350f3a9e25: Verifying Checksum
+3b350f3a9e25: Download complete
+858548d616f8: Verifying Checksum
+858548d616f8: Download complete
+4c8da057f5c9: Verifying Checksum
+4c8da057f5c9: Download complete
+73ea2e5a8d99: Verifying Checksum
+73ea2e5a8d99: Download complete
+28dc40835211: Verifying Checksum
+28dc40835211: Download complete
+c90f32b3401c: Verifying Checksum
+c90f32b3401c: Download complete
+2c7659662c4a: Verifying Checksum
+2c7659662c4a: Download complete
+fd806e0216fe: Verifying Checksum
+fd806e0216fe: Download complete
+ed3ccf39156c: Download complete
+2f147b58d187: Verifying Checksum
+2f147b58d187: Download complete
+3d37a4b11670: Verifying Checksum
+3d37a4b11670: Download complete
+bfccc20a9e31: Verifying Checksum
+bfccc20a9e31: Download complete
+f07574eb06f8: Download complete
+8971da4d1983: Verifying Checksum
+8971da4d1983: Download complete
+5d164e3e49ae: Verifying Checksum
+5d164e3e49ae: Download complete
+24f7f719b4f5: Verifying Checksum
+24f7f719b4f5: Download complete
+eff89550b0c9: Verifying Checksum
+eff89550b0c9: Download complete
+9ad233a034d9: Verifying Checksum
+9ad233a034d9: Download complete
+bc7a0a0b4a6e: Verifying Checksum
+bc7a0a0b4a6e: Download complete
+6f62ec8be385: Verifying Checksum
+6f62ec8be385: Download complete
+2dfa182f8dab: Verifying Checksum
+2dfa182f8dab: Download complete
+8d73da89abb4: Verifying Checksum
+8d73da89abb4: Download complete
+a837a6e9faa5: Verifying Checksum
+a837a6e9faa5: Download complete
+e94619e1041f: Verifying Checksum
+e94619e1041f: Download complete
+2063dec4e92d: Verifying Checksum
+2063dec4e92d: Download complete
+76d8e1031bce: Verifying Checksum
+76d8e1031bce: Download complete
+07d0856aa8e8: Verifying Checksum
+07d0856aa8e8: Download complete
+250f4bb59a73: Verifying Checksum
+250f4bb59a73: Download complete
+1ec78f690a8f: Verifying Checksum
+1ec78f690a8f: Download complete
+936e6b4c6030: Verifying Checksum
+936e6b4c6030: Download complete
+c771b320b201: Verifying Checksum
+c771b320b201: Download complete
+2f66c5690317: Verifying Checksum
+2f66c5690317: Download complete
+3eb82335ab93: Verifying Checksum
+3eb82335ab93: Download complete
+d402c2fe2775: Verifying Checksum
+d402c2fe2775: Download complete
+bbba63c997c7: Verifying Checksum
+bbba63c997c7: Download complete
+4e9fda4801f4: Verifying Checksum
+4e9fda4801f4: Download complete
+7d0ab944b7da: Verifying Checksum
+7d0ab944b7da: Download complete
+e6f2255a4288: Download complete
+7a9be19c5122: Verifying Checksum
+7a9be19c5122: Download complete
+0d2a3202373c: Verifying Checksum
+0d2a3202373c: Download complete
+bf33e0240346: Verifying Checksum
+bf33e0240346: Download complete
+7968a0317dc7: Verifying Checksum
+7968a0317dc7: Download complete
+a4e0f030513e: Verifying Checksum
+a4e0f030513e: Download complete
+b168bebe31c2: Verifying Checksum
+b168bebe31c2: Download complete
+b31ae3e158be: Verifying Checksum
+b31ae3e158be: Download complete
+f73a7be15a05: Verifying Checksum
+f73a7be15a05: Download complete
+0d11eb50814a: Verifying Checksum
+0d11eb50814a: Download complete
+237fca587c8a: Verifying Checksum
+237fca587c8a: Download complete
+32df639ea92f: Verifying Checksum
+32df639ea92f: Download complete
+b64277d31cbf: Verifying Checksum
+b64277d31cbf: Download complete
+de4f4310f018: Verifying Checksum
+de4f4310f018: Download complete
+d5e5942a4bc7: Verifying Checksum
+d5e5942a4bc7: Download complete
+40ab301ff48b: Verifying Checksum
+40ab301ff48b: Download complete
+818eb6ca6e33: Verifying Checksum
+818eb6ca6e33: Download complete
+5a6b1c54be18: Verifying Checksum
+5a6b1c54be18: Download complete
+625bde96d388: Verifying Checksum
+625bde96d388: Download complete
+3fcb0554cd37: Verifying Checksum
+3fcb0554cd37: Download complete
+9bc2337bb5de: Verifying Checksum
+9bc2337bb5de: Download complete
+06f90756c794: Verifying Checksum
+06f90756c794: Download complete
+15f296d64569: Verifying Checksum
+15f296d64569: Download complete
+f0715d42123e: Verifying Checksum
+f0715d42123e: Download complete
+5b3cd62dd72b: Verifying Checksum
+5b3cd62dd72b: Download complete
+38ddda254ef9: Verifying Checksum
+38ddda254ef9: Download complete
+a81304ae43bd: Verifying Checksum
+a81304ae43bd: Download complete
+2924e36f2f10: Verifying Checksum
+2924e36f2f10: Download complete
+75d059a8f06f: Verifying Checksum
+75d059a8f06f: Download complete
+3514e18e6167: Verifying Checksum
+3514e18e6167: Download complete
+7471ea23e90e: Verifying Checksum
+7471ea23e90e: Download complete
+f1ebbedcd970: Verifying Checksum
+f1ebbedcd970: Download complete
+093e035c3441: Verifying Checksum
+093e035c3441: Download complete
+cc5827b24d1b: Verifying Checksum
+cc5827b24d1b: Download complete
+e04bcc97ca19: Verifying Checksum
+e04bcc97ca19: Download complete
+1c3ca85c0872: Verifying Checksum
+1c3ca85c0872: Download complete
+e44eb38e012f: Verifying Checksum
+e44eb38e012f: Download complete
+923555a29b9d: Verifying Checksum
+923555a29b9d: Download complete
+02115f260c1b: Verifying Checksum
+02115f260c1b: Download complete
+7854fcc3c8a8: Verifying Checksum
+7854fcc3c8a8: Download complete
+2f5aa88aa2d1: Verifying Checksum
+2f5aa88aa2d1: Download complete
+23a068ba7aa0: Verifying Checksum
+23a068ba7aa0: Download complete
+fa2895487d59: Verifying Checksum
+fa2895487d59: Download complete
+375fd82da226: Pull complete
+4faae6904470: Pull complete
+3a0584074529: Pull complete
+1b0b3dcd67b7: Verifying Checksum
+1b0b3dcd67b7: Download complete
+0d62c252c62e: Pull complete
+8aec5b04915d: Pull complete
+eb35dcebf5f0: Pull complete
+9120fb1fc8cb: Pull complete
+f4783e0118a3: Pull complete
+db35d98d120e: Pull complete
+870ae27479ac: Pull complete
+9b3ac3b90fd5: Pull complete
+1e855a499ff2: Pull complete
+17d743a62b4c: Pull complete
+331e2137023c: Pull complete
+938169d3fa53: Pull complete
+67aec46cc9bc: Pull complete
+733443d9da67: Pull complete
+86c9aea85eab: Pull complete
+77d76b322aa3: Pull complete
+eddd13839d27: Pull complete
+92bf6f086eef: Pull complete
+6c7b675a2d94: Pull complete
+8da4be3d4392: Pull complete
+a9c7137e8cc8: Pull complete
+7e75fb3fd89b: Pull complete
+340095faa29b: Pull complete
+2548bfcccac2: Pull complete
+43fc68e209c7: Pull complete
+3336c7dc6dbb: Pull complete
+402c9e3415ea: Pull complete
+08c20900754b: Pull complete
+4324a545100f: Pull complete
+ed3ccf39156c: Pull complete
+3b350f3a9e25: Pull complete
+858548d616f8: Pull complete
+4c8da057f5c9: Pull complete
+73ea2e5a8d99: Pull complete
+c90f32b3401c: Pull complete
+28dc40835211: Pull complete
+fd806e0216fe: Pull complete
+2c7659662c4a: Pull complete
+2f147b58d187: Pull complete
+3d37a4b11670: Pull complete
+f07574eb06f8: Pull complete
+bfccc20a9e31: Pull complete
+8971da4d1983: Pull complete
+5d164e3e49ae: Pull complete
+eff89550b0c9: Pull complete
+24f7f719b4f5: Pull complete
+bc7a0a0b4a6e: Pull complete
+9ad233a034d9: Pull complete
+6f62ec8be385: Pull complete
+2dfa182f8dab: Pull complete
+8d73da89abb4: Pull complete
+a837a6e9faa5: Pull complete
+e94619e1041f: Pull complete
+76d8e1031bce: Pull complete
+2063dec4e92d: Pull complete
+07d0856aa8e8: Pull complete
+250f4bb59a73: Pull complete
+2f66c5690317: Pull complete
+1ec78f690a8f: Pull complete
+c771b320b201: Pull complete
+936e6b4c6030: Pull complete
+bbba63c997c7: Pull complete
+d402c2fe2775: Pull complete
+3eb82335ab93: Pull complete
+0d11eb50814a: Pull complete
+7d0ab944b7da: Pull complete
+4e9fda4801f4: Pull complete
+e6f2255a4288: Pull complete
+7a9be19c5122: Pull complete
+0d2a3202373c: Pull complete
+bf33e0240346: Pull complete
+b168bebe31c2: Pull complete
+7968a0317dc7: Pull complete
+a4e0f030513e: Pull complete
+f73a7be15a05: Pull complete
+b31ae3e158be: Pull complete
+237fca587c8a: Pull complete
+32df639ea92f: Pull complete
+818eb6ca6e33: Pull complete
+b64277d31cbf: Pull complete
+de4f4310f018: Pull complete
+d5e5942a4bc7: Pull complete
+40ab301ff48b: Pull complete
+5a6b1c54be18: Pull complete
+3fcb0554cd37: Pull complete
+9bc2337bb5de: Pull complete
+625bde96d388: Pull complete
+06f90756c794: Pull complete
+f0715d42123e: Pull complete
+15f296d64569: Pull complete
+75d059a8f06f: Pull complete
+5b3cd62dd72b: Pull complete
+3514e18e6167: Pull complete
+38ddda254ef9: Pull complete
+a81304ae43bd: Pull complete
+2924e36f2f10: Pull complete
+7471ea23e90e: Pull complete
+f1ebbedcd970: Pull complete
+093e035c3441: Pull complete
+cc5827b24d1b: Pull complete
+7854fcc3c8a8: Pull complete
+1b0b3dcd67b7: Pull complete
+e04bcc97ca19: Pull complete
+1c3ca85c0872: Pull complete
+e44eb38e012f: Pull complete
+923555a29b9d: Pull complete
+02115f260c1b: Pull complete
+2f5aa88aa2d1: Pull complete
+23a068ba7aa0: Pull complete
+fa2895487d59: Pull complete
+Digest: sha256:d38767f006ddb24b93efed0214eee4232c311bc468ee0277c41bca2816f9ba3b
+Status: Downloaded newer image for nciccbr/ccrgb_qctools:v1.8.1
+ ---> f8b7679e48eb
+Step 2/17 : ENV TAG="v1.9"
+ ---> Running in 33f789c8d189
+Removing intermediate container 33f789c8d189
+ ---> 24a769ecf016
+Step 3/17 : WORKDIR /opt2
+ ---> Running in 477507a23ece
+Removing intermediate container 477507a23ece
+ ---> 7f0f4d300913
+Step 4/17 : RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.22.0/bedtools-2.22.0.tar.gz &&     tar xzvf bedtools-2.22.0.tar.gz &&     rm -f bedtools-2.22.0.tar.gz
+ ---> Running in 065ec40d4999
+[91m--2023-01-20 09:49:30--  https://github.com/arq5x/bedtools2/releases/download/v2.22.0/bedtools-2.22.0.tar.gz
+[0m[91mResolving github.com (github.com)... [0m[91m140.82.113.4
+Connecting to github.com (github.com)|140.82.113.4|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/15059334/7ca8c680-69a3-11e4-944a-3b2750ce20e7?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230120%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230120T144930Z&X-Amz-Expires=300&X-Amz-Signature=07950f285c94ce52e2ebeb048f754dc88579564a5889cd2b634e531bf2ec3622&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=15059334&response-content-disposition=attachment%3B%20filename%3Dbedtools-2.22.0.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2023-01-20 09:49:30--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/15059334/7ca8c680-69a3-11e4-944a-3b2750ce20e7?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230120%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230120T144930Z&X-Amz-Expires=300&X-Amz-Signature=07950f285c94ce52e2ebeb048f754dc88579564a5889cd2b634e531bf2ec3622&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=15059334&response-content-disposition=attachment%3B%20filename%3Dbedtools-2.22.0.tar.gz&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... [0m[91m185.199.108.133, 185.199.110.133, 185.199.109.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.108.133|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 4309845 (4.1M) [application/octet-stream]
+Saving to: 'bedtools-2.22.0.tar.gz'
+[0m[91m
+     0K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m..  1% 4.15M 1s
+    50K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m....  2% 5.20M 1s
+   100K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m......  3% 23.6M 1s
+   150K ..........[0m[91m .......... ......[0m[91m.... .......... ..........  4% 29.5M 0s
+   200K ........[0m[91m.. .......... .......... ..........[0m[91m ..........  5% 7.61M 0s
+   250K .......... .......... ..[0m[91m........ ........[0m[91m.. [0m[91m..........  7% 23.7M 0s
+   300K .......... ..........[0m[91m .......... .......... ..........  8% 72.5M 0s
+   350K .......... ........[0m[91m.. .......... .......... .....[0m[91m.....  9% 41.7M 0s
+   400K .......... .......... .......... .......... ...[0m[91m....... 10% 54.6M 0s
+   450K .........[0m[91m. .......... .......... .......... .......... 11% 56.0M 0s
+   500K .......[0m[91m... .......... ...[0m[91m....... .......... .......... 13% 7.50M 0s
+   550K .......... .......... .......... .......... .......... 14%  157M 0s
+   600K .......... .......... .......... .......... .......... 15%  126M 0s
+   650K .......... .......... .......... .......... .......... 16%  204M 0s
+   700K .........[0m[91m. .......... .......... .......... ....[0m[91m...... 17% 27.3M 0s
+   750K .......... .......... .......... .......... .......... 19%  157M 0s
+   800K .......... .......... .......... .......... .......... 20%  210M 0s
+   850K .......... .......... .......... .......... .......... 21%  142M 0s
+   900K .......... .......... .......... .......... .......... 22%  204M 0s
+   950K .........[0m[91m. .........[0m[91m. .......... .......... .......... 23% 29.8M 0s
+  1000K .......... .......... .......... .......... .......... 24%  193M 0s
+  1050K .......... .......... .......... .......[0m[91m... .......... 26% 18.4M 0s
+  1100K ...[0m[91m....... .......... .......[0m[91m... .......... .....[0m[91m..... 27% 98.7M 0s
+  1150K .......... .........[0m[91m. .......... .......... .......... 28%  104M 0s
+  1200K .[0m[91m........[0m[91m. .......... .....[0m[91m..... .......... .........[0m[91m. 29% 33.5M 0s
+  1250K .......... .......... ...[0m[91m....... .........[0m[91m. .......... 30% 93.5M 0s
+  1300K .......... ...[0m[91m....... .......... .......[0m[91m... .......... 32%  110M 0s
+  1350K ...[0m[91m....... .......... .......... .....[0m[91m..... .......... 33%  106M 0s
+  1400K .[0m[91m......... .......... .......... ...[0m[91m....... .........[0m[91m. 34% 88.2M 0s
+  1450K .......... .....[0m[91m..... .......... .........[0m[91m. .......... 35% 86.1M 0s
+  1500K .....[0m[91m..... .......... .......... .......[0m[91m... .......... 36% 88.6M 0s
+  1550K ...[0m[91m....... .........[0m[91m. .......... .......... ...[0m[91m....... 38%  102M 0s
+  1600K .......... .......[0m[91m... .......... .......... .[0m[91m......... 39% 85.6M 0s
+  1650K .......[0m[91m... .......... .......... .........[0m[91m. .......... 40% 92.2M 0s[0m[91m
+  1700K .......... .......... ....[0m[91m...... .......... .......... 41% 86.9M 0s
+  1750K ......[0m[91m.... .......... .......... ........[0m[91m.. .......... 42%  128M 0s
+  1800K .......... ..........[0m[91m .......... .......... .......... 43%  136M 0s
+  1850K ..[0m[91m........ .......... .......... ....[0m[91m...... .......... 45%  130M 0s
+  1900K .........[0m[91m. .......... .......... .......... .......... 46%  101M 0s
+  1950K .......... .......... .......... .......... .......... 47%  134M 0s
+  2000K .......... .......... .......... .......... .......... 48%  154M 0s
+  2050K .......... .......... .......... .......... .......... 49% 58.0M 0s
+  2100K .......... .......... ......[0m[91m.... .......... .......... 51% 78.7M 0s
+  2150K .......... .......... .......... .......... .......... 52% 82.7M 0s
+  2200K ......[0m[91m.... .......... .......... .......... .......... 53% 69.0M 0s
+  2250K .......... ..[0m[91m........ .......... .......... .......... 54% 49.4M 0s
+  2300K .......... ........[0m[91m.. .......... .......... ..[0m[91m........ 55% 50.8M 0s
+  2350K .......... .......... .......... ......[0m[91m.... .......... 57% 40.6M 0s
+  2400K .......... ....[0m[91m...... .......... ........[0m[91m.. .......... 58% 37.3M 0s
+  2450K .......... .......... ........[0m[91m.. .......... .......... 59% 55.1M 0s
+  2500K .......... .......... .......[0m[91m... .......... .......... 60% 95.0M 0s
+  2550K .......... .......... .......... .......... .......... 61% 89.4M 0s
+  2600K .......... .......... ...[0m[91m....... .......... .......... 62%  112M 0s
+  2650K .......... .......... .......... .......... .......... 64% 90.3M 0s
+  2700K .......... .[0m[91m......... .......... .......... .......... 65% 86.8M 0s
+  2750K .......... .......... .......... .......... .......... 66% 88.9M 0s
+  2800K .........[0m[91m. .......... .......... .......... .......... 67% 93.2M 0s
+  2850K .......... .......... .......... .........[0m[91m. .......... 68% 69.9M 0s
+  2900K .......... .......... .......... .......... .......... 70% 98.7M 0s
+  2950K .......... .......... .......[0m[91m... .......... .......... 71% 82.6M 0s
+  3000K .......... .......... .......... .......... .......... 72% 81.2M 0s
+  3050K .......... .......[0m[91m... .......... .......... .......... 73% 81.7M 0s
+  3100K .......... .......... .......... .......... .......... 74% 87.7M 0s
+  3150K .....[0m[91m..... .......... .......... .......... .......... 76%  102M 0s
+  3200K .......... .......... .......... .......... ...[0m[91m....... 77% 83.4M 0s
+  3250K .......... .......... .......... .......... .......... 78% 78.4M 0s
+  3300K .......... .......... .....[0m[91m..... .......... .......... 79%  101M 0s
+  3350K .......... .......... .......... .......... .......... 80% 92.1M 0s
+  3400K .......... .......... .[0m[91m......... .......... .......... 81%  103M 0s
+  3450K ...[0m[91m....... .......... .......... .......... .......[0m[91m... 83% 62.0M 0s
+  3500K .......... .......... .......... .......... .[0m[91m......... 84% 54.7M 0s
+  3550K .......... .....[0m[91m..... .......... .......... .......... 85% 68.6M 0s
+  3600K .......... ...[0m[91m....... .......... .......... .......... 86% 57.6M 0s
+  3650K .......... .......... .......... .......... .......... 87%  100M 0s
+  3700K .......... .......... .......... .......... .......... 89% 77.6M 0s
+  3750K .......... .....[0m[91m..... .......... .......... .......... 90%  110M 0s
+  3800K .......... .......... .......... .......... .......... 91%  122M 0s
+  3850K .......... .......... .......... .......... .......... 92%  139M 0s
+  3900K .......... .......... .......... .......... .......... 93%  141M 0s
+  3950K .......... .......... .......... .......... .......... 95%  138M 0s
+  4000K .......... .......... .......... .......... .......... 96% 41.4M 0s
+  4050K .......... .......... .......... .......... .......... 97%  131M 0s
+  4100K .......... .......... .......... .......... .......... 98% 90.1M 0s
+  4150K .......... .......... .......... .......... .......... 99% 96.5M 0s
+  4200K ........                                              100% 35.0M=0.09s
+
+2023-01-20 09:49:30 (46.0 MB/s) - 'bedtools-2.22.0.tar.gz' saved [4309845/4309845]
+
+[0mbedtools2/
+bedtools2/.gitignore
+bedtools2/.travis.yml
+bedtools2/data/
+bedtools2/docs/
+bedtools2/genomes/
+bedtools2/LICENSE
+bedtools2/Makefile
+bedtools2/README.md
+bedtools2/RELEASE_HISTORY
+bedtools2/scripts/
+bedtools2/src/
+bedtools2/test/
+bedtools2/test/bamtobed/
+bedtools2/test/bamtofastq/
+bedtools2/test/bed12tobed6/
+bedtools2/test/closest/
+bedtools2/test/cluster/
+bedtools2/test/coverage/
+bedtools2/test/expand/
+bedtools2/test/flank/
+bedtools2/test/general/
+bedtools2/test/genomecov/
+bedtools2/test/getfasta/
+bedtools2/test/groupBy/
+bedtools2/test/intersect/
+bedtools2/test/jaccard/
+bedtools2/test/map/
+bedtools2/test/merge/
+bedtools2/test/multicov/
+bedtools2/test/reldist/
+bedtools2/test/sample/
+bedtools2/test/shuffle/
+bedtools2/test/slop/
+bedtools2/test/subtract/
+bedtools2/test/test.sh
+bedtools2/test/subtract/a.bed
+bedtools2/test/subtract/b.bed
+bedtools2/test/subtract/c.bed
+bedtools2/test/subtract/d.bed
+bedtools2/test/subtract/test-subtract.sh
+bedtools2/test/slop/a.bed
+bedtools2/test/slop/test-slop.sh
+bedtools2/test/slop/tiny.genome
+bedtools2/test/shuffle/excl.bed
+bedtools2/test/shuffle/incl.bed
+bedtools2/test/shuffle/simrep.bed
+bedtools2/test/shuffle/test-shuffle.sh
+bedtools2/test/sample/human.hg19.genome
+bedtools2/test/sample/sample_help_withoutVersion.txt
+bedtools2/test/sample/test-sample.sh
+bedtools2/test/reldist/test-reldist.sh
+bedtools2/test/multicov/multicov.bed
+bedtools2/test/multicov/one_block.bam.bai
+bedtools2/test/multicov/one_block.sam
+bedtools2/test/multicov/test-multicov.sh
+bedtools2/test/multicov/two_blocks.bam.bai
+bedtools2/test/multicov/two_blocks.sam
+bedtools2/test/merge/a.bed
+bedtools2/test/merge/a.full.bam
+bedtools2/test/merge/a.full.bed
+bedtools2/test/merge/a.gff
+bedtools2/test/merge/a.names.bed
+bedtools2/test/merge/b.bed
+bedtools2/test/merge/bamCol10Collapse.txt
+bedtools2/test/merge/bamCol11Collapse.txt
+bedtools2/test/merge/bamCol1Collapse.txt
+bedtools2/test/merge/bamCol3Collapse.txt
+bedtools2/test/merge/bamCol4Mean.txt
+bedtools2/test/merge/bamCol5Mean.txt
+bedtools2/test/merge/bamCol6Collapse.txt
+bedtools2/test/merge/bamCol7Collapse.txt
+bedtools2/test/merge/bamCol8Mean.txt
+bedtools2/test/merge/bamCol9Mean.txt
+bedtools2/test/merge/expFormat.bed
+bedtools2/test/merge/fullFields.bam
+bedtools2/test/merge/mergeBugTest.bed
+bedtools2/test/merge/mixedStrands.bed
+bedtools2/test/merge/precisionTest.bed
+bedtools2/test/merge/test-merge.sh
+bedtools2/test/merge/testA.vcf
+bedtools2/test/merge/unsorted.bed
+bedtools2/test/merge/vcfSVtest.vcf
+bedtools2/test/map/a.vsorted.bed
+bedtools2/test/map/b.vsorted.bed
+bedtools2/test/map/d.bed
+bedtools2/test/map/fullFields.bam
+bedtools2/test/map/genome
+bedtools2/test/map/ivls.bed
+bedtools2/test/map/ivls2.bed
+bedtools2/test/map/t.bed
+bedtools2/test/map/test-map.sh
+bedtools2/test/map/test.gff
+bedtools2/test/map/test.vcf
+bedtools2/test/map/three_blocks_match.bed
+bedtools2/test/map/three_blocks_nomatch.bed
+bedtools2/test/map/values.bam
+bedtools2/test/map/values.bed
+bedtools2/test/map/values2.bed
+bedtools2/test/map/values3.bed
+bedtools2/test/map/values4.bed
+bedtools2/test/map/values5.bed
+bedtools2/test/jaccard/a.bam
+bedtools2/test/jaccard/a.bed
+bedtools2/test/jaccard/aMixedStrands.bed
+bedtools2/test/jaccard/b.bed
+bedtools2/test/jaccard/bMixedStrands.bed
+bedtools2/test/jaccard/c.bed
+bedtools2/test/jaccard/d.bed
+bedtools2/test/jaccard/e.bed
+bedtools2/test/jaccard/test-jaccard.sh
+bedtools2/test/jaccard/three_blocks_match.bam
+bedtools2/test/jaccard/three_blocks_match.bed
+bedtools2/test/intersect/a.bam
+bedtools2/test/intersect/a.bed
+bedtools2/test/intersect/a_bgzipped.bed.gz
+bedtools2/test/intersect/a_gzipped.bed.gz
+bedtools2/test/intersect/a_testZeroLen.bed
+bedtools2/test/intersect/a_vcfSVtest.vcf
+bedtools2/test/intersect/a_with_bothUnmapped.bam
+bedtools2/test/intersect/a_withLargeHeader.bed
+bedtools2/test/intersect/a_withLargeHeader_bgzipped.bed.gz
+bedtools2/test/intersect/a_withLargeHeader_gzipped.bed.gz
+bedtools2/test/intersect/aVSb.bam
+bedtools2/test/intersect/aWithHeaderVsB.txt
+bedtools2/test/intersect/b.bed
+bedtools2/test/intersect/b_testZeroLen.bed
+bedtools2/test/intersect/b_vcfSVtest.vcf
+bedtools2/test/intersect/bed3.bed
+bedtools2/test/intersect/bed4.bed
+bedtools2/test/intersect/bed5.bed
+bedtools2/test/intersect/bed6.bed
+bedtools2/test/intersect/bed6.strand.bed
+bedtools2/test/intersect/bed6.strand2.bed
+bedtools2/test/intersect/bedplus.bed
+bedtools2/test/intersect/c.bed
+bedtools2/test/intersect/chromOrderA.bed
+bedtools2/test/intersect/chromOrderB.bed
+bedtools2/test/intersect/chromsOutOfOrder.bed
+bedtools2/test/intersect/d.bed
+bedtools2/test/intersect/dosLineChar_a.bed
+bedtools2/test/intersect/dosLineCharWithExtraTab_b.bed
+bedtools2/test/intersect/gdc.bam
+bedtools2/test/intersect/gdc.gff
+bedtools2/test/intersect/gdc_exp
+bedtools2/test/intersect/gdc_one.bed
+bedtools2/test/intersect/headerOnly.vcf
+bedtools2/test/intersect/human.hg19.genome
+bedtools2/test/intersect/human.hg19.vSort.genome
+bedtools2/test/intersect/j1.bed
+bedtools2/test/intersect/mapped_and_unmapped.sam
+bedtools2/test/intersect/multi_intersect/
+bedtools2/test/intersect/new_test-intersect.sh
+bedtools2/test/intersect/new_test-intersect.sh~
+bedtools2/test/intersect/one_block.sam
+bedtools2/test/intersect/oneRecordNoNewline.bed
+bedtools2/test/intersect/oneUnmapped.bam
+bedtools2/test/intersect/performanceTest.sh
+bedtools2/test/intersect/queryUnmappedMateMappedCoordsInvalid.bam
+bedtools2/test/intersect/recordsOutOfOrder.bed
+bedtools2/test/intersect/test-intersect.sh
+bedtools2/test/intersect/three_blocks.sam
+bedtools2/test/intersect/three_blocks_match.bam
+bedtools2/test/intersect/three_blocks_match.bed
+bedtools2/test/intersect/three_blocks_match_1bp.bed
+bedtools2/test/intersect/three_blocks_nomatch.bed
+bedtools2/test/intersect/two_blocks.sam
+bedtools2/test/intersect/two_blocks_partial.bam
+bedtools2/test/intersect/two_blocks_partial.bed
+bedtools2/test/intersect/multi_intersect/d1.bed
+bedtools2/test/intersect/multi_intersect/d2.bed
+bedtools2/test/intersect/multi_intersect/d3.bed
+bedtools2/test/intersect/multi_intersect/d4.bed
+bedtools2/test/intersect/multi_intersect/d5.bed
+bedtools2/test/intersect/multi_intersect/d6.bed
+bedtools2/test/intersect/multi_intersect/d7.bed
+bedtools2/test/intersect/multi_intersect/d8.bed
+bedtools2/test/intersect/multi_intersect/d9.bed
+bedtools2/test/intersect/multi_intersect/g.bed
+bedtools2/test/intersect/multi_intersect/query.bed
+bedtools2/test/intersect/multi_intersect/query2.bed
+bedtools2/test/intersect/multi_intersect/query3.bed
+bedtools2/test/intersect/multi_intersect/test-multi_intersect.sh
+bedtools2/test/groupBy/test-groupby.sh
+bedtools2/test/groupBy/values3.header.bed
+bedtools2/test/getfasta/blocks.bed
+bedtools2/test/getfasta/t.bed
+bedtools2/test/getfasta/t.fa
+bedtools2/test/getfasta/t.fa.fai
+bedtools2/test/getfasta/t_fH.fa
+bedtools2/test/getfasta/t_fH.fa.fai
+bedtools2/test/getfasta/test-getfasta.sh
+bedtools2/test/genomecov/one_block.sam
+bedtools2/test/genomecov/sam-w-del.sam
+bedtools2/test/genomecov/test-genomecov.sh
+bedtools2/test/genomecov/three_blocks.sam
+bedtools2/test/genomecov/three_blocks_match.bed
+bedtools2/test/genomecov/three_blocks_match_1bp.bed
+bedtools2/test/genomecov/three_blocks_nomatch.bed
+bedtools2/test/genomecov/two_blocks.sam
+bedtools2/test/general/empty.bed
+bedtools2/test/general/non-empty.bed.gz
+bedtools2/test/general/test-general.sh
+bedtools2/test/flank/a.bed
+bedtools2/test/flank/test-flank.sh
+bedtools2/test/flank/tiny.genome
+bedtools2/test/expand/expand.txt
+bedtools2/test/expand/test-expand.sh
+bedtools2/test/coverage/one_block.bam.bai
+bedtools2/test/coverage/one_block.sam
+bedtools2/test/coverage/sam-w-del.bam.bai
+bedtools2/test/coverage/sam-w-del.sam
+bedtools2/test/coverage/test-coverage.sh
+bedtools2/test/coverage/three_blocks.bam.bai
+bedtools2/test/coverage/three_blocks.sam
+bedtools2/test/coverage/three_blocks_match.bed
+bedtools2/test/coverage/three_blocks_match_1bp.bed
+bedtools2/test/coverage/three_blocks_nomatch.bed
+bedtools2/test/coverage/two_blocks.bam.bai
+bedtools2/test/coverage/two_blocks.sam
+bedtools2/test/cluster/in.bed
+bedtools2/test/cluster/test-cluster.sh
+bedtools2/test/closest/a.bed
+bedtools2/test/closest/a.names.bed
+bedtools2/test/closest/b-one-bp-closer.bed
+bedtools2/test/closest/b.bed
+bedtools2/test/closest/b.names.bed
+bedtools2/test/closest/close-a.bed
+bedtools2/test/closest/close-b.bed
+bedtools2/test/closest/d_d1F.bed
+bedtools2/test/closest/d_d1R.bed
+bedtools2/test/closest/d_d2F.bed
+bedtools2/test/closest/d_d2R.bed
+bedtools2/test/closest/d_q1.bed
+bedtools2/test/closest/d_q2.bed
+bedtools2/test/closest/mdb1.bed
+bedtools2/test/closest/mdb2.bed
+bedtools2/test/closest/mdb3.bed
+bedtools2/test/closest/mq1.bed
+bedtools2/test/closest/strand-test-a.bed
+bedtools2/test/closest/strand-test-b.bed
+bedtools2/test/closest/test-closest.sh
+bedtools2/test/bed12tobed6/bed6.bed
+bedtools2/test/bed12tobed6/one_blocks.bed
+bedtools2/test/bed12tobed6/test-bed12tobed6.sh
+bedtools2/test/bed12tobed6/three_blocks.bed
+bedtools2/test/bed12tobed6/two_blocks.bed
+bedtools2/test/bamtofastq/golden.fq
+bedtools2/test/bamtofastq/golden.fq2
+bedtools2/test/bamtofastq/test-bamtofastq.sh
+bedtools2/test/bamtofastq/test.sam
+bedtools2/test/bamtobed/one_block.sam
+bedtools2/test/bamtobed/test-bamtobed.sh
+bedtools2/test/bamtobed/three_blocks.sam
+bedtools2/test/bamtobed/two_blocks.sam
+bedtools2/test/bamtobed/two_blocks_w_D.sam
+bedtools2/src/annotateBed/
+bedtools2/src/bamToBed/
+bedtools2/src/bamToFastq/
+bedtools2/src/bed12ToBed6/
+bedtools2/src/bedpeToBam/
+bedtools2/src/bedToBam/
+bedtools2/src/bedToIgv/
+bedtools2/src/bedtools.cpp
+bedtools2/src/closestFile/
+bedtools2/src/clusterBed/
+bedtools2/src/complementBed/
+bedtools2/src/coverageBed/
+bedtools2/src/expand/
+bedtools2/src/fastaFromBed/
+bedtools2/src/fisher/
+bedtools2/src/flankBed/
+bedtools2/src/genomeCoverageBed/
+bedtools2/src/getOverlap/
+bedtools2/src/groupBy/
+bedtools2/src/intersectFile/
+bedtools2/src/jaccard/
+bedtools2/src/linksBed/
+bedtools2/src/mapFile/
+bedtools2/src/maskFastaFromBed/
+bedtools2/src/mergeFile/
+bedtools2/src/multiBamCov/
+bedtools2/src/multiIntersectBed/
+bedtools2/src/nekSandbox1/
+bedtools2/src/nucBed/
+bedtools2/src/pairToBed/
+bedtools2/src/pairToPair/
+bedtools2/src/randomBed/
+bedtools2/src/regressTest/
+bedtools2/src/reldist/
+bedtools2/src/sampleFile/
+bedtools2/src/shuffleBed/
+bedtools2/src/slopBed/
+bedtools2/src/sortBed/
+bedtools2/src/subtractBed/
+bedtools2/src/tagBam/
+bedtools2/src/unionBedGraphs/
+bedtools2/src/utils/
+bedtools2/src/windowBed/
+bedtools2/src/windowMaker/
+bedtools2/src/windowMaker/Makefile
+bedtools2/src/windowMaker/windowMaker.cpp
+bedtools2/src/windowMaker/windowMaker.h
+bedtools2/src/windowMaker/windowMakerMain.cpp
+bedtools2/src/windowBed/Makefile
+bedtools2/src/windowBed/windowBed.cpp
+bedtools2/src/windowBed/windowBed.h
+bedtools2/src/windowBed/windowMain.cpp
+bedtools2/src/utils/BamTools/
+bedtools2/src/utils/BamTools-Ancillary/
+bedtools2/src/utils/bedFile/
+bedtools2/src/utils/bedFilePE/
+bedtools2/src/utils/bedGraphFile/
+bedtools2/src/utils/BinTree/
+bedtools2/src/utils/BlockedIntervals/
+bedtools2/src/utils/chromsweep/
+bedtools2/src/utils/Contexts/
+bedtools2/src/utils/Fasta/
+bedtools2/src/utils/FileRecordTools/
+bedtools2/src/utils/fileType/
+bedtools2/src/utils/general/
+bedtools2/src/utils/GenomeFile/
+bedtools2/src/utils/gzstream/
+bedtools2/src/utils/KeyListOps/
+bedtools2/src/utils/lineFileUtilities/
+bedtools2/src/utils/NewChromsweep/
+bedtools2/src/utils/Point/
+bedtools2/src/utils/RecordOutputMgr/
+bedtools2/src/utils/sequenceUtilities/
+bedtools2/src/utils/stringUtilities/
+bedtools2/src/utils/tabFile/
+bedtools2/src/utils/VectorOps/
+bedtools2/src/utils/version/
+bedtools2/src/utils/version/Makefile
+bedtools2/src/utils/version/version.cpp
+bedtools2/src/utils/version/version.h
+bedtools2/src/utils/version/version_release.txt
+bedtools2/src/utils/VectorOps/Makefile
+bedtools2/src/utils/VectorOps/VectorOps.cpp
+bedtools2/src/utils/VectorOps/VectorOps.h
+bedtools2/src/utils/tabFile/Makefile
+bedtools2/src/utils/tabFile/tabFile.cpp
+bedtools2/src/utils/tabFile/tabFile.h
+bedtools2/src/utils/stringUtilities/stringUtilities.h
+bedtools2/src/utils/sequenceUtilities/Makefile
+bedtools2/src/utils/sequenceUtilities/sequenceUtils.cpp
+bedtools2/src/utils/sequenceUtilities/sequenceUtils.h
+bedtools2/src/utils/RecordOutputMgr/Makefile
+bedtools2/src/utils/RecordOutputMgr/RecordOutputMgr.cpp
+bedtools2/src/utils/RecordOutputMgr/RecordOutputMgr.h
+bedtools2/src/utils/Point/Point.h
+bedtools2/src/utils/NewChromsweep/CloseSweep.cpp
+bedtools2/src/utils/NewChromsweep/CloseSweep.h
+bedtools2/src/utils/NewChromsweep/Makefile
+bedtools2/src/utils/NewChromsweep/NewChromsweep.cpp
+bedtools2/src/utils/NewChromsweep/NewChromsweep.h
+bedtools2/src/utils/lineFileUtilities/lineFileUtilities.h
+bedtools2/src/utils/KeyListOps/KeyListOps.cpp
+bedtools2/src/utils/KeyListOps/KeyListOps.h
+bedtools2/src/utils/KeyListOps/KeyListOpsMethods.cpp
+bedtools2/src/utils/KeyListOps/KeyListOpsMethods.h
+bedtools2/src/utils/KeyListOps/Makefile
+bedtools2/src/utils/gzstream/COPYING.LIB
+bedtools2/src/utils/gzstream/gzstream.C
+bedtools2/src/utils/gzstream/gzstream.h
+bedtools2/src/utils/gzstream/Makefile
+bedtools2/src/utils/gzstream/README
+bedtools2/src/utils/gzstream/version
+bedtools2/src/utils/GenomeFile/GenomeFile.cpp
+bedtools2/src/utils/GenomeFile/GenomeFile.h
+bedtools2/src/utils/GenomeFile/Makefile
+bedtools2/src/utils/GenomeFile/NewGenomeFile.cpp
+bedtools2/src/utils/GenomeFile/NewGenomeFile.h
+bedtools2/src/utils/general/BedtoolsTypes.h
+bedtools2/src/utils/general/BTlist.h
+bedtools2/src/utils/general/CommonHelp.cpp
+bedtools2/src/utils/general/CommonHelp.h
+bedtools2/src/utils/general/CompressionTools.cpp
+bedtools2/src/utils/general/CompressionTools.h
+bedtools2/src/utils/general/ErrorMsg.h
+bedtools2/src/utils/general/FreeList.h
+bedtools2/src/utils/general/InflateStreamBuf.h
+bedtools2/src/utils/general/Makefile
+bedtools2/src/utils/general/ParseTools.cpp
+bedtools2/src/utils/general/ParseTools.h
+bedtools2/src/utils/general/PushBackStreamBuf.cpp
+bedtools2/src/utils/general/PushBackStreamBuf.h
+bedtools2/src/utils/general/QuickString.cpp
+bedtools2/src/utils/general/QuickString.h
+bedtools2/src/utils/general/Tokenizer.cpp
+bedtools2/src/utils/general/Tokenizer.h
+bedtools2/src/utils/fileType/FileRecordTypeChecker.cpp
+bedtools2/src/utils/fileType/FileRecordTypeChecker.h
+bedtools2/src/utils/fileType/fileType.cpp
+bedtools2/src/utils/fileType/fileType.h
+bedtools2/src/utils/fileType/Makefile
+bedtools2/src/utils/FileRecordTools/FileReaders/
+bedtools2/src/utils/FileRecordTools/FileRecordMergeMgr.cpp
+bedtools2/src/utils/FileRecordTools/FileRecordMergeMgr.h
+bedtools2/src/utils/FileRecordTools/FileRecordMgr.cpp
+bedtools2/src/utils/FileRecordTools/FileRecordMgr.h
+bedtools2/src/utils/FileRecordTools/Makefile
+bedtools2/src/utils/FileRecordTools/Records/
+bedtools2/src/utils/FileRecordTools/Records/BamRecord.cpp
+bedtools2/src/utils/FileRecordTools/Records/BamRecord.h
+bedtools2/src/utils/FileRecordTools/Records/Bed12Interval.cpp
+bedtools2/src/utils/FileRecordTools/Records/Bed12Interval.h
+bedtools2/src/utils/FileRecordTools/Records/Bed3Interval.cpp
+bedtools2/src/utils/FileRecordTools/Records/Bed3Interval.h
+bedtools2/src/utils/FileRecordTools/Records/Bed4Interval.cpp
+bedtools2/src/utils/FileRecordTools/Records/Bed4Interval.h
+bedtools2/src/utils/FileRecordTools/Records/Bed5Interval.cpp
+bedtools2/src/utils/FileRecordTools/Records/Bed5Interval.h
+bedtools2/src/utils/FileRecordTools/Records/Bed6Interval.cpp
+bedtools2/src/utils/FileRecordTools/Records/Bed6Interval.h
+bedtools2/src/utils/FileRecordTools/Records/BedGraphInterval.cpp
+bedtools2/src/utils/FileRecordTools/Records/BedGraphInterval.h
+bedtools2/src/utils/FileRecordTools/Records/BedPlusInterval.cpp
+bedtools2/src/utils/FileRecordTools/Records/BedPlusInterval.h
+bedtools2/src/utils/FileRecordTools/Records/BlockMgr.cpp
+bedtools2/src/utils/FileRecordTools/Records/BlockMgr.h
+bedtools2/src/utils/FileRecordTools/Records/EmptyRecord.cpp
+bedtools2/src/utils/FileRecordTools/Records/EmptyRecord.h
+bedtools2/src/utils/FileRecordTools/Records/GffRecord.cpp
+bedtools2/src/utils/FileRecordTools/Records/GffRecord.h
+bedtools2/src/utils/FileRecordTools/Records/Makefile
+bedtools2/src/utils/FileRecordTools/Records/Record.cpp
+bedtools2/src/utils/FileRecordTools/Records/Record.h
+bedtools2/src/utils/FileRecordTools/Records/RecordKeyList.cpp
+bedtools2/src/utils/FileRecordTools/Records/RecordKeyList.h
+bedtools2/src/utils/FileRecordTools/Records/RecordKeyVector.cpp
+bedtools2/src/utils/FileRecordTools/Records/RecordKeyVector.h
+bedtools2/src/utils/FileRecordTools/Records/RecordList.cpp
+bedtools2/src/utils/FileRecordTools/Records/RecordList.h
+bedtools2/src/utils/FileRecordTools/Records/RecordMgr.cpp
+bedtools2/src/utils/FileRecordTools/Records/RecordMgr.h
+bedtools2/src/utils/FileRecordTools/Records/StrandQueue.cpp
+bedtools2/src/utils/FileRecordTools/Records/StrandQueue.h
+bedtools2/src/utils/FileRecordTools/Records/VcfRecord.cpp
+bedtools2/src/utils/FileRecordTools/Records/VcfRecord.h
+bedtools2/src/utils/FileRecordTools/FileReaders/BamFileReader.cpp
+bedtools2/src/utils/FileRecordTools/FileReaders/BamFileReader.h
+bedtools2/src/utils/FileRecordTools/FileReaders/BufferedStreamMgr.cpp
+bedtools2/src/utils/FileRecordTools/FileReaders/BufferedStreamMgr.h
+bedtools2/src/utils/FileRecordTools/FileReaders/FileReader.cpp
+bedtools2/src/utils/FileRecordTools/FileReaders/FileReader.h
+bedtools2/src/utils/FileRecordTools/FileReaders/InputStreamMgr.cpp
+bedtools2/src/utils/FileRecordTools/FileReaders/InputStreamMgr.h
+bedtools2/src/utils/FileRecordTools/FileReaders/Makefile
+bedtools2/src/utils/FileRecordTools/FileReaders/Makefile~
+bedtools2/src/utils/FileRecordTools/FileReaders/SingleLineDelimTextFileReader.cpp
+bedtools2/src/utils/FileRecordTools/FileReaders/SingleLineDelimTextFileReader.h
+bedtools2/src/utils/FileRecordTools/FileReaders/SingleLineDelimTransferBuffer.cpp
+bedtools2/src/utils/FileRecordTools/FileReaders/SingleLineDelimTransferBuffer.h
+bedtools2/src/utils/Fasta/Fasta.cpp
+bedtools2/src/utils/Fasta/Fasta.h
+bedtools2/src/utils/Fasta/LargeFileSupport.h
+bedtools2/src/utils/Fasta/Makefile
+bedtools2/src/utils/Fasta/split.cpp
+bedtools2/src/utils/Fasta/split.h
+bedtools2/src/utils/Contexts/ContextBase.cpp
+bedtools2/src/utils/Contexts/ContextBase.h
+bedtools2/src/utils/Contexts/ContextClosest.cpp
+bedtools2/src/utils/Contexts/ContextClosest.h
+bedtools2/src/utils/Contexts/ContextFisher.cpp
+bedtools2/src/utils/Contexts/ContextFisher.h
+bedtools2/src/utils/Contexts/ContextIntersect.cpp
+bedtools2/src/utils/Contexts/ContextIntersect.h
+bedtools2/src/utils/Contexts/ContextJaccard.cpp
+bedtools2/src/utils/Contexts/ContextJaccard.h
+bedtools2/src/utils/Contexts/ContextMap.cpp
+bedtools2/src/utils/Contexts/ContextMap.h
+bedtools2/src/utils/Contexts/ContextMerge.cpp
+bedtools2/src/utils/Contexts/ContextMerge.h
+bedtools2/src/utils/Contexts/ContextSample.cpp
+bedtools2/src/utils/Contexts/ContextSample.h
+bedtools2/src/utils/Contexts/Makefile
+bedtools2/src/utils/chromsweep/chromsweep.cpp
+bedtools2/src/utils/chromsweep/chromsweep.h
+bedtools2/src/utils/chromsweep/Makefile
+bedtools2/src/utils/BlockedIntervals/BlockedIntervals.cpp
+bedtools2/src/utils/BlockedIntervals/BlockedIntervals.h
+bedtools2/src/utils/BlockedIntervals/Makefile
+bedtools2/src/utils/BinTree/BinTree.cpp
+bedtools2/src/utils/BinTree/BinTree.h
+bedtools2/src/utils/BinTree/Makefile
+bedtools2/src/utils/bedGraphFile/bedGraphFile.cpp
+bedtools2/src/utils/bedGraphFile/bedGraphFile.h
+bedtools2/src/utils/bedGraphFile/Makefile
+bedtools2/src/utils/bedFilePE/bedFilePE.cpp
+bedtools2/src/utils/bedFilePE/bedFilePE.h
+bedtools2/src/utils/bedFilePE/Makefile
+bedtools2/src/utils/bedFile/bedFile.cpp
+bedtools2/src/utils/bedFile/bedFile.h
+bedtools2/src/utils/bedFile/Makefile
+bedtools2/src/utils/BamTools-Ancillary/BamAncillary.cpp
+bedtools2/src/utils/BamTools-Ancillary/BamAncillary.h
+bedtools2/src/utils/BamTools-Ancillary/Makefile
+bedtools2/src/utils/BamTools/.gitignore
+bedtools2/src/utils/BamTools/LICENSE
+bedtools2/src/utils/BamTools/Makefile
+bedtools2/src/utils/BamTools/src/
+bedtools2/src/utils/BamTools/src/api/
+bedtools2/src/utils/BamTools/src/shared/
+bedtools2/src/utils/BamTools/src/shared/bamtools_global.h
+bedtools2/src/utils/BamTools/src/api/algorithms/
+bedtools2/src/utils/BamTools/src/api/api_global.h
+bedtools2/src/utils/BamTools/src/api/BamAlgorithms.h
+bedtools2/src/utils/BamTools/src/api/BamAlignment.cpp
+bedtools2/src/utils/BamTools/src/api/BamAlignment.h
+bedtools2/src/utils/BamTools/src/api/BamAux.h
+bedtools2/src/utils/BamTools/src/api/BamConstants.h
+bedtools2/src/utils/BamTools/src/api/BamIndex.h
+bedtools2/src/utils/BamTools/src/api/BamMultiReader.cpp
+bedtools2/src/utils/BamTools/src/api/BamMultiReader.h
+bedtools2/src/utils/BamTools/src/api/BamReader.cpp
+bedtools2/src/utils/BamTools/src/api/BamReader.h
+bedtools2/src/utils/BamTools/src/api/BamWriter.cpp
+bedtools2/src/utils/BamTools/src/api/BamWriter.h
+bedtools2/src/utils/BamTools/src/api/IBamIODevice.h
+bedtools2/src/utils/BamTools/src/api/internal/
+bedtools2/src/utils/BamTools/src/api/SamConstants.h
+bedtools2/src/utils/BamTools/src/api/SamHeader.cpp
+bedtools2/src/utils/BamTools/src/api/SamHeader.h
+bedtools2/src/utils/BamTools/src/api/SamProgram.cpp
+bedtools2/src/utils/BamTools/src/api/SamProgram.h
+bedtools2/src/utils/BamTools/src/api/SamProgramChain.cpp
+bedtools2/src/utils/BamTools/src/api/SamProgramChain.h
+bedtools2/src/utils/BamTools/src/api/SamReadGroup.cpp
+bedtools2/src/utils/BamTools/src/api/SamReadGroup.h
+bedtools2/src/utils/BamTools/src/api/SamReadGroupDictionary.cpp
+bedtools2/src/utils/BamTools/src/api/SamReadGroupDictionary.h
+bedtools2/src/utils/BamTools/src/api/SamSequence.cpp
+bedtools2/src/utils/BamTools/src/api/SamSequence.h
+bedtools2/src/utils/BamTools/src/api/SamSequenceDictionary.cpp
+bedtools2/src/utils/BamTools/src/api/SamSequenceDictionary.h
+bedtools2/src/utils/BamTools/src/api/internal/bam/
+bedtools2/src/utils/BamTools/src/api/internal/index/
+bedtools2/src/utils/BamTools/src/api/internal/io/
+bedtools2/src/utils/BamTools/src/api/internal/sam/
+bedtools2/src/utils/BamTools/src/api/internal/utils/
+bedtools2/src/utils/BamTools/src/api/internal/utils/BamException_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/utils/BamException_p.h
+bedtools2/src/utils/BamTools/src/api/internal/sam/SamFormatParser_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/sam/SamFormatParser_p.h
+bedtools2/src/utils/BamTools/src/api/internal/sam/SamFormatPrinter_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/sam/SamFormatPrinter_p.h
+bedtools2/src/utils/BamTools/src/api/internal/sam/SamHeaderValidator_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/sam/SamHeaderValidator_p.h
+bedtools2/src/utils/BamTools/src/api/internal/sam/SamHeaderVersion_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/BamDeviceFactory_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/BamDeviceFactory_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/BamFile_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/BamFile_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/BamFtp_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/BamFtp_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/BamHttp_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/BamHttp_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/BamPipe_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/BamPipe_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/BgzfStream_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/BgzfStream_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/ByteArray_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/ByteArray_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/HostAddress_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/HostAddress_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/HostInfo_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/HostInfo_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/HttpHeader_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/HttpHeader_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/ILocalIODevice_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/ILocalIODevice_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/NetUnix_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/NetWin_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/RollingBuffer_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/RollingBuffer_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/StdStreamDevice_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/TcpSocket_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/TcpSocket_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/TcpSocketEngine_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/TcpSocketEngine_p.h
+bedtools2/src/utils/BamTools/src/api/internal/io/TcpSocketEngine_unix_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/io/TcpSocketEngine_win_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/index/BamIndexFactory_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/index/BamIndexFactory_p.h
+bedtools2/src/utils/BamTools/src/api/internal/index/BamStandardIndex_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/index/BamStandardIndex_p.h
+bedtools2/src/utils/BamTools/src/api/internal/index/BamToolsIndex_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/index/BamToolsIndex_p.h
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamHeader_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamHeader_p.h
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamMultiMerger_p.h
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamMultiReader_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamMultiReader_p.h
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamRandomAccessController_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamRandomAccessController_p.h
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamReader_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamReader_p.h
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamWriter_p.cpp
+bedtools2/src/utils/BamTools/src/api/internal/bam/BamWriter_p.h
+bedtools2/src/utils/BamTools/src/api/algorithms/Sort.h
+bedtools2/src/unionBedGraphs/Makefile
+bedtools2/src/unionBedGraphs/unionBedGraphs.cpp
+bedtools2/src/unionBedGraphs/unionBedGraphs.h
+bedtools2/src/unionBedGraphs/unionBedGraphsMain.cpp
+bedtools2/src/tagBam/Makefile
+bedtools2/src/tagBam/tagBam.cpp
+bedtools2/src/tagBam/tagBam.h
+bedtools2/src/tagBam/tagBamMain.cpp
+bedtools2/src/subtractBed/Makefile
+bedtools2/src/subtractBed/subtractBed.cpp
+bedtools2/src/subtractBed/subtractBed.h
+bedtools2/src/subtractBed/subtractMain.cpp
+bedtools2/src/sortBed/Makefile
+bedtools2/src/sortBed/sortBed.cpp
+bedtools2/src/sortBed/sortBed.h
+bedtools2/src/sortBed/sortMain.cpp
+bedtools2/src/slopBed/Makefile
+bedtools2/src/slopBed/slopBed.cpp
+bedtools2/src/slopBed/slopBed.h
+bedtools2/src/slopBed/slopBedMain.cpp
+bedtools2/src/shuffleBed/Makefile
+bedtools2/src/shuffleBed/shuffleBed.cpp
+bedtools2/src/shuffleBed/shuffleBed.h
+bedtools2/src/shuffleBed/shuffleBedMain.cpp
+bedtools2/src/sampleFile/Makefile
+bedtools2/src/sampleFile/SampleFile.cpp
+bedtools2/src/sampleFile/SampleFile.h
+bedtools2/src/sampleFile/sampleMain.cpp
+bedtools2/src/reldist/Makefile
+bedtools2/src/reldist/reldist.cpp
+bedtools2/src/reldist/reldist.h
+bedtools2/src/reldist/reldistMain.cpp
+bedtools2/src/regressTest/Makefile
+bedtools2/src/regressTest/RegressTest.cpp
+bedtools2/src/regressTest/RegressTest.h
+bedtools2/src/regressTest/regressTestMain.cpp
+bedtools2/src/randomBed/Makefile
+bedtools2/src/randomBed/randomBed.cpp
+bedtools2/src/randomBed/randomBed.h
+bedtools2/src/randomBed/randomBedMain.cpp
+bedtools2/src/pairToPair/Makefile
+bedtools2/src/pairToPair/pairToPair.cpp
+bedtools2/src/pairToPair/pairToPair.h
+bedtools2/src/pairToPair/pairToPairMain.cpp
+bedtools2/src/pairToBed/Makefile
+bedtools2/src/pairToBed/pairToBed.cpp
+bedtools2/src/pairToBed/pairToBed.h
+bedtools2/src/pairToBed/pairToBedMain.cpp
+bedtools2/src/nucBed/LargeFileSupport.h
+bedtools2/src/nucBed/Makefile
+bedtools2/src/nucBed/nucBed.cpp
+bedtools2/src/nucBed/nucBed.h
+bedtools2/src/nucBed/nucBedMain.cpp
+bedtools2/src/nekSandbox1/FormatGuess.h
+bedtools2/src/nekSandbox1/Makefile
+bedtools2/src/nekSandbox1/nekSandboxMain.cpp
+bedtools2/src/multiIntersectBed/Makefile
+bedtools2/src/multiIntersectBed/multiIntersectBed.cpp
+bedtools2/src/multiIntersectBed/multiIntersectBed.h
+bedtools2/src/multiIntersectBed/multiIntersectBedMain.cpp
+bedtools2/src/multiBamCov/Makefile
+bedtools2/src/multiBamCov/multiBamCov.cpp
+bedtools2/src/multiBamCov/multiBamCov.h
+bedtools2/src/multiBamCov/multiBamCovMain.cpp
+bedtools2/src/mergeFile/Makefile
+bedtools2/src/mergeFile/mergeFile.cpp
+bedtools2/src/mergeFile/mergeFile.h
+bedtools2/src/mergeFile/mergeMain.cpp
+bedtools2/src/maskFastaFromBed/Makefile
+bedtools2/src/maskFastaFromBed/maskFastaFromBed.cpp
+bedtools2/src/maskFastaFromBed/maskFastaFromBed.h
+bedtools2/src/maskFastaFromBed/maskFastaFromBedMain.cpp
+bedtools2/src/mapFile/Makefile
+bedtools2/src/mapFile/mapFile.cpp
+bedtools2/src/mapFile/mapFile.h
+bedtools2/src/mapFile/mapMain.cpp
+bedtools2/src/linksBed/linksBed.cpp
+bedtools2/src/linksBed/linksBed.h
+bedtools2/src/linksBed/linksMain.cpp
+bedtools2/src/linksBed/Makefile
+bedtools2/src/jaccard/Jaccard.cpp
+bedtools2/src/jaccard/Jaccard.h
+bedtools2/src/jaccard/jaccardMain.cpp
+bedtools2/src/jaccard/Makefile
+bedtools2/src/intersectFile/intersectFile.cpp
+bedtools2/src/intersectFile/intersectFile.h
+bedtools2/src/intersectFile/intersectMain.cpp
+bedtools2/src/intersectFile/Makefile
+bedtools2/src/groupBy/groupBy.cpp
+bedtools2/src/groupBy/Makefile
+bedtools2/src/getOverlap/getOverlap.cpp
+bedtools2/src/getOverlap/Makefile
+bedtools2/src/genomeCoverageBed/genomeCoverageBed.cpp
+bedtools2/src/genomeCoverageBed/genomeCoverageBed.h
+bedtools2/src/genomeCoverageBed/genomeCoverageMain.cpp
+bedtools2/src/genomeCoverageBed/Makefile
+bedtools2/src/flankBed/flankBed.cpp
+bedtools2/src/flankBed/flankBed.h
+bedtools2/src/flankBed/flankBedMain.cpp
+bedtools2/src/flankBed/Makefile
+bedtools2/src/fisher/Fisher.cpp
+bedtools2/src/fisher/Fisher.h
+bedtools2/src/fisher/fisherMain.cpp
+bedtools2/src/fisher/kfunc.c
+bedtools2/src/fisher/Makefile
+bedtools2/src/fastaFromBed/fastaFromBed.cpp
+bedtools2/src/fastaFromBed/fastaFromBed.h
+bedtools2/src/fastaFromBed/fastaFromBedMain.cpp
+bedtools2/src/fastaFromBed/Makefile
+bedtools2/src/expand/expand.cpp
+bedtools2/src/expand/Makefile
+bedtools2/src/coverageBed/coverageBed.cpp
+bedtools2/src/coverageBed/coverageBed.h
+bedtools2/src/coverageBed/coverageMain.cpp
+bedtools2/src/coverageBed/Makefile
+bedtools2/src/complementBed/complementBed.cpp
+bedtools2/src/complementBed/complementBed.h
+bedtools2/src/complementBed/complementMain.cpp
+bedtools2/src/complementBed/Makefile
+bedtools2/src/clusterBed/clusterBed.cpp
+bedtools2/src/clusterBed/clusterBed.h
+bedtools2/src/clusterBed/clusterMain.cpp
+bedtools2/src/clusterBed/Makefile
+bedtools2/src/closestFile/closestFile.cpp
+bedtools2/src/closestFile/closestFile.h
+bedtools2/src/closestFile/closestMain.cpp
+bedtools2/src/closestFile/Makefile
+bedtools2/src/bedToIgv/bedToIgv.cpp
+bedtools2/src/bedToIgv/Makefile
+bedtools2/src/bedToBam/bedToBam.cpp
+bedtools2/src/bedToBam/Makefile
+bedtools2/src/bedpeToBam/bedpeToBam.cpp
+bedtools2/src/bedpeToBam/Makefile
+bedtools2/src/bedpeToBam/notes.txt
+bedtools2/src/bed12ToBed6/bed12ToBed6.cpp
+bedtools2/src/bed12ToBed6/Makefile
+bedtools2/src/bamToFastq/bamToFastq.cpp
+bedtools2/src/bamToFastq/bamToFastq.h
+bedtools2/src/bamToFastq/bamToFastqMain.cpp
+bedtools2/src/bamToFastq/Makefile
+bedtools2/src/bamToBed/bamToBed.cpp
+bedtools2/src/bamToBed/Makefile
+bedtools2/src/annotateBed/annotateBed.cpp
+bedtools2/src/annotateBed/annotateBed.h
+bedtools2/src/annotateBed/annotateMain.cpp
+bedtools2/src/annotateBed/Makefile
+bedtools2/scripts/makeBashScripts.py
+bedtools2/genomes/human.hg18.genome
+bedtools2/genomes/human.hg19.genome
+bedtools2/genomes/human.hg38.genome
+bedtools2/genomes/mouse.mm10.genome.txt
+bedtools2/genomes/mouse.mm8.genome
+bedtools2/genomes/mouse.mm9.genome
+bedtools2/docs/_static/
+bedtools2/docs/bedtools.ai
+bedtools2/docs/bedtools.png
+bedtools2/docs/bedtools.swiss.png
+bedtools2/docs/build.sh
+bedtools2/docs/conf.py
+bedtools2/docs/content/
+bedtools2/docs/index.rst
+bedtools2/docs/make.bat
+bedtools2/docs/Makefile
+bedtools2/docs/templates/
+bedtools2/docs/themes/
+bedtools2/docs/themes/rtd/
+bedtools2/docs/themes/rtd/static/
+bedtools2/docs/themes/rtd/theme.conf
+bedtools2/docs/themes/rtd/static/rtd.css_t
+bedtools2/docs/templates/page.html
+bedtools2/docs/templates/sidebar-intro.html
+bedtools2/docs/content/advanced-usage.rst
+bedtools2/docs/content/bedtools-suite.rst
+bedtools2/docs/content/example-usage.rst
+bedtools2/docs/content/faq.rst
+bedtools2/docs/content/general-usage.rst
+bedtools2/docs/content/history.rst
+bedtools2/docs/content/images/
+bedtools2/docs/content/installation.rst
+bedtools2/docs/content/overview.rst
+bedtools2/docs/content/quick-start.rst
+bedtools2/docs/content/related-tools.rst
+bedtools2/docs/content/tips-and-tricks.rst
+bedtools2/docs/content/tools/
+bedtools2/docs/content/tools/annotate.rst
+bedtools2/docs/content/tools/bamtobed.rst
+bedtools2/docs/content/tools/bamtofastq.rst
+bedtools2/docs/content/tools/bed12tobed6.rst
+bedtools2/docs/content/tools/bedpetobam.rst
+bedtools2/docs/content/tools/bedtobam.rst
+bedtools2/docs/content/tools/closest.rst
+bedtools2/docs/content/tools/cluster.rst
+bedtools2/docs/content/tools/complement.rst
+bedtools2/docs/content/tools/coverage.rst
+bedtools2/docs/content/tools/expand.rst
+bedtools2/docs/content/tools/fisher.rst
+bedtools2/docs/content/tools/flank.rst
+bedtools2/docs/content/tools/genomecov.rst
+bedtools2/docs/content/tools/getfasta.rst
+bedtools2/docs/content/tools/groupby.rst
+bedtools2/docs/content/tools/igv.rst
+bedtools2/docs/content/tools/intersect.rst
+bedtools2/docs/content/tools/jaccard.rst
+bedtools2/docs/content/tools/links.rst
+bedtools2/docs/content/tools/makewindows.rst
+bedtools2/docs/content/tools/map.rst
+bedtools2/docs/content/tools/maskfasta.rst
+bedtools2/docs/content/tools/merge.rst
+bedtools2/docs/content/tools/multicov.rst
+bedtools2/docs/content/tools/multiinter.rst
+bedtools2/docs/content/tools/nuc.rst
+bedtools2/docs/content/tools/overlap.rst
+bedtools2/docs/content/tools/pairtobed.rst
+bedtools2/docs/content/tools/pairtopair.rst
+bedtools2/docs/content/tools/random.rst
+bedtools2/docs/content/tools/reldist.rst
+bedtools2/docs/content/tools/shuffle.rst
+bedtools2/docs/content/tools/slop.rst
+bedtools2/docs/content/tools/sort.rst
+bedtools2/docs/content/tools/subtract.rst
+bedtools2/docs/content/tools/tag.rst
+bedtools2/docs/content/tools/unionbedg.rst
+bedtools2/docs/content/tools/window.rst
+bedtools2/docs/content/images/bedtoolsMenu.png
+bedtools2/docs/content/images/galaxy-bedtools.png
+bedtools2/docs/content/images/github-zip-button.png
+bedtools2/docs/content/images/memory-comparo.png
+bedtools2/docs/content/images/speed-comparo.png
+bedtools2/docs/content/images/tool-glyphs/
+bedtools2/docs/content/images/tool-glyphs/cluster-glyph.png
+bedtools2/docs/content/images/tool-glyphs/complement-glyph.png
+bedtools2/docs/content/images/tool-glyphs/flank-glyph.png
+bedtools2/docs/content/images/tool-glyphs/genomecov-glyph.png
+bedtools2/docs/content/images/tool-glyphs/getfasta-glyph.png
+bedtools2/docs/content/images/tool-glyphs/intersect-glyph.png
+bedtools2/docs/content/images/tool-glyphs/jaccard-glyph.ai
+bedtools2/docs/content/images/tool-glyphs/jaccard-glyph.png
+bedtools2/docs/content/images/tool-glyphs/map-glyph.png
+bedtools2/docs/content/images/tool-glyphs/map-glyph.svg
+bedtools2/docs/content/images/tool-glyphs/map-speed-comparo.png
+bedtools2/docs/content/images/tool-glyphs/maskfasta-glyph.png
+bedtools2/docs/content/images/tool-glyphs/maskfasta-glyph.svg
+bedtools2/docs/content/images/tool-glyphs/merge-glyph.png
+bedtools2/docs/content/images/tool-glyphs/reldist-glyph.ai
+bedtools2/docs/content/images/tool-glyphs/reldist-glyph.png
+bedtools2/docs/content/images/tool-glyphs/reldist-plot.png
+bedtools2/docs/content/images/tool-glyphs/shuffle-glyph.png
+bedtools2/docs/content/images/tool-glyphs/slop-glyph.png
+bedtools2/docs/content/images/tool-glyphs/subtract-glyph.png
+bedtools2/docs/content/images/tool-glyphs/window-glyph.png
+bedtools2/docs/_static/labibi.css
+bedtools2/docs/_static/labibi.js
+bedtools2/data/aluY.chr1.bed.gz
+bedtools2/data/gerp.chr1.bed.gz
+bedtools2/data/knownGene.hg18.chr21.bed
+bedtools2/data/knownGene.hg18.chr21.short.bed
+bedtools2/data/refseq.chr1.exons.bed.gz
+bedtools2/data/simpleRepeats.chr1.bed.gz
+Removing intermediate container 065ec40d4999
+ ---> 0d040b42a8b7
+Step 5/17 : WORKDIR /opt2/bedtools2
+ ---> Running in 4347b3d4dbdd
+Removing intermediate container 4347b3d4dbdd
+ ---> 6f5532347b2d
+Step 6/17 : RUN make
+ ---> Running in 5bb82402eeb0
+Building BEDTools:
+=========================================================
+DETECTED_VERSION = v2.22.0
+CURRENT_VERSION  = 
+Updating version file.
+ * Creating BamTools API
+- Building in src/utils/bedFile
+  * compiling bedFile.cpp
+- Building in src/utils/BinTree
+  * compiling BinTree.cpp
+- Building in src/utils/version
+  * compiling version.cpp
+- Building in src/utils/bedGraphFile
+  * compiling bedGraphFile.cpp
+- Building in src/utils/chromsweep
+  * compiling chromsweep.cpp
+- Building in src/utils/Contexts
+  * compiling ContextBase.cpp
+  * compiling ContextIntersect.cpp
+  * compiling ContextFisher.cpp
+  * compiling ContextMap.cpp
+  * compiling ContextSample.cpp
+  * compiling ContextMerge.cpp
+  * compiling ContextJaccard.cpp
+  * compiling ContextClosest.cpp
+- Building in src/utils/FileRecordTools
+- Building in FileReaders
+  * compiling FileReader.cpp
+  * compiling SingleLineDelimTextFileReader.cpp
+  * compiling BamFileReader.cpp
+  * compiling BufferedStreamMgr.cpp
+  * compiling InputStreamMgr.cpp
+- Building in Records
+  * compiling Record.cpp
+  * compiling EmptyRecord.cpp
+  * compiling Bed3Interval.cpp
+  * compiling Bed4Interval.cpp
+  * compiling BedGraphInterval.cpp
+  * compiling Bed5Interval.cpp
+  * compiling Bed6Interval.cpp
+  * compiling BedPlusInterval.cpp
+  * compiling Bed12Interval.cpp
+  * compiling BamRecord.cpp
+  * compiling VcfRecord.cpp
+  * compiling GffRecord.cpp
+  * compiling BlockMgr.cpp
+  * compiling StrandQueue.cpp
+  * compiling RecordMgr.cpp
+  * compiling RecordList.cpp
+  * compiling RecordKeyList.cpp
+  * compiling RecordKeyVector.cpp
+  * compiling FileRecordMgr.cpp
+  * compiling FileRecordMergeMgr.cpp
+- Building in src/utils/general
+  * compiling QuickString.cpp
+  * compiling ParseTools.cpp
+[91mParseTools.cpp: In function 'int str2chrPos(const char*, size_t)':
+ParseTools.cpp:31:7: warning: unused variable 'hasExponent' [-Wunused-variable]
+   31 |  bool hasExponent = false;
+      |       ^~~~~~~~~~~
+[0m  * compiling PushBackStreamBuf.cpp
+  * compiling CompressionTools.cpp
+  * compiling Tokenizer.cpp
+  * compiling CommonHelp.cpp
+- Building in src/utils/gzstream
+g++ -Wall -O2 -D_FILE_OFFSET_BITS=64 -fPIC  -c -o ../../../obj//gzstream.o gzstream.C -I.
+- Building in src/utils/fileType
+  * compiling fileType.cpp
+  * compiling FileRecordTypeChecker.cpp
+- Building in src/utils/bedFilePE
+  * compiling bedFilePE.cpp
+- Building in src/utils/KeyListOps
+  * compiling KeyListOps.cpp
+  * compiling KeyListOpsMethods.cpp
+- Building in src/utils/NewChromsweep
+  * compiling NewChromsweep.cpp
+  * compiling CloseSweep.cpp
+- Building in src/utils/sequenceUtilities
+  * compiling sequenceUtils.cpp
+- Building in src/utils/tabFile
+  * compiling tabFile.cpp
+- Building in src/utils/BamTools
+ * compiling BamAlignment.cpp
+ * compiling BamMultiReader.cpp
+ * compiling BamReader.cpp
+ * compiling BamWriter.cpp
+ * compiling SamHeader.cpp
+ * compiling SamProgram.cpp
+ * compiling SamProgramChain.cpp
+ * compiling SamReadGroup.cpp
+ * compiling SamReadGroupDictionary.cpp
+ * compiling SamSequence.cpp
+ * compiling SamSequenceDictionary.cpp
+ * compiling BamHeader_p.cpp
+ * compiling BamMultiReader_p.cpp
+ * compiling BamRandomAccessController_p.cpp
+ * compiling BamReader_p.cpp
+ * compiling BamWriter_p.cpp
+ * compiling BamIndexFactory_p.cpp
+ * compiling BamStandardIndex_p.cpp
+[91msrc/api/internal/index/BamStandardIndex_p.cpp: In member function 'void BamTools::Internal::BamStandardIndex::WriteLinearOffsets(const int&, BamTools::Internal::BaiLinearOffsetVector&)':
+src/api/internal/index/BamStandardIndex_p.cpp:958:26: warning: comparison of integer expressions of different signedness: 'int64_t' {aka 'long int'} and 'long unsigned int' [-Wsign-compare]
+  958 |     if ( numBytesWritten != (sizeof(offsetCount) + linearOffsets.size()*sizeof(uint64_t)) )
+      |          ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m * compiling BamToolsIndex_p.cpp
+ * compiling BamDeviceFactory_p.cpp
+ * compiling BamFile_p.cpp
+ * compiling BamFtp_p.cpp
+ * compiling BamHttp_p.cpp
+[91msrc/api/internal/io/BamHttp_p.cpp: In member function 'bool BamTools::Internal::BamHttp::SendRequest(size_t)':
+src/api/internal/io/BamHttp_p.cpp:396:63: warning: comparison of integer expressions of different signedness: 'int64_t' {aka 'long int'} and 'const size_t' {aka 'const long unsigned int'} [-Wsign-compare]
+  396 |     return ( WriteToSocket(requestHeader.c_str(), headerSize) == headerSize );
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+[0m * compiling BamPipe_p.cpp
+ * compiling BgzfStream_p.cpp
+ * compiling ByteArray_p.cpp
+ * compiling HostAddress_p.cpp
+[91msrc/api/internal/io/HostAddress_p.cpp: In member function 'bool BamTools::Internal::HostAddress::operator<(const BamTools::Internal::HostAddress&) const':
+src/api/internal/io/HostAddress_p.cpp:266:33: warning: self-comparison always evaluates to false [-Wtautological-compare]
+  266 |             return m_ip4Address < m_ip4Address;
+      |                    ~~~~~~~~~~~~ ^ ~~~~~~~~~~~~
+[0m[91msrc/api/internal/io/HostAddress_p.cpp: In member function 'void BamTools::Internal::HostAddress::Clear()':
+src/api/internal/io/HostAddress_p.cpp:283:49: warning: 'void* memset(void*, int, size_t)' clearing an object of non-trivial type 'struct BamTools::Internal::IPv6Address'; use assignment or value-initialization instead [-Wclass-memaccess]
+  283 |     memset(&m_ip6Address, 0, sizeof(IPv6Address));
+      |                                                 ^
+[0m[91mIn file included from src/api/internal/io/HostAddress_p.cpp:10:
+src/api/internal/io/HostAddress_p.h:30:8: note: 'struct BamTools::Internal::IPv6Address' declared here
+   30 | struct IPv6Address {
+      |        ^~~~~~~~~~~
+[0m[91msrc/api/internal/io/HostAddress_p.cpp: In member function 'std::string BamTools::Internal::HostAddress::GetIPString() const':
+src/api/internal/io/HostAddress_p.cpp:325:13: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  325 |             if ( i != 0 )
+      |             ^~
+[0m[91msrc/api/internal/io/HostAddress_p.cpp:327:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  327 |                 ss << hex << ( (uint16_t(m_ip6Address[2*i]) << 8) |
+      |                 ^~
+[0m * compiling HostInfo_p.cpp
+ * compiling HttpHeader_p.cpp
+ * compiling ILocalIODevice_p.cpp
+ * compiling RollingBuffer_p.cpp
+ * compiling TcpSocketEngine_p.cpp
+ * compiling TcpSocketEngine_unix_p.cpp
+ * compiling TcpSocket_p.cpp
+ * compiling SamFormatParser_p.cpp
+ * compiling SamFormatPrinter_p.cpp
+ * compiling SamHeaderValidator_p.cpp
+ * compiling BamException_p.cpp
+ * linking lib/libbamtools.a
+ar cr lib/libbamtools.a src/api/BamAlignment.o src/api/BamMultiReader.o src/api/BamReader.o src/api/BamWriter.o src/api/SamHeader.o src/api/SamProgram.o src/api/SamProgramChain.o src/api/SamReadGroup.o src/api/SamReadGroupDictionary.o src/api/SamSequence.o src/api/SamSequenceDictionary.o src/api/internal/bam/BamHeader_p.o src/api/internal/bam/BamMultiReader_p.o src/api/internal/bam/BamRandomAccessController_p.o src/api/internal/bam/BamReader_p.o src/api/internal/bam/BamWriter_p.o src/api/internal/index/BamIndexFactory_p.o src/api/internal/index/BamStandardIndex_p.o src/api/internal/index/BamToolsIndex_p.o src/api/internal/io/BamDeviceFactory_p.o src/api/internal/io/BamFile_p.o src/api/internal/io/BamFtp_p.o src/api/internal/io/BamHttp_p.o src/api/internal/io/BamPipe_p.o src/api/internal/io/BgzfStream_p.o src/api/internal/io/ByteArray_p.o src/api/internal/io/HostAddress_p.o src/api/internal/io/HostInfo_p.o src/api/internal/io/HttpHeader_p.o src/api/internal/io/ILocalIODevice_p.o src/api/internal/io/RollingBuffer_p.o src/api/internal/io/TcpSocketEngine_p.o src/api/internal/io/TcpSocketEngine_unix_p.o src/api/internal/io/TcpSocket_p.o src/api/internal/sam/SamFormatParser_p.o src/api/internal/sam/SamFormatPrinter_p.o src/api/internal/sam/SamHeaderValidator_p.o src/api/internal/utils/BamException_p.o
+ranlib lib/libbamtools.a
+- Building in src/utils/BamTools-Ancillary
+  * compiling BamAncillary.cpp
+  * compiling BamAncillary.cpp
+- Building in src/utils/BlockedIntervals
+  * compiling BlockedIntervals.cpp
+- Building in src/utils/Fasta
+  * compiling Fasta.cpp
+[91mFasta.cpp: In member function 'std::string FastaReference::getSequence(std::string)':
+Fasta.cpp:283:14: warning: ignoring return value of 'size_t fread(void*, size_t, size_t, FILE*)', declared with attribute warn_unused_result [-Wunused-result]
+  283 |         fread(seq, sizeof(char), seqlen, file);
+      |         ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[91mFasta.cpp: In member function 'std::string FastaReference::getSubSequence(std::string, int, int)':
+Fasta.cpp:325:14: warning: ignoring return value of 'size_t fread(void*, size_t, size_t, FILE*)', declared with attribute warn_unused_result [-Wunused-result]
+  325 |         fread(seq, sizeof(char), (off_t) seqlen, file);
+      |         ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m  * compiling split.cpp
+- Building in src/utils/VectorOps
+  * compiling VectorOps.cpp
+- Building in src/utils/GenomeFile
+  * compiling GenomeFile.cpp
+[91mGenomeFile.cpp: In member function 'void GenomeFile::loadGenomeFileIntoMap()':
+GenomeFile.cpp:60:26: warning: variable 'c2' set but not used [-Wunused-but-set-variable]
+   60 |                     long c2;
+      |                          ^~
+[0m  * compiling NewGenomeFile.cpp
+- Building in src/utils/RecordOutputMgr
+  * compiling RecordOutputMgr.cpp
+- Building in src/annotateBed
+  * compiling annotateMain.cpp
+[91mannotateMain.cpp: In function 'int annotate_main(int, char**)':
+annotateMain.cpp:39:10: warning: variable 'haveTitles' set but not used [-Wunused-but-set-variable]
+   39 |     bool haveTitles     = false;
+      |          ^~~~~~~~~~
+[0m  * compiling annotateBed.cpp
+- Building in src/bamToBed
+  * compiling bamToBed.cpp
+[91mbamToBed.cpp: In function 'int bamtobed_main(int, char**)':
+bamToBed.cpp:88:10: warning: variable 'useAlignmentScore' set but not used [-Wunused-but-set-variable]
+   88 |     bool useAlignmentScore = false;
+      |          ^~~~~~~~~~~~~~~~~
+[0m- Building in src/bamToFastq
+  * compiling bamToFastqMain.cpp
+[91mbamToFastqMain.cpp: In function 'int bamtofastq_main(int, char**)':
+bamToFastqMain.cpp:38:10: warning: variable 'haveFastq2' set but not used [-Wunused-but-set-variable]
+   38 |     bool haveFastq2    = false;
+      |          ^~~~~~~~~~
+[0m  * compiling bamToFastq.cpp
+- Building in src/bedToBam
+  * compiling bedToBam.cpp
+[91mbedToBam.cpp: In function 'int bedtobam_main(int, char**)':
+bedToBam.cpp:60:10: warning: variable 'haveMapQual' set but not used [-Wunused-but-set-variable]
+   60 |     bool haveMapQual     = false;
+      |          ^~~~~~~~~~~
+[0m- Building in src/bedpeToBam
+  * compiling bedpeToBam.cpp
+[91mbedpeToBam.cpp: In function 'int bedpetobam_main(int, char**)':
+bedpeToBam.cpp:61:10: warning: variable 'haveMapQual' set but not used [-Wunused-but-set-variable]
+   61 |     bool haveMapQual     = false;
+      |          ^~~~~~~~~~~
+[0m- Building in src/bedToIgv
+  * compiling bedToIgv.cpp
+- Building in src/bed12ToBed6
+  * compiling bed12ToBed6.cpp
+- Building in src/closestFile
+  * compiling closestMain.cpp
+  * compiling closestFile.cpp
+- Building in src/clusterBed
+  * compiling clusterMain.cpp
+[91mclusterMain.cpp: In function 'int cluster_main(int, char**)':
+clusterMain.cpp:38:10: warning: variable 'haveMaxDistance' set but not used [-Wunused-but-set-variable]
+   38 |     bool haveMaxDistance = false;
+      |          ^~~~~~~~~~~~~~~
+[0m  * compiling clusterBed.cpp
+- Building in src/complementBed
+  * compiling complementMain.cpp
+  * compiling complementBed.cpp
+- Building in src/coverageBed
+  * compiling coverageMain.cpp
+  * compiling coverageBed.cpp
+- Building in src/expand
+  * compiling expand.cpp
+- Building in src/fastaFromBed
+  * compiling fastaFromBedMain.cpp
+  * compiling fastaFromBed.cpp
+- Building in src/flankBed
+  * compiling flankBedMain.cpp
+  * compiling flankBed.cpp
+- Building in src/genomeCoverageBed
+  * compiling genomeCoverageMain.cpp
+  * compiling genomeCoverageBed.cpp
+- Building in src/getOverlap
+  * compiling getOverlap.cpp
+[91mgetOverlap.cpp: In function 'int getoverlap_main(int, char**)':
+getOverlap.cpp:44:10: warning: variable 'haveColumns' set but not used [-Wunused-but-set-variable]
+   44 |     bool haveColumns = false;
+      |          ^~~~~~~~~~~
+[0m- Building in src/groupBy
+  * compiling groupBy.cpp
+[91mgroupBy.cpp: In function 'int groupby_main(int, char**)':
+groupBy.cpp:80:10: warning: variable 'haveOps' set but not used [-Wunused-but-set-variable]
+   80 |     bool haveOps           = true;
+      |          ^~~~~~~
+[0m- Building in src/intersectFile
+  * compiling intersectMain.cpp
+  * compiling intersectFile.cpp
+- Building in src/fisher
+  * compiling fisherMain.cpp
+  * compiling Fisher.cpp
+- Building in src/jaccard
+  * compiling jaccardMain.cpp
+  * compiling Jaccard.cpp
+- Building in src/linksBed
+  * compiling linksMain.cpp
+  * compiling linksBed.cpp
+- Building in src/maskFastaFromBed
+  * compiling maskFastaFromBedMain.cpp
+  * compiling maskFastaFromBed.cpp
+- Building in src/mapFile
+  * compiling mapMain.cpp
+  * compiling mapFile.cpp
+- Building in src/mergeFile
+  * compiling mergeMain.cpp
+  * compiling mergeFile.cpp
+- Building in src/multiBamCov
+  * compiling multiBamCovMain.cpp
+[91mmultiBamCovMain.cpp: In function 'int multibamcov_main(int, char**)':
+multiBamCovMain.cpp:38:10: warning: variable 'haveBed' set but not used [-Wunused-but-set-variable]
+   38 |     bool haveBed           = false;
+      |          ^~~~~~~
+multiBamCovMain.cpp:39:10: warning: variable 'haveBams' set but not used [-Wunused-but-set-variable]
+   39 |     bool haveBams          = false;
+      |          ^~~~~~~~
+multiBamCovMain.cpp:47:10: warning: variable 'haveFraction' set but not used [-Wunused-but-set-variable]
+   47 |     bool haveFraction       = false;
+      |          ^~~~~~~~~~~~
+[0m  * compiling multiBamCov.cpp
+- Building in src/multiIntersectBed
+  * compiling multiIntersectBedMain.cpp
+[91mmultiIntersectBedMain.cpp: In function 'int multiintersect_main(int, char**)':
+multiIntersectBedMain.cpp:45:10: warning: variable 'haveFiles' set but not used [-Wunused-but-set-variable]
+   45 |     bool haveFiles         = false;
+      |          ^~~~~~~~~
+multiIntersectBedMain.cpp:47:10: warning: variable 'haveGenome' set but not used [-Wunused-but-set-variable]
+   47 |     bool haveGenome        = false;
+      |          ^~~~~~~~~~
+multiIntersectBedMain.cpp:48:10: warning: variable 'haveFiller' set but not used [-Wunused-but-set-variable]
+   48 |     bool haveFiller        = true;
+      |          ^~~~~~~~~~
+[0m  * compiling multiIntersectBed.cpp
+- Building in src/nekSandbox1
+  * compiling nekSandboxMain.cpp
+- Building in src/nucBed
+  * compiling nucBedMain.cpp
+  * compiling nucBed.cpp
+- Building in src/pairToBed
+  * compiling pairToBedMain.cpp
+[91mpairToBedMain.cpp: In function 'int pairtobed_main(int, char**)':
+pairToBedMain.cpp:43:10: warning: variable 'haveFraction' set but not used [-Wunused-but-set-variable]
+   43 |     bool haveFraction       = false;
+      |          ^~~~~~~~~~~~
+[0m  * compiling pairToBed.cpp
+[91mpairToBed.cpp: In member function 'void BedIntersectPE::FindSpanningOverlaps(const BEDPE&, std::vector<BED>&, const string&)':
+pairToBed.cpp:257:12: warning: variable 'spanLength' set but not used [-Wunused-but-set-variable]
+  257 |     CHRPOS spanLength = 0;
+      |            ^~~~~~~~~~
+[0m[91mpairToBed.cpp: In member function 'bool BedIntersectPE::FindOneOrMoreSpanningOverlaps(const BEDPE&, const string&)':
+pairToBed.cpp:310:9: warning: variable 'spanLength' set but not used [-Wunused-but-set-variable]
+  310 |     int spanLength = 0;
+      |         ^~~~~~~~~~
+[0m- Building in src/pairToPair
+  * compiling pairToPairMain.cpp
+[91mpairToPairMain.cpp: In function 'int pairtopair_main(int, char**)':
+pairToPairMain.cpp:44:10: warning: variable 'haveFraction' set but not used [-Wunused-but-set-variable]
+   44 |     bool haveFraction = false;
+      |          ^~~~~~~~~~~~
+[0m  * compiling pairToPair.cpp
+[91mpairToPair.cpp: In member function 'void PairToPair::FindOverlaps(const BEDPE&)':
+pairToPair.cpp:112:14: warning: variable 'found1' set but not used [-Wunused-but-set-variable]
+  112 |         bool found1 = false;
+      |              ^~~~~~
+pairToPair.cpp:113:14: warning: variable 'found2' set but not used [-Wunused-but-set-variable]
+  113 |         bool found2 = false;
+      |              ^~~~~~
+[0m- Building in src/randomBed
+  * compiling randomBedMain.cpp
+  * compiling randomBed.cpp
+- Building in src/regressTest
+compiling RegressTest.cpp
+[91mRegressTest.cpp: In member function 'bool RegressTest::executeAndCompareCorrectness(const fileListType&)':
+RegressTest.cpp:431:8: warning: ignoring return value of 'int system(const char*)', declared with attribute warn_unused_result [-Wunused-result]
+  431 |  system(diffCmd.c_str());
+      |  ~~~~~~^~~~~~~~~~~~~~~~~
+[0m[91mRegressTest.cpp: In member function 'bool RegressTest::startMemoryProfile(bool)':
+RegressTest.cpp:573:7: warning: ignoring return value of 'char* fgets(char*, int, FILE*)', declared with attribute warn_unused_result [-Wunused-result]
+  573 |  fgets(sLine, 4192, fp);
+      |  ~~~~~^~~~~~~~~~~~~~~~~
+[0m[91mRegressTest.cpp: In member function 'bool RegressTest::calcMemoryStats()':
+RegressTest.cpp:622:8: warning: ignoring return value of 'char* fgets(char*, int, FILE*)', declared with attribute warn_unused_result [-Wunused-result]
+  622 |   fgets(sLine, 4192, fp);
+      |   ~~~~~^~~~~~~~~~~~~~~~~
+[0mcompiling regressTestMain.cpp
+- Building in src/reldist
+  * compiling reldistMain.cpp
+  * compiling reldist.cpp
+- Building in src/sampleFile
+  * compiling sampleMain.cpp
+  * compiling SampleFile.cpp
+- Building in src/shuffleBed
+  * compiling shuffleBedMain.cpp
+  * compiling shuffleBed.cpp
+- Building in src/slopBed
+  * compiling slopBedMain.cpp
+  * compiling slopBed.cpp
+- Building in src/sortBed
+  * compiling sortMain.cpp
+  * compiling sortBed.cpp
+- Building in src/subtractBed
+  * compiling subtractMain.cpp
+  * compiling subtractBed.cpp
+- Building in src/tagBam
+  * compiling tagBamMain.cpp
+[91mtagBamMain.cpp: In function 'int tagbam_main(int, char**)':
+tagBamMain.cpp:38:10: warning: variable 'haveFraction' set but not used [-Wunused-but-set-variable]
+   38 |     bool haveFraction     = false;
+      |          ^~~~~~~~~~~~
+[0m  * compiling tagBam.cpp
+- Building in src/unionBedGraphs
+  * compiling unionBedGraphsMain.cpp
+[91munionBedGraphsMain.cpp: In function 'int unionbedgraphs_main(int, char**)':
+unionBedGraphsMain.cpp:46:10: warning: variable 'haveFiles' set but not used [-Wunused-but-set-variable]
+   46 |     bool haveFiles         = false;
+      |          ^~~~~~~~~
+unionBedGraphsMain.cpp:48:10: warning: variable 'haveGenome' set but not used [-Wunused-but-set-variable]
+   48 |     bool haveGenome        = false;
+      |          ^~~~~~~~~~
+unionBedGraphsMain.cpp:49:10: warning: variable 'haveFiller' set but not used [-Wunused-but-set-variable]
+   49 |     bool haveFiller        = true;
+      |          ^~~~~~~~~~
+[0m  * compiling unionBedGraphs.cpp
+- Building in src/windowBed
+  * compiling windowMain.cpp
+  * compiling windowBed.cpp
+- Building in src/windowMaker
+  * compiling windowMakerMain.cpp
+  * compiling windowMaker.cpp
+- Building main bedtools binary.
+done.
+- Creating executables for old CLI.
+done.
+Removing intermediate container 5bb82402eeb0
+ ---> d0c93bca2e6f
+Step 7/17 : COPY Dockerfile.${TAG} /opt2/Dockerfile.${TAG}
+ ---> 96ac7817d0cb
+Step 8/17 : COPY printversions.bash /opt2/printversions
+ ---> 044068838b28
+Step 9/17 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile &&     chmod a+rx /opt2/printversions
+ ---> Running in 815618250af2
+Removing intermediate container 815618250af2
+ ---> 232a7ef54a12
+Step 10/17 : RUN /opt2/printversions > /opt2/versions.txt; exit 0
+ ---> Running in fd3bdeed9127
+[91m
+[0m[91mProgram: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.17-r1188
+Contact: Heng Li <lh3@sanger.ac.uk>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries
+
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
+
+[0m[91mopenjdk version "1.8.0_342"[0m[91m
+[0m[91mOpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07[0m[91m)[0m[91m
+[0m[91mOpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)[0m[91m
+[0m[91mjavac 1.8.0_342
+[0m[91m[1m[31mUSAGE: PicardCommandLine [32m<program name>[1m[31m [-h]
+
+[0m[1m[31mAvailable Programs:
+[0m[37m--------------------------------------------------------------------------------------
+[0m[31mBase Calling:                                    Tools that process sequencing machine data, e.g. Illumina base calls, and detect sequencing level attributes, e.g. adapters[0m
+[32m    CheckIlluminaDirectory                       [31m[36mAsserts the validity for specified Illumina basecalling data.  [0m
+[32m    CollectIlluminaBasecallingMetrics            [31m[36mCollects Illumina Basecalling metrics for a sequencing run.  [0m
+[32m    CollectIlluminaLaneMetrics                   [31m[36mCollects Illumina lane metrics for the given BaseCalling analysis directory.[0m
+[32m    ExtractIlluminaBarcodes                      [31m[36mTool determines the barcode for each read in an Illumina lane.  [0m
+[32m    IlluminaBasecallsToFastq                     [31m[36mGenerate FASTQ file(s) from Illumina basecall read data.  [0m
+[32m    IlluminaBasecallsToSam                       [31m[36mTransforms raw Illumina sequencing data into an unmapped SAM, BAM or CRAM file.[0m
+[32m    MarkIlluminaAdapters                         [31m[36mReads a SAM/BAM/CRAM file and rewrites it with new adapter-trimming tags.  [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mDiagnostics and Quality Control:                 Tools that collect sequencing quality related and comparative metrics[0m
+[32m    AccumulateQualityYieldMetrics                [31m[36mCombines multiple QualityYieldMetrics files into a single file.[0m
+[32m    AccumulateVariantCallingMetrics              [31m[36mCombines multiple Variant Calling Metrics files into a single file[0m
+[32m    BamIndexStats                                [31m[36mGenerate index statistics from a BAM file[0m
+[32m    CalculateFingerprintMetrics                  [31m[36mCalculate statistics on fingerprints, checking their viability[0m
+[32m    CalculateReadGroupChecksum                   [31m[36mCreates a hash code based on the read groups (RG).  [0m
+[32m    CheckDuplicateMarking                        [31m[36mChecks the consistency of duplicate markings.[0m
+[32m    CheckFingerprint                             [31m[36mComputes a fingerprint from the supplied input (SAM/BAM/CRAM or VCF) file and compares it to the provided genotypes[0m
+[32m    CheckTerminatorBlock                         [31m[36mAsserts the provided gzip file's (e.g., BAM) last block is well-formed; RC 100 otherwise[0m
+[32m    ClusterCrosscheckMetrics                     [31m[36mClusters the results of a CrosscheckFingerprints run by LOD score[0m
+[32m    CollectAlignmentSummaryMetrics               [31m[36m<b>Produces a summary of alignment metrics from a SAM or BAM file.</b>  [0m
+[32m    CollectArraysVariantCallingMetrics           [31m[36mCollects summary and per-sample from the provided arrays VCF file[0m
+[32m    CollectBaseDistributionByCycle               [31m[36mChart the nucleotide distribution per cycle in a SAM or BAM file[0m
+[32m    CollectGcBiasMetrics                         [31m[36mCollect metrics regarding GC bias. [0m
+[32m    CollectHiSeqXPfFailMetrics                   [31m[36mClassify PF-Failing reads in a HiSeqX Illumina Basecalling directory into various categories.[0m
+[32m    CollectHsMetrics                             [31m[36mCollects hybrid-selection (HS) metrics for a SAM or BAM file.  [0m
+[32m    CollectIndependentReplicateMetrics           [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mEstimates the rate of independent replication rate of reads within a bam. 
+[0m
+[32m    CollectInsertSizeMetrics                     [31m[36mCollect metrics about the insert size distribution of a paired-end library. [0m
+[32m    CollectJumpingLibraryMetrics                 [31m[36mCollect jumping library metrics. [0m
+[32m    CollectMultipleMetrics                       [31m[36mCollect multiple classes of metrics. [0m
+[32m    CollectOxoGMetrics                           [31m[36mCollect metrics to assess oxidative artifacts.[0m
+[32m    CollectQualityYieldMetrics                   [31m[36mCollect metrics about reads that pass quality thresholds and Illumina-specific filters.  [0m
+[32m    CollectRawWgsMetrics                         [31m[36mCollect whole genome sequencing-related metrics.  [0m
+[32m    CollectRnaSeqMetrics                         [31m[36mProduces RNA alignment metrics for a SAM or BAM file.  [0m
+[32m    CollectRrbsMetrics                           [31m[36m<b>Collects metrics from reduced representation bisulfite sequencing (Rrbs) data.</b>  [0m
+[32m    CollectSamErrorMetrics                       [31m[36mProgram to collect error metrics on bases stratified in various ways.[0m
+[32m    CollectSequencingArtifactMetrics             [31m[36mCollect metrics to quantify single-base sequencing artifacts.  [0m
+[32m    CollectTargetedPcrMetrics                    [31m[36mCalculate PCR-related metrics from targeted sequencing data. [0m
+[32m    CollectVariantCallingMetrics                 [31m[36mCollects per-sample and aggregate (spanning all samples) metrics from the provided VCF file[0m
+[32m    CollectWgsMetrics                            [31m[36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.[0m
+[32m    CollectWgsMetricsWithNonZeroCoverage         [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mCollect metrics about coverage and performance of whole genome sequencing (WGS) experiments.  [0m
+[32m    CompareMetrics                               [31m[36mCompare two metrics files.[0m
+[32m    CompareSAMs                                  [31m[36mCompare two input SAM/BAM/CRAM files.  [0m
+[32m    ConvertHaplotypeDatabaseToVcf                [31m[36mConvert Haplotype database file to vcf[0m
+[32m    ConvertSequencingArtifactToOxoG              [31m[36mExtract OxoG metrics from generalized artifacts metrics.  [0m
+[32m    CrosscheckFingerprints                       [31m[36mChecks that all data in the input files appear to have come from the same individual[0m
+[32m    CrosscheckReadGroupFingerprints              [31m[36mDEPRECATED: USE CrosscheckFingerprints. [0m
+[32m    EstimateLibraryComplexity                    [31m[36mEstimates the numbers of unique molecules in a sequencing library.  [0m
+[32m    ExtractFingerprint                           [31m[36mComputes a fingerprint from the input file.[0m
+[32m    IdentifyContaminant                          [31m[36mComputes a fingerprint from the supplied SAM/BAM file, given a contamination estimate.[0m
+[32m    LiftOverHaplotypeMap                         [31m[36mLifts over a haplotype database from one reference to another[0m
+[32m    MeanQualityByCycle                           [31m[36mCollect mean quality by cycle.[0m
+[32m    QualityScoreDistribution                     [31m[36mChart the distribution of quality scores.  [0m
+[32m    ValidateSamFile                              [31m[36mValidates a SAM/BAM/CRAM file.[0m
+[32m    ViewSam                                      [31m[36mPrints a SAM or BAM file to the screen[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mGenotyping Arrays Manipulation:                  Tools that manipulate data generated by Genotyping arrays[0m
+[32m    BpmToNormalizationManifestCsv                [31m[36mProgram to convert an Illumina bpm file into a bpm.csv file.[0m
+[32m    CombineGenotypingArrayVcfs                   [31m[36mProgram to combine multiple genotyping array VCF files into one VCF.[0m
+[32m    CompareGtcFiles                              [31m[36mCompares two GTC files.[0m
+[32m    CreateBafRegressMetricsFile                  [31m[36mProgram to generate a picard metrics file from the output of the bafRegress tool.[0m
+[32m    CreateExtendedIlluminaManifest               [31m[36mCreate an Extended Illumina Mani[0m[91mfest for usage by the Picard tool GtcToVcf[0m
+[32m    CreateVerifyIDIntensityContaminationMetricsFile    [31m[36mProgram to generate a picard metrics file from the output of the VerifyIDIntensity tool.[0m
+[32m    GtcToVcf                                     [31m[36mProgram to convert an Illumina GTC file to a VCF[0m
+[32m    MergePedIntoVcf                              [31m[36mProgram to merge a single-sample ped file from zCall into a single-sample VCF.[0m
+[32m    VcfToAdpc                                    [31m[36mProgram to convert an Arrays VCF to an ADPC file.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mIntervals Manipulation:                          Tools that process genomic intervals in various formats[0m
+[32m    BedToIntervalList                            [31m[36mConverts a BED file to a Picard Interval List.  [0m
+[32m    IntervalListToBed                            [31m[36mConverts an Picard IntervalList file to a BED file.[0m
+[32m    IntervalListTools                            [31m[36mA tool for performing various IntervalList manipulations[0m
+[32m    LiftOverIntervalList                         [31m[36mLifts over an interval list from one reference build to another. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mOther:                                           Miscellaneous tools, e.g. those that aid in data streaming[0m
+[32m    FifoBuffer                                   [31m[36mProvides a large, FIFO buffer that can be used to buffer input and output streams between programs.[0m
+[32m    SortGff                                      [31m[36mSorts a gff3 file, and adds flush directives[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mRead Data Manipulation:                          Tools that manipulate read data in SAM, BAM or CRAM format[0m
+[32m    AddCommentsToBam                             [31m[36mAdds comments to the header of a BAM file.[0m
+[32m    AddOATag                                     [31m[36mRecord current alignment information to OA tag.[0m
+[32m    AddOrReplaceReadGroups                       [31m[36mAssigns all the reads in a file to a single new read-group.[0m
+[32m    BamToBfq                                     [31m[36mConverts a BAM file into a BFQ (binary fastq formatted) file[0m
+[32m    BuildBamIndex                                [31m[36mGenerates a BAM index ".bai" file.  [0m
+[32m    CleanSam                                     [31m[36mCleans a SAM/BAM/CRAM files, soft-clipping beyond-end-of-reference alignments and setting MAPQ to 0 for unmapped reads[0m
+[32m    CollectDuplicateMetrics                      [31m[36mCollect Duplicate metrics from marked file.[0m
+[32m    DownsampleSam                                [31m[36mDownsample a SAM or BAM file.[0m
+[32m    FastqToSam                                   [31m[36mConverts a FASTQ file to an unaligned BAM or SAM file[0m
+[32m    FilterSamReads                               [31m[36mSubsets reads from a SAM/BAM/CRAM file by applying one of several filters.[0m
+[32m    FixMateInformation                           [31m[36mVerify mate-pair information between mates and fix if needed.[0m
+[32m    GatherBamFiles                               [31m[36mConcatenate efficiently BAM files that resulted from a scattered parallel analysis[0m
+[32m    MarkDuplicates                               [31m[36mIdentifies duplicate reads.  [0m
+[32m    MarkDuplicatesWithMateCigar                  [31m[36mIdentifies duplicate reads, accounting for mate CIGAR.  [0m
+[32m    MergeBamAlignment                            [31m[36mMerge alignment data from a SAM or BAM with data in an unmapped BAM file.  [0m
+[32m    MergeSamFiles                                [31m[36mMerges multiple SAM/BAM/CRAM (and/or) files into a single file.  [0m
+[32m    PositionBasedDownsampleSam                   [31m[36mDownsample a SAM or BAM file to retain a subset of the reads based on the reads location in each tile in the flowcell.[0m
+[32m    ReorderSam                                   [31m[36mReorders reads in a SAM or BAM file to match ordering in a second reference file.[0m
+[32m    ReplaceSamHeader                             [31m[36mReplaces the SAMFileHeader in a SAM/BAM/CRAM file.  [0m
+[32m    RevertOriginalBaseQualitiesAndAddMateCigar   [31m[36mReverts the original base qualities and adds the mate cigar tag to read-group files[0m
+[32m    RevertSam                                    [31m[36mReverts SAM/BAM/CRAM files to a previous state.  [0m
+[32m    SamFormatConverter                           [31m[36mConvert a BAM file to a SAM file, or a SAM to a BAM[0m
+[32m    SamToFastq                                   [31m[36mConverts a SAM/BAM/CRAM file to FASTQ.[0m
+[32m    SamToFastqWithTags                           [31m[36mConverts a SAM or BAM file to FASTQ alongside FASTQs created from tags.[0m
+[32m    SetNmAndUqTags                               [31m[36mDEPRECATED: Use SetNmMdAndUqTags instead.[0m
+[32m    SetNmMdAndUqTags                             [31m[36mFixes the NM, MD, and UQ tags in a SAM/BAM/CRAM file [0m
+[32m    SimpleMarkDuplicatesWithMateCigar            [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mExamines aligned records in the supplied SAM or BAM file to locate duplicate molecules.[0m
+[32m    SortSam                                      [31m[36mSorts a SAM, BAM or CRAM file.  [0m
+[32m    SplitSamByLibrary                            [31m[36mSplits a SAM/BAM/CRAM file into individual files by library[0m
+[32m    SplitSamByNumberOfReads                      [31m[36mSplits a SAM/BAM/CRAM file to multiple files.[0m
+[32m    UmiAwareMarkDuplicatesWithMateCigar          [31m**EXPERIMENTAL - USE AT YOUR OWN RISK** [36mIdentifies duplicate reads using information from read positions and UMIs. [0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mReference:                                       Tools that analyze and manipulate FASTA format references[0m
+[32m    BaitDesigner                                 [31m[36mDesigns oligonucleotide baits for hybrid selection reactions.[0m
+[32m    CreateSequenceDictionary                     [31m[36mCreates a sequence dictionary for a reference sequence.  [0m
+[32m    ExtractSequences                             [31m[36mSubsets intervals from a reference sequence to a new FASTA file.[0m
+[32m    NonNFastaSize                                [31m[36mCounts the number of non-N bases in a fasta file.[0m
+[32m    NormalizeFasta                               [31m[36mNormalizes lines of sequence in a FASTA file to be of the same length.[0m
+[32m    ScatterIntervalsByNs                         [31m[36mWrites an interval list created by splitting a reference at Ns.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Evaluation and Refinement:               Tools that evaluate and refine variant calls, e.g. with annotations not offered by the engine[0m
+[32m    FindMendelianViolations                      [31m[36mFinds mendelian violations of all types within a VCF[0m
+[32m    GenotypeConcordance                          [31m[36mCalculates the concordance between genotype data of one sample in each of two VCFs - truth (or reference) vs. calls.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Filtering:                               Tools that filter variants by annotating the FILTER column[0m
+[32m    FilterVcf                                    [31m[36mHard filters a VCF.[0m
+
+[37m--------------------------------------------------------------------------------------
+[0m[31mVariant Manipulation:                            Tools that manipulate variant call format (VCF) data[0m
+[32m    FixVcfHeader                                 [31m[36mReplaces or fixes a VCF header.[0m
+[32m    GatherVcfs                                   [31m[36mGathers multiple VCF files from a scatter operation into a single VCF file[0m
+[32m    LiftoverVcf                                  [31m[36mLifts over a VCF file from one reference build to another.  [0m
+[32m    MakeSitesOnlyVcf                             [31m[36mCreates a VCF that contains all the site-level information for all records in the input VCF but no genotype information.[0m
+[32m    MakeVcfSampleNameMap                         [31m[36mCreates a TSV from sample name to VCF/GVCF path, with one line per input.[0m
+[32m    MergeVcfs                                    [31m[36mCombines multiple variant files into a single variant file[0m
+[32m    RenameSampleInVcf                            [31m[36mRenames a sample within a VCF or BCF.[0m
+[32m    SortVcf                                      [31m[36mSorts one or more VCF files.  [0m
+[32m    SplitVcfs                                    [31m[36mSplits SNPs and INDELs into separate files.  [0m
+[32m    UpdateVcfSequenceDictionary                  [31m[36mTakes a VCF and a second file that contains a sequence dictionary and updates the VCF with the new sequence dictionary.[0m
+[32m    VcfFormatConverter                           [31m[36mConverts VCF to BCF or BCF to VCF.  [0m
+[32m    VcfToIntervalList                            [31m[36mConverts a VCF or BCF file to a Picard Interval List[0m
+
+[37m--------------------------------------------------------------------------------------
+
+[0m[0mRemoving intermediate container fd3bdeed9127
+ ---> 87c0b7bfcdd2
+Step 11/17 : RUN chmod a+r /opt2/versions.txt
+ ---> Running in 45bcb5399e52
+Removing intermediate container 45bcb5399e52
+ ---> 2f1f3871b60a
+Step 12/17 : WORKDIR /data2
+ ---> Running in d1ebc359e47c
+Removing intermediate container d1ebc359e47c
+ ---> fac27c9aebbe
+Step 13/17 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 8625de9ad776
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 8625de9ad776
+ ---> a0426c5bd138
+Step 14/17 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in 2c1745cad672

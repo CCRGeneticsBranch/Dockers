@@ -1,0 +1,149 @@
+Sending build context to Docker daemon  2.275MB
+Step 1/21 : FROM nciccbr/ccrgb_qctools:v1.8
+ ---> de4af8ea3db8
+Step 2/21 : ENV TAG="v1.8.1"
+ ---> Running in 1ed34fa0f130
+Removing intermediate container 1ed34fa0f130
+ ---> 2906a6d2dbff
+Step 3/21 : RUN Rscript -e 'install.packages("reshape2")'
+ ---> Running in b7e45ec3641c
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/reshape2_1.4.4.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 37307 bytes (36 KB)
+[0m[91m=====================[0m[91m======================[0m[91m=======
+downloaded 36 KB
+
+[0m[91m* installing *source* package 'reshape2' ...
+[0m[91m** package 'reshape2' successfully unpacked and MD5 sums checked
+[0m[91m** using staged installation
+[0m[91m** libs
+[0mg++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/Rcpp/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/usr/local/lib/R/site-library/Rcpp/include"   -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-jbaK_j/r-base-3.6.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c melt.cpp -o melt.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o reshape2.so RcppExports.o melt.o -L/usr/lib/R/lib -lR
+[91minstalling to /usr/local/lib/R/site-library/00LOCK-reshape2/00new/reshape2/libs
+[0m[91m** R
+[0m[91m** data
+[0m[91m*** moving datasets to lazyload DB
+[0m[91m** inst
+[0m[91m** byte-compile and prepare package for lazy loading
+[0m[91m** help
+[0m[91m*** installing help indices
+[0m[91m** building package indices
+[0m[91m** testing if installed package can be loaded from temporary location
+[0m[91m** checking absolute paths in shared objects and dynamic libraries
+[0m[91m** testing if installed package can be loaded from final location
+[0m[91m** testing if installed package keeps a record of temporary installation path
+[0m[91m* DONE (reshape2)
+[0m[91m
+The downloaded source packages are in
+	'/tmp/Rtmp9cMjtK/downloaded_packages'
+[0mRemoving intermediate container b7e45ec3641c
+ ---> 8b2d80db5b93
+Step 4/21 : RUN Rscript -e 'install.packages("grDevices")'
+ ---> Running in c2b3e71c03a3
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mWarning messages:
+1: package 'grDevices' is not available (for R version 3.6.3) 
+2: package 'grDevices' is a base package, and should not be updated 
+[0mRemoving intermediate container c2b3e71c03a3
+ ---> 585e6d85d559
+Step 5/21 : RUN Rscript -e 'install.packages("graphics")'
+ ---> Running in 92838b42553f
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mWarning messages:
+1: package 'graphics' is not available (for R version 3.6.3) 
+2: package 'graphics' is a base package, and should not be updated 
+[0mRemoving intermediate container 92838b42553f
+ ---> 721bdba04f96
+Step 6/21 : RUN Rscript -e 'install.packages("utils")'
+ ---> Running in 83c5b9f3dddd
+[91mInstalling package into '/usr/local/lib/R/site-library'
+(as 'lib' is unspecified)
+[0m[91mWarning messages:
+1: package 'utils' is not available (for R version 3.6.3) 
+[0m[91m2: package 'utils' is a base package, and should not be updated 
+[0mRemoving intermediate container 83c5b9f3dddd
+ ---> 8b4941b14505
+Step 7/21 : RUN Rscript -e 'BiocManager::install("BSgenome")'
+ ---> Running in f857bd693b82
+[91m'getOption("repos")' replaces Bioconductor standard repositories, see
+'?repositories' for details
+
+replacement repositories:
+    CRAN: https://cloud.r-project.org
+
+[0m[91mBioconductor version 3.10 (BiocManager 1.30.19), R 3.6.3 (2020-02-29)
+[0m[91mInstalling package(s) 'BSgenome'
+[0m[91malso installing the dependencies 'matrixStats', 'formatR', 'Biobase', 'DelayedArray', 'lambda.r', 'futile.options', 'SummarizedExperiment', 'futile.logger', 'snow', 'BH', 'XML', 'GenomicAlignments', 'BiocParallel', 'Rhtslib', 'Biostrings', 'rtracklayer', 'Rsamtools'
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/matrixStats_0.63.0.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 202957 bytes (198 KB)
+===[0m[91m==[0m[91m=====[0m[91m====[0m[91m=[0m[91m========[0m[91m=[0m[91m===[0m[91m=[0m[91m===[0m[91m=====[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m===[0m[91m==[0m[91m===
+downloaded 198 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/formatR_1.13.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 96088 bytes (93 KB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=======[0m[91m=[0m[91m========[0m[91m========[0m[91m=========[0m[91m========
+downloaded 93 KB
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/Biobase_2.46.0.tar.gz'
+[0m[91mContent type 'application/octet-stream'[0m[91m length 1657663 bytes (1.6 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=
+downloaded 1.6 MB
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/DelayedArray_0.12.3.tar.gz'
+[0m[91mContent type 'application/octet-stream'[0m[91m length 558370 bytes (545 KB)
+[0m[91m=[0m[91m==[0m[91m=[0m[91m===[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m======================[0m[91m=[0m[91m========
+downloaded 545 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/lambda.r_1.2.4.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 25666 bytes (25 KB)
+===============================[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m====[0m[91m=[0m[91m=====
+downloaded 25 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/futile.options_1.0.1.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 3919 bytes
+========================================[0m[91m==========
+downloaded 3919 bytes
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/SummarizedExperiment_1.16.1.tar.gz'
+[0m[91mContent type 'application/octet-stream'[0m[91m length 1518022 bytes (1.4 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=======[0m[91m=[0m[91m=[0m[91m==[0m[91m==[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m===[0m[91m=[0m[91m=======[0m[91m=
+downloaded 1.4 MB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/futile.logger_1.4.3.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 17456 bytes (17 KB)
+=[0m[91m=[0m[91m=[0m[91m=[0m[91m==============================================
+downloaded 17 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/snow_0.4-4.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 20464 bytes (19 KB)
+===============[0m[91m=============[0m[91m=======[0m[91m===[0m[91m=[0m[91m===========[0m[91m
+downloaded 19 KB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/BH_1.78.0-0.tar.gz'
+[0m[91mContent type 'application/x-gzip' length 13269768 bytes (12.7 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=======[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m
+[0m[91mdownloaded 12.7 MB
+
+[0m[91mtrying URL 'https://cloud.r-project.org/src/contrib/Older/XML_3.99-0.3.tar.gz'
+[0m[91mContent type 'application/x-gzip'[0m[91m length 968543 bytes (945 KB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m===[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m==[0m[91m==[0m[91m=[0m[91m==[0m[91m==[0m[91m=
+downloaded 945 KB
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/GenomicAlignments_1.22.1.tar.gz'
+[0m[91mContent type 'application/octet-stream' length 2316288 bytes (2.2 MB)
+[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=
+[0m[91mdownloaded 2.2 MB
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/BiocParallel_1.20.1.tar.gz'
+[0m[91mContent type 'application/octet-stream'[0m[91m length 930979 bytes (909 KB)
+[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m==[0m[91m==[0m[91m=[0m[91m=[0m[91m=[0m[91m==[0m[91m=[0m[91m=[0m[91m=
+downloaded 909 KB
+
+[0m[91mtrying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/Rhtslib_1.18.1.tar.gz'
+[0m[91mContent type 'application/octet-stream' length 1471336 bytes (1.4 MB)
+[0m
