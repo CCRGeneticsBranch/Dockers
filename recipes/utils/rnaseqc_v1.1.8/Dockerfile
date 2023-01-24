@@ -1,8 +1,17 @@
-FROM nciccbr/ccbr_ubuntu_base_20.04:v2.1
+FROM ubuntu:20.04
 ENV TAG="v1.0"
+RUN mkdir -p /opt2 && mkdir -p /data2
+ENV TZ=America/New_York
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt update
+RUN apt-get install -y cpanminus unzip zlibc zlib1g zlib1g-dev bzip2 make gcc g++ wget git curl zip
+RUN cpanm FindBin Term::ReadLine
+# Set the locale
+RUN apt-get install -y locales && localedef -i en_US -f UTF-8 en_US.UTF-8
 
 RUN curl -s "https://get.sdkman.io" --output /opt2/getsdkman.bash
-RUN bash getsdkman.bash
+RUN bash /opt2/getsdkman.bash
 COPY install_java.sh /opt2
 RUN bash /opt2/install_java.sh
 # RNA-SeQC jar
