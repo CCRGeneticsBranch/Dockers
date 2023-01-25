@@ -5,15 +5,22 @@ ENV TZ=America/New_York
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt update
-RUN apt-get install -y cpanminus unzip zlibc zlib1g zlib1g-dev bzip2 make gcc g++ wget git curl zip
+RUN apt-get install -y cpanminus unzip zlibc zlib1g zlib1g-dev bzip2 make gcc g++ wget git curl zip sudo samtools bowtie bwa ttf-dejavu fontconfig
 RUN cpanm FindBin Term::ReadLine
 # Set the locale
 RUN apt-get install -y locales && localedef -i en_US -f UTF-8 en_US.UTF-8
 
+# RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo && chown -R docker:docker /opt2 && chown -R docker:docker /data2
+
+# USER docker
+
 RUN curl -s "https://get.sdkman.io" --output /opt2/getsdkman.bash
+ENV SDKMAN_DIR="/opt2/sdk"
 RUN bash /opt2/getsdkman.bash
 COPY install_java.sh /opt2
 RUN bash /opt2/install_java.sh
+ENV PATH="$PATH:/opt2/sdk/candidates/java/current/bin"
+
 # RNA-SeQC jar
 ADD http://www.broadinstitute.org/cancer/cga/tools/rnaseqc/RNA-SeQC_v1.1.8.jar /opt2
 ENV RNASEQCJAR="/opt2/RNA-SeQC_v1.1.8.jar"

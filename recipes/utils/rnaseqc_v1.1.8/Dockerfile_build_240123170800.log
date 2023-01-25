@@ -1,0 +1,110 @@
+Sending build context to Docker daemon  292.9kB
+Step 1/24 : FROM ubuntu:20.04
+ ---> d5447fc01ae6
+Step 2/24 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> c7d8144ba358
+Step 3/24 : RUN mkdir -p /opt2 && mkdir -p /data2
+ ---> Using cache
+ ---> 28202a1395b5
+Step 4/24 : ENV TZ=America/New_York
+ ---> Using cache
+ ---> cb098edc4e4b
+Step 5/24 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ ---> Using cache
+ ---> eec36c09a071
+Step 6/24 : RUN apt update
+ ---> Using cache
+ ---> c51a05f01268
+Step 7/24 : RUN apt-get install -y cpanminus unzip zlibc zlib1g zlib1g-dev bzip2 make gcc g++ wget git curl zip
+ ---> Using cache
+ ---> 907ffde357e8
+Step 8/24 : RUN cpanm FindBin Term::ReadLine
+ ---> Using cache
+ ---> 29e43b152c17
+Step 9/24 : RUN apt-get install -y locales && localedef -i en_US -f UTF-8 en_US.UTF-8
+ ---> Using cache
+ ---> f4ec85643531
+Step 10/24 : RUN curl -s "https://get.sdkman.io" --output /opt2/getsdkman.bash
+ ---> Using cache
+ ---> 0850ea57ce1b
+Step 11/24 : RUN bash /opt2/getsdkman.bash
+ ---> Using cache
+ ---> 963be2bbfb74
+Step 12/24 : COPY install_java.sh /opt2
+ ---> 44eb77b26520
+Step 13/24 : RUN bash /opt2/install_java.sh
+ ---> Running in 6827c15d34b7
+[1;36m==== BROADCAST =================================================================
+* 2023-01-22: schemacrawler 16.19.7 available on SDKMAN! https://www.schemacrawler.com/changes-report.html
+* 2023-01-22: groovy 4.0.8 available on SDKMAN!
+* 2023-01-22: groovy 2.5.21 available on SDKMAN!
+================================================================================[0m
+
+Downloading: java 7.0.352-zulu
+
+In progress...
+
+[91m#=#=#                                                                         [0m[91m                                                                           0.0%[0m[91m                                                                           0.5%[0m[91m[0m[91m#             [0m[91m           [0m[91m                  [0m[91m        [0m[91m         [0m[91m        [0m[91m      [0m[91m 2.2%[0m[91m#####                                                                      7.7%[0m[91m##################                                                        26.3%[0m[91m##########################################                                59.3%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#####[0m[91m######################################        [0m[91m 91.3%[0m[91m[0m[91m######################################################################## 100.0%
+[0m
+Repackaging Java 7.0.352-zulu...
+
+Done repackaging...
+
+[1;32mInstalling: java 7.0.352-zulu[0m
+[1;32mDone installing![0m
+
+
+[1;32mSetting java 7.0.352-zulu as default.[0m
+Removing intermediate container 6827c15d34b7
+ ---> 3a12d4022885
+Step 14/24 : ADD http://www.broadinstitute.org/cancer/cga/tools/rnaseqc/RNA-SeQC_v1.1.8.jar /opt2
+
+ ---> d5741b2d1039
+Step 15/24 : ENV RNASEQCJAR="/opt2/RNA-SeQC_v1.1.8.jar"
+ ---> Running in 16d2d6f9801c
+Removing intermediate container 16d2d6f9801c
+ ---> e271d9b6a139
+Step 16/24 : RUN chmod a+rX $RNASEQCJAR
+ ---> Running in 035885657fa6
+Removing intermediate container 035885657fa6
+ ---> a8a3cd95b037
+Step 17/24 : COPY Dockerfile /opt2/Dockerfile.${TAG}
+ ---> 70181329ed5d
+Step 18/24 : RUN if [ -f /opt2/Dockerfile ];then rm -f /opt2/Dockerfile;fi &&     chmod a+r /opt2/Dockerfile.${TAG} &&     ln -s Dockerfile.${TAG} /opt2/Dockerfile
+ ---> Running in 4b5d6b6c89d1
+Removing intermediate container 4b5d6b6c89d1
+ ---> c597193831ac
+Step 19/24 : WORKDIR /data2
+ ---> Running in 0080c92d8513
+Removing intermediate container 0080c92d8513
+ ---> 89db78a24de1
+Step 20/24 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+ ---> Running in 7de308b1afcc
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 7de308b1afcc
+ ---> 685a38d5ecd0
+Step 21/24 : LABEL maintainer="vishal.koparde@nih.gov"
+ ---> Running in e8ace066376d
+Removing intermediate container e8ace066376d
+ ---> 98544fd27cf5
+Step 22/24 : LABEL github_handle="kopardev"
+ ---> Running in dbd6dcbb62bd
+Removing intermediate container dbd6dcbb62bd
+ ---> 6c9cd034a2be
+Step 23/24 : ARG BUILD_DATE
+ ---> Running in f126ab42325a
+Removing intermediate container f126ab42325a
+ ---> 5e032c3c77f4
+Step 24/24 : LABEL build_date=$BUILD_DATE
+ ---> Running in 2cd2f1963007
+Removing intermediate container 2cd2f1963007
+ ---> 924a892c083a
+Successfully built 924a892c083a
+Successfully tagged nciccbr/ccrgb_rnaseqc_v1.1.8:latest

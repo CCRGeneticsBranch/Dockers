@@ -1,0 +1,40 @@
+Sending build context to Docker daemon  289.3kB
+Step 1/27 : FROM ubuntu:20.04
+ ---> d5447fc01ae6
+Step 2/27 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> c7d8144ba358
+Step 3/27 : RUN mkdir -p /opt2 && mkdir -p /data2
+ ---> Using cache
+ ---> 28202a1395b5
+Step 4/27 : ENV TZ=America/New_York
+ ---> Using cache
+ ---> cb098edc4e4b
+Step 5/27 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ ---> Using cache
+ ---> eec36c09a071
+Step 6/27 : RUN apt update
+ ---> Using cache
+ ---> c51a05f01268
+Step 7/27 : RUN apt-get install -y cpanminus unzip zlibc zlib1g zlib1g-dev bzip2 make gcc g++ wget git curl zip
+ ---> Using cache
+ ---> 907ffde357e8
+Step 8/27 : RUN cpanm FindBin Term::ReadLine
+ ---> Using cache
+ ---> 29e43b152c17
+Step 9/27 : RUN apt-get install -y locales && localedef -i en_US -f UTF-8 en_US.UTF-8
+ ---> Using cache
+ ---> f4ec85643531
+Step 10/27 : RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 ubuntu
+ ---> Using cache
+ ---> 18e95bf6abc9
+Step 11/27 : USER ubuntu
+ ---> Using cache
+ ---> 5e09c5c3d657
+Step 12/27 : WORKDIR /home/ubuntu
+ ---> Using cache
+ ---> 96d04051ae55
+Step 13/27 : RUN sudo curl -s "https://get.sdkman.io" --output /opt2/getsdkman.bash
+ ---> Running in 0d18722c8a86
+[91m/bin/sh: 1: sudo: not found
+[0m

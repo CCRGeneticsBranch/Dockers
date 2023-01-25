@@ -1,0 +1,104 @@
+Sending build context to Docker daemon  380.4kB
+Step 1/25 : FROM ubuntu:20.04
+ ---> d5447fc01ae6
+Step 2/25 : ENV TAG="v1.0"
+ ---> Using cache
+ ---> c7d8144ba358
+Step 3/25 : RUN mkdir -p /opt2 && mkdir -p /data2
+ ---> Using cache
+ ---> 28202a1395b5
+Step 4/25 : ENV TZ=America/New_York
+ ---> Using cache
+ ---> cb098edc4e4b
+Step 5/25 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ ---> Using cache
+ ---> eec36c09a071
+Step 6/25 : RUN apt update
+ ---> Using cache
+ ---> c51a05f01268
+Step 7/25 : RUN apt-get install -y cpanminus unzip zlibc zlib1g zlib1g-dev bzip2 make gcc g++ wget git curl zip sudo
+ ---> Using cache
+ ---> 5e065a1056ab
+Step 8/25 : RUN cpanm FindBin Term::ReadLine
+ ---> Using cache
+ ---> 7c3f9c3b671e
+Step 9/25 : RUN apt-get install -y locales && localedef -i en_US -f UTF-8 en_US.UTF-8
+ ---> Using cache
+ ---> 7fe4a91c4a3f
+Step 10/25 : RUN curl -s "https://get.sdkman.io" --output /opt2/getsdkman.bash && mkdir -p /opt2/sdk
+ ---> Running in cb1adc18c864
+Removing intermediate container cb1adc18c864
+ ---> b3fa79c1e0d7
+Step 11/25 : ENV SDKMAN_DIR="/opt2/sdk"
+ ---> Running in f3bbda192c8c
+Removing intermediate container f3bbda192c8c
+ ---> c23d971bae22
+Step 12/25 : RUN bash /opt2/getsdkman.bash
+ ---> Running in d38b469db525
+
+                                -+syyyyyyys:
+                            `/yho:`       -yd.
+                         `/yh/`             +m.
+                       .oho.                 hy                          .`
+                     .sh/`                   :N`                `-/o`  `+dyyo:.
+                   .yh:`                     `M-          `-/osysoym  :hs` `-+sys:      hhyssssssssy+
+                 .sh:`                       `N:          ms/-``  yy.yh-      -hy.    `.N-````````+N.
+               `od/`                         `N-       -/oM-      ddd+`     `sd:     hNNm        -N:
+              :do`                           .M.       dMMM-     `ms.      /d+`     `NMMs       `do
+            .yy-                             :N`    ```mMMM.      -      -hy.       /MMM:       yh
+          `+d+`           `:/oo/`       `-/osyh/ossssssdNMM`           .sh:         yMMN`      /m.
+         -dh-           :ymNMMMMy  `-/shmNm-`:N/-.``   `.sN            /N-         `NMMy      .m/
+       `oNs`          -hysosmMMMMydmNmds+-.:ohm           :             sd`        :MMM/      yy
+      .hN+           /d:    -MMMmhs/-.`   .MMMh   .ss+-                 `yy`       sMMN`     :N.
+     :mN/           `N/     `o/-`         :MMMo   +MMMN-         .`      `ds       mMMh      do
+    /NN/            `N+....--:/+oooosooo+:sMMM:   hMMMM:        `my       .m+     -MMM+     :N.
+   /NMo              -+ooooo+/:-....`...:+hNMN.  `NMMMd`        .MM/       -m:    oMMN.     hs
+  -NMd`                                    :mm   -MMMm- .s/     -MMm.       /m-   mMMd     -N.
+ `mMM/                                      .-   /MMh. -dMo     -MMMy        od. .MMMs..---yh
+ +MMM.                                           sNo`.sNMM+     :MMMM/        sh`+MMMNmNm+++-
+ mMMM-                                           /--ohmMMM+     :MMMMm.       `hyymmmdddo
+ MMMMh.                  ````                  `-+yy/`yMMM/     :MMMMMy       -sm:.``..-:-.`
+ dMMMMmo-.``````..-:/osyhddddho.           `+shdh+.   hMMM:     :MmMMMM/   ./yy/` `:sys+/+sh/
+ .dMMMMMMmdddddmmNMMMNNNNNMMMMMs           sNdo-      dMMM-  `-/yd/MMMMm-:sy+.   :hs-      /N`
+  `/ymNNNNNNNmmdys+/::----/dMMm:          +m-         mMMM+ohmo/.` sMMMMdo-    .om:       `sh
+     `.-----+/.`       `.-+hh/`         `od.          NMMNmds/     `mmy:`     +mMy      `:yy.
+           /moyso+//+ossso:.           .yy`          `dy+:`         ..       :MMMN+---/oys:
+         /+m:  `.-:::-`               /d+                                    +MMMMMMMNh:`
+        +MN/                        -yh.                                     `+hddhy+.
+       /MM+                       .sh:
+      :NMo                      -sh/
+     -NMs                    `/yy:
+    .NMy                  `:sh+.
+   `mMm`               ./yds-
+  `dMMMmyo:-.````.-:oymNy:`
+  +NMMMMMMMMMMMMMMMMms:`
+    -+shmNMMMNmdy+:`
+
+
+                                                                 Now attempting installation...
+
+
+Looking for a previous installation of SDKMAN...
+SDKMAN found.
+
+======================================================================================================
+ You already have SDKMAN installed.
+ SDKMAN was found at:
+
+    /opt2/sdk
+
+ Please consider running the following if you need to upgrade.
+
+    $ sdk selfupdate force
+
+======================================================================================================
+
+Removing intermediate container d38b469db525
+ ---> 322d5d73e23f
+Step 13/25 : COPY install_java.sh /opt2
+ ---> 1bef479f8420
+Step 14/25 : RUN bash /opt2/install_java.sh
+ ---> Running in 263836f11f6a
+[91m/opt2/install_java.sh: line 2: /root/.sdkman/bin/sdkman-init.sh: No such file or directory
+[0m[91m/opt2/install_java.sh: line 4: sdk: command not found
+[0m
