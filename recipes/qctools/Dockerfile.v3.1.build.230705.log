@@ -1,0 +1,96 @@
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 727B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/nciccbr/ccrgb_qctools:v3.0
+#3 ...
+
+#4 [auth] nciccbr/ccrgb_qctools:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/nciccbr/ccrgb_qctools:v3.0
+#3 DONE 0.8s
+
+#5 [internal] load build context
+#5 transferring context: 727B done
+#5 DONE 0.0s
+
+#6 [1/6] FROM docker.io/nciccbr/ccrgb_qctools:v3.0@sha256:93aabd6cb3d24177e9f97e9590afa5ac86a8263ef6bf63e7d40662cd050d1c28
+#6 DONE 0.7s
+
+#7 [2/6] RUN apt-get update &&     apt-get install -y poppler-utils
+#7 0.453 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+#7 0.627 Get:2 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+#7 1.010 Get:3 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [2482 kB]
+#7 1.141 Get:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+#7 1.268 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+#7 1.388 Get:6 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+#7 1.560 Get:7 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [1068 kB]
+#7 1.588 Get:8 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [2858 kB]
+#7 1.625 Get:9 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+#7 1.641 Get:10 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+#7 1.645 Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+#7 1.693 Get:12 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [28.5 kB]
+#7 2.062 Get:13 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1367 kB]
+#7 2.085 Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [3342 kB]
+#7 2.212 Get:15 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [2648 kB]
+#7 2.274 Get:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [31.2 kB]
+#7 2.461 Get:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [28.6 kB]
+#7 2.674 Get:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [55.2 kB]
+#7 3.615 Fetched 27.3 MB in 3s (8155 kB/s)
+#7 3.615 Reading package lists...
+#7 5.106 Reading package lists...
+#7 6.554 Building dependency tree...
+#7 6.851 Reading state information...
+#7 7.240 The following additional packages will be installed:
+#7 7.241   libpoppler97
+#7 7.292 The following NEW packages will be installed:
+#7 7.295   libpoppler97 poppler-utils
+#7 7.510 0 upgraded, 2 newly installed, 0 to remove and 5 not upgraded.
+#7 7.510 Need to get 1090 kB of archives.
+#7 7.510 After this operation, 4264 kB of additional disk space will be used.
+#7 7.510 Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpoppler97 amd64 0.86.1-0ubuntu1.1 [916 kB]
+#7 8.195 Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 poppler-utils amd64 0.86.1-0ubuntu1.1 [174 kB]
+#7 8.456 debconf: delaying package configuration, since apt-utils is not installed
+#7 8.520 Fetched 1090 kB in 1s (1218 kB/s)
+#7 8.553 Selecting previously unselected package libpoppler97:amd64.
+#7 8.553 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 68737 files and directories currently installed.)
+#7 8.609 Preparing to unpack .../libpoppler97_0.86.1-0ubuntu1.1_amd64.deb ...
+#7 8.616 Unpacking libpoppler97:amd64 (0.86.1-0ubuntu1.1) ...
+#7 8.781 Selecting previously unselected package poppler-utils.
+#7 8.791 Preparing to unpack .../poppler-utils_0.86.1-0ubuntu1.1_amd64.deb ...
+#7 8.794 Unpacking poppler-utils (0.86.1-0ubuntu1.1) ...
+#7 8.888 Setting up libpoppler97:amd64 (0.86.1-0ubuntu1.1) ...
+#7 8.899 Setting up poppler-utils (0.86.1-0ubuntu1.1) ...
+#7 8.910 Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+#7 DONE 9.1s
+
+#8 [3/6] COPY Dockerfile /opt2/Dockerfile_ccrgb_qctools.v3.1
+#8 DONE 0.0s
+
+#9 [4/6] RUN chmod a+r /opt2/Dockerfile_ccrgb_qctools.v3.1
+#9 DONE 0.3s
+
+#10 [5/6] RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     apt-get autoclean &&     apt-get autoremove -y &&     rm -rf /var/lib/{apt,dpkg,cache,log}/
+#10 0.325 Reading package lists...
+#10 0.352 Building dependency tree...
+#10 0.355 Reading state information...
+#10 0.366 Reading package lists...
+#10 0.388 Building dependency tree...
+#10 0.390 Reading state information...
+#10 0.397 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+#10 DONE 0.4s
+
+#11 [6/6] WORKDIR /data2
+#11 DONE 0.1s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 0.4s done
+#12 writing image sha256:d2ea7c04f66d63fdc5daf9cf0e93cb24e70458ddc39d4bd3237ed9678b77854b done
+#12 naming to docker.io/nciccbr/ccrgb_qctools:v3.1 done
+#12 DONE 0.4s
