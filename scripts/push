@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ "$#" != "1" ];then
+    echo "Provide a TAG as argument!"
+    exit
+fi
+
+dockerhub_account="nciccbr"
+# foldername is the reponame
+CWD=`pwd`
+JUSTFOLDERNAME=$(basename $CWD)
+reponame=ccrgb_"$JUSTFOLDERNAME"
+
+dt=$(date +"%y%m%d")
+tag="$1"
+
+echo "Pushing ${dockerhub_account}/${reponame}:${tag} ... "
+docker push ${dockerhub_account}/${reponame}:${tag}
+echo "making ${tag} the \"latest\" tag ..."
+docker tag ${dockerhub_account}/${reponame}:${tag} ${dockerhub_account}/${reponame}:latest
+echo "Pushing ${dockerhub_account}/${reponame}:latest ..."
+docker push ${dockerhub_account}/${reponame}:latest

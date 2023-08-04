@@ -1,0 +1,43 @@
+#!/bin/bash
+
+if [ "$#" == "0" ];then
+    echo "Provide a TAG as argument!"
+    exit
+fi
+
+if [ "$#" == "2" ];then
+    cash=""
+else
+    cash="--no-cache"
+fi
+
+dockerhub_account="nciccbr"
+# foldername is the reponame
+CWD=`pwd`
+JUSTFOLDERNAME=$(basename $CWD)
+reponame="ccrgb_$JUSTFOLDERNAME"
+
+dt=$(date +"%y%m%d")
+tag="$1"
+
+if [ -f Dockerfile ];then rm -f Dockerfile;fi
+if [ ! -f Dockerfile.${tag} ];then
+    echo "Dockerfile.${tag} does not exist. Cannot build!"
+    exit
+fi
+ln -s Dockerfile.${tag} Dockerfile
+
+docker build $cash \
+    --progress=plain \
+    --build-arg BUILD_DATE=${dt} \
+    --build-arg BUILD_TAG=${tag} \
+    --build-arg REPONAME=${reponame} \
+    -f Dockerfile \
+    -t ${dockerhub_account}/${reponame}:${tag} \
+    . 2>&1 | \
+    tee Dockerfile.${tag}.build.${dt}.log
+#if [ "$?" == "0" ];then
+#docker push ${dockerhub_account}/${reponame}:${tag}
+#docker tag ${dockerhub_account}/${reponame}:${tag} ${dockerhub_account}/${reponame}:latest
+#docker push ${dockerhub_account}/${reponame}:latest
+#fi
